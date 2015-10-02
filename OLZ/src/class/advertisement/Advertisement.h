@@ -11,12 +11,14 @@ class Advertisement{
 public:
 	Advertisement(string title, Category category);
 	Advertisement(string title, Category category, string description);
+	unsigned int getId() const;
 	string getTitle() const;
 	Category getCategory() const;
 	string getDescription() const;
 	string getImageAt(unsigned int index) const;
 	void addImage(string path);
 private:
+	static unsigned int id;
 	string title;
 	Category category;
 	string description;
