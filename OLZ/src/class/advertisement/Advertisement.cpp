@@ -1,4 +1,6 @@
 #include"Advertisement.h"
+#include<ctime>
+#include<chrono>
 
 unsigned int Advertisement::id = 0;
 
@@ -9,6 +11,7 @@ Advertisement::Advertisement(string title, Category category){
 	showEmail = true;
 	showPhoneNumber = true;
 	id++;
+	//TODO: get time and save as creationDate
 }
 
 Advertisement::Advertisement(string title, Category category, string description) : Advertisement(title, category){
