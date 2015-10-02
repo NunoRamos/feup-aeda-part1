@@ -16,7 +16,7 @@ public:
 	unsigned int getDay() const;
 	unsigned int getMonth() const;
 	unsigned int getYear() const;
-	string getDate() const;
+	string getString() const;
 	Date& operator=(Date lhs, Date rhs);
 private:
 	bool isLeapYear(unsigned int year);

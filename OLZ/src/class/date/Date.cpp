@@ -57,7 +57,7 @@ unsigned int Date::getYear() const{
 	return year;
 }
 
-string Date::getDate() const{
+string Date::getString() const{
 	return day + "/" + month + "/" + year;
 }
 

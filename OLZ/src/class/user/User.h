@@ -3,22 +3,23 @@
 
 #include<string>
 #include"../date/Date.h"
+#include"../location/Location.h"
 
 using namespace std;
 
 class User{
 public:
 	User();
-	User(string &login, string &name, string &email, string phoneNumber, Date signUpDate);
-	string getLogin() const;
-	string getName() const;
+	User(string email, string name, string phoneNumber, Date signUpDate, Location location);
 	string getEmail() const;
+	string getName() const;
 	string getPhoneNumber() const;
-	string getDate() const;
+	Location getLocation() const;
+	string getLocationString() const;
 	friend istream& operator>>(istream& in, User user);
 private:
-	string login, name, email, phoneNumber;
-	Date signUpDate;
+	string email, name, phoneNumber;
+	Location location;
 };
 
 #ENDIF

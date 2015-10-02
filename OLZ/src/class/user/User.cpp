@@ -6,32 +6,32 @@ User::User(){
 
 }
 
-User::User(string &login, string &name, string &email, string phoneNumber, Date signUpDate){
-	this->login = login;
-	this->name = name;
+User::User(string email, string name, string phoneNumber, Date signUpDate, Location location){
 	this->email = email;
+	this->name = name;
 	this->phoneNumber = phoneNumber;
-	this->signUpDate = signUpDate;
-}
-
-string User::getLogin() const{
-	return login;
-}
-
-string User::getName() const{
-	return name;
+	this->location = location;
 }
 
 string User::getEmail() const{
 	return email;
 }
 
+string User::getName() const{
+	return name;
+}
+
 string User::getPhoneNumber() const{
 	return phoneNumber;
 }
 
-string User::getDate() const{
-	return signUpDate.getDate();
+
+Location User::getLocation() const{
+	return location;
+}
+
+string User::getLocationString() const{
+	return location.getString();
 }
 
 istream& operator>>(istream& in, User user){
