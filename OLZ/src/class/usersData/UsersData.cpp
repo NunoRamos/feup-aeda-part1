@@ -3,7 +3,7 @@
 
 string separationChar = "|";
 
-UsersData::UsersData(string path) : this->path(path){
+UsersData::UsersData(string path) : path(path){
 
 }
 
@@ -15,8 +15,8 @@ bool UsersData::loadUsers(){
 		return false;
 
 	while(!userFile.eof()){
-		User user();
-		userFile >> user;
+		User user;
+		//userFile >> user;
 		users.push_back(user);
 	}
 }
@@ -29,9 +29,8 @@ bool UsersData::saveUsers(){
 		return false;
 
 	for(unsigned int i = 0; i < users.size(); i++){
-		userFile << users[i].getLogin() << separationChar << users[i].getName() << separationChar
-				<< users[i].getEmail() << separationChar << users[i].getPhoneNumber() << separationChar
-				<< users[i].getDate << endl;
+		userFile << users[i].getEmail() << separationChar << users[i].getName() << separationChar
+				<< users[i].getPhoneNumber() << separationChar << users[i].getLocationString() << separationChar;
 	}
 
 }

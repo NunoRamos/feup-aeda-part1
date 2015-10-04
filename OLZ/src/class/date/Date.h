@@ -17,10 +17,10 @@ public:
 	unsigned int getMonth() const;
 	unsigned int getYear() const;
 	string getString() const;
-	Date& operator=(Date lhs, Date rhs);
+	Date& operator=(Date rhs);
+	static bool isDateValid(unsigned int day, unsigned int month, unsigned int year);
+	static bool isLeapYear(unsigned int year);
 private:
-	bool isLeapYear(unsigned int year);
-	bool isDateValid(unsigned int day, unsigned int month, unsigned int year);
 	unsigned int day, month, year;
 };
 

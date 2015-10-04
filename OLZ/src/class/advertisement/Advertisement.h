@@ -4,6 +4,7 @@
 #include<string>
 #include<vector>
 #include"../../Category.h"
+#include"../date/Date.h"
 
 using namespace std;
 

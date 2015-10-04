@@ -58,7 +58,9 @@ unsigned int Date::getYear() const{
 }
 
 string Date::getString() const{
-	return day + "/" + month + "/" + year;
+	stringstream ss;
+	ss << day << '/' << month << '/' << year;
+	return ss.str();
 }
 
 bool Date::isLeapYear(unsigned int year){
@@ -103,11 +105,10 @@ bool Date::isDateValid(unsigned int day, unsigned int month, unsigned int year){
 	return true;
 }
 
-Date& Date::operator=(Date lhs, Date rhs){
-	lhs.day = rhs.day;
-	lhs.month = rhs.month;
-	lhs.year = rhs.year;
-
-	return lhs;
+Date& Date::operator=(Date rhs){
+	this->day = rhs.day;
+	this->month = rhs.month;
+	this->year = rhs.year;
+	return this;
 }
 
