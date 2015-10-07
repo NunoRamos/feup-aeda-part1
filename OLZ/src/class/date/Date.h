@@ -1,5 +1,5 @@
-#IFNDEF DATE_H
-#DEFINE DATE_H
+#ifndef DATE_H
+#define DATE_H
 
 #include<string>
 
@@ -24,4 +24,4 @@ private:
 	unsigned int day, month, year;
 };
 
-#ENDIF
+#endif

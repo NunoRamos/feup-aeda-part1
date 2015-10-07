@@ -1,5 +1,5 @@
-#IFNDEF USERSDATA_H
-#DEFINE USERSDATA_H
+#ifndef USERSDATA_H
+#define USERSDATA_H
 
 #include<vector>
 #include"../user/User.h"
@@ -16,4 +16,4 @@ private:
 	const string path = "../../../data/users.txt";
 };
 
-#ENDIF
+#endif

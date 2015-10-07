@@ -109,6 +109,6 @@ Date& Date::operator=(Date rhs){
 	this->day = rhs.day;
 	this->month = rhs.month;
 	this->year = rhs.year;
-	return this;
+	return *this;
 }
 

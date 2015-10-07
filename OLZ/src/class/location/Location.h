@@ -8,12 +8,14 @@ using namespace std;
 
 class Location{
 public:
+	Location();
 	Location(string city, string county, string district);
+	Location(string location);
 	string getString() const;
 	string getCity() const;
 	string getCounty() const;
 	string getDistrict() const;
-	Location& operator=(Location rhs);
+	Location& operator=(const Location &rhs);
 private:
 	string city, county, district;
 };

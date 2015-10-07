@@ -13,6 +13,13 @@ User::User(string email, string name, string phoneNumber, Date signUpDate, Locat
 	this->location = location;
 }
 
+User::User(string email, string name, string phoneNumber, Date signUpDate, string location){
+	this->email = email;
+	this->name = name;
+	this->phoneNumber = phoneNumber;
+	this->location = Location(location);
+}
+
 string User::getEmail() const{
 	return email;
 }
@@ -39,7 +46,7 @@ istream& operator>>(istream& in, User user){
 	in >> line;
 
 	int cursor = line.find(separationChar);
-	user.login = line.substr(0, cursor);
+	user.email = line.substr(0, cursor);
 
 	line = line.substr(cursor+1);
 	cursor = line.find(separationChar);
@@ -47,15 +54,11 @@ istream& operator>>(istream& in, User user){
 
 	line = line.substr(cursor+1);
 	cursor = line.find(separationChar);
-	user.email = line.substr(0, cursor);
-
-	line = line.substr(cursor+1);
-	cursor = line.find(separationChar);
 	user.phoneNumber = line.substr(0, cursor);
 
 	line = line.substr(cursor+1);
 	cursor = line.find(separationChar);
-	user.signUpDate = new Date(line);
+	user.location = Location(line);
 
 	return in;
 }
