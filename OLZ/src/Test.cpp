@@ -3,6 +3,7 @@
 #include "../cute/xml_listener.h"
 #include "../cute/cute_runner.h"
 #include "class/date/Date.h"
+#include "class/location/Location.h"
 
 void userTest(){
 
@@ -13,6 +14,12 @@ void usersDataTest() {
 }
 
 void locationTest(){
+	Location l1("Maia", "Maia", "Porto");
+	Location l2("Maia, Maia, Porto");
+	Location l3 = l1;
+	ASSERT_EQUAL("Maia, Maia, Porto", l1.getString());
+	ASSERT_EQUAL("Maia, Maia, Porto", l2.getString());
+	ASSERT_EQUAL("Maia, Maia, Porto", l3.getString());
 
 }
 

@@ -12,10 +12,10 @@ Location::Location(string city, string county, string district){
 }
 
 Location::Location(string location){
-	string county = location.substr(location.find(","));
+	string temp = location.substr(location.find(",")+2);
 	this->city = location.substr(0, location.find(","));
-	this->county = county.substr(0, county.find(","));
-	this->district = county.substr(county.find(","));
+	this->county = temp.substr(0, temp.find(","));
+	this->district = temp.substr(temp.find(",")+2);
 }
 
 string Location::getString() const{
