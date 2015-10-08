@@ -14,16 +14,9 @@ Advertisement::Advertisement(string title, Category category){
 	//TODO: get time and save as creationDate
 }
 
-Advertisement::Advertisement(string title, Category category, string description){
-	//c++98 does not let us call a constructor in this constructor,
-	//so we have to repeat code
-	this->title = title;
-	this->category = category;
+Advertisement::Advertisement(string title, Category category, string description)
+	: Advertisement(title, category){
 	this->description = description;
-	showName = true;
-	showEmail = true;
-	showPhoneNumber = true;
-	id++;
 }
 
 unsigned int Advertisement::getId() const{
