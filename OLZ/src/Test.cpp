@@ -5,6 +5,18 @@
 #include "class/date/Date.h"
 #include "class/location/Location.h"
 
+void advertisementTest(){
+
+}
+
+void saleTest(){
+
+}
+
+void purchaseTest(){
+
+}
+
 void userTest(){
 
 }
@@ -37,6 +49,9 @@ void runAllTests(int argc, char const *argv[]){
 	s.push_back(CUTE(locationTest));
 	s.push_back(CUTE(userTest));
 	s.push_back(CUTE(usersDataTest));
+	s.push_back(CUTE(advertisementTest));
+	s.push_back(CUTE(saleTest));
+	s.push_back(CUTE(purchaseTest));
 	cute::xml_file_opener xmlfile(argc,argv);
 	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
 	cute::makeRunner(lis,argc,argv)(s, "AllTests");
