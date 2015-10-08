@@ -19,6 +19,7 @@ bool UsersData::loadUsers(){
 		//userFile >> user;
 		users.push_back(user);
 	}
+	return true;
 }
 
 bool UsersData::saveUsers(){
@@ -32,5 +33,5 @@ bool UsersData::saveUsers(){
 		userFile << users[i].getEmail() << separationChar << users[i].getName() << separationChar
 				<< users[i].getPhoneNumber() << separationChar << users[i].getLocationString() << separationChar;
 	}
-
+	return true;
 }
