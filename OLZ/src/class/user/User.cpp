@@ -1,6 +1,6 @@
 #include"User.h"
 
-string separationChar = "|";
+string User::separationChar = "|";
 
 User::User(){
 
@@ -45,19 +45,19 @@ istream& operator>>(istream& in, User user){
 	string line;
 	in >> line;
 
-	int cursor = line.find(separationChar);
+	int cursor = line.find(User::separationChar);
 	user.email = line.substr(0, cursor);
 
 	line = line.substr(cursor+1);
-	cursor = line.find(separationChar);
+	cursor = line.find(User::separationChar);
 	user.name = line.substr(0, cursor);
 
 	line = line.substr(cursor+1);
-	cursor = line.find(separationChar);
+	cursor = line.find(User::separationChar);
 	user.phoneNumber = line.substr(0, cursor);
 
 	line = line.substr(cursor+1);
-	cursor = line.find(separationChar);
+	cursor = line.find(User::separationChar);
 	user.location = Location(line);
 
 	return in;

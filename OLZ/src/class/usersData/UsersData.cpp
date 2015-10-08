@@ -1,7 +1,7 @@
 #include"UsersData.h"
 #include<fstream>
 
-string separationChar = "|";
+string UsersData::separationChar = "|";
 
 UsersData::UsersData(string path) : path(path){
 

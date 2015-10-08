@@ -21,6 +21,8 @@ public:
 protected:
 	string email, name, phoneNumber;
 	Location location;
+private:
+	static string separationChar;
 };
 
 #endif
