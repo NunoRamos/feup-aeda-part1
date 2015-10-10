@@ -9,8 +9,8 @@ using namespace std;
 class UserData{
 public:
 	UserData(string path);
-	bool loadUsers();
-	bool saveUsers();
+	bool loadUsers(); ///< Loads user data from specified file
+	bool saveUsers(); ///< Saves user data to specified file
 private:
 	vector<User> users;
 	const string path = "../../../data/users.txt";

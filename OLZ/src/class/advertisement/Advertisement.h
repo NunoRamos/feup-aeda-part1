@@ -10,8 +10,8 @@ using namespace std;
 
 class Advertisement{
 public:
-	Advertisement(string title, Category category);
-	Advertisement(string title, Category category, string description);
+	Advertisement(User* owner, string title, Category category);
+	Advertisement(User* owner, string title, Category category, string description);
 	unsigned int getId() const;
 	string getTitle() const;
 	Category getCategory() const;
@@ -26,6 +26,7 @@ private:
 	Date creationDate;
 	bool showName, showEmail, showPhoneNumber;
 	vector<string> imagesPath;
+	User* owner;
 };
 
 

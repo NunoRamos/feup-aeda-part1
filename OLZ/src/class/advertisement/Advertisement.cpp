@@ -4,7 +4,8 @@
 
 unsigned int Advertisement::id = 0;
 
-Advertisement::Advertisement(string title, Category category){
+Advertisement::Advertisement(User* owner, string title, Category category){
+	this->owner = owner;
 	this->title = title;
 	this->category = category;
 	showName = true;
@@ -14,8 +15,8 @@ Advertisement::Advertisement(string title, Category category){
 	//TODO: get time and save as creationDate
 }
 
-Advertisement::Advertisement(string title, Category category, string description)
-	: Advertisement(title, category){
+Advertisement::Advertisement(User* owner, string title, Category category, string description)
+	: Advertisement(owner, title, category){
 	this->description = description;
 }
 
