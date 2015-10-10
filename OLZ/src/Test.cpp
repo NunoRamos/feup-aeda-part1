@@ -5,26 +5,32 @@
 #include "class/date/Date.h"
 #include "class/location/Location.h"
 
+///Advertisement Class Test
 void advertisementTest(){
 
 }
 
+///Advertisement Class Test
 void saleTest(){
 
 }
 
+///Advertisement Class Test
 void purchaseTest(){
 
 }
 
+///Advertisement Class Test
 void userTest(){
 
 }
 
-void usersDataTest() {
+///UserData Class Test
+void userDataTest() {
 
 }
 
+///Location Class Test
 void locationTest(){
 	Location l1("Maia", "Maia", "Porto");
 	Location l2("Maia, Maia, Porto");
@@ -35,6 +41,7 @@ void locationTest(){
 
 }
 
+///Date Class Test
 void dateTest() {
 	ASSERT_EQUALM("1800 should not be a leap year.", Date::isLeapYear(1800), false);
 	ASSERT_EQUALM("1903 should not be a leap year.", Date::isLeapYear(1903), false);
@@ -48,7 +55,7 @@ void runAllTests(int argc, char const *argv[]){
 	s.push_back(CUTE(dateTest));
 	s.push_back(CUTE(locationTest));
 	s.push_back(CUTE(userTest));
-	s.push_back(CUTE(usersDataTest));
+	s.push_back(CUTE(userDataTest));
 	s.push_back(CUTE(advertisementTest));
 	s.push_back(CUTE(saleTest));
 	s.push_back(CUTE(purchaseTest));

@@ -1,14 +1,14 @@
-#ifndef USERSDATA_H
-#define USERSDATA_H
+#ifndef UserData_H
+#define UserData_H
 
 #include<vector>
 #include"../user/User.h"
 
 using namespace std;
 
-class UsersData{
+class UserData{
 public:
-	UsersData(string path);
+	UserData(string path);
 	bool loadUsers();
 	bool saveUsers();
 private:
@@ -18,5 +18,6 @@ private:
 };
 
 //TODO move separationChar to a constants file
+//Better option may be writing to a binary file and end every input with \n
 
 #endif

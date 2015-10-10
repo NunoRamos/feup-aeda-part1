@@ -1,13 +1,14 @@
-#include"UsersData.h"
+#include "UserData.h"
+
 #include<fstream>
 
-string UsersData::separationChar = "|";
+string UserData::separationChar = "|";
 
-UsersData::UsersData(string path) : path(path){
+UserData::UserData(string path) : path(path){
 
 }
 
-bool UsersData::loadUsers(){
+bool UserData::loadUsers(){
 	ifstream userFile;
 	userFile.open(path.c_str(), ofstream::in);
 
@@ -22,7 +23,7 @@ bool UsersData::loadUsers(){
 	return true;
 }
 
-bool UsersData::saveUsers(){
+bool UserData::saveUsers(){
 	ofstream userFile;
 	userFile.open(path.c_str(), ofstream::out | ofstream::trunc);
 
