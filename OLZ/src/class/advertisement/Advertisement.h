@@ -5,6 +5,7 @@
 #include<vector>
 #include"../../Category.h"
 #include"../date/Date.h"
+#include"../user/User.h"
 
 using namespace std;
 
