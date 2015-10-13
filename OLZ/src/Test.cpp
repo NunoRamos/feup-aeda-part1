@@ -2,9 +2,10 @@
 #include "../cute/ide_listener.h"
 #include "../cute/xml_listener.h"
 #include "../cute/cute_runner.h"
-#include "class/date/Date.h"
-#include "class/location/Location.h"
 #include <stdexcept>
+
+#include "class/date/date.h"
+#include "class/location/location.h"
 
 using namespace std;
 

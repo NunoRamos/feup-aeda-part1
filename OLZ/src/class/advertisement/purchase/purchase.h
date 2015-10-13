@@ -1,7 +1,7 @@
 #ifndef PURCHASE_H
 #define PURCHASE_H
 
-#include"../Advertisement.h"
+#include "../advertisement.h"
 
 class Purchase : public Advertisement{
 

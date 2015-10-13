@@ -3,9 +3,10 @@
 
 #include<string>
 #include<vector>
-#include"../date/Date.h"
-#include"../location/Location.h"
-#include"../advertisement/Advertisement.h"
+
+#include "../advertisement/advertisement.h"
+#include "../date/date.h"
+#include "../location/location.h"
 
 using namespace std;
 
