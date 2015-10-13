@@ -3,7 +3,7 @@
 #include "../cute/xml_listener.h"
 #include "../cute/cute_runner.h"
 #include <stdexcept>
-
+#include "class/menu/menu.h"
 #include "class/date/date.h"
 #include "class/location/location.h"
 
@@ -66,6 +66,18 @@ void dateTest() {
 	ASSERT_EQUALM("2000 should be a leap year.", true, Date::isLeapYear(2000));
 }
 
+void hello(){
+	cout << "ola";
+}
+
+///Menu Class Test
+void menuTest(){
+	Menu menu(20,20,'?');
+	menu.addOption("Ola", &hello);
+	menu.addOption("Tudo bem?", &hello);
+	menu.createMenu();
+}
+
 void runAllTests(int argc, char const *argv[]){
 	cute::suite s;
 	//TODO add your test here
@@ -76,6 +88,7 @@ void runAllTests(int argc, char const *argv[]){
 	s.push_back(CUTE(advertisementTest));
 	s.push_back(CUTE(saleTest));
 	s.push_back(CUTE(purchaseTest));
+	s.push_back(CUTE(menuTest));
 	cute::xml_file_opener xmlfile(argc,argv);
 	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
 	cute::makeRunner(lis,argc,argv)(s, "AllTests");
