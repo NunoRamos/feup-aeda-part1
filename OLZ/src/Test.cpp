@@ -66,6 +66,7 @@ void dateTest() {
 	ASSERT_EQUALM("2000 should be a leap year.", true, Date::isLeapYear(2000));
 }
 
+///Menu Class Test Utility
 void hello(){
 	cout << "ola";
 }
