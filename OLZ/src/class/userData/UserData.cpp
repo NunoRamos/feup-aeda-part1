@@ -2,8 +2,6 @@
 
 #include<fstream>
 
-string UserData::separationChar = "|";
-
 UserData::UserData(string path) : path(path){
 
 }
@@ -24,6 +22,7 @@ bool UserData::loadUsers(){
 }
 
 bool UserData::saveUsers(){
+	char separationChar = '\n';
 	ofstream userFile;
 	userFile.open(path.c_str(), ofstream::out | ofstream::trunc);
 

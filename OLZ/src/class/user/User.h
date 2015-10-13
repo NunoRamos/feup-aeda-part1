@@ -9,6 +9,8 @@
 
 using namespace std;
 
+class Advertisement;//add to do this to allow cyclic calling of class
+
 class User{
 public:
 	User();
@@ -24,8 +26,6 @@ protected:
 	vector<Advertisement*> advertisements;
 	string email, name, phoneNumber;
 	Location location;
-private:
-	static string separationChar;
 };
 
 #endif

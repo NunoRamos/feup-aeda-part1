@@ -1,5 +1,7 @@
 #include "Date.h"
 #include <sstream>
+#include <stdlib.h>
+#include <stdexcept>
 
 Date::Date(){
 	day = 1;
@@ -13,36 +15,38 @@ Date::Date(unsigned int day, unsigned int month, unsigned int year){
 		this->month = month;
 		this->year = year;
 	}
+	else
+		throw out_of_range("Invalid date.");
 }
+
+#include<iostream>
 
 Date::Date(string date){
 	stringstream ss;
+	char temp;
 	ss.str(date);
-	ss >> day >> month >> year;
+	ss >> day >> temp >> month >> temp >> year;
+	if(!isDateValid(day,month,year))
+		throw out_of_range("Invalid date.");
+
 }
 
-bool Date::setDay(unsigned int day){
-	if(isDateValid(day,month,year)){
+void Date::setDay(unsigned int day){
+	if(isDateValid(day,month,year))
 		this->day = day;
-		return true;
-	}
-	return false;
+	else
+		throw out_of_range("Invalid day.");
 }
 
-bool Date::setMonth(unsigned int month){
-	if(isDateValid(day,month,year)){
+void Date::setMonth(unsigned int month){
+	if(isDateValid(day,month,year))
 			this->month = month;
-			return true;
-		}
-		return false;
+	else
+		throw out_of_range("Invalid month.");
 }
 
-bool Date::setYear(unsigned int year){
-	if(isDateValid(day,month,year)){
-			this->year = year;
-			return true;
-		}
-		return false;
+void Date::setYear(unsigned int year){
+	this->year = year;
 }
 
 unsigned int Date::getDay() const{

@@ -14,7 +14,6 @@ public:
 private:
 	vector<User> users;
 	const string path = "../../../data/users.txt";
-	static string separationChar;
 };
 
 //TODO move separationChar to a constants file

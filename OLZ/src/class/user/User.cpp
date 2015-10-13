@@ -1,7 +1,5 @@
 #include"User.h"
 
-string User::separationChar = "|";
-
 User::User(){
 
 }
@@ -42,22 +40,23 @@ string User::getLocationString() const{
 }
 
 istream& operator>>(istream& in, User user){
+	char separationChar = '\n';
 	string line;
 	in >> line;
 
-	int cursor = line.find(User::separationChar);
+	int cursor = line.find(separationChar);
 	user.email = line.substr(0, cursor);
 
 	line = line.substr(cursor+1);
-	cursor = line.find(User::separationChar);
+	cursor = line.find(separationChar);
 	user.name = line.substr(0, cursor);
 
 	line = line.substr(cursor+1);
-	cursor = line.find(User::separationChar);
+	cursor = line.find(separationChar);
 	user.phoneNumber = line.substr(0, cursor);
 
 	line = line.substr(cursor+1);
-	cursor = line.find(User::separationChar);
+	cursor = line.find(separationChar);
 	user.location = Location(line);
 
 	return in;

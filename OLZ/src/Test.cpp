@@ -4,6 +4,9 @@
 #include "../cute/cute_runner.h"
 #include "class/date/Date.h"
 #include "class/location/Location.h"
+#include <stdexcept>
+
+using namespace std;
 
 ///Advertisement Class Test
 void advertisementTest(){
@@ -43,10 +46,23 @@ void locationTest(){
 
 ///Date Class Test
 void dateTest() {
-	ASSERT_EQUALM("1800 should not be a leap year.", Date::isLeapYear(1800), false);
-	ASSERT_EQUALM("1903 should not be a leap year.", Date::isLeapYear(1903), false);
-	ASSERT_EQUALM("1904 should be a leap year.", Date::isLeapYear(1904), true);
-	ASSERT_EQUALM("2000 should be a leap year.", Date::isLeapYear(2000), true);
+	Date d1;
+	try{
+		Date d2(32,14,1904);
+	}
+	catch(out_of_range &e){
+		ASSERT_EQUALM(e.what(), true, true);
+	}
+
+	Date d3("1/12/2015");
+	ASSERT_EQUAL("1/1/1900", d1.getString());
+	ASSERT_EQUAL("1/12/2015", d3.getString());
+
+
+	ASSERT_EQUALM("1800 should not be a leap year.", false, Date::isLeapYear(1800));
+	ASSERT_EQUALM("1903 should not be a leap year.", false, Date::isLeapYear(1903));
+	ASSERT_EQUALM("1904 should be a leap year.", true, Date::isLeapYear(1904));
+	ASSERT_EQUALM("2000 should be a leap year.", true, Date::isLeapYear(2000));
 }
 
 void runAllTests(int argc, char const *argv[]){

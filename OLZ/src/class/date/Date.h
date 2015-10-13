@@ -10,9 +10,9 @@ public:
 	Date();
 	Date(unsigned int day, unsigned int month, unsigned int year);
 	Date(string date);
-	bool setDay(unsigned int day);
-	bool setMonth(unsigned int month);
-	bool setYear(unsigned int year);
+	void setDay(unsigned int day);
+	void setMonth(unsigned int month);
+	void setYear(unsigned int year);
 	unsigned int getDay() const;
 	unsigned int getMonth() const;
 	unsigned int getYear() const;

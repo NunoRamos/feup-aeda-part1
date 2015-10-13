@@ -1,5 +1,5 @@
-#ifndef SRC_CLASS_ADVERTISEMENT_ADVERTISEMENT_H_
-#define SRC_CLASS_ADVERTISEMENT_ADVERTISEMENT_H_
+#ifndef ADVERTISEMENT_H
+#define ADVERTISEMENT_H
 
 #include<string>
 #include<vector>
@@ -8,6 +8,8 @@
 #include"../user/User.h"
 
 using namespace std;
+
+class User;//add to do this to allow cyclic calling of class
 
 class Advertisement{
 public:
