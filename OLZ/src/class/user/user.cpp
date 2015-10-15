@@ -74,7 +74,6 @@ void User::removeAdvertisement(unsigned int id)
 
 	if(i!=advertisements.size())
 		{
-			delete advertisements.at(i);
 			advertisements.erase(advertisements.begin()+i);
 		}
 
