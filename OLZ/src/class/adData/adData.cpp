@@ -23,4 +23,8 @@ void AdData::removeAdvertisement(unsigned int id)
 	}
 }
 
+void AdData::addAdvertisement(Advertisement ad)
+{
+	advertisements.push_back(ad);
+}
 

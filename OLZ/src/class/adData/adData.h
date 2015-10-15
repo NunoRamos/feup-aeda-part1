@@ -17,6 +17,7 @@
 	 vector<Advertisement> advertisements;
  public:
 	 void removeAdvertisement(unsigned int id);
+	 void addAdvertisement(Advertisement ad);
 
  };
 
