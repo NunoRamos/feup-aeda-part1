@@ -13,6 +13,7 @@ Advertisement::Advertisement(User* owner, string title, Category category){
 	showEmail = true;
 	showPhoneNumber = true;
 	id++;
+	views=0;
 	//TODO: get time and save as creationDate
 }
 
@@ -41,6 +42,16 @@ string Advertisement::getImageAt(unsigned int index) const{
 	return imagesPath[index];
 }
 
+unsigned int Advertisement:: getId()
+{
+	return id;
+}
 void Advertisement::addImage(string path){
 	imagesPath.push_back(path);
 }
+
+void Advertisement::increaseViews()
+{
+	views++;
+}
+

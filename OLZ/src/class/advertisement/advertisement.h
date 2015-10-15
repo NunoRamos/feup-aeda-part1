@@ -22,7 +22,10 @@ public:
 	string getDescription() const;
 	string getImageAt(unsigned int index) const;
 	void addImage(string path);
+	void increaseViews();
+	unsigned int getId();
 private:
+	unsigned int views;
 	static unsigned int id;
 	string title;
 	Category category;
