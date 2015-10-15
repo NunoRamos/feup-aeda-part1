@@ -11,6 +11,12 @@ using namespace std;
 
 ///Advertisement Class Test
 void advertisementTest(){
+	/*Location l1("Maia", "Maia", "Porto");
+	Date d1(15,10,2015);
+	User u1("nunoramos@gmail.com", "Nuno","916530681", d1,l1);
+	Advertisement ad(&u1,"Vendo telemovel!",telemovel);
+	ASSERT_EQUAL("Vendo telemovel!",ad.getTitle());*/
+
 
 }
 

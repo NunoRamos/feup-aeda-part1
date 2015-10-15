@@ -4,6 +4,12 @@
 #include "../advertisement.h"
 
 class Purchase : public Advertisement{
+protected:
+
+
+public:
+
+
 
 };
 

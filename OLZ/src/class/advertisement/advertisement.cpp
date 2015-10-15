@@ -5,6 +5,7 @@
 
 unsigned int Advertisement::id = 0;
 
+
 Advertisement::Advertisement(User* owner, string title, Category category){
 	this->owner = owner;
 	this->title = title;
@@ -18,7 +19,7 @@ Advertisement::Advertisement(User* owner, string title, Category category){
 }
 
 Advertisement::Advertisement(User* owner, string title, Category category, string description)
-	: Advertisement(owner, title, category){
+: Advertisement(owner, title, category){
 	this->description = description;
 }
 

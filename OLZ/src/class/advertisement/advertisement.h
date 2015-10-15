@@ -34,6 +34,7 @@ private:
 	bool showName, showEmail, showPhoneNumber;
 	vector<string> imagesPath;
 	User* owner;
+	float price;
 };
 
 

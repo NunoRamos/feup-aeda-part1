@@ -61,3 +61,21 @@ istream& operator>>(istream& in, User user){
 
 	return in;
 }
+
+void User::removeAdvertisement(unsigned int id)
+{
+	unsigned int i;
+
+	for(i=0;i<advertisements.size();i++)
+	{
+		if (advertisements.at(i)->getId()==id)
+			break;
+	}
+
+	if(i!=advertisements.size())
+		{
+			delete advertisements.at(i);
+			advertisements.erase(advertisements.begin()+i);
+		}
+
+}

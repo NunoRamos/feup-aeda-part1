@@ -23,6 +23,7 @@ public:
 	Location getLocation() const;
 	string getLocationString() const;
 	friend istream& operator>>(istream& in, User user);
+	void removeAdvertisement(unsigned int id);
 protected:
 	vector<Advertisement*> advertisements;
 	string email, name, phoneNumber;
