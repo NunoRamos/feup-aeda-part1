@@ -3,21 +3,21 @@
 #include "../cute/xml_listener.h"
 #include "../cute/cute_runner.h"
 #include <stdexcept>
-//#include "class/menu/menu.h"
+#include "class/menu/menu.h"
 #include "class/date/date.h"
 #include "class/location/location.h"
+#include "class/advertisement/advertisement.h"
+#include "enums.h"
 
 using namespace std;
 
 ///Advertisement Class Test
 void advertisementTest(){
-	/*Location l1("Maia", "Maia", "Porto");
+	Location l1("Maia", "Maia", "Porto");
 	Date d1(15,10,2015);
 	User u1("nunoramos@gmail.com", "Nuno","916530681", d1,l1);
-	Advertisement ad(&u1,"Vendo telemovel!",telemovel);
-	ASSERT_EQUAL("Vendo telemovel!",ad.getTitle());*/
-
-
+	Advertisement ad(&u1,"Vendo telemovel!", PhonesAndTablets);
+	ASSERT_EQUAL("Vendo telemovel!", ad.getTitle());
 }
 
 ///Advertisement Class Test
@@ -78,12 +78,12 @@ void hello(){
 }
 
 ///Menu Class Test
-/*void menuTest(){
+void menuTest(){
 	Menu menu(20,20,'?');
 	menu.addOption("Ola", &hello);
 	menu.addOption("Tudo bem?", &hello);
 	menu.createMenu();
-}*/
+}
 
 void runAllTests(int argc, char const *argv[]){
 	cute::suite s;

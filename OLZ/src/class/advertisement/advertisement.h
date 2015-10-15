@@ -4,11 +4,12 @@
 #include<string>
 #include<vector>
 
-#include "../../category.h"
+#include "../../enums.h"
 #include "../date/date.h"
 #include "../user/user.h"
 
 using namespace std;
+using namespace enums;
 
 class User;//add to do this to allow cyclic calling of class
 
