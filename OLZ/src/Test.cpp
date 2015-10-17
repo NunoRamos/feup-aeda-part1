@@ -7,6 +7,7 @@
 #include "class/date/date.h"
 #include "class/location/location.h"
 #include "class/advertisement/advertisement.h"
+#include "class/adData/adData.h"
 #include "enums.h"
 
 using namespace std;
@@ -73,16 +74,18 @@ void dateTest() {
 }
 
 ///Menu Class Test Utility
-void hello(){
+void hello(AdData* data){
 	cout << "ola";
 }
 
 ///Menu Class Test
 void menuTest(){
-	Menu menu(20,20,'?');
+	AdData adData;
+	Menu<AdData> menu(&adData, 20,20,'?');
 	menu.addOption("Ola", &hello);
 	menu.addOption("Tudo bem?", &hello);
-	menu.createMenu();
+	//menu.createMenu();
+	menu.print();
 }
 
 void runAllTests(int argc, char const *argv[]){

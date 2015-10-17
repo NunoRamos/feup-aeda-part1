@@ -25,6 +25,7 @@ public:
 	void addImage(string path);
 	void increaseViews();
 	unsigned int getId();
+	bool searchForText(string text) const;
 private:
 	unsigned int views;
 	static unsigned int id;

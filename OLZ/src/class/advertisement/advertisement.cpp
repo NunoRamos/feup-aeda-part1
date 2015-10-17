@@ -56,3 +56,12 @@ void Advertisement::increaseViews()
 	views++;
 }
 
+bool Advertisement::searchForText(string text) const{
+	if(title.find(text, 0) != -1)
+		return true;
+
+	if(description.find(text, 0) != -1)
+		return true;
+
+	return false;
+}

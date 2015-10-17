@@ -28,3 +28,14 @@ void AdData::addAdvertisement(Advertisement ad)
 	advertisements.push_back(ad);
 }
 
+vector<Advertisement*> AdData::searchForAds(string text){
+	vector<Advertisement*> results;
+
+	for(unsigned int i = 0; i < advertisements.size(); i++){
+		if(advertisements[i].searchForText(text))
+			results.push_back(&advertisements[i]);
+	}
+
+	return results;
+}
+

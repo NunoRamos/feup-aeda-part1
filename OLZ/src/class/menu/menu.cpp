@@ -3,28 +3,33 @@
 #include<string>
 #include<sstream>
 
-
-Menu::Menu(unsigned int height, unsigned int width) : Menu(height, width, '#'){
+template <class T>
+Menu<T>::Menu(T* info, unsigned int height, unsigned int width) : Menu(info, height, width, '#'){
 
 }
 
-Menu::Menu(unsigned int height, unsigned int width, char borderChar){
+template <class T>
+Menu<T>::Menu(T* info, unsigned int height, unsigned int width, char borderChar){
 	this->height = height;
 	this->width = width;
 	this->borderChar = borderChar;
+	this->info = info;
 	topMargin = 1;
 	leftMargin = 1;
 }
 
-void Menu::setBorderChar(char borderChar){
+template <class T>
+void Menu<T>::setBorderChar(char borderChar){
 	this->borderChar = borderChar;
 }
 
-char Menu::getBorderChar(){
+template <class T>
+char Menu<T>::getBorderChar(){
 	return borderChar;
 }
 
-void Menu::print(){
+template <class T>
+void Menu<T>::print(){
 	//first line, only borderChar
 	for(unsigned int i = 0; i < width; i++)
 		cout << borderChar;
@@ -60,7 +65,8 @@ void Menu::print(){
 	cout << endl;
 }
 
-void Menu::createMenu(){
+template <class T>
+void Menu<T>::createMenu(){
 	unsigned int input;
 	bool showMsg = false;
 	print();
@@ -70,10 +76,15 @@ void Menu::createMenu(){
 		cin >> input;
 	}
 
-	functions[input-1].second();
+	functions[input-1].second(info);
 }
 
-void Menu::addOption(string name, void(*function)()){
-	functions.push_back(pair<string, void(*)()>(name, function));
+template <class T>
+void Menu<T>::addOption(string name, void(*function)(AdData* adData)){
+	//may get an error below, still need to test
+	functions.push_back(pair<string, void(*)(AdData*)>(name, function));
 }
 
+template class Menu<AdData>; //needed because of c++ and template class issues
+//more info:
+//http://stackoverflow.com/questions/8752837/undefined-reference-to-template-class-constructor

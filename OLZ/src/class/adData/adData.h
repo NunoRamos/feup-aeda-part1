@@ -1,16 +1,13 @@
-/*
- * adData.h
- *
- *  Created on: 15/10/2015
- *      Author: Nuno
- */
-
-#ifndef OLZ_SRC_CLASS_ADDATA_ADDATA_H_
-#define OLZ_SRC_CLASS_ADDATA_ADDATA_H_
+#ifndef ADDATA_H
+#define ADDATA_H
 
 #include "../advertisement/advertisement.h"
 #include "../user/user.h"
 #include<vector>
+#include<string>
+
+using namespace std;
+
  class AdData
  {
  private:
@@ -18,8 +15,8 @@
  public:
 	 void removeAdvertisement(unsigned int id);
 	 void addAdvertisement(Advertisement ad);
-
+	 vector<Advertisement*> searchForAds(string text); //still not sure what type of data to return
  };
 
 
-#endif /* OLZ_SRC_CLASS_ADDATA_ADDATA_H_ */
+#endif
