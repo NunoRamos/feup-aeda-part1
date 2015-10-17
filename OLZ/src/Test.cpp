@@ -84,8 +84,8 @@ void menuTest(){
 	Menu<AdData> menu(&adData, 20,20,'?');
 	menu.addOption("Ola", &hello);
 	menu.addOption("Tudo bem?", &hello);
-	//menu.createMenu();
-	menu.print();
+	menu.createMenu();
+	//menu.print();
 }
 
 void runAllTests(int argc, char const *argv[]){
@@ -98,7 +98,7 @@ void runAllTests(int argc, char const *argv[]){
 	s.push_back(CUTE(advertisementTest));
 	s.push_back(CUTE(saleTest));
 	s.push_back(CUTE(purchaseTest));
-	//s.push_back(CUTE(menuTest));
+	s.push_back(CUTE(menuTest));
 	cute::xml_file_opener xmlfile(argc,argv);
 	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
 	cute::makeRunner(lis,argc,argv)(s, "AllTests");

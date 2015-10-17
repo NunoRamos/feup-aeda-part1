@@ -1,6 +1,6 @@
-#include"class/menu/menu.h"
-#include"class/adData/adData.h"
-#include"class/advertisement/advertisement.h"
+#include"../../class/menu/menu.h"
+#include"../../class/advertisement/advertisement.h"
+#include"../../class/adData/adData.h"
 #include<iostream>
 
 /*Menu Presentation
