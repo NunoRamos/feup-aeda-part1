@@ -25,15 +25,18 @@ char Menu::getBorderChar(){
 }
 
 void Menu::print(){
+	//first line, only borderChar
 	for(unsigned int i = 0; i < width; i++)
 		cout << borderChar;
 
 	cout << endl;
 
+	//includes top margin with is a line full of spaces, with borderChar on either side
 	for (unsigned int i = 0; i < topMargin; i++){
 		cout << borderChar << string(width-2, ' ') << borderChar << endl;
 	}
 
+	//used to add menu options correctly
 	stringstream ss;
 	for(unsigned int i = 0; i < functions.size(); i++){
 		string line(leftMargin, ' ');
@@ -45,10 +48,12 @@ void Menu::print(){
 				<< string(widthLeft-1, ' ') << borderChar << endl;
 	}
 
+	//fills the rest of the menu with empty lines, with border
 	for (unsigned int i = functions.size(); i < height-(2+topMargin); i++){
 			cout << borderChar << string(width-2, ' ') << borderChar << endl;
 		}
 
+	//last line
 	for(unsigned int i = 0; i < width; i++)
 			cout << borderChar;
 
