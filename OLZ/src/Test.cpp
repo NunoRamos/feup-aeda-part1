@@ -81,7 +81,7 @@ void hello(AdData* data){
 ///Menu Class Test
 void menuTest(){
 	AdData adData;
-	Menu<AdData> menu(&adData, 20,20,'?');
+	Menu menu(&adData, 20,20,'?');
 	menu.addOption("Ola", &hello);
 	menu.addOption("Tudo bem?", &hello);
 	menu.createMenu();
