@@ -56,10 +56,9 @@ void OptionMenu::createMenu(){
 	unsigned int input;
 	print();
 	cin >> input;
-	while (input <= 0 || input > functions.size()){
+	while (input < 0 || input > functions.size()){
 		cout << "Please introduce a valid option.\n";
 		cin >> input;
 	}
-
 
 }

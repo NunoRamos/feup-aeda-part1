@@ -1,10 +1,12 @@
 #include "searchMenu.h"
+#include "../adDisplayMenu/adDisplayMenu.h"
 #include <iostream>
 #include <sstream>
 #include <math.h>
+#include <stdlib.h>
 
 SearchMenu::SearchMenu(AdData* adData, unsigned int height, unsigned int width, vector<Advertisement*> results) :
-	Menu(height, width){
+Menu(height, width){
 	this->adData = adData;
 	this->results = results;
 	page = 0;
@@ -13,7 +15,7 @@ SearchMenu::SearchMenu(AdData* adData, unsigned int height, unsigned int width, 
 
 SearchMenu::SearchMenu(AdData* adData, unsigned int height, unsigned int width, char borderChar,
 		vector<Advertisement*> results) :
-	Menu(height, width, borderChar){
+					Menu(height, width, borderChar){
 	this->adData = adData;
 	this->results = results;
 	page = 0;
@@ -25,61 +27,80 @@ void SearchMenu::setAdsPerPage(unsigned int adsPerPage){
 }
 
 unsigned int SearchMenu::getAdsPerPage(){
-		return adsPerPage;
+	return adsPerPage;
 }
 
 void SearchMenu::print(){
 	//first line, only borderChar
-		for(unsigned int i = 0; i < width; i++)
-			cout << borderChar;
+	for(unsigned int i = 0; i < width; i++)
+		cout << borderChar;
 
-		cout << endl;
+	cout << endl;
 
-		//includes top margin with is a line full of spaces, with borderChar on either side
-		for (unsigned int i = 0; i < topMargin; i++){
-			cout << borderChar << string(width-2, ' ') << borderChar << endl;
-		}
+	//includes top margin with is a line full of spaces, with borderChar on either side
+	for (unsigned int i = 0; i < topMargin; i++){
+		cout << borderChar << string(width-2, ' ') << borderChar << endl;
+	}
 
-		//calculates how many ads in page
-		unsigned int adLimit = adsPerPage;
-		if(trunc(static_cast<double> (results.size() / adsPerPage)) == page)
-			adLimit = results.size() % adsPerPage;
+	//calculates how many ads in page
+	unsigned int adLimit = adsPerPage;
+	if(trunc(static_cast<double> (results.size() / adsPerPage)) == page)
+		adLimit = results.size() % adsPerPage;
 
-		//used to add menu options correctly
-		stringstream ss;
-		for(unsigned int i = 0; i < adLimit; i++){
-			string line(leftMargin, ' ');
-			ss.str("");
-			ss << i+1 << " - ";
-			unsigned int widthLeft = width -
-					(1 + leftMargin + ss.str().length() + results[page*adsPerPage+i]->getTitle().length());
-			cout << borderChar << line
-					<< ss.str() << results[page*adsPerPage+i]->getTitle()
-					<< string(widthLeft-1, ' ') << borderChar << endl;
-		}
+	//used to add menu options correctly
+	stringstream ss;
+	for(unsigned int i = 0; i < adLimit; i++){
+		string line(leftMargin, ' ');
+		ss.str("");
+		ss << i+1 << " - ";
+		unsigned int widthLeft = width -
+				(1 + leftMargin + ss.str().length() + results[page*adsPerPage+i]->getTitle().length());
+		cout << borderChar << line
+				<< ss.str() << results[page*adsPerPage+i]->getTitle()
+				<< string(widthLeft-1, ' ') << borderChar << endl;
+	}
 
-		//fills the rest of the menu with empty lines, with border
-		for (unsigned int i = adLimit; i < height-(2+topMargin); i++){
-				cout << borderChar << string(width-2, ' ') << borderChar << endl;
-			}
+	//add next, back, and exit options
+	cout << borderChar << "Next" << string(width-6, ' ') << borderChar << endl;
+	cout << borderChar << "Back" << string(width-6, ' ') << borderChar << endl;
+	cout << borderChar << "Exit" << string(width-6, ' ') << borderChar << endl;
 
-		//last line
-		for(unsigned int i = 0; i < width; i++)
-				cout << borderChar;
+	//fills the rest of the menu with empty lines, with border
+	for (unsigned int i = adLimit; i < height-(2+topMargin); i++){
+		cout << borderChar << string(width-2, ' ') << borderChar << endl;
+	}
 
-		cout << endl;
+	//last line
+	for(unsigned int i = 0; i < width; i++)
+		cout << borderChar;
+
+	cout << endl;
 }
 
 void SearchMenu::createMenu(){
 	unsigned int input;
 	unsigned int adLimit = adsPerPage;
 	if(trunc(static_cast<double> (results.size() / adsPerPage)) == page)
-	adLimit = results.size() % adsPerPage;
+		adLimit = results.size() % adsPerPage;
 	print();
 	cin >> input;
-	while (input <= 0 || input > adLimit){
+	while (input < 0 || input > adLimit + 3){
 		cout << "Please introduce a valid option.\n";
 		cin >> input;
 	}
-
+	if(input <= adLimit){
+		AdDisplayMenu displayAd(height, width, borderChar, results[page*adsPerPage+input]);
+		displayAd.createMenu();
+	}
+	else if(input == adLimit + 1){ //next
+		page++;
+		createMenu();
+	}
+	else if(input == adLimit + 2){ //back
+		page--;
+		createMenu();
+	}
+	else if(input == adLimit + 3){ //exit
+		exit(0);
+	}
 }
