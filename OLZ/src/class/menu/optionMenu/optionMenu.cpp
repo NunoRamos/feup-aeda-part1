@@ -1,13 +1,15 @@
 #include "optionMenu.h"
+#include <iostream>
+#include <sstream>
 
 OptionMenu::OptionMenu(AdData* adData, unsigned int height, unsigned int width) :
-	Menu(adData, height, width){
-
+Menu(height, width){
+	this->adData = adData;
 }
 
 OptionMenu::OptionMenu(AdData* adData, unsigned int height, unsigned int width, char borderChar) :
-	Menu(adData, height, width, borderChar){
-
+Menu(height, width, borderChar){
+	this->adData = adData;
 }
 
 void OptionMenu::print(){
@@ -36,12 +38,12 @@ void OptionMenu::print(){
 
 	//fills the rest of the menu with empty lines, with border
 	for (unsigned int i = functions.size(); i < height-(2+topMargin); i++){
-			cout << borderChar << string(width-2, ' ') << borderChar << endl;
-		}
+		cout << borderChar << string(width-2, ' ') << borderChar << endl;
+	}
 
 	//last line
 	for(unsigned int i = 0; i < width; i++)
-			cout << borderChar;
+		cout << borderChar;
 
 	cout << endl;
 }
@@ -52,7 +54,6 @@ void OptionMenu::addOption(string name, void(*function)(AdData* adData)){
 
 void OptionMenu::createMenu(){
 	unsigned int input;
-	bool showMsg = false;
 	print();
 	cin >> input;
 	while (input <= 0 || input > functions.size()){
@@ -60,5 +61,5 @@ void OptionMenu::createMenu(){
 		cin >> input;
 	}
 
-	functions[input-1].second(adData);
+
 }

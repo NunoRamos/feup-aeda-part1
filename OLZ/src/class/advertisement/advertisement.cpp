@@ -1,4 +1,5 @@
 #include "advertisement.h"
+#include "../menu/adDisplayMenu/adDisplayMenu.h"
 
 #include<ctime>
 #include<chrono>
@@ -65,3 +66,4 @@ bool Advertisement::searchForText(string text) const{
 
 	return false;
 }
+

@@ -16,6 +16,7 @@ public:
 	void addOption(string name, void(*function)(AdData* adData));
 	void createMenu();
 private:
+	AdData* adData;
 	vector<pair<string, void (*)(AdData*)>> functions;
 
 };

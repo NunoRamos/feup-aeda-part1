@@ -4,13 +4,9 @@
 #include "../advertisement.h"
 
 class Purchase : public Advertisement{
-protected:
-
-
 public:
-
-
-
+	void displayAd(unsigned int height, unsigned int width, char borderChar);
+	void displayAd(unsigned int height, unsigned int width);
 };
 
 #endif

@@ -26,6 +26,7 @@ public:
 	void increaseViews();
 	unsigned int getId();
 	bool searchForText(string text) const;
+	virtual void displayAd(unsigned int height, unsigned int width, char borderChar) = 0;
 private:
 	unsigned int views;
 	static unsigned int id;

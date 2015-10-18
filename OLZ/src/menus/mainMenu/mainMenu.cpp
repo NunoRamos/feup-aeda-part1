@@ -17,6 +17,7 @@ void search(AdData* adData){
 	getline(cin, search);
 	vector<Advertisement* > results;
 	results = adData->searchForAds(search);
+
 }
 
 void signIn(AdData* adData){

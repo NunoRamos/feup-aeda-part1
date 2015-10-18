@@ -4,16 +4,12 @@
 #include<sstream>
 
 
-Menu::Menu(AdData* adData, unsigned int height, unsigned int width)
-: Menu(adData, height, width, '#'){
+Menu::Menu(unsigned int height, unsigned int width): Menu(height, width, '#'){ }
 
-}
-
-Menu::Menu(AdData* adData, unsigned int height, unsigned int width, char borderChar){
+Menu::Menu(unsigned int height, unsigned int width, char borderChar){
 	this->height = height;
 	this->width = width;
 	this->borderChar = borderChar;
-	this->adData = adData;
 	topMargin = 1;
 	leftMargin = 1;
 }
