@@ -11,10 +11,10 @@ using namespace std;
  class AdData
  {
  private:
-	 vector<Advertisement> advertisements;
+	 vector<Advertisement*> advertisements;
  public:
 	 void removeAdvertisement(unsigned int id);
-	 void addAdvertisement(Advertisement ad);
+	 void addAdvertisement(Advertisement* ad);
 	 vector<Advertisement*> searchForAds(string text); //still not sure what type of data to return
  };
 
