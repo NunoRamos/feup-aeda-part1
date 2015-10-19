@@ -55,5 +55,5 @@ void AdDisplayMenu::print(){
 }
 
 void AdDisplayMenu::createMenu(){
-
+	AdDisplayMenu::print();
 }

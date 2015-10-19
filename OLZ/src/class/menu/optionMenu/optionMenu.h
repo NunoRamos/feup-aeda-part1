@@ -17,7 +17,6 @@ public:
 	void createMenu();
 private:
 	vector<pair<string, void (*)(Data*)>> functions;
-
 };
 
 #endif

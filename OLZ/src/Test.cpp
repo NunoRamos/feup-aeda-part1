@@ -10,6 +10,7 @@
 #include "class/advertisement/advertisement.h"
 #include "class/data/data.h"
 #include "enums.h"
+#include "menus/mainMenu/mainMenu.h"
 
 using namespace std;
 
@@ -74,19 +75,14 @@ void dateTest() {
 	ASSERT_EQUALM("2000 should be a leap year.", true, Date::isLeapYear(2000));
 }
 
-///Menu Class Test Utility
-void hello(Data* data){
-	cout << "ola";
-}
-
 ///Menu Class Test
 void menuTest(){
-	Data data();
-	OptionMenu menu(&data, 20, 20, '?');
-	menu.addOption("Ola", &hello);
-	menu.addOption("Tudo bem?", &hello);
+	Data* data = new Data();
+	OptionMenu menu(data, 20, 20, '?');
+	menu.addOption("Search", &search);
+	menu.addOption("Sign In", &signIn);
+	menu.addOption("Sign Up", &signUp);
 	menu.createMenu();
-	//menu.print();
 }
 
 void runAllTests(int argc, char const *argv[]){

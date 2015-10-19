@@ -58,9 +58,9 @@ void SearchMenu::print(){
 				<< string(widthLeft-1, ' ') << borderChar << endl;
 	}
 
-	//add next, back, and exit options
-	cout << borderChar << "Next" << string(width-6, ' ') << borderChar << endl;
+	//add back, next, and exit options
 	cout << borderChar << "Back" << string(width-6, ' ') << borderChar << endl;
+	cout << borderChar << "Next" << string(width-6, ' ') << borderChar << endl;
 	cout << borderChar << "Exit" << string(width-6, ' ') << borderChar << endl;
 
 	//fills the rest of the menu with empty lines, with border
@@ -90,12 +90,12 @@ void SearchMenu::createMenu(){
 		AdDisplayMenu displayAd(data, height, width, borderChar, results[page*adsPerPage+input]);
 		displayAd.createMenu();
 	}
-	else if(input == adLimit + 1){ //next
-		page++;
+	else if(input == adLimit + 1){ //back
+		page--;
 		createMenu();
 	}
-	else if(input == adLimit + 2){ //back
-		page--;
+	else if(input == adLimit + 2){ //next
+		page++;
 		createMenu();
 	}
 	else if(input == adLimit + 3){ //exit
