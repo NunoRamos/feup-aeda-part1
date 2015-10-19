@@ -4,9 +4,10 @@
 #include<sstream>
 
 
-Menu::Menu(unsigned int height, unsigned int width): Menu(height, width, '#'){ }
+Menu::Menu(Data* data, unsigned int height, unsigned int width): Menu(data, height, width, '#'){ }
 
-Menu::Menu(unsigned int height, unsigned int width, char borderChar){
+Menu::Menu(Data* data, unsigned int height, unsigned int width, char borderChar){
+	this->data = data;
 	this->height = height;
 	this->width = width;
 	this->borderChar = borderChar;

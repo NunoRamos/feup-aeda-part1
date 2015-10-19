@@ -1,6 +1,6 @@
 #include"../../class/menu/menu.h"
 #include"../../class/advertisement/advertisement.h"
-#include"../../class/adData/adData.h"
+#include"../../class/data/data.h"
 #include<iostream>
 
 /*Menu Presentation
@@ -11,19 +11,19 @@
  * 4 - Exit
  */
 
-void search(AdData* adData){
+void search(Data* data){
 	string search;
 	cout << "\nInsert what you would like to search for: ";
 	getline(cin, search);
 	vector<Advertisement* > results;
-	results = adData->searchForAds(search);
+	results = data->searchForAds(search);
 
 }
 
-void signIn(AdData* adData){
+void signIn(Data* data){
 
 }
 
-void signUp(AdData* adData){
+void signUp(Data* data){
 
 }

@@ -2,13 +2,13 @@
 #include <sstream>
 #include <iostream>
 
-AdDisplayMenu::AdDisplayMenu(unsigned int height, unsigned int width, Advertisement* ad):
-	Menu(height, width, borderChar){
+AdDisplayMenu::AdDisplayMenu(Data* data, unsigned int height, unsigned int width, Advertisement* ad):
+	Menu(data, height, width, borderChar){
 	this->ad = ad;
 }
 
-AdDisplayMenu::AdDisplayMenu(unsigned int height, unsigned int width, char borderChar, Advertisement* ad):
-	Menu(height, width, borderChar){
+AdDisplayMenu::AdDisplayMenu(Data* data, unsigned int height, unsigned int width, char borderChar, Advertisement* ad):
+	Menu(data, height, width, borderChar){
 	this->ad = ad;
 }
 

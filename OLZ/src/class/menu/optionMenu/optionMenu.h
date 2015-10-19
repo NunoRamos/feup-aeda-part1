@@ -10,14 +10,13 @@ using namespace std;
 
 class OptionMenu : public Menu{
 public:
-	OptionMenu(AdData* adData, unsigned int height, unsigned int width);
-	OptionMenu(AdData* adData, unsigned int height, unsigned int width, char borderChar);
+	OptionMenu(Data* data, unsigned int height, unsigned int width);
+	OptionMenu(Data* data, unsigned int height, unsigned int width, char borderChar);
 	void print();
-	void addOption(string name, void(*function)(AdData* adData));
+	void addOption(string name, void(*function)(Data* data));
 	void createMenu();
 private:
-	AdData* adData;
-	vector<pair<string, void (*)(AdData*)>> functions;
+	vector<pair<string, void (*)(Data*)>> functions;
 
 };
 

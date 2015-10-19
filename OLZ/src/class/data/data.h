@@ -1,5 +1,5 @@
-#ifndef UserData_H
-#define UserData_H
+#ifndef DATA_H
+#define DATA_H
 
 #include<vector>
 
@@ -7,12 +7,17 @@
 
 using namespace std;
 
-class UserData{
+class Data{
 public:
-	UserData(string path);
+	Data();
+	Data(string path);
 	bool loadUsers(); ///< Loads user data from specified file
 	bool saveUsers(); ///< Saves user data to specified file
+	void removeAdvertisement(unsigned int id);
+	void addAdvertisement(Advertisement* ad);
+	vector<Advertisement*> searchForAds(string text); //still not sure what type of data to return
 private:
+	vector<Advertisement*> advertisements;
 	vector<User> users;
 	const string path = "../../../data/users.txt";
 };

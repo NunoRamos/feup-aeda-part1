@@ -2,15 +2,11 @@
 #include <iostream>
 #include <sstream>
 
-OptionMenu::OptionMenu(AdData* adData, unsigned int height, unsigned int width) :
-Menu(height, width){
-	this->adData = adData;
-}
+OptionMenu::OptionMenu(Data* data, unsigned int height, unsigned int width) :
+Menu(data, height, width){ }
 
-OptionMenu::OptionMenu(AdData* adData, unsigned int height, unsigned int width, char borderChar) :
-Menu(height, width, borderChar){
-	this->adData = adData;
-}
+OptionMenu::OptionMenu(Data* data, unsigned int height, unsigned int width, char borderChar) :
+Menu(data, height, width, borderChar){ }
 
 void OptionMenu::print(){
 	//first line, only borderChar
@@ -48,8 +44,8 @@ void OptionMenu::print(){
 	cout << endl;
 }
 
-void OptionMenu::addOption(string name, void(*function)(AdData* adData)){
-	functions.push_back(pair<string, void(*)(AdData*)>(name, function));
+void OptionMenu::addOption(string name, void(*function)(Data* data)){
+	functions.push_back(pair<string, void(*)(Data*)>(name, function));
 }
 
 void OptionMenu::createMenu(){
