@@ -14,7 +14,7 @@ Menu(data, height, width){
 
 SearchMenu::SearchMenu(Data* data, unsigned int height, unsigned int width, char borderChar,
 		vector<Advertisement*> results) :
-					Menu(data, height, width, borderChar){
+							Menu(data, height, width, borderChar){
 	this->results = results;
 	page = 0;
 	adsPerPage = 7;
@@ -91,14 +91,15 @@ void SearchMenu::createMenu(){
 		displayAd.createMenu();
 	}
 	else if(input == adLimit + 1){ //back
-		page--;
-		createMenu();
+		if(page!=0){
+			page--;
+			createMenu();
+		}
 	}
 	else if(input == adLimit + 2){ //next
-		page++;
-		createMenu();
-	}
-	else if(input == adLimit + 3){ //exit
-		exit(0);
+		if(trunc(results.size()/adsPerPage) != page){
+			page++;
+			createMenu();
+		}
 	}
 }

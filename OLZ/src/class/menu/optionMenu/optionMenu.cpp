@@ -6,7 +6,7 @@ OptionMenu::OptionMenu(Data* data, unsigned int height, unsigned int width) :
 Menu(data, height, width){ }
 
 OptionMenu::OptionMenu(Data* data, unsigned int height, unsigned int width, char borderChar) :
-Menu(data, height, width, borderChar){ }
+				Menu(data, height, width, borderChar){ }
 
 void OptionMenu::print(){
 	//first line, only borderChar
@@ -57,4 +57,5 @@ void OptionMenu::createMenu(){
 		cin >> input;
 	}
 
+	(*functions[input].second) (data);
 }

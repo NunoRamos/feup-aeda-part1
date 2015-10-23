@@ -1,6 +1,7 @@
 #include"../../class/menu/menu.h"
 #include"../../class/advertisement/advertisement.h"
 #include"../../class/data/data.h"
+#include"../../class/menu/searchMenu/searchMenu.h"
 #include<iostream>
 
 /*Menu Presentation
@@ -17,6 +18,10 @@ void search(Data* data){
 	getline(cin, search);
 	vector<Advertisement* > results;
 	results = data->searchForAds(search);
+	SearchMenu menu(data,20,20,results);
+	menu.createMenu();
+
+
 }
 
 void signIn(Data* data){
