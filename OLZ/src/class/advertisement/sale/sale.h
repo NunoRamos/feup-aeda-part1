@@ -1,3 +1,13 @@
+/**
+* @file sale.h
+*
+* @brief Header file for class Sale*/
+
+/**
+* @file sale.cpp
+*
+* @brief Code for class Sale*/
+
 #ifndef SALE_H
 #define SALE_H
 
@@ -6,11 +16,23 @@
 
 using namespace enums;
 
+/**
+ * @brief Sale class
+ */
 class Sale : public Advertisement{
-public:
-	Sale(User* owner, string title, Category category, string description, Condition productCondition);
 private:
-	Condition productCondition;
+	Condition productCondition; //< Condition of product being sold
+public:
+	/**
+	 * @brief Sale constructor
+	 *
+	 * @param owner Pointer to advertisement owner
+	 * @param title Advertisement title
+	 * @param category Advertisement category
+	 * @param description Advertisement description
+	 * @param productCondition Product condition
+	 */
+	Sale(User* owner, string title, Category category, string description, Condition productCondition);
 };
 
 

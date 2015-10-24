@@ -1,3 +1,14 @@
+/**
+* @file advertisement.h
+*
+* @brief Header file for class Advertisement*/
+
+/**
+* @file advertisement.cpp
+*
+* @brief Code for class Advertisement*/
+
+
 #ifndef ADVERTISEMENT_H
 #define ADVERTISEMENT_H
 
@@ -13,6 +24,9 @@ using namespace enums;
 
 class User;//add to do this to allow cyclic calling of class
 
+/**
+ * @brief Advertisement class
+ */
 class Advertisement{
 private:
 	unsigned int views; //< Number of times the advertisement has been seen
