@@ -44,10 +44,6 @@ string Advertisement::getImageAt(unsigned int index) const{
 	return imagesPath[index];
 }
 
-unsigned int Advertisement:: getId() const
-{
-	return id;
-}
 void Advertisement::addImage(string path){
 	imagesPath.push_back(path);
 }
