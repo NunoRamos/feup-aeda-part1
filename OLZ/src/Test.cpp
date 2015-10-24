@@ -102,8 +102,14 @@ void runAllTests(int argc, char const *argv[]){
 }
 
 int main(int argc, char const *argv[]){
-	runAllTests(argc,argv);
-    return 0;
+	//runAllTests(argc,argv);
+
+	Data* data = new Data();
+	OptionMenu menu(data, 20, 20, '?');
+	menu.addOption("Search", &search);
+	menu.createMenu();
+
+	return 0;
 }
 
 

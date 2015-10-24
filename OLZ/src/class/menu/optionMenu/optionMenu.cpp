@@ -6,7 +6,7 @@ OptionMenu::OptionMenu(Data* data, unsigned int height, unsigned int width) :
 Menu(data, height, width){ }
 
 OptionMenu::OptionMenu(Data* data, unsigned int height, unsigned int width, char borderChar) :
-				Menu(data, height, width, borderChar){ }
+						Menu(data, height, width, borderChar){ }
 
 void OptionMenu::print(){
 	//first line, only borderChar
@@ -49,13 +49,19 @@ void OptionMenu::addOption(string name, void(*function)(Data* data)){
 }
 
 void OptionMenu::createMenu(){
-	unsigned int input;
+	string inputString;
+	int input;
 	print();
-	cin >> input;
+	cin >> inputString;
+	//input = std::stoi(inputString);
+	cout << input;
+	cout << input;
 	while (input < 0 || input > functions.size()){
 		cout << "Please introduce a valid option.\n";
 		cin >> input;
+		cout << input;
 	}
+
 
 	(*functions[input].second) (data);
 }
