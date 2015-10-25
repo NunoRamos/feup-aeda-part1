@@ -20,7 +20,7 @@ public:
 private:
 	vector<Advertisement*> advertisements;
 	vector<User> users;
-	User* loggedInUser;
+	User* signedInUser;
 	const string path = "../../../data/users.txt"; //used to save and load users. still not fully implemented
 };
 

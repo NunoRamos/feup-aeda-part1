@@ -3,7 +3,7 @@
 #include<fstream>
 
 Data::Data(){
-	loggedInUser = NULL;
+	signedInUser = NULL;
 }
 
 bool Data::login(string email, string password){
@@ -17,7 +17,7 @@ bool Data::login(string email, string password){
 	}
 
 	if(users[i].login(password)){
-		loggedInUser = &users[i];
+		signedInUser = &users[i];
 		return true;
 	}
 	return false;
