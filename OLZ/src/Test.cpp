@@ -82,6 +82,7 @@ void menuTest(){
 	menu.addOption("Search", &search);
 	menu.addOption("Sign In", &signIn);
 	menu.addOption("Sign Up", &signUp);
+	menu.addOption("Exit", &exitApp);
 	menu.createMenu();
 }
 
@@ -103,12 +104,7 @@ void runAllTests(int argc, char const *argv[]){
 
 int main(int argc, char const *argv[]){
 	//runAllTests(argc,argv);
-
-	Data* data = new Data();
-	OptionMenu menu(data, 20, 20, '?');
-	menu.addOption("Search", &search);
-	menu.createMenu();
-
+	menuTest();
 	return 0;
 }
 

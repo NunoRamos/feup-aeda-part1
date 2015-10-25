@@ -3,11 +3,29 @@
 #include<fstream>
 
 Data::Data(){
-
+	loggedInUser = NULL;
 }
 
-Data::Data(string path) : path(path){
+bool Data::login(string email, string password){
+	if(users.size() == 0)
+		return false;
 
+	unsigned int i;
+	for(i = 0; i < users.size(); i++){
+		if(users[i].getEmail() == email)
+			break;
+	}
+
+	if(users[i].login(password)){
+		loggedInUser = &users[i];
+		return true;
+	}
+	return false;
+}
+
+bool Data::addUser(User user){//may add a condition to see if a user with the same email already exists
+	users.push_back(user);
+	return true;
 }
 
 bool Data::loadUsers(){

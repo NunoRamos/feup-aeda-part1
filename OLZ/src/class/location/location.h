@@ -16,7 +16,8 @@ public:
 	string getCounty() const;
 	string getDistrict() const;
 	Location& operator=(const Location &rhs);
-private:
+	friend ostream& operator<<(ostream & os, Location location);
+protected:
 	string city, county, district;
 };
 

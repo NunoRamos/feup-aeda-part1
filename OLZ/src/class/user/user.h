@@ -15,8 +15,9 @@ class Advertisement;//add to do this to allow cyclic calling of class
 class User{
 public:
 	User();
-	User(string email, string name, string phoneNumber, Date signUpDate, Location location);
-	User(string email, string name, string phoneNumber, Date signUpDate, string location);
+	User(string email, string password, string name, string phoneNumber, Date signUpDate, Location location);
+	User(string email, string password, string name, string phoneNumber, Date signUpDate, string location);
+	bool login(string password) const;
 	string getEmail() const;
 	string getName() const;
 	string getPhoneNumber() const;
@@ -26,7 +27,8 @@ public:
 	void removeAdvertisement(unsigned int id);
 protected:
 	vector<Advertisement*> advertisements;
-	string email, name, phoneNumber;
+	string email, password, name, phoneNumber;
+	Date signUpDate;
 	Location location;
 };
 

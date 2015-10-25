@@ -4,18 +4,28 @@ User::User(){
 
 }
 
-User::User(string email, string name, string phoneNumber, Date signUpDate, Location location){
+User::User(string email, string password, string name, string phoneNumber, Date signUpDate, Location location){
 	this->email = email;
+	this->password = password;
 	this->name = name;
 	this->phoneNumber = phoneNumber;
 	this->location = location;
+	this->signUpDate = signUpDate;
 }
 
-User::User(string email, string name, string phoneNumber, Date signUpDate, string location){
+User::User(string email, string password, string name, string phoneNumber, Date signUpDate, string location){
 	this->email = email;
+	this->password = password;
 	this->name = name;
 	this->phoneNumber = phoneNumber;
 	this->location = Location(location);
+	this->signUpDate = signUpDate;
+}
+
+bool User::login(string password) const{
+	if(this->password == password)
+		return true;
+	return false;
 }
 
 string User::getEmail() const{

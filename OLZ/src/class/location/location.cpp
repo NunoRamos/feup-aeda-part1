@@ -41,6 +41,11 @@ Location& Location::operator=(const Location& rhs){
 	return *this;
 }
 
+ostream& operator<<(ostream & os, Location location){
+	os << location.getString();
+	return os;
+}
+
 
 
 

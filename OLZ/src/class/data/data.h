@@ -10,7 +10,8 @@ using namespace std;
 class Data{
 public:
 	Data();
-	Data(string path);
+	bool login(string email, string password);
+	bool addUser(User user);
 	bool loadUsers(); ///< Loads user data from specified file
 	bool saveUsers(); ///< Saves user data to specified file
 	void removeAdvertisement(unsigned int id);
@@ -19,10 +20,10 @@ public:
 private:
 	vector<Advertisement*> advertisements;
 	vector<User> users;
-	const string path = "../../../data/users.txt";
+	User* loggedInUser;
+	const string path = "../../../data/users.txt"; //used to save and load users. still not fully implemented
 };
 
-//TODO move separationChar to a constants file
 //Better option may be writing to a binary file and end every input with \n
 
 #endif
