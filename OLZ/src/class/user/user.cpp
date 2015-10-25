@@ -22,7 +22,7 @@ User::User(string email, string password, string name, string phoneNumber, Date 
 	this->signUpDate = signUpDate;
 }
 
-bool User::login(string password) const{
+bool User::signIn(string password) const{
 	if(this->password == password)
 		return true;
 	return false;

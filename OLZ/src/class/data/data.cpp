@@ -6,7 +6,7 @@ Data::Data(){
 	signedInUser = NULL;
 }
 
-bool Data::login(string email, string password){
+bool Data::signIn(string email, string password){
 	if(users.size() == 0)
 		return false;
 
@@ -16,7 +16,7 @@ bool Data::login(string email, string password){
 			break;
 	}
 
-	if(users[i].login(password)){
+	if(users[i].signIn(password)){
 		signedInUser = &users[i];
 		return true;
 	}

@@ -1,3 +1,14 @@
+/**
+ * @file data.h
+ *
+ * @brief Header file for class Data*/
+
+/**
+ * @file data.cpp
+ *
+ * @brief Code for class Data*/
+
+
 #ifndef DATA_H
 #define DATA_H
 
@@ -7,21 +18,69 @@
 
 using namespace std;
 
+/**
+ * @brief User and Advertisement data class
+ */
 class Data{
-public:
-	Data();
-	bool login(string email, string password);
-	bool addUser(User user);
-	bool loadUsers(); ///< Loads user data from specified file
-	bool saveUsers(); ///< Saves user data to specified file
-	void removeAdvertisement(unsigned int id);
-	void addAdvertisement(Advertisement* ad);
-	vector<Advertisement*> searchForAds(string text); //still not sure what type of data to return
 private:
-	vector<Advertisement*> advertisements;
-	vector<User> users;
-	User* signedInUser;
-	const string path = "../../../data/users.txt"; //used to save and load users. still not fully implemented
+	vector<Advertisement*> advertisements; //< Vector of pointers to all advertisements
+	vector<User> users; //< Vector of all users
+	User* signedInUser; //< Pointer to user that is currently signed in
+	const string path = "../../../data/users.txt"; //< used to save and load users. still not fully implemented
+public:
+	/**
+	 * @brief Constructor for class Data
+	 */
+	Data();
+
+	/**
+	 * @brief Sign user in
+	 *
+	 * @param email Email of user to try to sign in
+	 * @param password Password of user to try to sign in
+	 *
+	 * @return Returns true if the user has successfully signed in
+	 */
+	bool signIn(string email, string password);
+
+	/**
+	 * @brief Add user to User vector
+	 *
+	 * @param user User to be added in
+	 *
+	 * @return Returns true if the user has been successfully added
+	 */
+	bool addUser(User user);
+
+	/**
+	 * @brief Loads users to user vector from path
+	 *
+	 * @return Returns true if the users have been successfully loaded
+	 */
+	bool loadUsers();
+
+	/**
+		 * @brief Save users to path from user vector
+		 *
+		 * @return Returns true if the users have been successfully saved
+		 */
+	bool saveUsers();
+
+	/**
+		 * @brief Removes advertisement from advertisement vector
+		 */
+	void removeAdvertisement(unsigned int id);
+	/**
+		 * @brief Added advertisement to advertisement vector
+		 */
+	void addAdvertisement(Advertisement* ad);
+
+	/**
+		 * @brief Searches for ads with text in it.
+		 *
+		 * @return Returns vector of pointers to Advertisement with ads that have text either in their title or their description
+		 */
+	vector<Advertisement*> searchForAds(string text);
 };
 
 //Better option may be writing to a binary file and end every input with \n

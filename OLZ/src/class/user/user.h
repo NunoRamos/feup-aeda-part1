@@ -17,7 +17,7 @@ public:
 	User();
 	User(string email, string password, string name, string phoneNumber, Date signUpDate, Location location);
 	User(string email, string password, string name, string phoneNumber, Date signUpDate, string location);
-	bool login(string password) const;
+	bool signIn(string password) const;
 	string getEmail() const;
 	string getName() const;
 	string getPhoneNumber() const;

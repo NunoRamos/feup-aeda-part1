@@ -1,29 +1,128 @@
 \hypertarget{class_data}{}\section{Data Class Reference}
 \label{class_data}\index{Data@{Data}}
+
+
+\hyperlink{class_user}{User} and \hyperlink{class_advertisement}{Advertisement} data class.  
+
+
+
+
+{\ttfamily \#include $<$data.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_data_a68533b8be01f87fa0f989788da9e6735}{}{\bfseries Data} (string path)\label{class_data_a68533b8be01f87fa0f989788da9e6735}
+\hypertarget{class_data_af11f741cb7f587e2e495452a8905a22a}{}\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data} ()\label{class_data_af11f741cb7f587e2e495452a8905a22a}
 
-\item 
-\hypertarget{class_data_af6bfff017e2428145e1f723c41f62e55}{}bool \hyperlink{class_data_af6bfff017e2428145e1f723c41f62e55}{load\+Users} ()\label{class_data_af6bfff017e2428145e1f723c41f62e55}
+\begin{DoxyCompactList}\small\item\em Constructor for class \hyperlink{class_data}{Data}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_data_a4dd197a4768f96f882ec6f093abd8d1c}{sign\+In} (string email, string password)
+\begin{DoxyCompactList}\small\item\em Sign user in. \end{DoxyCompactList}\item 
+bool \hyperlink{class_data_a7d8a17cd3323b4db1e1a39ce85094cff}{add\+User} (\hyperlink{class_user}{User} user)
+\begin{DoxyCompactList}\small\item\em Add user to \hyperlink{class_user}{User} vector. \end{DoxyCompactList}\item 
+bool \hyperlink{class_data_af6bfff017e2428145e1f723c41f62e55}{load\+Users} ()
+\begin{DoxyCompactList}\small\item\em Loads users to user vector from path. \end{DoxyCompactList}\item 
+bool \hyperlink{class_data_aaf1fcf32ff1e5aab2dbdba338740ea41}{save\+Users} ()
+\begin{DoxyCompactList}\small\item\em Save users to path from user vector. \end{DoxyCompactList}\item 
+\hypertarget{class_data_aef09da10593bb91b3ae2f627bfc55951}{}void \hyperlink{class_data_aef09da10593bb91b3ae2f627bfc55951}{remove\+Advertisement} (unsigned int id)\label{class_data_aef09da10593bb91b3ae2f627bfc55951}
 
-\begin{DoxyCompactList}\small\item\em Loads user data from specified file. \end{DoxyCompactList}\item 
-\hypertarget{class_data_aaf1fcf32ff1e5aab2dbdba338740ea41}{}bool \hyperlink{class_data_aaf1fcf32ff1e5aab2dbdba338740ea41}{save\+Users} ()\label{class_data_aaf1fcf32ff1e5aab2dbdba338740ea41}
+\begin{DoxyCompactList}\small\item\em Removes advertisement from advertisement vector. \end{DoxyCompactList}\item 
+\hypertarget{class_data_ae4aa5295e124638182712d68416fc603}{}void \hyperlink{class_data_ae4aa5295e124638182712d68416fc603}{add\+Advertisement} (\hyperlink{class_advertisement}{Advertisement} $\ast$ad)\label{class_data_ae4aa5295e124638182712d68416fc603}
 
-\begin{DoxyCompactList}\small\item\em Saves user data to specified file. \end{DoxyCompactList}\item 
-\hypertarget{class_data_aef09da10593bb91b3ae2f627bfc55951}{}void {\bfseries remove\+Advertisement} (unsigned int id)\label{class_data_aef09da10593bb91b3ae2f627bfc55951}
+\begin{DoxyCompactList}\small\item\em Added advertisement to advertisement vector. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_a2d154ed7f306a52f9881f28c8a05dd8d}{search\+For\+Ads} (string text)
+\begin{DoxyCompactList}\small\item\em Searches for ads with text in it. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\item 
-\hypertarget{class_data_ae4aa5295e124638182712d68416fc603}{}void {\bfseries add\+Advertisement} (\hyperlink{class_advertisement}{Advertisement} $\ast$ad)\label{class_data_ae4aa5295e124638182712d68416fc603}
 
-\item 
-\hypertarget{class_data_a2d154ed7f306a52f9881f28c8a05dd8d}{}vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ {\bfseries search\+For\+Ads} (string text)\label{class_data_a2d154ed7f306a52f9881f28c8a05dd8d}
+\subsection{Detailed Description}
+\hyperlink{class_user}{User} and \hyperlink{class_advertisement}{Advertisement} data class. 
 
-\end{DoxyCompactItemize}
+\subsection{Member Function Documentation}
+\hypertarget{class_data_a7d8a17cd3323b4db1e1a39ce85094cff}{}\index{Data@{Data}!add\+User@{add\+User}}
+\index{add\+User@{add\+User}!Data@{Data}}
+\subsubsection[{add\+User(\+User user)}]{\setlength{\rightskip}{0pt plus 5cm}bool Data\+::add\+User (
+\begin{DoxyParamCaption}
+\item[{{\bf User}}]{user}
+\end{DoxyParamCaption}
+)}\label{class_data_a7d8a17cd3323b4db1e1a39ce85094cff}
+
+
+Add user to \hyperlink{class_user}{User} vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \hyperlink{class_user}{User} to be added in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the user has been successfully added 
+\end{DoxyReturn}
+\hypertarget{class_data_af6bfff017e2428145e1f723c41f62e55}{}\index{Data@{Data}!load\+Users@{load\+Users}}
+\index{load\+Users@{load\+Users}!Data@{Data}}
+\subsubsection[{load\+Users()}]{\setlength{\rightskip}{0pt plus 5cm}bool Data\+::load\+Users (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_data_af6bfff017e2428145e1f723c41f62e55}
+
+
+Loads users to user vector from path. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the users have been successfully loaded 
+\end{DoxyReturn}
+\hypertarget{class_data_aaf1fcf32ff1e5aab2dbdba338740ea41}{}\index{Data@{Data}!save\+Users@{save\+Users}}
+\index{save\+Users@{save\+Users}!Data@{Data}}
+\subsubsection[{save\+Users()}]{\setlength{\rightskip}{0pt plus 5cm}bool Data\+::save\+Users (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_data_aaf1fcf32ff1e5aab2dbdba338740ea41}
+
+
+Save users to path from user vector. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the users have been successfully saved 
+\end{DoxyReturn}
+\hypertarget{class_data_a2d154ed7f306a52f9881f28c8a05dd8d}{}\index{Data@{Data}!search\+For\+Ads@{search\+For\+Ads}}
+\index{search\+For\+Ads@{search\+For\+Ads}!Data@{Data}}
+\subsubsection[{search\+For\+Ads(string text)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Advertisement} $\ast$ $>$ Data\+::search\+For\+Ads (
+\begin{DoxyParamCaption}
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}\label{class_data_a2d154ed7f306a52f9881f28c8a05dd8d}
+
+
+Searches for ads with text in it. 
+
+\begin{DoxyReturn}{Returns}
+Returns vector of pointers to \hyperlink{class_advertisement}{Advertisement} with ads that have text either in their title or their description 
+\end{DoxyReturn}
+\hypertarget{class_data_a4dd197a4768f96f882ec6f093abd8d1c}{}\index{Data@{Data}!sign\+In@{sign\+In}}
+\index{sign\+In@{sign\+In}!Data@{Data}}
+\subsubsection[{sign\+In(string email, string password)}]{\setlength{\rightskip}{0pt plus 5cm}bool Data\+::sign\+In (
+\begin{DoxyParamCaption}
+\item[{string}]{email, }
+\item[{string}]{password}
+\end{DoxyParamCaption}
+)}\label{class_data_a4dd197a4768f96f882ec6f093abd8d1c}
+
+
+Sign user in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email of user to try to sign in \\
+\hline
+{\em password} & Password of user to try to sign in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the user has successfully signed in 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-O\+L\+Z/src/class/data/data.\+h\item 
-O\+L\+Z/src/class/data/data.\+cpp\end{DoxyCompactItemize}
+O\+L\+Z/src/class/data/\hyperlink{data_8h}{data.\+h}\item 
+O\+L\+Z/src/class/data/\hyperlink{data_8cpp}{data.\+cpp}\end{DoxyCompactItemize}

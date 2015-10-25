@@ -89,33 +89,164 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Data Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="class_user.html">User</a> and <a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> data class.  
+ <a href="class_data.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="data_8h_source.html">data.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a68533b8be01f87fa0f989788da9e6735"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68533b8be01f87fa0f989788da9e6735"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Data</b> (string path)</td></tr>
-<tr class="separator:a68533b8be01f87fa0f989788da9e6735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6bfff017e2428145e1f723c41f62e55"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6bfff017e2428145e1f723c41f62e55"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#af6bfff017e2428145e1f723c41f62e55">loadUsers</a> ()</td></tr>
-<tr class="memdesc:af6bfff017e2428145e1f723c41f62e55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads user data from specified file. <br /></td></tr>
+<tr class="memitem:af11f741cb7f587e2e495452a8905a22a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af11f741cb7f587e2e495452a8905a22a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#af11f741cb7f587e2e495452a8905a22a">Data</a> ()</td></tr>
+<tr class="memdesc:af11f741cb7f587e2e495452a8905a22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for class <a class="el" href="class_data.html" title="User and Advertisement data class. ">Data</a>. <br /></td></tr>
+<tr class="separator:af11f741cb7f587e2e495452a8905a22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd197a4768f96f882ec6f093abd8d1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a4dd197a4768f96f882ec6f093abd8d1c">signIn</a> (string email, string password)</td></tr>
+<tr class="memdesc:a4dd197a4768f96f882ec6f093abd8d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sign user in.  <a href="#a4dd197a4768f96f882ec6f093abd8d1c">More...</a><br /></td></tr>
+<tr class="separator:a4dd197a4768f96f882ec6f093abd8d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d8a17cd3323b4db1e1a39ce85094cff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a7d8a17cd3323b4db1e1a39ce85094cff">addUser</a> (<a class="el" href="class_user.html">User</a> user)</td></tr>
+<tr class="memdesc:a7d8a17cd3323b4db1e1a39ce85094cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add user to <a class="el" href="class_user.html">User</a> vector.  <a href="#a7d8a17cd3323b4db1e1a39ce85094cff">More...</a><br /></td></tr>
+<tr class="separator:a7d8a17cd3323b4db1e1a39ce85094cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6bfff017e2428145e1f723c41f62e55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#af6bfff017e2428145e1f723c41f62e55">loadUsers</a> ()</td></tr>
+<tr class="memdesc:af6bfff017e2428145e1f723c41f62e55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads users to user vector from path.  <a href="#af6bfff017e2428145e1f723c41f62e55">More...</a><br /></td></tr>
 <tr class="separator:af6bfff017e2428145e1f723c41f62e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf1fcf32ff1e5aab2dbdba338740ea41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf1fcf32ff1e5aab2dbdba338740ea41"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#aaf1fcf32ff1e5aab2dbdba338740ea41">saveUsers</a> ()</td></tr>
-<tr class="memdesc:aaf1fcf32ff1e5aab2dbdba338740ea41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves user data to specified file. <br /></td></tr>
+<tr class="memitem:aaf1fcf32ff1e5aab2dbdba338740ea41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#aaf1fcf32ff1e5aab2dbdba338740ea41">saveUsers</a> ()</td></tr>
+<tr class="memdesc:aaf1fcf32ff1e5aab2dbdba338740ea41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save users to path from user vector.  <a href="#aaf1fcf32ff1e5aab2dbdba338740ea41">More...</a><br /></td></tr>
 <tr class="separator:aaf1fcf32ff1e5aab2dbdba338740ea41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef09da10593bb91b3ae2f627bfc55951"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef09da10593bb91b3ae2f627bfc55951"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeAdvertisement</b> (unsigned int id)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#aef09da10593bb91b3ae2f627bfc55951">removeAdvertisement</a> (unsigned int id)</td></tr>
+<tr class="memdesc:aef09da10593bb91b3ae2f627bfc55951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes advertisement from advertisement vector. <br /></td></tr>
 <tr class="separator:aef09da10593bb91b3ae2f627bfc55951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4aa5295e124638182712d68416fc603"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4aa5295e124638182712d68416fc603"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addAdvertisement</b> (<a class="el" href="class_advertisement.html">Advertisement</a> *ad)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#ae4aa5295e124638182712d68416fc603">addAdvertisement</a> (<a class="el" href="class_advertisement.html">Advertisement</a> *ad)</td></tr>
+<tr class="memdesc:ae4aa5295e124638182712d68416fc603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Added advertisement to advertisement vector. <br /></td></tr>
 <tr class="separator:ae4aa5295e124638182712d68416fc603"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d154ed7f306a52f9881f28c8a05dd8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d154ed7f306a52f9881f28c8a05dd8d"></a>
-vector&lt; <a class="el" href="class_advertisement.html">Advertisement</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>searchForAds</b> (string text)</td></tr>
+<tr class="memitem:a2d154ed7f306a52f9881f28c8a05dd8d"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_advertisement.html">Advertisement</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data.html#a2d154ed7f306a52f9881f28c8a05dd8d">searchForAds</a> (string text)</td></tr>
+<tr class="memdesc:a2d154ed7f306a52f9881f28c8a05dd8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for ads with text in it.  <a href="#a2d154ed7f306a52f9881f28c8a05dd8d">More...</a><br /></td></tr>
 <tr class="separator:a2d154ed7f306a52f9881f28c8a05dd8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_user.html">User</a> and <a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> data class. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a7d8a17cd3323b4db1e1a39ce85094cff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Data::addUser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_user.html">User</a>&#160;</td>
+          <td class="paramname"><em>user</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add user to <a class="el" href="class_user.html">User</a> vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td><a class="el" href="class_user.html">User</a> to be added in</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the user has been successfully added </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af6bfff017e2428145e1f723c41f62e55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Data::loadUsers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads users to user vector from path. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the users have been successfully loaded </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaf1fcf32ff1e5aab2dbdba338740ea41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Data::saveUsers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save users to path from user vector. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the users have been successfully saved </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2d154ed7f306a52f9881f28c8a05dd8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_advertisement.html">Advertisement</a> * &gt; Data::searchForAds </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Searches for ads with text in it. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns vector of pointers to <a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> with ads that have text either in their title or their description </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4dd197a4768f96f882ec6f093abd8d1c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Data::signIn </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sign user in. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email of user to try to sign in </td></tr>
+    <tr><td class="paramname">password</td><td>Password of user to try to sign in</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the user has successfully signed in </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>OLZ/src/class/data/<a class="el" href="data_8h_source.html">data.h</a></li>
-<li>OLZ/src/class/data/data.cpp</li>
+<li>OLZ/src/class/data/<a class="el" href="data_8cpp.html">data.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
