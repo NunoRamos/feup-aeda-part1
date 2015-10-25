@@ -49,19 +49,16 @@ void OptionMenu::addOption(string name, void(*function)(Data* data)){
 }
 
 void OptionMenu::createMenu(){
-	string inputString;
 	int input;
 	print();
-	cin >> inputString;
-	//input = std::stoi(inputString);
-	cout << input;
-	cout << input;
+	cin >> input;
 	while (input < 0 || input > functions.size()){
 		cout << "Please introduce a valid option.\n";
 		cin >> input;
-		cout << input;
 	}
 
+	cin.ignore();
+	cin.clear();
 
-	(*functions[input].second) (data);
+	(*functions[input-1].second) (data);
 }

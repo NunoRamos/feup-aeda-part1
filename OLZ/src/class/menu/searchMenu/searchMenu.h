@@ -15,7 +15,7 @@ public:
 	void createMenu();
 private:
 	vector<Advertisement* > results;
-	unsigned int page, adsPerPage;
+	unsigned int page, pageMax, adsPerPage;
 };
 
 #endif

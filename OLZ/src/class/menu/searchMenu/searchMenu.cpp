@@ -10,14 +10,16 @@ Menu(data, height, width){
 	this->results = results;
 	page = 0;
 	adsPerPage = 7;
+	pageMax = results.size() / adsPerPage;
 }
 
 SearchMenu::SearchMenu(Data* data, unsigned int height, unsigned int width, char borderChar,
 		vector<Advertisement*> results) :
-							Menu(data, height, width, borderChar){
+													Menu(data, height, width, borderChar){
 	this->results = results;
 	page = 0;
 	adsPerPage = 7;
+	pageMax = results.size() / adsPerPage;
 }
 
 void SearchMenu::setAdsPerPage(unsigned int adsPerPage){
@@ -59,9 +61,15 @@ void SearchMenu::print(){
 	}
 
 	//add back, next, and exit options
-	cout << borderChar << "Back" << string(width-6, ' ') << borderChar << endl;
-	cout << borderChar << "Next" << string(width-6, ' ') << borderChar << endl;
-	cout << borderChar << "Exit" << string(width-6, ' ') << borderChar << endl;
+	ss.str("");
+	ss << adLimit+1;
+	cout << borderChar << " " << adLimit + 1 << " - " << "Back" << string(width-10-ss.str().size(), ' ') << borderChar << endl;
+	ss.str("");
+	ss << adLimit+2;
+	cout << borderChar << " " << adLimit + 2 << " - " << "Next" << string(width-10-ss.str().size(), ' ') << borderChar << endl;
+	ss.str("");
+	ss << adLimit+3;
+	cout << borderChar << " " << adLimit + 3 << " - " << "Exit" << string(width-10-ss.str().size(), ' ') << borderChar << endl;
 
 	//fills the rest of the menu with empty lines, with border
 	for (unsigned int i = adLimit; i < height-(2+topMargin); i++){
@@ -82,24 +90,26 @@ void SearchMenu::createMenu(){
 		adLimit = results.size() % adsPerPage;
 	print();
 	cin >> input;
-	while (input < 0 || input > adLimit + 3){
+	while (input <= 0 || input > adLimit + 3){
 		cout << "Please introduce a valid option.\n";
 		cin >> input;
 	}
-	if(input <= adLimit){
+
+	cin.ignore();
+	cin.clear();
+
+	if(input <= adLimit){ //ad options
 		AdDisplayMenu displayAd(data, height, width, borderChar, results[page*adsPerPage+input]);
 		displayAd.createMenu();
 	}
 	else if(input == adLimit + 1){ //back
-		if(page!=0){
+		if(page!=0)
 			page--;
-			createMenu();
-		}
+		createMenu();
 	}
 	else if(input == adLimit + 2){ //next
-		if(trunc(results.size()/adsPerPage) != page){
+		if(page != pageMax)
 			page++;
-			createMenu();
-		}
+		createMenu();
 	}
 }
