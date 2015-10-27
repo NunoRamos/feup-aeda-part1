@@ -34,7 +34,7 @@ void signIn(Data* data){
 
 	cout << endl;
 
-	if(data->login(email, password))
+	if(data->signIn(email, password))
 		cout << "Logged in.";
 	else
 		cout << "Wrong email and password combination.";

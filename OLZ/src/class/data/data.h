@@ -60,26 +60,26 @@ public:
 	bool loadUsers();
 
 	/**
-		 * @brief Save users to path from user vector
-		 *
-		 * @return Returns true if the users have been successfully saved
-		 */
+	 * @brief Save users to path from user vector
+	 *
+	 * @return Returns true if the users have been successfully saved
+	 */
 	bool saveUsers();
 
 	/**
-		 * @brief Removes advertisement from advertisement vector
-		 */
+	 * @brief Removes advertisement from advertisement vector
+	 */
 	void removeAdvertisement(unsigned int id);
 	/**
-		 * @brief Added advertisement to advertisement vector
-		 */
+	 * @brief Added advertisement to advertisement vector
+	 */
 	void addAdvertisement(Advertisement* ad);
 
 	/**
-		 * @brief Searches for ads with text in it.
-		 *
-		 * @return Returns vector of pointers to Advertisement with ads that have text either in their title or their description
-		 */
+	 * @brief Searches for ads with text in it.
+	 *
+	 * @return Returns vector of pointers to Advertisement with ads that have text either in their title or their description
+	 */
 	vector<Advertisement*> searchForAds(string text);
 };
 

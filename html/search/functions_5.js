@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['removeadvertisement',['removeAdvertisement',['../class_data.html#aef09da10593bb91b3ae2f627bfc55951',1,'Data']]]
+  ['operator_3d',['operator=',['../class_date.html#a6835b4cfb6a3034a8daa0168c4e9d614',1,'Date']]]
 ];
