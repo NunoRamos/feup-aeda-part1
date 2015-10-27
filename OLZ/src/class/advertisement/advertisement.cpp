@@ -24,6 +24,10 @@ Advertisement::Advertisement(User* owner, string title, Category category, strin
 	this->description = description;
 }
 
+Advertisement::~Advertisement(){
+	id--;
+}
+
 unsigned int Advertisement::getId() const{
 	return id;
 }

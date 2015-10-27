@@ -13,14 +13,14 @@
 
 #include "../advertisement.h"
 
-/*
+/**
  * @brief Purchase class
  */
 class Purchase : public Advertisement{
 private:
 
 public:
-	/*
+	/**
 	 * @brief Purchase constructor
 	 *
 	 * @param owner Pointer to advertisement owner
@@ -29,6 +29,11 @@ public:
 	 * @param description Advertisement description
 	 */
 	Purchase(User* owner, string title, Category category, string description);
+
+	/**
+	 * @brief Purchase destructor
+	 */
+	~Purchase();
 };
 
 #endif

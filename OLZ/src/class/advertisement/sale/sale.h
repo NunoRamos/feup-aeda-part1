@@ -33,6 +33,11 @@ public:
 	 * @param productCondition Product condition
 	 */
 	Sale(User* owner, string title, Category category, string description, Condition productCondition);
+
+	/**
+	 * @brief Sale destructor
+	 */
+	~Sale();
 };
 
 

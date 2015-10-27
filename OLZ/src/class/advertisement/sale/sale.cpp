@@ -5,3 +5,5 @@ Sale::Sale(User* owner, string title, Category category, string description, Con
 Advertisement(owner, title, category, description){
 	this->productCondition = productCondition;
 }
+
+Sale::~Sale(){ }

@@ -22,7 +22,7 @@
 using namespace std;
 using namespace enums;
 
-class User;//add to do this to allow cyclic calling of class
+class User;//had to do this to allow cyclic calling of class
 
 /**
  * @brief Advertisement class
@@ -58,6 +58,11 @@ public:
 	 * @param description Advertisement description
 	 */
 	Advertisement(User* owner, string title, Category category, string description);
+
+	/**
+	 * @brief Advertisement destructor
+	 */
+	virtual ~Advertisement();
 
 	/**
 	 * @brief Gets advertisement ID

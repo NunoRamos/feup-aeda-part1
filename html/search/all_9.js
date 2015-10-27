@@ -10,5 +10,5 @@ var searchData=
   ['setday',['setDay',['../class_date.html#a18dc2bd52ab8adcca331f66c27ed6623',1,'Date']]],
   ['setmonth',['setMonth',['../class_date.html#aa83b79359070012ab58ff99abeb34340',1,'Date']]],
   ['setyear',['setYear',['../class_date.html#a1299c7e1f0080304f082a9225a743957',1,'Date']]],
-  ['signin',['signIn',['../class_data.html#a4dd197a4768f96f882ec6f093abd8d1c',1,'Data']]]
+  ['signin',['signIn',['../class_data.html#a4dd197a4768f96f882ec6f093abd8d1c',1,'Data::signIn()'],['../class_user.html#af75d18fdc45ac9fba9911815b78b7daa',1,'User::signIn()']]]
 ];

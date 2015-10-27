@@ -5,3 +5,5 @@ Purchase::Purchase(User* owner, string title, Category category, string descript
 	Advertisement(owner, title, category, description){
 
 }
+
+Purchase::~Purchase(){ }

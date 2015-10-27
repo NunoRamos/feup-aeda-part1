@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['removeadvertisement',['removeAdvertisement',['../class_data.html#aef09da10593bb91b3ae2f627bfc55951',1,'Data']]]
+  ['purchase',['Purchase',['../class_purchase.html#a5603b3428060205ce26e45441f37d560',1,'Purchase']]]
 ];
