@@ -1,9 +1,17 @@
 #include "data.h"
 
 #include<fstream>
+#include <iostream>
 
 Data::Data(){
 	signedInUser = NULL;
+}
+
+Data::~Data(){
+	saveUsers();
+	for(int i=0;i<advertisements.size();i++){
+		delete advertisements[i];
+	}
 }
 
 bool Data::signIn(string email, string password){
@@ -46,14 +54,15 @@ bool Data::loadUsers(){
 bool Data::saveUsers(){
 	char separationChar = '\n';
 	ofstream userFile;
-	userFile.open(path.c_str(), ofstream::out | ofstream::trunc);
-
-	if(!userFile.is_open())
-		return false;
 
 	for(unsigned int i = 0; i < users.size(); i++){
-		userFile << users[i].getEmail() << separationChar << users[i].getName() << separationChar
-				<< users[i].getPhoneNumber() << separationChar << users[i].getLocationString() << separationChar;
+		userFile.open((path+users[i].getEmail()).c_str(), ofstream::out | ofstream::trunc);
+		if(userFile.is_open()){
+			userFile << users[i].getEmail()<<separationChar<<users[i].getPassword() << separationChar << users[i].getName() << separationChar
+					<< users[i].getPhoneNumber() << separationChar << users[i].getLocationString() << separationChar;
+			userFile.close();
+			cout<<"Merdou\n";
+		}
 	}
 	return true;
 }

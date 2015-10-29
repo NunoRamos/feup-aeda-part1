@@ -86,6 +86,12 @@ public:
 	string getPhoneNumber() const;
 
 	/**
+	 * @brief Gets user password
+	 *
+	 * @return Returns user password
+	 */
+	string getPassword() const;
+	/**
 	 * @brief Gets user location
 	 *
 	 * @return Returns user location
