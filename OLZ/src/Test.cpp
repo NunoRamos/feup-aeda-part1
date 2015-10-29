@@ -78,12 +78,16 @@ void dateTest() {
 ///Menu Class Test
 void menuTest(){
 	Data* data = new Data();
+
+	//data->loadUsers();
 	OptionMenu menu(data, 20, 20, '?');
 	menu.addOption("Search", &search);
 	menu.addOption("Sign In", &signIn);
 	menu.addOption("Sign Up", &signUp);
 	menu.addOption("Exit", &exitApp);
 	menu.createMenu();
+
+	//data->saveUsers();
 }
 
 void runAllTests(int argc, char const *argv[]){
