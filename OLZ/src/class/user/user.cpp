@@ -1,6 +1,10 @@
 #include "user.h"
 
+unsigned int User::nextId=0;
+
 User::User() {
+	id=nextId;
+	nextId++;
 
 }
 
@@ -12,6 +16,8 @@ User::User(string email, string password, string name, string phoneNumber,
 	this->phoneNumber = phoneNumber;
 	this->location = location;
 	this->signUpDate = signUpDate;
+	id=nextId;
+	nextId++;
 }
 
 User::User(string email, string password, string name, string phoneNumber,
@@ -22,6 +28,8 @@ User::User(string email, string password, string name, string phoneNumber,
 	this->phoneNumber = phoneNumber;
 	this->location = Location(location);
 	this->signUpDate = signUpDate;
+	id=nextId;
+	nextId++;
 }
 
 bool User::signIn(string password) const {
@@ -54,6 +62,10 @@ string User::getLocationString() const {
 	return location.getString();
 }
 
+unsigned int User::getId() const{
+
+	return id;
+}
 istream& operator>>(istream& in, User user) {
 	char separationChar = '\n';
 	string line;
@@ -92,4 +104,10 @@ void User::removeAdvertisement(unsigned int id) {
 	if (i != advertisements.size()) {
 		advertisements.erase(advertisements.begin() + i);
 	}
+}
+
+void User::addAdvertisement(Advertisement *newAdvertisment){
+
+	advertisements.push_back(newAdvertisment);
+
 }

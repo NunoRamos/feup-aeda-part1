@@ -34,6 +34,8 @@ protected:
 	string phoneNumber; //< User phone number
 	Date signUpDate; //< User sign up date
 	Location location; //< User location
+	unsigned int id;
+	static unsigned int nextId;
 public:
 	/**
 	 * @brief User default constructor
@@ -106,6 +108,12 @@ public:
 	string getLocationString() const;
 
 	/**
+	 * @brief Gets user Id
+	 *
+	 * @return Returns user Id
+	 */
+	unsigned int getId() const;
+	/**
 	 * @brief Signs in user
 	 *
 	 * @param password User password
@@ -127,6 +135,26 @@ public:
 	 * @param id Advertisement identification number
 	 */
 	void removeAdvertisement(unsigned int id);
+	/**
+	 * @brief Addd advertisement to user advertisements.
+	 *
+	 * @param newAdvertisement Pointer to New Advertisement
+	 *
+	 *
+	 */
+
+	void addAdvertisement(Advertisement *newAdvertisement);
+	/**
+	 * @brief Edit advertisement to user advertisements.
+	 *
+	 *
+	 *
+	 *
+	 */
+	void editAdvertisement();
+
+
+
 };
 
 #endif
