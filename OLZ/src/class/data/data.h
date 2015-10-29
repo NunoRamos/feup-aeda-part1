@@ -82,6 +82,10 @@ public:
 	 * @return Returns vector of pointers to Advertisement with ads that have text either in their title or their description
 	 */
 	vector<Advertisement*> searchForAds(string text);
+
+	void signOut();
+
+	User* getSignedInUser() const;
 };
 
 //Better option may be writing to a binary file and end every input with \n

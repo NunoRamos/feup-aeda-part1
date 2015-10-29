@@ -2,16 +2,19 @@
 
 #include<fstream>
 #include <iostream>
+#include <sstream>
 
 Data::Data(){
 	signedInUser = NULL;
 }
 
 Data::~Data(){
+	int i;
 	saveUsers();
 	for(int i=0;i<advertisements.size();i++){
 		delete advertisements[i];
 	}
+	cin>>i;
 }
 
 bool Data::signIn(string email, string password){
@@ -38,30 +41,55 @@ bool Data::addUser(User user){//may add a condition to see if a user with the sa
 
 bool Data::loadUsers(){
 	ifstream userFile;
-	userFile.open(path.c_str(), ofstream::in);
+	int numberOfFiles;
+	stringstream ss;
 
-	if(!userFile.is_open())
+	//userFile.open(path.c_str(), ofstream::in);
+
+	/*if(!userFile.is_open())
 		return false;
 
 	while(!userFile.eof()){
 		User user;
 		//userFile >> user;
 		users.push_back(user);
+	}*/
+	userFile.open((path+"info.txt").c_str(), ofstream::out | ofstream::trunc);
+	if(userFile.is_open()){
+		userFile>>numberOfFiles;
+		userFile.close();
 	}
+
+	for(unsigned int i = 0; i < numberOfFiles; i++){
+		ss<<"user"<<i<<".txt";
+		userFile.open((path+ss.str()).c_str(), ofstream::out | ofstream::trunc);
+		if(userFile.is_open()){
+			userFile.close();
+		}
+	}
+
 	return true;
 }
 
 bool Data::saveUsers(){
 	char separationChar = '\n';
 	ofstream userFile;
+	stringstream ss;
+
+	userFile.open((path+"info.txt").c_str(),ofstream::out | ofstream::trunc);
+	if(userFile.is_open()){
+		userFile<<users.size();
+		userFile.close();
+	}
 
 	for(unsigned int i = 0; i < users.size(); i++){
-		userFile.open((path+users[i].getEmail()).c_str(), ofstream::out | ofstream::trunc);
+		ss<<"user"<<users[i].getId()<<".txt";
+		userFile.open((path+ss.str()).c_str(), ofstream::out | ofstream::trunc);
 		if(userFile.is_open()){
 			userFile << users[i].getEmail()<<separationChar<<users[i].getPassword() << separationChar << users[i].getName() << separationChar
 					<< users[i].getPhoneNumber() << separationChar << users[i].getLocationString() << separationChar;
 			userFile.close();
-			cout<<"Merdou\n";
+			cout<<"Is open\n";
 		}
 	}
 	return true;
@@ -95,3 +123,10 @@ vector<Advertisement*> Data::searchForAds(string text){
 	return results;
 }
 
+void Data::signOut(){
+	signedInUser==NULL;
+}
+
+User* Data::getSignedInUser() const {
+	return signedInUser;
+}
