@@ -1,4 +1,6 @@
 #include "data.h"
+#include "../../sequentialSearch.h"
+#include "../advertisement/purchase/purchase.h"
 
 #include<fstream>
 #include <iostream>
@@ -95,16 +97,20 @@ bool Data::saveUsers() {
 	return true;
 }
 
-void Data::removeAdvertisement(unsigned int id) {
-	unsigned int i;
-	for (i = 0; i < advertisements.size(); i++)
-		if (advertisements[i]->getId() == id)
-			break;
+void Data::removeAdvertisement(string title) {
 
-	if (i != advertisements.size()) {
+	int i;
+	Advertisement* ad = new Purchase(NULL,title);
+
+	i=sequentialSearch(advertisements,ad);
+
+
+	if (i !=-1) {
 		delete advertisements[i];
 		advertisements.erase(advertisements.begin() + i);
 	}
+
+
 }
 
 void Data::addAdvertisement(Advertisement* ad) {

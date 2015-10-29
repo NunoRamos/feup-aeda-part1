@@ -6,6 +6,8 @@ Advertisement(owner, title, category, description){
 	this->productCondition = productCondition;
 }
 
+Sale::Sale(User* owner, string title):Advertisement(owner,title){}
+
 Sale::~Sale(){ }
 
 void Sale::displayAd(unsigned int height, unsigned int width, char borderChar){

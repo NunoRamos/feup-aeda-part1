@@ -1,11 +1,16 @@
 #include "advertisement.h"
 #include "../menu/adDisplayMenu/adDisplayMenu.h"
 
+
 #include<ctime>
 #include<chrono>
 
-unsigned int Advertisement::id = 0;
+unsigned int Advertisement::nextId = 0;
 
+Advertisement::Advertisement(User* owner, string title){
+	this->title=title;
+	this->owner=owner;
+}
 
 Advertisement::Advertisement(User* owner, string title, Category category){
 	this->owner = owner;
@@ -14,7 +19,8 @@ Advertisement::Advertisement(User* owner, string title, Category category){
 	showName = true;
 	showEmail = true;
 	showPhoneNumber = true;
-	id++;
+	id = nextId;
+	nextId++;
 	views=0;
 	//TODO: get time and save as creationDate
 }
@@ -25,7 +31,7 @@ Advertisement::Advertisement(User* owner, string title, Category category, strin
 }
 
 Advertisement::~Advertisement(){
-	id--;
+	nextId--;
 }
 
 unsigned int Advertisement::getId() const{
@@ -67,3 +73,6 @@ bool Advertisement::searchForText(string text) const{
 	return false;
 }
 
+bool Advertisement::operator==(Advertisement* ad) const{
+	return (this->title == ad->title);
+}

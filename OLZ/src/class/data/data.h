@@ -70,7 +70,7 @@ public:
 	/**
 	 * @brief Removes advertisement from advertisement vector
 	 */
-	void removeAdvertisement(unsigned int id);
+	void removeAdvertisement(string title);
 	/**
 	 * @brief Added advertisement to advertisement vector
 	 */

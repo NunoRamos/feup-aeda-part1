@@ -1,12 +1,12 @@
 /**
-* @file purchase.h
-*
-* @brief Header file for class Purchase*/
+ * @file purchase.h
+ *
+ * @brief Header file for class Purchase*/
 
 /**
-* @file purchase.cpp
-*
-* @brief Code for class Purchase*/
+ * @file purchase.cpp
+ *
+ * @brief Code for class Purchase*/
 
 #ifndef PURCHASE_H
 #define PURCHASE_H
@@ -20,6 +20,14 @@ class Purchase : public Advertisement{
 private:
 
 public:
+	/**
+	 * @brief Purchase constructor
+	 *
+	 * @param owner Pointer to advertisement owner
+	 * @param title Advertisement title
+	 */
+	Purchase(User* owner, string title);
+
 	/**
 	 * @brief Purchase constructor
 	 *

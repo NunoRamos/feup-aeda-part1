@@ -1,12 +1,12 @@
 /**
-* @file advertisement.h
-*
-* @brief Header file for class Advertisement*/
+ * @file advertisement.h
+ *
+ * @brief Header file for class Advertisement*/
 
 /**
-* @file advertisement.cpp
-*
-* @brief Code for class Advertisement*/
+ * @file advertisement.cpp
+ *
+ * @brief Code for class Advertisement*/
 
 
 #ifndef ADVERTISEMENT_H
@@ -30,7 +30,8 @@ class User;//had to do this to allow cyclic calling of class
 class Advertisement{
 private:
 	unsigned int views; //< Number of times the advertisement has been seen
-	static unsigned int id; //< Advertisement identification number
+	unsigned int id; //< Advertisement identification number
+	static unsigned int nextId; //<Next advertisement identification number
 	string title; //< Advertisement title
 	Category category; //< Advertisement category
 	string description; //< Advertisement description
@@ -40,6 +41,14 @@ private:
 	User* owner; //< Pointer to owner of advertisement
 	//float price;
 public:
+	/**
+	 * @brief Constructor for class Advertisement
+	 *
+	 * @param owner Pointer to advertisement owner
+	 * @param title Advertisement title
+	 */
+	Advertisement(User* owner, string title);
+
 	/**
 	 * @brief Constructor for class Advertisement
 	 *
@@ -110,14 +119,15 @@ public:
 	bool searchForText(string text) const;
 
 	/**
-		 * @brief Displays ad
-		 *
-		 * @param height Height of menu to be printed
-		 * @param width Width of menu to be printed
-		 * @param borderChar Border character of menu to be printed
-		 */
+	 * @brief Displays ad
+	 *
+	 * @param height Height of menu to be printed
+	 * @param width Width of menu to be printed
+	 * @param borderChar Border character of menu to be printed
+	 */
 	virtual void displayAd(unsigned int height, unsigned int width, char borderChar) = 0;
 
+	bool operator==(Advertisement* ad) const;
 };
 
 

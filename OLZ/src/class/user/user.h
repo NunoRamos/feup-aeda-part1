@@ -18,6 +18,7 @@
 #include "../date/date.h"
 #include "../location/location.h"
 
+
 using namespace std;
 
 class Advertisement;//had to do this to allow cyclic calling of class

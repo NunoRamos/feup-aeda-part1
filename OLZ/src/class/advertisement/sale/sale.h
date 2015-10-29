@@ -1,12 +1,12 @@
 /**
-* @file sale.h
-*
-* @brief Header file for class Sale*/
+ * @file sale.h
+ *
+ * @brief Header file for class Sale*/
 
 /**
-* @file sale.cpp
-*
-* @brief Code for class Sale*/
+ * @file sale.cpp
+ *
+ * @brief Code for class Sale*/
 
 #ifndef SALE_H
 #define SALE_H
@@ -23,6 +23,13 @@ class Sale : public Advertisement{
 private:
 	Condition productCondition; //< Condition of product being sold
 public:
+	/**
+	 * @brief Sale constructor
+	 *
+	 * @param owner Pointer to advertisement owner
+	 * @param title Advertisement title
+	 */
+	Sale(User* owner, string title);
 	/**
 	 * @brief Sale constructor
 	 *

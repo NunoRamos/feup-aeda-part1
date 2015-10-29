@@ -1,4 +1,6 @@
 #include "user.h"
+#include "../../sequentialSearch.h"
+#include "../advertisement/purchase/purchase.h"
 
 unsigned int User::nextId=0;
 
@@ -94,20 +96,20 @@ istream& operator>>(istream& in, User user) {
 }
 
 void User::removeAdvertisement(string title) {
-	unsigned int i;
+	int i;
 
-	for (i = 0; i < advertisements.size(); i++) {
-		if (advertisements[i]->getTitle() == title)
-			break;
-	}
 
-	if (i != advertisements.size()) {
+	Advertisement* ad = new Purchase(this,title);
+
+	i = sequentialSearch(advertisements,ad);
+	if (i!=-1){
 		advertisements.erase(advertisements.begin() + i);
 	}
+
 }
 
-void User::addAdvertisement(Advertisement *newAdvertisment){
+void User::addAdvertisement(Advertisement *newAdvertisement){
 
-	advertisements.push_back(newAdvertisment);
+	advertisements.push_back(newAdvertisement);
 
 }
