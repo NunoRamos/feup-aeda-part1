@@ -93,11 +93,11 @@ istream& operator>>(istream& in, User user) {
 	return in;
 }
 
-void User::removeAdvertisement(unsigned int id) {
+void User::removeAdvertisement(string title) {
 	unsigned int i;
 
 	for (i = 0; i < advertisements.size(); i++) {
-		if (advertisements[i]->getId() == id)
+		if (advertisements[i]->getTitle() == title)
 			break;
 	}
 
