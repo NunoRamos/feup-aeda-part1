@@ -80,7 +80,10 @@ void dateTest() {
 void menuTest(){
 	Data* data = new Data();
 
-	//data->loadUsers();
+	data->loadUsers();
+
+	User u1("nunoramos@gmail.com", "oi" , "nuno","91",Date (29,10,2015),"maia");
+	data->addUser(u1);
 	OptionMenu menu(data, 20, 20, '?');
 	menu.addOption("Search", &search);
 	menu.addOption("Sign In", &signIn);
@@ -88,7 +91,7 @@ void menuTest(){
 	menu.addOption("Exit", &exitApp);
 	menu.createMenu();
 
-	//data->saveUsers();
+	data->saveUsers();
 }
 
 void runAllTests(int argc, char const *argv[]){

@@ -71,11 +71,13 @@ bool Data::saveUsers() {
 	stringstream ss;
 
 	userFile.open((path + "info.txt").c_str(), ofstream::out | ofstream::trunc);
-	if (userFile.is_open()) {
+	if (!userFile.is_open())
+		return false;
+
 		userFile << users.size();
 		userFile.close();
-	}
 
+		cout<<"oi";
 	for (unsigned int i = 0; i < users.size(); i++) {
 		ss << "user" << users[i].getId() << ".txt";
 		userFile.open((path + ss.str()).c_str(),

@@ -101,18 +101,20 @@ void exitApp(Data* data){
 }
 
 void signedInMenu(Data* data){
-	OptionMenu menu(data, 20, 20, '#');
+	OptionMenu menu(data, 20, 50, '#');
 	menu.addOption("Search", &search);
 	menu.addOption("Manage advertisements", &manageAds);
 	menu.addOption("Sign out", &signOut);
+	menu.createMenu();
 }
 
 void manageAds(Data* data){
-	OptionMenu menu(data, 20, 20, '#');
+	OptionMenu menu(data, 20, 50, '#');
 	menu.addOption("Create buying advertisement", &createBuyingAd);
 	menu.addOption("Create selling advertisement", &createSellingAd);
 	menu.addOption("Edit advertisement", &editAd);
 	menu.addOption("Delete advertisement", &removeAd);
+	menu.createMenu();
 }
 
 void createSellingAd(Data* data){
@@ -127,18 +129,16 @@ void createSellingAd(Data* data){
 	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
 	Category cat = Others;
 
-	cout << "Insert description. Ctrl + Z to end.\n";
-	while(!cin.eof()){
-		getline(cin, tmp);
-		description += tmp;
-	}
+	cout << "Insert description.\n";
+	getline(cin, description);
+
 	cin.clear();
 
 	cout << "What is your product condition?\n";
-		do{
-			getline(cin, condition);
-		}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
-		Condition cond = New;
+	do{
+		getline(cin, condition);
+	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
+	Condition cond = New;
 
 
 	Advertisement* ad = new Sale(data->getSignedInUser(), title, cat, description,cond);
@@ -157,11 +157,9 @@ void createBuyingAd(Data* data){
 	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
 	Category cat = Others;
 
-	cout << "Insert description. Ctrl + Z to end.\n";
-	while(!cin.eof()){
-		getline(cin, tmp);
-		description += tmp;
-	}
+	cout << "Insert description.\n";
+	getline(cin, description);
+
 	cin.clear();
 
 	Advertisement* ad = new Purchase(data->getSignedInUser(), title, cat, description);
@@ -169,7 +167,7 @@ void createBuyingAd(Data* data){
 }
 
 void editAd(Data* data){
-
+ //TODO implement function
 }
 
 void removeAd(Data* data){
