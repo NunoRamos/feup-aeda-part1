@@ -128,13 +128,12 @@ public:
 	 * @return Returns input stream
 	 */
 	friend istream& operator>>(istream& in, User user);
-
 	/**
 	 * @brief Removes advertisement from advertisements the user owns.
 	 *
-	 * @param id Advertisement identification number
+	 * @param title Advertisement title
 	 */
-	void removeAdvertisement(unsigned int id);
+	void removeAdvertisement(string title);
 	/**
 	 * @brief Addd advertisement to user advertisements.
 	 *
