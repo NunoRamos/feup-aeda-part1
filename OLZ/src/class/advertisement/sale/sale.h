@@ -38,6 +38,8 @@ public:
 	 * @brief Sale destructor
 	 */
 	~Sale();
+
+	void displayAd(unsigned int height, unsigned int width, char borderChar);
 };
 
 

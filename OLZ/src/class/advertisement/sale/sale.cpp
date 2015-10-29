@@ -7,3 +7,7 @@ Advertisement(owner, title, category, description){
 }
 
 Sale::~Sale(){ }
+
+void Sale::displayAd(unsigned int height, unsigned int width, char borderChar){
+
+}

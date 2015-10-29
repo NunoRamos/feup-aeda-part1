@@ -7,3 +7,7 @@ Purchase::Purchase(User* owner, string title, Category category, string descript
 }
 
 Purchase::~Purchase(){ }
+
+void Purchase::displayAd(unsigned int height, unsigned int width, char borderChar){
+
+}

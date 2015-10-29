@@ -1,9 +1,14 @@
+#include "menus.h"
+
 #include"class/menu/menu.h"
 #include"class/advertisement/advertisement.h"
+#include"class/advertisement/sale/sale.h"
+#include"class/advertisement/purchase/purchase.h"
 #include"class/data/data.h"
 #include"class/menu/searchMenu/searchMenu.h"
 #include<iostream>
 #include<stdlib.h>
+#include"class/menu/optionMenu/optionMenu.h"
 
 /*Menu Presentation
  *
@@ -104,13 +109,15 @@ void signedInMenu(Data* data){
 
 void manageAds(Data* data){
 	OptionMenu menu(data, 20, 20, '#');
-	menu.addOption("Create advertisement", &createAd);
+	menu.addOption("Create buying advertisement", &createBuyingAd);
+	menu.addOption("Create selling advertisement", &createSellingAd);
 	menu.addOption("Edit advertisement", &editAd);
 	menu.addOption("Delete advertisement", &removeAd);
 }
 
-void createAd(Data* data){
-	string title, description = "", tmp = "", category;
+void createSellingAd(Data* data){
+	string title, description = "", tmp = "", category, condition;
+
 	cout << "Title: ";
 	getline(cin, title);
 
@@ -120,15 +127,44 @@ void createAd(Data* data){
 	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
 	Category cat = Others;
 
-	cout << "Insert description. Ctrl + Z to end.\n"
+	cout << "Insert description. Ctrl + Z to end.\n";
 	while(!cin.eof()){
 		getline(cin, tmp);
 		description += tmp;
 	}
 	cin.clear();
 
+	cout << "What is your product condition?\n";
+		do{
+			getline(cin, condition);
+		}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
+		Condition cond = New;
 
-	Advertisement* ad(data->getSignedInUser(), title, cat, description);
+
+	Advertisement* ad = new Sale(data->getSignedInUser(), title, cat, description,cond);
+	data->getSignedInUser()->addAdvertisement(ad);
+}
+
+void createBuyingAd(Data* data){
+	string title, description = "", tmp = "", category, condition;
+
+	cout << "Title: ";
+	getline(cin, title);
+
+	cout << "What category does your advertisement fit into?\n";
+	do{
+		getline(cin, category);
+	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
+	Category cat = Others;
+
+	cout << "Insert description. Ctrl + Z to end.\n";
+	while(!cin.eof()){
+		getline(cin, tmp);
+		description += tmp;
+	}
+	cin.clear();
+
+	Advertisement* ad = new Purchase(data->getSignedInUser(), title, cat, description);
 	data->getSignedInUser()->addAdvertisement(ad);
 }
 
@@ -140,7 +176,7 @@ void removeAd(Data* data){
 	//temporary. will create a menu afterwards.
 	string title;
 	cout << "Insert the title of the advertisement you want to delete.\n";
-	data->getSignedInUser()->removeAdvertisement(title);
+	//data->getSignedInUser()->removeAdvertisement(title);
 }
 
 void signOut(Data* data){

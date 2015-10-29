@@ -34,6 +34,7 @@ public:
 	 * @brief Purchase destructor
 	 */
 	~Purchase();
+	void displayAd(unsigned int height, unsigned int width, char borderChar);
 };
 
 #endif
