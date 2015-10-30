@@ -12,11 +12,9 @@ public:
 	unsigned int getAdsPerPage();
 	void print();
 	void createMenu();
-	void setExitFunction(void (*exitFunction) (Data*));
 private:
 	vector<Advertisement* > results;
 	unsigned int page, pageMax, adsPerPage;
-	void (*exitFunction)(Data*);
 };
 
 #endif

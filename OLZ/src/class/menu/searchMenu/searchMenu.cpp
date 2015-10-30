@@ -9,7 +9,6 @@
 SearchMenu::SearchMenu(Data* data, vector<Advertisement* > results, unsigned int height, unsigned int width, char borderChar) :
 			Menu(data, height, width, borderChar){
 	this->results = results;
-	this->exitFunction = &exitApp;
 	page = 0;
 	adsPerPage = 7;
 	pageMax = results.size() / adsPerPage;
@@ -105,10 +104,5 @@ void SearchMenu::createMenu(){
 			page++;
 		createMenu();
 	}
-	else
-		exitFunction(data);
-}
 
-void SearchMenu::setExitFunction(void (*exitFunction) (Data*)){
-	this->exitFunction = exitFunction;
 }

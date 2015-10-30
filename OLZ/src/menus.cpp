@@ -35,6 +35,10 @@ void search(Data* data){
 	results = data->searchForAds(search);
 	SearchMenu menu(data, results);
 	menu.createMenu();
+	if(data->getSignedInUser() != NULL)
+		signedInMenu(data);
+	else
+		mainMenu(data);
 }
 
 void signIn(Data* data){
@@ -51,7 +55,7 @@ void signIn(Data* data){
 	if(data->signIn(email, password))
 		signedInMenu(data);
 	else{
-		cout << "Wrong email and password combination.";
+		cout << "Wrong email and password combination.\n";
 		mainMenu(data);
 	}
 }
