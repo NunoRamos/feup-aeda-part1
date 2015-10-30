@@ -1,6 +1,7 @@
 #include "user.h"
 #include "../../sequentialSearch.h"
 #include "../advertisement/purchase/purchase.h"
+#include <iostream>
 
 unsigned int User::nextId=0;
 
