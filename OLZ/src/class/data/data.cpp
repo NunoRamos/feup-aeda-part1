@@ -37,8 +37,12 @@ bool Data::signIn(string email, string password) {
 }
 
 bool Data::addUser(User user) { //may add a condition to see if a user with the same email already exists
-	users.push_back(user);
-	return true;
+	int i = -1; //sequentialSearch(users);
+		if (i != -1)
+			cout << "Client is already created\n";
+		else
+			users.push_back(user);
+		return true;
 }
 
 bool Data::loadUsers() {
@@ -46,7 +50,7 @@ bool Data::loadUsers() {
 	int numberOfFiles;
 	stringstream ss;
 
-	userFile.open((path + "info.txt").c_str(), ofstream::out | ofstream::trunc);
+	userFile.open((path + "info.txt").c_str());
 	if (!userFile.is_open())
 		return false;
 
@@ -54,14 +58,17 @@ bool Data::loadUsers() {
 	userFile.close();
 
 
+	User temp;
 
 	for (unsigned int i = 0; i < numberOfFiles; i++) {
 		ss << "user" << i << ".txt";
-		userFile.open((path + ss.str()).c_str(),
-				ofstream::out | ofstream::trunc);
+		userFile.open((path + ss.str()).c_str());
 		if (userFile.is_open()) {
-			userFile.close();
+			userFile >> temp;
+			users.push_back(temp);
+			cout << users[i].getName() << endl;
 		}
+		userFile.close();
 	}
 
 	return true;
@@ -69,32 +76,29 @@ bool Data::loadUsers() {
 
 bool Data::saveUsers() {
 	char separationChar = '\n';
-	ofstream userFile;
-	stringstream ss;
+		ofstream userFile;
+		stringstream ss;
 
-	userFile.open((path + "info.txt").c_str(), ofstream::out | ofstream::trunc);
-	if (!userFile.is_open())
-		return false;
+		userFile.open((path + "info.txt").c_str()); //ofstream::out | ofstream::trunc
+		if (!userFile.is_open())
+			return false;
 
 		userFile << users.size();
 		userFile.close();
 
-		cout<<"oi";
-	for (unsigned int i = 0; i < users.size(); i++) {
-		ss << "user" << users[i].getId() << ".txt";
-		userFile.open((path + ss.str()).c_str(),
-				ofstream::out | ofstream::trunc);
-		if (userFile.is_open()) {
-			userFile << users[i].getEmail() << separationChar
-					<< users[i].getPassword() << separationChar
-					<< users[i].getName() << separationChar
-					<< users[i].getPhoneNumber() << separationChar
-					<< users[i].getLocationString() << separationChar;
-			userFile.close();
-			cout << "Is open\n";
+		for (unsigned int i = 0; i < users.size(); i++) {
+			ss << "user" << users[i].getId() << ".txt";
+			userFile.open((path + ss.str()).c_str());
+			if (userFile.is_open()) {
+				userFile << users[i].getEmail() << separationChar
+						<< users[i].getPassword() << separationChar
+						<< users[i].getName() << separationChar
+						<< users[i].getPhoneNumber() << separationChar
+						<< users[i].getLocationString() << separationChar;
+				userFile.close();
+			}
 		}
-	}
-	return true;
+		return true;
 }
 
 void Data::removeAdvertisement(string title) {

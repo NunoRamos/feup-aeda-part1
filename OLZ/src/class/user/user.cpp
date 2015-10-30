@@ -1,6 +1,7 @@
 #include "user.h"
 #include "../../sequentialSearch.h"
 #include "../advertisement/purchase/purchase.h"
+#include <iostream>
 
 unsigned int User::nextId=0;
 
@@ -69,30 +70,37 @@ unsigned int User::getId() const{
 	return id;
 }
 istream& operator>>(istream& in, User user) {
-	char separationChar = '\n';
-	string line;
-	in >> line;
+	//char separationChar = '\n';
+		//string line;
+		//in >> line;
 
-	int cursor = line.find(separationChar);
-	user.email = line.substr(0, cursor);
+		/*int cursor = line.find(separationChar);
+		user.email = line.substr(0, cursor);
 
-	line = line.substr(cursor + 1);
-	cursor = line.find(separationChar);
-	user.password = line.substr(0, cursor);
+		line = line.substr(cursor + 1);
+		cursor = line.find(separationChar);
+		user.password = line.substr(0, cursor);
 
-	line = line.substr(cursor + 1);
-	cursor = line.find(separationChar);
-	user.name = line.substr(0, cursor);
+		line = line.substr(cursor + 1);
+		cursor = line.find(separationChar);
+		user.name = line.substr(0, cursor);
 
-	line = line.substr(cursor + 1);
-	cursor = line.find(separationChar);
-	user.phoneNumber = line.substr(0, cursor);
+		line = line.substr(cursor + 1);
+		cursor = line.find(separationChar);
+		user.phoneNumber = line.substr(0, cursor);
 
-	line = line.substr(cursor + 1);
-	cursor = line.find(separationChar);
-	user.location = Location(line);
+		line = line.substr(cursor + 1);
+		cursor = line.find(separationChar);
+		user.location = Location(line);*/
+		string loc;
+		getline(in,user.email);
+		getline(in,user.password);
+		getline(in,user.name);
+		getline(in,user.phoneNumber);
+		getline(in,loc);
+		user.location= Location(loc);
 
-	return in;
+		return in;
 }
 
 void User::removeAdvertisement(string title) {
@@ -112,4 +120,8 @@ void User::addAdvertisement(Advertisement *newAdvertisement){
 
 	advertisements.push_back(newAdvertisement);
 
+}
+
+bool User::operator==(const User & u1){
+	return(this->email==u1.email);
 }

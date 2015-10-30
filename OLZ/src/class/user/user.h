@@ -153,7 +153,7 @@ public:
 	 */
 	void editAdvertisement();
 
-
+	bool operator==(const User & u1);
 
 };
 
