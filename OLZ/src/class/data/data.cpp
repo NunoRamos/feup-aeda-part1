@@ -56,7 +56,7 @@ bool Data::loadUsers() {
 
 	userFile >> numberOfFiles;
 	userFile.close();
-
+	cout << numberOfFiles;
 
 	User temp;
 
@@ -69,6 +69,7 @@ bool Data::loadUsers() {
 			cout << users[i].getName() << endl;
 		}
 		userFile.close();
+		ss.str("");
 	}
 
 	return true;
@@ -93,6 +94,7 @@ bool Data::saveUsers() {
 				userFile << users[i];
 				userFile.close();
 			}
+			ss.str("");
 		}
 		return true;
 }

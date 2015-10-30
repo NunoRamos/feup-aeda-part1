@@ -61,7 +61,7 @@ unsigned int Date::getYear() const {
 	return year;
 }
 
-string Date::getString() const {
+string Date::toString() const {
 	stringstream ss;
 	ss << day << '/' << month << '/' << year;
 	return ss.str();
@@ -118,3 +118,7 @@ Date& Date::operator=(Date rhs) {
 	return *this;
 }
 
+ostream& operator<<(ostream& out, const Date &date){
+	out << date.toString();
+	return out;
+}

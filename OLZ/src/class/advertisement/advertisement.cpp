@@ -4,6 +4,7 @@
 
 #include<ctime>
 #include<chrono>
+#include<iostream>
 
 unsigned int Advertisement::nextId = 0;
 
@@ -78,6 +79,14 @@ bool Advertisement::operator==(Advertisement* ad) const{
 }
 
 ostream& operator<<(ostream& out, const Advertisement &ad){
-	int a = ad.views;
+	char separationChar = '\n';
+//TODO print category to file, not sure how.
+	out << ad.id << separationChar
+			<< ad.title << separationChar
+			<< ad.views << separationChar
+			<< ad.category << separationChar
+			<< ad.description << separationChar
+			<< ad.creationDate << separationChar;
+
 	return out;
 }

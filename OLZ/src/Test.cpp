@@ -49,9 +49,9 @@ void locationTest(){
 	Location l1("Maia", "Maia", "Porto");
 	Location l2("Maia, Maia, Porto");
 	Location l3 = l1;
-	ASSERT_EQUAL("Maia, Maia, Porto", l1.getString());
-	ASSERT_EQUAL("Maia, Maia, Porto", l2.getString());
-	ASSERT_EQUAL("Maia, Maia, Porto", l3.getString());
+	ASSERT_EQUAL("Maia, Maia, Porto", l1.toString());
+	ASSERT_EQUAL("Maia, Maia, Porto", l2.toString());
+	ASSERT_EQUAL("Maia, Maia, Porto", l3.toString());
 
 }
 
@@ -66,8 +66,8 @@ void dateTest() {
 	}
 
 	Date d3("1/12/2015");
-	ASSERT_EQUAL("1/1/1900", d1.getString());
-	ASSERT_EQUAL("1/12/2015", d3.getString());
+	ASSERT_EQUAL("1/1/1900", d1.toString());
+	ASSERT_EQUAL("1/12/2015", d3.toString());
 
 
 	ASSERT_EQUALM("1800 should not be a leap year.", false, Date::isLeapYear(1800));

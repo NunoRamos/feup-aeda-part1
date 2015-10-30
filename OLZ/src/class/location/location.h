@@ -51,7 +51,7 @@ public:
 	 *
 	 * @return Returns location in string format
 	 */
-	string getString() const;
+	string toString() const;
 
 	/**
 	 * @brief Gets city attribute
@@ -86,7 +86,7 @@ public:
 	 *
 	 * @return Returns output stream
 	 */
-	friend ostream& operator<<(ostream & os, Location location);
+	friend ostream& operator<<(ostream & os, const Location &location);
 };
 
 

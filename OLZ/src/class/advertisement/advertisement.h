@@ -144,7 +144,7 @@ public:
 	 *
 	 * @return Returns out stream
 	 */
-	friend ostream& operator<<(ostream& out, Advertisement* ad);
+	friend ostream& operator<<(ostream& out, const Advertisement &ad);
 };
 
 #endif

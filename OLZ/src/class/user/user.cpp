@@ -62,7 +62,7 @@ Location User::getLocation() const {
 }
 
 string User::getLocationString() const {
-	return location.getString();
+	return location.toString();
 }
 
 unsigned int User::getId() const{
@@ -127,8 +127,17 @@ bool User::operator==(const User & u1){
 }
 
 ostream& operator<<(ostream& out, const User &user){
+	char separationChar = '\n';
+
+	out << user.email << separationChar << user.password
+			<< separationChar << user.name
+			<< separationChar << user.phoneNumber
+			<< separationChar << user.signUpDate
+			<< separationChar << user.location
+			<< separationChar << user.id;
+
 	for(unsigned int i = 0; i < user.advertisements.size(); i++){
-			out << user.advertisements[i];
+			out << *user.advertisements[i];
 		}
 		return out;
 }
