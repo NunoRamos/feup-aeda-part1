@@ -125,3 +125,10 @@ void User::addAdvertisement(Advertisement *newAdvertisement){
 bool User::operator==(const User & u1){
 	return(this->email==u1.email);
 }
+
+ostream& operator<<(ostream& out, const User &user){
+	for(unsigned int i = 0; i < user.advertisements.size(); i++){
+			out << user.advertisements[i];
+		}
+		return out;
+}

@@ -76,3 +76,8 @@ bool Advertisement::searchForText(string text) const{
 bool Advertisement::operator==(Advertisement* ad) const{
 	return (this->title == ad->title);
 }
+
+ostream& operator<<(ostream& out, const Advertisement &ad){
+	int a = ad.views;
+	return out;
+}

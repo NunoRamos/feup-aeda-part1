@@ -90,11 +90,7 @@ bool Data::saveUsers() {
 			ss << "user" << users[i].getId() << ".txt";
 			userFile.open((path + ss.str()).c_str());
 			if (userFile.is_open()) {
-				userFile << users[i].getEmail() << separationChar
-						<< users[i].getPassword() << separationChar
-						<< users[i].getName() << separationChar
-						<< users[i].getPhoneNumber() << separationChar
-						<< users[i].getLocationString() << separationChar;
+				userFile << users[i];
 				userFile.close();
 			}
 		}
