@@ -108,13 +108,11 @@ istream& operator>>(istream& in, User user) {
 	return in;
 }
 
-Advertisement* User::removeAdvertisement(string title) {
-	Advertisement* ad = new Purchase(this, title);
+void User::removeAdvertisement(Advertisement* ad) {
 	int adIndex = sequentialSearch(advertisements, ad);
 	if (adIndex != -1) {
 		advertisements.erase(advertisements.begin() + adIndex);
 	}
-	return ad;
 }
 
 void User::addAdvertisement(Advertisement *newAdvertisement) {

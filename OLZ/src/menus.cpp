@@ -107,18 +107,12 @@ void exitApp(Data* data){
 void signedInMenu(Data* data){
 	OptionMenu menu(data);
 	menu.addOption("Search", &search);
-	menu.addOption("Manage advertisements", &manageAds);
-	menu.addOption("Sign out", &signOut);
-	menu.createMenu();
-}
-
-void manageAds(Data* data){
-	OptionMenu menu(data);
 	menu.addOption("Create buying advertisement", &createBuyingAd);
 	menu.addOption("Create selling advertisement", &createSellingAd);
 	menu.addOption("Edit advertisement", &editAd);
 	menu.addOption("Delete advertisement", &removeAd);
-	menu.addOption("Exit", &signedInMenu);
+	menu.addOption("Sign out", &signOut);
+	menu.addOption("Exit", &exitApp);
 	menu.createMenu();
 }
 
@@ -149,7 +143,7 @@ void createSellingAd(Data* data){
 	Advertisement* ad = new Sale(data->getSignedInUser(), title, cat, description,cond);
 	data->addAdvertisement(ad);
 	cout << "Ad has been successfully created";
-	manageAds(data);
+	signedInMenu(data);
 }
 
 void createBuyingAd(Data* data){
@@ -172,20 +166,21 @@ void createBuyingAd(Data* data){
 	Advertisement* ad = new Purchase(data->getSignedInUser(), title, cat, description);
 	data->addAdvertisement(ad);
 	cout << "Ad has been successfully created";
-	manageAds(data);
+	signedInMenu(data);
 }
 
 void editAd(Data* data){
  //TODO implement function
-	manageAds(data);
+	signedInMenu(data);
 }
 
 void removeAd(Data* data){
 	//temporary. will create a menu afterwards.
 	string title;
 	cout << "Insert the title of the advertisement you want to delete.\n";
-	data->removeAdvertisement(title);
-	cout << "Ad has been successfully created";
+	//data->removeAdvertisement(title);
+	cout << "WIP. Ad has been successfully removed.\n";
+	signedInMenu(data);
 }
 
 void signOut(Data* data){

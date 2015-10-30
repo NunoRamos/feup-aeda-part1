@@ -27,7 +27,7 @@ bool Data::signIn(const string &email, const string &password) {
 	tmp.setEmail(email);
 	int user = sequentialSearch(users, tmp);
 
-	if(user == -1)
+	if (user == -1)
 		return false;
 
 	if (users[user].signIn(password)) {
@@ -99,19 +99,15 @@ bool Data::saveUsers() {
 	return true;
 }
 
-void Data::removeAdvertisement(string title) {
-
-	int i;
-	Advertisement* ad = new Purchase(NULL, title);
-
+void Data::removeAdvertisement(Advertisement* ad) {
 	ad->getOwner()->removeAdvertisement(ad);
+	int adIndex = sequentialSearch(advertisements, ad);
 
-	i = sequentialSearch(advertisements, ad);
+	if (adIndex == -1)
+		return;
 
-	if (i != -1) {
-		delete advertisements[i];
-		advertisements.erase(advertisements.begin() + i);
-	}
+	delete advertisements[adIndex];
+	advertisements.erase(advertisements.begin() + adIndex);
 }
 
 void Data::addAdvertisement(Advertisement* ad) {

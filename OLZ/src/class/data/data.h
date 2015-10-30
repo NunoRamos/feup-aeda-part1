@@ -74,7 +74,7 @@ public:
 	/**
 	 * @brief Removes advertisement from advertisement vector
 	 */
-	void removeAdvertisement(string title);
+	void removeAdvertisement(Advertisement* ad);
 	/**
 	 * @brief Added advertisement to advertisement vector
 	 */

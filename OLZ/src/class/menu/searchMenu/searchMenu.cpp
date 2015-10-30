@@ -1,5 +1,6 @@
 #include "searchMenu.h"
 #include "../adDisplayMenu/adDisplayMenu.h"
+#include"../../../menus.h"
 #include <iostream>
 #include <sstream>
 #include <math.h>
@@ -8,6 +9,7 @@
 SearchMenu::SearchMenu(Data* data, vector<Advertisement* > results, unsigned int height, unsigned int width, char borderChar) :
 			Menu(data, height, width, borderChar){
 	this->results = results;
+	this->exitFunction = &exitApp;
 	page = 0;
 	adsPerPage = 7;
 	pageMax = results.size() / adsPerPage;
@@ -103,5 +105,10 @@ void SearchMenu::createMenu(){
 			page++;
 		createMenu();
 	}
-	//else call exitfunction
+	else
+		exitFunction(data);
+}
+
+void SearchMenu::setExitFunction(void (*exitFunction) (Data*)){
+	this->exitFunction = exitFunction;
 }

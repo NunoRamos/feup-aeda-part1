@@ -140,11 +140,9 @@ public:
 	/**
 	 * @brief Removes advertisement from advertisements the user owns.
 	 *
-	 * @param title Advertisement title
-	 *
-	 * @return Returns pointer to advertisement removed
+	 * @param title Advertisement
 	 */
-	Advertisement* removeAdvertisement(string title);
+	void removeAdvertisement(Advertisement* ad);
 	/**
 	 * @brief Addd advertisement to user advertisements.
 	 *
