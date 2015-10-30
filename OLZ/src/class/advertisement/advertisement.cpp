@@ -39,6 +39,10 @@ unsigned int Advertisement::getId() const{
 	return id;
 }
 
+User* Advertisement::getOwner() const{
+	return owner;
+}
+
 string Advertisement::getTitle() const{
 	return title;
 }

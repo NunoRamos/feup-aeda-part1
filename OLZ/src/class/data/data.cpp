@@ -19,30 +19,31 @@ Data::~Data() {
 	cin >> i;
 }
 
-bool Data::signIn(string email, string password) {
+bool Data::signIn(const string &email, const string &password) {
 	if (users.size() == 0)
 		return false;
 
-	unsigned int i;
-	for (i = 0; i < users.size(); i++) {
-		if (users[i].getEmail() == email)
-			break;
-	}
+	User tmp;
+	tmp.setEmail(email);
+	int user = sequentialSearch(users, tmp);
 
-	if (users[i].signIn(password)) {
-		signedInUser = &users[i];
+	if(user == -1)
+		return false;
+
+	if (users[user].signIn(password)) {
+		signedInUser = &users[user];
 		return true;
 	}
 	return false;
 }
 
-bool Data::addUser(User user) { //may add a condition to see if a user with the same email already exists
+bool Data::signUp(User user) { //may add a condition to see if a user with the same email already exists
 	int i = -1; //sequentialSearch(users);
-		if (i != -1)
-			cout << "Client is already created\n";
-		else
-			users.push_back(user);
-		return true;
+	if (i != -1)
+		cout << "Client is already created\n";
+	else
+		users.push_back(user);
+	return true;
 }
 
 bool Data::loadUsers() {
@@ -56,7 +57,6 @@ bool Data::loadUsers() {
 
 	userFile >> numberOfFiles;
 	userFile.close();
-	cout << numberOfFiles;
 
 	User temp;
 
@@ -77,46 +77,46 @@ bool Data::loadUsers() {
 
 bool Data::saveUsers() {
 	char separationChar = '\n';
-		ofstream userFile;
-		stringstream ss;
+	ofstream userFile;
+	stringstream ss;
 
-		userFile.open((path + "info.txt").c_str()); //ofstream::out | ofstream::trunc
-		if (!userFile.is_open())
-			return false;
+	userFile.open((path + "info.txt").c_str()); //ofstream::out | ofstream::trunc
+	if (!userFile.is_open())
+		return false;
 
-		userFile << users.size();
-		userFile.close();
+	userFile << users.size();
+	userFile.close();
 
-		for (unsigned int i = 0; i < users.size(); i++) {
-			ss << "user" << users[i].getId() << ".txt";
-			userFile.open((path + ss.str()).c_str());
-			if (userFile.is_open()) {
-				userFile << users[i];
-				userFile.close();
-			}
-			ss.str("");
+	for (unsigned int i = 0; i < users.size(); i++) {
+		ss << "user" << users[i].getId() << ".txt";
+		userFile.open((path + ss.str()).c_str());
+		if (userFile.is_open()) {
+			userFile << users[i];
+			userFile.close();
 		}
-		return true;
+		ss.str("");
+	}
+	return true;
 }
 
 void Data::removeAdvertisement(string title) {
 
 	int i;
-	Advertisement* ad = new Purchase(NULL,title);
+	Advertisement* ad = new Purchase(NULL, title);
 
-	i=sequentialSearch(advertisements,ad);
+	ad->getOwner()->removeAdvertisement(ad);
 
+	i = sequentialSearch(advertisements, ad);
 
-	if (i !=-1) {
+	if (i != -1) {
 		delete advertisements[i];
 		advertisements.erase(advertisements.begin() + i);
 	}
-
-
 }
 
 void Data::addAdvertisement(Advertisement* ad) {
 	advertisements.push_back(ad);
+	ad->getOwner()->addAdvertisement(ad);
 }
 
 vector<Advertisement*> Data::searchForAds(string text) {

@@ -46,7 +46,7 @@ public:
 	 *
 	 * @return Returns true if the user has successfully signed in
 	 */
-	bool signIn(string email, string password);
+	bool signIn(const string &email, const string &password);
 
 	/**
 	 * @brief Add user to User vector
@@ -55,7 +55,7 @@ public:
 	 *
 	 * @return Returns true if the user has been successfully added
 	 */
-	bool addUser(User user);
+	bool signUp(User user);
 
 	/**
 	 * @brief Loads users to user vector from path

@@ -114,6 +114,14 @@ public:
 	 * @return Returns user Id
 	 */
 	unsigned int getId() const;
+
+	/**
+	 * @brief Sets user email
+	 *
+	 * @email User email
+	 */
+	void setEmail(string email);
+
 	/**
 	 * @brief Signs in user
 	 *
@@ -133,8 +141,10 @@ public:
 	 * @brief Removes advertisement from advertisements the user owns.
 	 *
 	 * @param title Advertisement title
+	 *
+	 * @return Returns pointer to advertisement removed
 	 */
-	void removeAdvertisement(string title);
+	Advertisement* removeAdvertisement(string title);
 	/**
 	 * @brief Addd advertisement to user advertisements.
 	 *
@@ -155,7 +165,7 @@ public:
 	 *
 	 * @return Returns true if this and u1 have the same email. Returns false otherwise.
 	 */
-	bool operator==(const User & u1);
+	bool operator==(const User & u1) const;
 
 	/**
 	 * @brief Saves user and every advertisement he/she owns

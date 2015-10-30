@@ -81,6 +81,13 @@ public:
 	unsigned int getId() const;
 
 	/**
+	 * @brief Gets advertisement owner
+	 *
+	 * @return Pointer to advertisement owner
+	 */
+	User* getOwner() const;
+
+	/**
 	 * @brief Gets advertisement title
 	 *
 	 * @return Returns advertisement title

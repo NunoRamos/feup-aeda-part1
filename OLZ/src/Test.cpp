@@ -83,8 +83,10 @@ void menuTest(){
 	data->loadUsers();
 
 	User u1("nunoramos@gmail.com", "oi" , "nuno","91",Date (29,10,2015),"maia");
-	data->addUser(u1);
-	OptionMenu menu(data, 20, 20, '?');
+	data->signUp(u1);
+	User u2("a@b.c", "oi" , "nuno","91",Date (29,10,2015),"maia");
+	data->signUp(u2);
+	OptionMenu menu(data);
 	menu.addOption("Search", &search);
 	menu.addOption("Sign In", &signIn);
 	menu.addOption("Sign Up", &signUp);
