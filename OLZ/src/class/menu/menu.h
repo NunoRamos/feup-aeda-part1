@@ -9,7 +9,6 @@ using namespace std;
 
 class Menu{
 public:
-	Menu(Data* data, unsigned int height, unsigned int width);
 	Menu(Data* data, unsigned int height, unsigned int width, char borderChar);
 	void setBorderChar(char borderChar);
 	char getBorderChar();

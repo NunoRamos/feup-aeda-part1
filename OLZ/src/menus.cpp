@@ -33,7 +33,7 @@ void search(Data* data){
 	getline(cin, search);
 	vector<Advertisement* > results;
 	results = data->searchForAds(search);
-	SearchMenu menu(data,20,20,results);
+	SearchMenu menu(data, results);
 	menu.createMenu();
 }
 

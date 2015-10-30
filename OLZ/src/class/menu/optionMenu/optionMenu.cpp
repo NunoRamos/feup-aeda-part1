@@ -2,9 +2,6 @@
 #include <iostream>
 #include <sstream>
 
-OptionMenu::OptionMenu(Data* data, unsigned int height, unsigned int width) :
-Menu(data, height, width){ }
-
 OptionMenu::OptionMenu(Data* data, unsigned int height, unsigned int width, char borderChar) :
 						Menu(data, height, width, borderChar){ }
 

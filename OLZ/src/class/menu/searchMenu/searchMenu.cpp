@@ -5,17 +5,8 @@
 #include <math.h>
 #include <stdlib.h>
 
-SearchMenu::SearchMenu(Data* data, unsigned int height, unsigned int width, vector<Advertisement*> results) :
-Menu(data, height, width){
-	this->results = results;
-	page = 0;
-	adsPerPage = 7;
-	pageMax = results.size() / adsPerPage;
-}
-
-SearchMenu::SearchMenu(Data* data, unsigned int height, unsigned int width, char borderChar,
-		vector<Advertisement*> results) :
-													Menu(data, height, width, borderChar){
+SearchMenu::SearchMenu(Data* data, vector<Advertisement* > results, unsigned int height, unsigned int width, char borderChar) :
+			Menu(data, height, width, borderChar){
 	this->results = results;
 	page = 0;
 	adsPerPage = 7;
@@ -99,7 +90,7 @@ void SearchMenu::createMenu(){
 	cin.clear();
 
 	if(input <= adLimit){ //ad options
-		AdDisplayMenu displayAd(data, height, width, borderChar, results[page*adsPerPage+input]);
+		AdDisplayMenu displayAd(data, results[page*adsPerPage+input], height, width, borderChar);
 		displayAd.createMenu();
 	}
 	else if(input == adLimit + 1){ //back
@@ -112,4 +103,5 @@ void SearchMenu::createMenu(){
 			page++;
 		createMenu();
 	}
+	//else call exitfunction
 }

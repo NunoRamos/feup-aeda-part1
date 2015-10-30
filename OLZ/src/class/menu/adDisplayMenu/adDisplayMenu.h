@@ -8,8 +8,7 @@ using namespace std;
 
 class AdDisplayMenu : public Menu{
 public:
-	AdDisplayMenu(Data* data, unsigned int height, unsigned int width, Advertisement* ad);
-	AdDisplayMenu(Data* data, unsigned int height, unsigned int width, char borderChar, Advertisement* ad);
+	AdDisplayMenu(Data* data, Advertisement* ad, unsigned int height = 20, unsigned int width = 50, char borderChar = '#');
 	void print();
 	void createMenu();
 private:
