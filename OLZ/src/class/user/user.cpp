@@ -71,10 +71,10 @@ unsigned int User::getId() const{
 }
 istream& operator>>(istream& in, User user) {
 	//char separationChar = '\n';
-		//string line;
-		//in >> line;
+	//string line;
+	//in >> line;
 
-		/*int cursor = line.find(separationChar);
+	/*int cursor = line.find(separationChar);
 		user.email = line.substr(0, cursor);
 
 		line = line.substr(cursor + 1);
@@ -92,15 +92,15 @@ istream& operator>>(istream& in, User user) {
 		line = line.substr(cursor + 1);
 		cursor = line.find(separationChar);
 		user.location = Location(line);*/
-		string loc;
-		getline(in,user.email);
-		getline(in,user.password);
-		getline(in,user.name);
-		getline(in,user.phoneNumber);
-		getline(in,loc);
-		user.location= Location(loc);
+	string loc;
+	getline(in,user.email);
+	getline(in,user.password);
+	getline(in,user.name);
+	getline(in,user.phoneNumber);
+	getline(in,loc);
+	user.location= Location(loc);
 
-		return in;
+	return in;
 }
 
 void User::removeAdvertisement(string title) {

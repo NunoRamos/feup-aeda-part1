@@ -97,6 +97,7 @@ void signUp(Data* data){
 }
 
 void exitApp(Data* data){
+	data->saveUsers();
 	exit(0);
 }
 
