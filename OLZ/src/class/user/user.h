@@ -35,8 +35,8 @@ protected:
 	string phoneNumber; //< User phone number
 	Date signUpDate; //< User sign up date
 	Location location; //< User location
-	unsigned int id;
-	static unsigned int nextId;
+	unsigned int id; //< User identification number
+	static unsigned int nextId; //< Next user identification number
 public:
 	/**
 	 * @brief User default constructor
@@ -114,6 +114,14 @@ public:
 	 * @return Returns user Id
 	 */
 	unsigned int getId() const;
+
+	/**
+	 * @brief Sets user email
+	 *
+	 * @email User email
+	 */
+	void setEmail(string email);
+
 	/**
 	 * @brief Signs in user
 	 *
@@ -132,29 +140,40 @@ public:
 	/**
 	 * @brief Removes advertisement from advertisements the user owns.
 	 *
-	 * @param title Advertisement title
+	 * @param title Advertisement
 	 */
-	void removeAdvertisement(string title);
+	void removeAdvertisement(Advertisement* ad);
 	/**
 	 * @brief Addd advertisement to user advertisements.
 	 *
 	 * @param newAdvertisement Pointer to New Advertisement
-	 *
-	 *
 	 */
 
 	void addAdvertisement(Advertisement *newAdvertisement);
+
 	/**
-	 * @brief Edit advertisement to user advertisements.
-	 *
-	 *
-	 *
-	 *
+	 * @brief Edits a user advertisement.
 	 */
 	void editAdvertisement();
 
-	bool operator==(const User & u1);
+	/**
+	 * @brief Compares if this user is equal to u1, using email attribute.
+	 *
+	 * @param u1 User to be compared with
+	 *
+	 * @return Returns true if this and u1 have the same email. Returns false otherwise.
+	 */
+	bool operator==(const User & u1) const;
 
+	/**
+	 * @brief Saves user and every advertisement he/she owns
+	 *
+	 * @param out Output file
+	 * @param user User to print
+	 *
+	 * @return Returns out stream
+	 */
+	friend ostream& operator<<(ostream& out, const User &user);
 };
 
 #endif

@@ -15,7 +15,6 @@ public:
 private:
 	vector<Advertisement* > results;
 	unsigned int page, pageMax, adsPerPage;
-	void (*exitFunction)(Data*);
 };
 
 #endif

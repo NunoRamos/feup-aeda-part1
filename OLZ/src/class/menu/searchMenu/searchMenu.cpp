@@ -1,5 +1,6 @@
 #include "searchMenu.h"
 #include "../adDisplayMenu/adDisplayMenu.h"
+#include"../../../menus.h"
 #include <iostream>
 #include <sstream>
 #include <math.h>
@@ -103,5 +104,5 @@ void SearchMenu::createMenu(){
 			page++;
 		createMenu();
 	}
-	//else call exitfunction
+
 }

@@ -4,6 +4,7 @@
 
 #include<ctime>
 #include<chrono>
+#include<iostream>
 
 unsigned int Advertisement::nextId = 0;
 
@@ -36,6 +37,10 @@ Advertisement::~Advertisement(){
 
 unsigned int Advertisement::getId() const{
 	return id;
+}
+
+User* Advertisement::getOwner() const{
+	return owner;
 }
 
 string Advertisement::getTitle() const{
@@ -74,5 +79,18 @@ bool Advertisement::searchForText(string text) const{
 }
 
 bool Advertisement::operator==(Advertisement* ad) const{
-	return (this->title == ad->title);
+	return (this->id == ad->id);
+}
+
+ostream& operator<<(ostream& out, const Advertisement &ad){
+	char separationChar = '\n';
+//TODO print category to file, not sure how.
+	//does not print id
+	out << ad.title << separationChar
+			<< ad.views << separationChar
+			<< ad.category << separationChar
+			<< ad.description << separationChar
+			<< ad.creationDate << separationChar;
+
+	return out;
 }

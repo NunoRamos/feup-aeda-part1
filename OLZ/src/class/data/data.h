@@ -26,14 +26,18 @@ private:
 	vector<Advertisement*> advertisements; //< Vector of pointers to all advertisements
 	vector<User> users; //< Vector of all users
 	User* signedInUser; //< Pointer to user that is currently signed in
-	const string path = "C:/Users/Nuno/git/OLZ/OLZ/data/"; //< used to save and load users. still not fully implemented
+	const string path = "C:/Users/Nuno/git/OLZ/OLZ/data/";//const string path = "/data/"; //< used to save and load users. still not fully implemented
 public:
 	/**
 	 * @brief Constructor for class Data
 	 */
 	Data();
 
+	/**
+	 * @brief Destructor for class Data. Deletes all advertisements.
+	 */
 	~Data();
+
 	/**
 	 * @brief Sign user in
 	 *
@@ -42,7 +46,7 @@ public:
 	 *
 	 * @return Returns true if the user has successfully signed in
 	 */
-	bool signIn(string email, string password);
+	bool signIn(const string &email, const string &password);
 
 	/**
 	 * @brief Add user to User vector
@@ -51,7 +55,7 @@ public:
 	 *
 	 * @return Returns true if the user has been successfully added
 	 */
-	bool addUser(User user);
+	bool signUp(User user);
 
 	/**
 	 * @brief Loads users to user vector from path
@@ -70,7 +74,7 @@ public:
 	/**
 	 * @brief Removes advertisement from advertisement vector
 	 */
-	void removeAdvertisement(string title);
+	void removeAdvertisement(Advertisement* ad);
 	/**
 	 * @brief Added advertisement to advertisement vector
 	 */

@@ -28,7 +28,7 @@ class User;//had to do this to allow cyclic calling of class
  * @brief Advertisement class
  */
 class Advertisement{
-private:
+protected:
 	unsigned int views; //< Number of times the advertisement has been seen
 	unsigned int id; //< Advertisement identification number
 	static unsigned int nextId; //<Next advertisement identification number
@@ -81,6 +81,13 @@ public:
 	unsigned int getId() const;
 
 	/**
+	 * @brief Gets advertisement owner
+	 *
+	 * @return Pointer to advertisement owner
+	 */
+	User* getOwner() const;
+
+	/**
 	 * @brief Gets advertisement title
 	 *
 	 * @return Returns advertisement title
@@ -127,9 +134,24 @@ public:
 	 */
 	virtual void displayAd(unsigned int height, unsigned int width, char borderChar) = 0;
 
+	/**
+	 * @brief Compares two ads by they title
+	 *
+	 * @param ad Pointer to ad to compare with.
+	 *
+	 * @return Returns true if their titles match.
+	 */
 	bool operator==(Advertisement* ad) const;
+
+	/**
+	 * @brief Prints advertisement to out
+	 *
+	 * @param out Out stream
+	 * @param ad Pointer to advertisement to print
+	 *
+	 * @return Returns out stream
+	 */
+	friend ostream& operator<<(ostream& out, const Advertisement &ad);
 };
-
-
 
 #endif

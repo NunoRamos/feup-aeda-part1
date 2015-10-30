@@ -92,7 +92,7 @@ public:
 	 *
 	 * @return Returns date in string format
 	 */
-	string getString() const;
+	string toString() const;
 
 	/**
 	 * @brief Date assignment operator
@@ -122,6 +122,16 @@ public:
 	 * @return Returns true if the parameter is a leap year. Returns false otherwise.
 	 */
 	static bool isLeapYear(unsigned int year);
+
+	/**
+	 * @brief Prints date to out stream
+	 *
+	 * @param out Out stream
+	 * @param date Date to be printed
+	 *
+	 * @return Returns out stream
+	 */
+	friend ostream& operator<<(ostream& out, const Date &date);
 };
 
 #endif

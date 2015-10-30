@@ -18,7 +18,7 @@ Location::Location(string location){
 	this->district = temp.substr(temp.find(",")+2);
 }
 
-string Location::getString() const{
+string Location::toString() const{
 	return city + ", " + county + ", " + district;
 }
 
@@ -41,8 +41,8 @@ Location& Location::operator=(const Location& rhs){
 	return *this;
 }
 
-ostream& operator<<(ostream & os, Location location){
-	os << location.getString();
+ostream& operator<<(ostream & os, const Location &location){
+	os << location.toString();
 	return os;
 }
 
