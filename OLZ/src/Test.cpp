@@ -94,6 +94,8 @@ void menuTest(){
 	menu.createMenu();
 
 	data->saveUsers();
+	int n;
+	cin>>n;
 }
 
 void runAllTests(int argc, char const *argv[]){

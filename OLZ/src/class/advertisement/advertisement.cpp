@@ -5,6 +5,7 @@
 #include<ctime>
 #include<chrono>
 #include<iostream>
+#include<sstream>
 
 unsigned int Advertisement::nextId = 0;
 
@@ -93,4 +94,26 @@ ostream& operator<<(ostream& out, const Advertisement &ad){
 			<< ad.creationDate << separationChar;
 
 	return out;
+}
+
+
+istream& operator>>(istream& in, Advertisement &ad){
+	stringstream ss;
+	string temp;
+	//TODO print category from file to variable, not sure how.
+
+		getline(in,ad.title);
+		getline(in,temp);
+		ss<<temp;
+		ss>>ad.views;
+		getline(in,ad.title);
+		/*getline(in,temp);
+		ss<<temp;
+		ss>>ad.category;*/
+		getline(in,ad.description);
+		getline(in,temp);
+		Date d1(temp);
+		ad.creationDate=d1;
+
+		return in;
 }

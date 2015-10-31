@@ -60,13 +60,12 @@ bool Data::loadUsers() {
 
 	User temp;
 
-	for (unsigned int i = 0; i < numberOfFiles; i++) {
+	for (unsigned int i = 1; i <= numberOfFiles; i++) {
 		ss << "user" << i << ".txt";
 		userFile.open((path + ss.str()).c_str());
 		if (userFile.is_open()) {
 			userFile >> temp;
 			users.push_back(temp);
-			cout << users[i].getName() << endl;
 		}
 		userFile.close();
 		ss.str("");

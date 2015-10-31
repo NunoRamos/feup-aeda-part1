@@ -74,12 +74,12 @@ void User::setEmail(string email) {
 	this->email = email;
 }
 
-istream& operator>>(istream& in, User user) {
-	//char separationChar = '\n';
-	//string line;
-	//in >> line;
+istream& operator>>(istream& in, User &user) {
+	/*char separationChar = '\n';
+	string line;
+	in >> line;
 
-	/*int cursor = line.find(separationChar);
+	int cursor = line.find(separationChar);
 		user.email = line.substr(0, cursor);
 
 	 line = line.substr(cursor + 1);
@@ -104,6 +104,10 @@ istream& operator>>(istream& in, User user) {
 	getline(in, user.phoneNumber);
 	getline(in, loc);
 	user.location = Location(loc);
+
+	for (unsigned int i = 0; i < user.advertisements.size(); i++) {
+			in >> *user.advertisements[i];
+		}
 
 	return in;
 }

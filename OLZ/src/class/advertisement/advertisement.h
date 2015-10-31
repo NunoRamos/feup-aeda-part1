@@ -152,6 +152,16 @@ public:
 	 * @return Returns out stream
 	 */
 	friend ostream& operator<<(ostream& out, const Advertisement &ad);
+
+	/**
+	 * @brief Reads advertisement to in
+	 *
+	 * @param in In stream
+	 * @param ad Pointer to advertisement to write on
+	 *
+	 * @return Returns in stream
+	 */
+	friend istream& operator>>(istream& in, Advertisement &ad);
 };
 
 #endif

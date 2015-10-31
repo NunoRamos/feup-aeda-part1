@@ -136,7 +136,8 @@ public:
 	 *
 	 * @return Returns input stream
 	 */
-	friend istream& operator>>(istream& in, User user);
+	friend istream& operator>>(istream& in, User &user);
+
 	/**
 	 * @brief Removes advertisement from advertisements the user owns.
 	 *
