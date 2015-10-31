@@ -110,6 +110,7 @@ istream& operator>>(istream& in, Advertisement &ad){
 		getline(in,temp);   //learn how to read to variable category
 		/*ss<<temp;
 		ss>>ad.category;*/
+		ad.category=Job;
 		getline(in,ad.description);
 		getline(in,temp);
 		Date d1(temp);
