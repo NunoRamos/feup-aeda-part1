@@ -107,8 +107,8 @@ istream& operator>>(istream& in, Advertisement &ad){
 		ss<<temp;
 		ss>>ad.views;
 		getline(in,ad.title);
-		/*getline(in,temp);
-		ss<<temp;
+		getline(in,temp);   //learn how to read to variable category
+		/*ss<<temp;
 		ss>>ad.category;*/
 		getline(in,ad.description);
 		getline(in,temp);
