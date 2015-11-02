@@ -37,8 +37,8 @@ bool Data::signIn(const string &email, const string &password) {
 	return false;
 }
 
-bool Data::signUp(User user) { //may add a condition to see if a user with the same email already exists
-	int i = -1; //sequentialSearch(users);
+bool Data::signUp(User &user) { //may add a condition to see if a user with the same email already exists
+	int i = sequentialSearch(users,user);
 	if (i != -1)
 		cout << "Client is already created\n";
 	else
@@ -60,7 +60,7 @@ bool Data::loadUsers() {
 
 	User temp;
 
-	for (unsigned int i = 1; i <= numberOfFiles; i++) {
+	for (unsigned int i = 0; i < numberOfFiles; i++) {
 		ss << "user" << i << ".txt";
 		userFile.open((path + ss.str()).c_str());
 		if (userFile.is_open()) {
@@ -87,7 +87,7 @@ bool Data::saveUsers() {
 	userFile.close();
 
 	for (unsigned int i = 0; i < users.size(); i++) {
-		ss << "user" << users[i].getId() << ".txt";
+		ss << "user" << i << ".txt";
 		userFile.open((path + ss.str()).c_str());
 		if (userFile.is_open()) {
 			userFile << users[i];

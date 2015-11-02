@@ -96,7 +96,8 @@ void signUp(Data* data){
 
 	Date signUpDate(25,10,2015);//still have to get date as of now
 
-	data->signUp(User(email, passwordOne, name, phoneNumber, loc));
+	User u1(email, passwordOne, name, phoneNumber, loc);
+	data->signUp(u1);
 	cout << loc;
 	cout << "\nYour profile has been created. You may now sign in.\n";
 	mainMenu(data);
