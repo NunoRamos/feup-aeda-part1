@@ -6,8 +6,6 @@
 //unsigned int User::nextId = 0;
 
 User::User() {
-	/*id = nextId;
-	nextId++;*/
 	showEmail = true;
 	showName = true;
 	showPhoneNumber = true;
@@ -115,10 +113,11 @@ ostream& operator<<(ostream& out, const User &user) {
 
 	out << user.email << separationChar << user.password << separationChar
 			<< user.name << separationChar << user.phoneNumber << separationChar
-			<< user.location ;
+			<< user.location <<separationChar;
 
 	for (unsigned int i = 0; i < user.advertisements.size(); i++) {
 		out << *user.advertisements[i];
 	}
+
 	return out;
 }

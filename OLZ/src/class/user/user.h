@@ -175,6 +175,8 @@ public:
 	 * @return Returns out stream
 	 */
 	friend ostream& operator<<(ostream& out, const User &user);
+
+	vector<Advertisement *>  getAdvertisement(){return advertisements;};
 };
 
 #endif

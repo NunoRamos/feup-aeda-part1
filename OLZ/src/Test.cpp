@@ -9,6 +9,7 @@
 #include "class/date/date.h"
 #include "class/location/location.h"
 #include "class/advertisement/advertisement.h"
+#include "class/advertisement/purchase/purchase.h"
 #include "class/data/data.h"
 #include "enums.h"
 
@@ -82,10 +83,14 @@ void menuTest(){
 
 	data->loadUsers();
 
-	User u1("nunoramos@gmail.com", "oi" , "nuno","91","Maia, Maia, Porto");
+	/*User u1("nunoramos@gmail.com", "oi" , "nuno","91","Maia, Maia, Porto");
 	data->signUp(u1);
-	User u2("a@b.c", "oi" , "nuno","91","Maia, Maia, Porto");
-	data->signUp(u2);
+	//string title="Compro nocao do bernardo";
+	//Purchase* p1=new Purchase(&data->getUsers[0],title);
+	//data->addAdvertisement(p1);
+	cout<<data->getUsers()[0].getAdvertisement()[0]->getTitle()<<endl;
+	User u2("a@b.c", "oi" , "bernardo","91","Maia, Maia, Porto");
+	data->signUp(u2);*/
 	OptionMenu menu(data);
 	menu.addOption("Search", &search);
 	menu.addOption("Sign In", &signIn);
@@ -94,8 +99,6 @@ void menuTest(){
 	menu.createMenu();
 
 	data->saveUsers();
-	int n;
-	cin>>n;
 }
 
 void runAllTests(int argc, char const *argv[]){

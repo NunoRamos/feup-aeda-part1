@@ -90,6 +90,8 @@ public:
 	void signOut();
 
 	User* getSignedInUser() const;
+
+	vector<User> getUsers(){return users;};
 };
 
 //Better option may be writing to a binary file and end every input with \n
