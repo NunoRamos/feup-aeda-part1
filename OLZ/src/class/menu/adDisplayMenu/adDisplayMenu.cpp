@@ -7,6 +7,7 @@ AdDisplayMenu::AdDisplayMenu(Data* data, Advertisement* ad, unsigned int height,
 		unsigned int width, char borderChar) :
 		Menu(data, height, width, borderChar) {
 	this->ad = ad;
+	ad->incrementViews();
 }
 
 void AdDisplayMenu::print() {
@@ -67,6 +68,10 @@ void AdDisplayMenu::print() {
 		}
 		emptyLine();
 	}
+	stringstream ss;
+	ss << ad->getViews();
+	cout << borderChar << " Views: " << ss.str() << string(width-2-8-ss.str().length(), ' ') << borderChar << endl;
+	emptyLine();
 
 	//im interested
 	string imInterested = " 1 - I'm interested";

@@ -51,6 +51,10 @@ string Advertisement::getDescription() const{
 	return description;
 }
 
+unsigned int Advertisement::getViews() const{
+	return views;
+}
+
 string Advertisement::getImageAt(unsigned int index) const{
 	return imagesPath[index];
 }

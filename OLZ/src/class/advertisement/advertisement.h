@@ -101,6 +101,13 @@ public:
 	 */
 	string getDescription() const;
 
+	/**
+	 * @brief Gets number of views the advertisement has had
+	 *
+	 * @return Returns views
+	 */
+	unsigned int getViews() const;
+
 	string getImageAt(unsigned int index) const;//still to decide what to do with this
 	void addImage(string path);
 
