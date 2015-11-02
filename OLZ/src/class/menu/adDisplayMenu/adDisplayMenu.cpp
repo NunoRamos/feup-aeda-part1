@@ -70,24 +70,49 @@ void AdDisplayMenu::print() {
 	}
 	stringstream ss;
 	ss << ad->getViews();
-	cout << borderChar << " Views: " << ss.str() << string(width-2-8-ss.str().length(), ' ') << borderChar << endl;
+	cout << borderChar << " Views: " << ss.str()
+			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+			<< endl;
 	emptyLine();
 
 	ss.str("");
 	ss << ad->getPrice() << "  ";
-	if(!ad->isPriceNegotiable())
+	if (!ad->isPriceNegotiable())
 		ss << "Non-";
 	ss << "Negotiable";
-	cout << borderChar << " Price: " << ss.str() << string(width-2-8-ss.str().length(), ' ') << borderChar << endl;
+	cout << borderChar << " Price: " << ss.str()
+			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+			<< endl;
 	emptyLine();
 
-	//im interested
-	string imInterested = " 1 - I'm interested";
-	string exit = " 2 - Exit";
-	cout << borderChar << imInterested
-			<< string(width - imInterested.length() - 2, ' ') << borderChar
-			<< endl;
-	cout << borderChar << exit << string(width - exit.length() - 2, ' ')
+	unsigned int i = 1;
+	if (data->getSignedInUser() == ad->getOwner()) {
+		string editTitle = "1 - Edit title";
+		cout << borderChar << " " << editTitle
+				<< string(width - 3 - editTitle.length(), ' ') << borderChar
+				<< endl;
+		string editDescription = "2 - Edit description";
+		cout << borderChar << " " << editDescription
+				<< string(width - 3 - editDescription.length(), ' ')
+				<< borderChar << endl;
+		string editCategory = "3 - Edit category";
+		cout << borderChar << " " << editCategory
+				<< string(width - 3 - editCategory.length(), ' ') << borderChar
+				<< endl;
+		string editPrice = "4 - Edit price";
+		cout << borderChar << " " << editPrice
+				<< string(width - 3 - editPrice.length(), ' ') << borderChar
+				<< endl;
+	} else {
+		string imInterested = " 1 - I'm interested";
+		i = 1;
+		cout << borderChar << imInterested
+				<< string(width - imInterested.length() - 2, ' ') << borderChar
+				<< endl;
+	}
+	ss.str("");
+	ss << " " << i << " - Exit";
+	cout << borderChar << ss.str() << string(width - ss.str().length() - 2, ' ')
 			<< borderChar << endl;
 
 	emptyLine();
@@ -105,16 +130,41 @@ void AdDisplayMenu::createMenu() {
 	int input;
 	unsigned int i = 0;
 	cout << "What option would you like to choose?" << endl;
-	do {
-		if (i > 0)
-			cout << "Please introduce a valid option." << endl;
-		cin >> input;
-		cin.ignore();
-		cin.clear();
-		i++;
-	} while (input < 1 || input > 2);
+	if (data->getSignedInUser() == ad->getOwner()) {
+		do {
+			if (i > 0)
+				cout << "Please introduce a valid option." << endl;
+			cin >> input;
+			cin.ignore();
+			cin.clear();
+			i++;
+		} while (input < 1 || input > 5);
+		switch(input){
+		case 1:
+			//edit text
+			break;
+		case 2:
+			//edit description
+			break;
+		case 3:
+			//edit category
+			break;
+		case 4:
+			//edit price and if it is negotiable or not
+			break;
+		}
+	}
+	else {
+		do {
+			if (i > 0)
+				cout << "Please introduce a valid option." << endl;
+			cin >> input;
+			cin.ignore();
+			cin.clear();
+			i++;
+		} while (input < 1 || input > 2);
 
-	if (input == 1)
-		interested(ad->getOwner());
+		if (input == 1)
+			interested(ad->getOwner());
+	}
 }
-
