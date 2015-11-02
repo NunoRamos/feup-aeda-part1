@@ -33,10 +33,12 @@ protected:
 	string password; //< User password
 	string name; //< User name
 	string phoneNumber; //< User phone number
-	Date signUpDate; //< User sign up date
 	Location location; //< User location
 	unsigned int id; //< User identification number
 	static unsigned int nextId; //< Next user identification number
+	bool showEmail; //< Whether the user's email should be displayed in his/hers ads
+	bool showName; //< Whether the user's name should be displayed in his/hers ads
+	bool showPhoneNumber; //< Whether the user's phone number should be displayed in his/hers ads
 public:
 	/**
 	 * @brief User default constructor
@@ -53,7 +55,7 @@ public:
 	 * @param signUpDate User sign up date
 	 * @param location User location
 	 */
-	User(string email, string password, string name, string phoneNumber, Date signUpDate, Location location);
+	User(string email, string password, string name, string phoneNumber, Location location);
 
 	/**
 	 * @brief User constructor
@@ -65,7 +67,7 @@ public:
 	 * @param signUpDate User sign up date
 	 * @param location User location as string
 	 */
-	User(string email, string password, string name, string phoneNumber, Date signUpDate, string location);
+	User(string email, string password, string name, string phoneNumber, string location);
 
 	/**
 	 * @brief Gets user email

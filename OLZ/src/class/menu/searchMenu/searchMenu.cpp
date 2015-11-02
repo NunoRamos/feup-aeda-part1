@@ -97,12 +97,10 @@ void SearchMenu::createMenu(){
 	else if(input == adLimit + 1){ //back
 		if(page!=0)
 			page--;
-		createMenu();
 	}
 	else if(input == adLimit + 2){ //next
 		if(page != pageMax)
 			page++;
-		createMenu();
 	}
-
+	createMenu();
 }

@@ -15,5 +15,6 @@ void createBuyingAd(Data* data);
 void editAd(Data* data);
 void removeAd(Data* data);
 void signOut(Data* data);
+void interested(User* user);
 
 #endif

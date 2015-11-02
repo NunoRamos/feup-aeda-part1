@@ -82,9 +82,9 @@ void menuTest(){
 
 	data->loadUsers();
 
-	User u1("nunoramos@gmail.com", "oi" , "nuno","91",Date (29,10,2015),"maia");
+	User u1("nunoramos@gmail.com", "oi" , "nuno","91","Maia, Maia, Porto");
 	data->signUp(u1);
-	User u2("a@b.c", "oi" , "nuno","91",Date (29,10,2015),"maia");
+	User u2("a@b.c", "oi" , "nuno","91","Maia, Maia, Porto");
 	data->signUp(u2);
 	OptionMenu menu(data);
 	menu.addOption("Search", &search);

@@ -1,3 +1,4 @@
+#include "../../../menus.h"
 #include "adDisplayMenu.h"
 #include <sstream>
 #include <iostream>
@@ -37,10 +38,24 @@ void AdDisplayMenu::print(){
 				<< ' ' << borderChar << endl;
 	}
 
-	//a white line between description and lower border
+	//a white line between description and contacts
 		for (unsigned int i = 0; i < topMargin; i++){
 			cout << borderChar << string(width-2, ' ') << borderChar << endl;
 		}
+
+
+		//if()
+
+		//a white line between contacts and options
+		cout << borderChar << string(width-2, ' ') << borderChar << endl;
+
+
+
+		//im interested
+		string imInterested = " 1 - I'm interested";
+		string exit = " 2 - Exit";
+		cout << borderChar << imInterested << string(width-imInterested.length()-2, ' ') << borderChar << endl;
+		cout << borderChar << exit << string(width-exit.length()-2, ' ') << borderChar << endl;
 
 	//last line
 	for(unsigned int i = 0; i < width; i++)
@@ -51,4 +66,15 @@ void AdDisplayMenu::print(){
 
 void AdDisplayMenu::createMenu(){
 	AdDisplayMenu::print();
+	int input;
+	unsigned int i = 0;
+	cout << "What option would you like to choose?" << endl;
+	do{
+		if(i > 0)
+			cout << "Please introduce a valid option." << endl;
+		cin >> input;
+	}while(input < 1 || input > 2);
+
+	if(input == 1)
+		interested(ad->getOwner());
 }

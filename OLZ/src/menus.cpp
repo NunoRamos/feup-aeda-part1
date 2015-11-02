@@ -96,7 +96,7 @@ void signUp(Data* data){
 
 	Date signUpDate(25,10,2015);//still have to get date as of now
 
-	data->signUp(User(email, passwordOne, name, phoneNumber, signUpDate, loc));
+	data->signUp(User(email, passwordOne, name, phoneNumber, loc));
 	cout << loc;
 	cout << "\nYour profile has been created. You may now sign in.\n";
 	mainMenu(data);
@@ -190,4 +190,13 @@ void removeAd(Data* data){
 void signOut(Data* data){
 	data->signOut();
 	mainMenu(data);
+}
+
+void interested(User* user){
+	string contact, message;
+	cout << "Please enter your contact: ";
+	getline(cin, contact);
+	cout << "Please enter a message to the announcer.\n";
+	getline(cin, message);
+	//sendEmail(user->getEmail(), contact, message);
 }

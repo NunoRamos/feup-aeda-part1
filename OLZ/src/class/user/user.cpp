@@ -8,32 +8,20 @@ unsigned int User::nextId = 0;
 User::User() {
 	id = nextId;
 	nextId++;
-
+	showEmail = true;
+	showName = true;
+	showPhoneNumber = true;
 }
 
-User::User(string email, string password, string name, string phoneNumber,
-		Date signUpDate, Location location) {
+User::User(string email, string password, string name, string phoneNumber, Location location) : User() {
 	this->email = email;
 	this->password = password;
 	this->name = name;
 	this->phoneNumber = phoneNumber;
 	this->location = location;
-	this->signUpDate = signUpDate;
-	id = nextId;
-	nextId++;
 }
 
-User::User(string email, string password, string name, string phoneNumber,
-		Date signUpDate, string location) {
-	this->email = email;
-	this->password = password;
-	this->name = name;
-	this->phoneNumber = phoneNumber;
-	this->location = Location(location);
-	this->signUpDate = signUpDate;
-	id = nextId;
-	nextId++;
-}
+User::User(string email, string password, string name, string phoneNumber, string location) : User(email, password, name, phoneNumber, Location(location)) { }
 
 bool User::signIn(string password) const {
 	if (this->password == password)
@@ -132,8 +120,7 @@ ostream& operator<<(ostream& out, const User &user) {
 
 	out << user.email << separationChar << user.password << separationChar
 			<< user.name << separationChar << user.phoneNumber << separationChar
-			<< user.signUpDate << separationChar << user.location
-			<< separationChar << user.id;
+			<< user.location << separationChar << user.id;
 
 	for (unsigned int i = 0; i < user.advertisements.size(); i++) {
 		out << *user.advertisements[i];
