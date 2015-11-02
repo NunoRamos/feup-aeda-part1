@@ -132,3 +132,11 @@ void Data::signOut() {
 User* Data::getSignedInUser() const {
 	return signedInUser;
 }
+
+int Data::getIndice() const {
+	return indice;
+}
+
+void Data::setIndice(int i){
+	this->indice=i;
+}

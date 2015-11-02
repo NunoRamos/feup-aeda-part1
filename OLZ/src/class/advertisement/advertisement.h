@@ -114,13 +114,35 @@ public:
 	bool isPriceNegotiable() const;
 
 	/**
+	 * @brief Changes the title
+	 *
+	 * @param newTitle is the new title
+	 */
+	void setTitle(string newTitle);
+
+	/**
+	 * @brief Changes the description
+	 *
+	 * @param newDescription is the new description
+	 */
+	void setDescription(string newDescription);
+
+	/**
 	 * @brief Sets negotiable attribute to value
 	 *
 	 * @param negotiable New value of negotiable attribute
 	 */
 	void setNegotiable(bool negotiable);
 
+	/**
+	* @brief Sets price attribute to value
+	*
+	* @param newPrice New value of price attribute
+	*/
+	void setPrice(float newPrice);
+
 	string getImageAt(unsigned int index) const;//still to decide what to do with this
+
 	void addImage(string path);
 
 	/**
@@ -145,6 +167,15 @@ public:
 	 * @param borderChar Border character of menu to be printed
 	 */
 	virtual void displayAd(unsigned int height, unsigned int width, char borderChar) = 0;
+
+	/**
+	 * @brief See if validCategory is a valid category then changes the value of category
+	 *
+	 * @param validCategory to compare with the enums
+	 *
+	 * @return Returns true if is a valid category
+	 */
+	bool setStringToCategory(string validCategory);
 
 	/**
 	 * @brief Compares two ads by they title

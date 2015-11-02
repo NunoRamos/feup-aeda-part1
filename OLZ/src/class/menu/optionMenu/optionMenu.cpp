@@ -59,6 +59,6 @@ void OptionMenu::createMenu(){
 
 	cin.ignore();
 	cin.clear();
-
+	data->setIndice(input-1);
 	(*functions[input-1].second) (data);
 }

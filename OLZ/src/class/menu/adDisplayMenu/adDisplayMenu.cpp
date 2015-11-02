@@ -71,8 +71,8 @@ void AdDisplayMenu::print() {
 	stringstream ss;
 	ss << ad->getViews();
 	cout << borderChar << " Views: " << ss.str()
-			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
-			<< endl;
+																			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+																			<< endl;
 	emptyLine();
 
 	ss.str("");
@@ -81,8 +81,8 @@ void AdDisplayMenu::print() {
 		ss << "Non-";
 	ss << "Negotiable";
 	cout << borderChar << " Price: " << ss.str()
-			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
-			<< endl;
+																			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+																			<< endl;
 	emptyLine();
 
 	unsigned int i = 1;
@@ -103,6 +103,7 @@ void AdDisplayMenu::print() {
 		cout << borderChar << " " << editPrice
 				<< string(width - 3 - editPrice.length(), ' ') << borderChar
 				<< endl;
+		i=5;
 	} else {
 		string imInterested = " 1 - I'm interested";
 		i = 1;
@@ -113,7 +114,7 @@ void AdDisplayMenu::print() {
 	ss.str("");
 	ss << " " << i << " - Exit";
 	cout << borderChar << ss.str() << string(width - ss.str().length() - 2, ' ')
-			<< borderChar << endl;
+																			<< borderChar << endl;
 
 	emptyLine();
 
@@ -128,6 +129,7 @@ void AdDisplayMenu::createMenu() {
 	clearScreen();
 	AdDisplayMenu::print();
 	int input;
+	string title,description,category,answer;
 	unsigned int i = 0;
 	cout << "What option would you like to choose?" << endl;
 	if (data->getSignedInUser() == ad->getOwner()) {
@@ -138,19 +140,56 @@ void AdDisplayMenu::createMenu() {
 			cin.ignore();
 			cin.clear();
 			i++;
-		} while (input < 1 || input > 5);
+		} while (input < 1 || input > 6);
 		switch(input){
 		case 1:
-			//edit text
+			cout<<"Please introduce the new title."<<endl;
+			cin>>title;
+			cin.ignore();
+			cin.clear();
+			ad->setTitle(title);
 			break;
 		case 2:
-			//edit description
+			cout<<"Please introduce the new description."<<endl;
+			cin>>description;
+			cin.ignore();
+			cin.clear();
+			ad->setDescription(description);
 			break;
 		case 3:
-			//edit category
+			cout<<"Please introduce the new category."<<endl;
+			cin>>category;
+			cin.ignore();
+			cin.clear();
+			while (!ad->setStringToCategory(category)){
+				cout<<"Invalid category, try again. Press 1 to exit."<<endl;
+				cin>>category;
+				cin.ignore();
+				cin.clear();
+				if(category=="1")
+					break;
+			}
 			break;
 		case 4:
-			//edit price and if it is negotiable or not
+			cout<<"Please introduce the new price."<<endl;
+			float newPrice;
+			cin>>newPrice;
+			cin.ignore();
+			cin.clear();
+			ad->setPrice(newPrice);
+			cout<<"Please introduce if it is negotiable or not(Y/N)."<<endl;
+			cin>>answer;
+			cin.ignore();
+			cin.clear();
+			if(answer=="Y"|| answer=="y")
+				ad->setNegotiable(true);
+			else ad->setNegotiable(false);
+			break;
+		case 5:
+			signedInMenu(data);
+			break;
+		default:
+			AdDisplayMenu::createMenu();
 			break;
 		}
 	}

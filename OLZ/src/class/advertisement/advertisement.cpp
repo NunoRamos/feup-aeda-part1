@@ -59,6 +59,18 @@ void Advertisement::setNegotiable(bool negotiable){
 	this->negotiable = negotiable;
 }
 
+void Advertisement::setTitle(string newTitle){
+	this->title=newTitle;
+}
+
+void Advertisement::setDescription(string newDescription){
+	this->description=newDescription;
+}
+
+void Advertisement::setPrice(float newPrice){
+	this->price=newPrice;
+}
+
 string Advertisement::getImageAt(unsigned int index) const{
 	return imagesPath[index];
 }
@@ -78,6 +90,63 @@ bool Advertisement::searchForText(string text) const{
 
 	if(description.find(text, 0) != -1)
 		return true;
+
+	return false;
+}
+
+bool Advertisement::setStringToCategory(string validCategory){
+	if (validCategory=="Agriculture"){
+		category=Agriculture;
+		return true;
+	}
+	else if (validCategory=="BabyAndChildren"){
+		category=BabyAndChildren;
+		return true;
+	}
+	else if (validCategory=="Fashion"){
+		category=Fashion;
+		return true;
+	}
+	else if (validCategory=="Home"){
+		category=Home;
+		return true;
+	}
+	else if (validCategory=="Job"){
+		category=Job;
+		return true;
+	}
+	else if (validCategory=="Leisure"){
+		category=Leisure;
+		return true;
+	}
+	else if (validCategory=="PhonesAndTablets"){
+		category=PhonesAndTablets;
+		return true;
+	}
+	else if (validCategory=="RealEstate"){
+		category=RealEstate;
+		return true;
+	}
+	else if (validCategory=="Services"){
+		category=Services;
+		return true;
+	}
+	else if (validCategory=="Sports"){
+		category=Sports;
+		return true;
+	}
+	else if (validCategory=="Tecnology"){
+		category=Tecnology;
+		return true;
+	}
+	else if (validCategory=="Vehicles"){
+		category=Vehicles;
+		return true;
+	}
+	else if (validCategory=="Others"){
+		category=Others;
+		return true;
+	}
 
 	return false;
 }
@@ -121,3 +190,5 @@ istream& operator>>(istream& in, Advertisement &ad){
 
 	return in;
 }
+
+

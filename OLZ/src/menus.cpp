@@ -6,6 +6,7 @@
 #include"class/advertisement/purchase/purchase.h"
 #include"class/data/data.h"
 #include"class/menu/searchMenu/searchMenu.h"
+#include"class/menu/adDisplayMenu/adDisplayMenu.h"
 #include<iostream>
 #include<stdlib.h>
 #include"class/menu/optionMenu/optionMenu.h"
@@ -162,6 +163,7 @@ void signedInMenu(Data* data){
 	menu.addOption("Create buying advertisement", &createBuyingAd);
 	menu.addOption("Create selling advertisement", &createSellingAd);
 	menu.addOption("Edit advertisement", &editAd);
+	menu.addOption("View my advertisements", &chooseAds);
 	menu.addOption("Delete advertisement", &removeAd);
 	menu.addOption("Sign out", &signOut);
 	menu.addOption("Exit", &exitApp);
@@ -289,4 +291,25 @@ void interested(User* user){
 	getline(cin, message);
 	//sendEmail(user->getEmail(), contact, message);
 	cout << "Message sent.\n";
+}
+
+void chooseAds(Data* data){
+	clearScreen();
+	vector<string> titles=data->getSignedInUser()->fillWithTitles();
+	OptionMenu menu(data);
+	for(unsigned int i=0;i<titles.size();i++){
+		menu.addOption(titles[i], &viewAd);
+	}
+	menu.addOption("Exit", &signedInMenu);
+	menu.createMenu();
+
+}
+
+void viewAd(Data* data){
+	clearScreen();
+	int i=data->getIndice();
+	AdDisplayMenu menu(data,data->getSignedInUser()->getAdvertisement()[i]);
+	menu.print();
+	menu.createMenu();
+	signedInMenu(data);
 }

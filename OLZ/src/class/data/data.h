@@ -26,6 +26,7 @@ private:
 	vector<Advertisement*> advertisements; //< Vector of pointers to all advertisements
 	vector<User> users; //< Vector of all users
 	User* signedInUser; //< Pointer to user that is currently signed in
+	int indice; //<too now which add is to show
 	const string path = "C:/Users/Nuno/git/OLZ/OLZ/data/";//const string path = "/data/"; //< used to save and load users. still not fully implemented
 public:
 	/**
@@ -90,6 +91,10 @@ public:
 	void signOut();
 
 	User* getSignedInUser() const;
+
+	int getIndice() const ;
+
+	void setIndice(int i);
 
 	vector<User> getUsers(){return users;};
 };

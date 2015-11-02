@@ -41,6 +41,15 @@ public:
 	~Sale();
 
 	void displayAd(unsigned int height, unsigned int width, char borderChar);
+
+	/**
+	 * @brief See if validCondition is a valid condition then changes the value of product condition
+	 *
+	 * @param validCondition to compare with the enums
+	 *
+	 * @return Returns true if is a valid condition
+	 */
+	bool setStringToCondition(string validCondition);
 };
 
 

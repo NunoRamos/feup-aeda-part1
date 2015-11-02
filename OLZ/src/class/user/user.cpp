@@ -77,6 +77,14 @@ void User::setShowPhoneNumber(bool show){
 	this->showPhoneNumber = show;
 }
 
+vector<string> User::fillWithTitles() const{
+	vector<string> titles;
+	for(int i=0;i<advertisements.size();i++){
+		titles.push_back(advertisements[i]->getTitle());
+	}
+	return titles;
+}
+
 istream& operator>>(istream& in, User &user) {
 	/*char separationChar = '\n';
 	string line;
@@ -109,8 +117,8 @@ istream& operator>>(istream& in, User &user) {
 	user.location = Location(loc);
 
 	for (unsigned int i = 0; i < user.advertisements.size(); i++) {
-			in >> *user.advertisements[i];
-		}
+		in >> *user.advertisements[i];
+	}
 
 	return in;
 }
