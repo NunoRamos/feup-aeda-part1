@@ -53,6 +53,18 @@ string User::getLocationString() const {
 	return location.toString();
 }
 
+bool User::getShowEmail() const{
+	return showEmail;
+}
+
+bool User::getShowName() const{
+	return showName;
+}
+
+bool User::getShowPhoneNumber() const{
+	return showPhoneNumber;
+}
+
 unsigned int User::getId() const {
 
 	return id;
@@ -60,6 +72,18 @@ unsigned int User::getId() const {
 
 void User::setEmail(string email) {
 	this->email = email;
+}
+
+void User::setShowEmail(bool show){
+	this->showEmail = show;
+}
+
+void User::setShowName(bool show){
+	this->showName = show;
+}
+
+void User::setShowPhoneNumber(bool show){
+	this->showPhoneNumber = show;
 }
 
 istream& operator>>(istream& in, User &user) {

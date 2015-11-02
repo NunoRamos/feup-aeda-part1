@@ -39,15 +39,8 @@ protected:
 	bool showName, showEmail, showPhoneNumber; //temporary
 	vector<string> imagesPath; // temporary
 	User* owner; //< Pointer to owner of advertisement
-	//float price;
+	float price; //< Price of product
 public:
-	/**
-	 * @brief Constructor for class Advertisement
-	 *
-	 * @param owner Pointer to advertisement owner
-	 * @param title Advertisement title
-	 */
-	Advertisement(User* owner, string title);
 
 	/**
 	 * @brief Constructor for class Advertisement

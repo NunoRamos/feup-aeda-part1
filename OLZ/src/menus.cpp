@@ -18,7 +18,13 @@
  * 4 - Exit
  */
 
+void clearScreen(){
+	for(unsigned int i = 0; i < 50; i++)
+		cout << endl;
+}
+
 void mainMenu(Data* data){
+	clearScreen();
 	OptionMenu menu(data);
 	menu.addOption("Search", &search);
 	menu.addOption("Sign In", &signIn);
@@ -28,6 +34,7 @@ void mainMenu(Data* data){
 }
 
 void search(Data* data){
+	clearScreen();
 	string search;
 	cout << "\nInsert what you would like to search for: ";
 	getline(cin, search);
@@ -42,6 +49,7 @@ void search(Data* data){
 }
 
 void signIn(Data* data){
+	clearScreen();
 	string email, password;
 
 	cout << "Email: ";
@@ -61,6 +69,7 @@ void signIn(Data* data){
 }
 
 void signUp(Data* data){
+	clearScreen();
 	string name, email, passwordOne = " ", passwordTwo = "", phoneNumber, location;
 
 	unsigned int i = 0;
@@ -94,9 +103,53 @@ void signUp(Data* data){
 	location = "Maia, Maia, Porto"; //temporary until there is a checking function
 	Location loc(location);
 
-	Date signUpDate(25,10,2015);//still have to get date as of now
+	User u1(email, passwordOne, name, phoneNumber, loc);
 
-	data->signUp(User(email, passwordOne, name, phoneNumber, loc));
+	//showEmail
+	string answer;
+	cout << "\nWould you mind showing your email in your advertisements? (Y/N)\n";
+	i = 0;
+	do{
+		if(i > 0)
+			cout << "Please introduce a valid option. (Y/N)\n";
+		getline(cin,answer);
+		if(answer == "Y" || answer == "y")
+			u1.setShowEmail(true);
+		if(answer == "N" || answer == "n")
+			u1.setShowEmail(false);
+		i++;
+	}while(answer != "Y" && answer != "y" && answer != "N" && answer != "n");
+
+	//showName
+	cout << "\nWould you mind showing your name in your advertisements? (Y/N)\n";
+	i = 0;
+	do{
+		if(i > 0)
+			cout << "Please introduce a valid option. (Y/N)\n";
+		getline(cin,answer);
+		if(answer == "Y" || answer == "y")
+			u1.setShowName(true);
+		if(answer == "N" || answer == "n")
+			u1.setShowName(false);
+		i++;
+	}while(answer != "Y" && answer != "y" && answer != "N" && answer != "n");
+
+
+	//showPhoneNumber
+	cout << "\nWould you mind showing your phone number in your advertisements? (Y/N)\n";
+	i = 0;
+	do{
+		if(i > 0)
+			cout << "Please introduce a valid option. (Y/N)\n";
+		getline(cin,answer);
+		if(answer == "Y" || answer == "y")
+			u1.setShowPhoneNumber(true);
+		if(answer == "N" || answer == "n")
+			u1.setShowPhoneNumber(false);
+		i++;
+	}while(answer != "Y" && answer != "y" && answer != "N" && answer != "n");
+
+	data->signUp(u1);
 	cout << loc;
 	cout << "\nYour profile has been created. You may now sign in.\n";
 	mainMenu(data);
@@ -109,6 +162,7 @@ void exitApp(Data* data){
 }
 
 void signedInMenu(Data* data){
+	clearScreen();
 	OptionMenu menu(data);
 	menu.addOption("Search", &search);
 	menu.addOption("Create buying advertisement", &createBuyingAd);
@@ -121,6 +175,7 @@ void signedInMenu(Data* data){
 }
 
 void createSellingAd(Data* data){
+	clearScreen();
 	string title, description = "", tmp = "", category, condition;
 
 	cout << "Title: ";
@@ -151,34 +206,37 @@ void createSellingAd(Data* data){
 }
 
 void createBuyingAd(Data* data){
+	clearScreen();
 	string title, description = "", tmp = "", category, condition;
 
-	cout << "Title: ";
+	cout << "\nTitle: ";
 	getline(cin, title);
 
-	cout << "What category does your advertisement fit into?\n";
+	cout << "\nCategory: ";
 	do{
 		getline(cin, category);
 	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
 	Category cat = Others;
 
-	cout << "Insert description.\n";
+	cout << "\nDescription: ";
 	getline(cin, description);
 
 	cin.clear();
 
 	Advertisement* ad = new Purchase(data->getSignedInUser(), title, cat, description);
 	data->addAdvertisement(ad);
-	cout << "Ad has been successfully created";
+	cout << "Ad has been successfully created\n";
 	signedInMenu(data);
 }
 
 void editAd(Data* data){
- //TODO implement function
+	clearScreen();
+	//TODO implement function
 	signedInMenu(data);
 }
 
 void removeAd(Data* data){
+	clearScreen();
 	//temporary. will create a menu afterwards.
 	string title;
 	cout << "Insert the title of the advertisement you want to delete.\n";
@@ -193,10 +251,12 @@ void signOut(Data* data){
 }
 
 void interested(User* user){
+	clearScreen();
 	string contact, message;
-	cout << "Please enter your contact: ";
+	cout << "\nPlease enter your contact: ";
 	getline(cin, contact);
-	cout << "Please enter a message to the announcer.\n";
+	cout << "\nPlease enter a message to the announcer.\n";
 	getline(cin, message);
 	//sendEmail(user->getEmail(), contact, message);
+	cout << "Message sent.\n";
 }

@@ -118,11 +118,54 @@ public:
 	unsigned int getId() const;
 
 	/**
+	 * @brief Gets user showEmail attribute
+	 *
+	 * @return Returns user showEmail
+	 */
+	bool getShowEmail() const;
+
+	/**
+	 * @brief Gets user showName attribute
+	 *
+	 * @return Returns user showName
+	 */
+	bool getShowName() const;
+
+	/**
+	 * @brief Gets user showPhoneNumber attribute
+	 *
+	 * @return Returns user showPhoneNumber
+	 */
+	bool getShowPhoneNumber() const;
+
+	/**
 	 * @brief Sets user email
 	 *
 	 * @email User email
 	 */
 	void setEmail(string email);
+
+	/**
+	 * @brief Sets user showEmail attribute
+	 *
+	 * @param show Whether showEmail should be true or not
+	 */
+	void setShowEmail(bool show);
+
+	/**
+	 * @brief Sets user showName attribute
+	 *
+	 * @param show Whether showName should be true or not
+	 */
+	void setShowName(bool show);
+
+	/**
+	 * @brief Sets user showPhoneNumber attribute
+	 *
+	 * @param show Whether showPhoneNumber should be true or not
+	 */
+	void setShowPhoneNumber(bool show);
+
 
 	/**
 	 * @brief Signs in user

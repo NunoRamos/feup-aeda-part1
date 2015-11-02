@@ -9,11 +9,13 @@
 #include "class/date/date.h"
 #include "class/location/location.h"
 #include "class/advertisement/advertisement.h"
+#include "class/advertisement/purchase/purchase.h"
 #include "class/data/data.h"
 #include "enums.h"
 
 
 using namespace std;
+using namespace enums;
 
 ///Advertisement Class Test
 /*void advertisementTest(){
@@ -85,6 +87,10 @@ void menuTest(){
 	User u1("nunoramos@gmail.com", "oi" , "nuno","91","Maia, Maia, Porto");
 	data->signUp(u1);
 	User u2("a@b.c", "oi" , "nuno","91","Maia, Maia, Porto");
+	Purchase *purchase = new Purchase(&u2, "Ola", Others , "oi, esta tudo?");
+	data->addAdvertisement(purchase);
+	u2.setShowName(false);
+	u2.setShowPhoneNumber(false);
 	data->signUp(u2);
 	OptionMenu menu(data);
 	menu.addOption("Search", &search);

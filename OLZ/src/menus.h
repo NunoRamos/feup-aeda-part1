@@ -3,6 +3,7 @@
 
 #include "class/data/data.h"
 
+void clearScreen();
 void mainMenu(Data* data);
 void search(Data* data);
 void signIn(Data* data);

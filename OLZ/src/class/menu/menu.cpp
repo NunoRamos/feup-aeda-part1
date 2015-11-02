@@ -20,3 +20,7 @@ void Menu::setBorderChar(char borderChar){
 char Menu::getBorderChar(){
 	return borderChar;
 }
+
+void Menu::emptyLine() const{
+	cout << borderChar << string(width-2, ' ') << borderChar << endl;
+}

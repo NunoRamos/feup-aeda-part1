@@ -28,8 +28,9 @@ public:
 	 *
 	 * @param owner Pointer to advertisement owner
 	 * @param title Advertisement title
+	 * @param category Advertisement category
 	 */
-	Sale(User* owner, string title);
+	Sale(User* owner, string title, Category category, Condition productCondition);
 	/**
 	 * @brief Sale constructor
 	 *

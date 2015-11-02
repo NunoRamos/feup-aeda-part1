@@ -76,6 +76,7 @@ void SearchMenu::print(){
 }
 
 void SearchMenu::createMenu(){
+	clearScreen();
 	unsigned int input;
 	unsigned int adLimit = adsPerPage;
 	if(trunc(static_cast<double> (results.size() / adsPerPage)) == page)
@@ -91,7 +92,7 @@ void SearchMenu::createMenu(){
 	cin.clear();
 
 	if(input <= adLimit){ //ad options
-		AdDisplayMenu displayAd(data, results[page*adsPerPage+input], height, width, borderChar);
+		AdDisplayMenu displayAd(data, results[page*adsPerPage+input-1], height, width, borderChar);
 		displayAd.createMenu();
 	}
 	else if(input == adLimit + 1){ //back
@@ -102,5 +103,7 @@ void SearchMenu::createMenu(){
 		if(page != pageMax)
 			page++;
 	}
-	createMenu();
+
+	if(input != adLimit + 3) //exit
+		createMenu();
 }

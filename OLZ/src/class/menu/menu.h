@@ -15,6 +15,7 @@ public:
 	virtual void print() = 0;
 	virtual void createMenu() = 0;
 protected:
+	void emptyLine() const;
 	char borderChar;
 	unsigned int height, width;
 	unsigned int topMargin, leftMargin;

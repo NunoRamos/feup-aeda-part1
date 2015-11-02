@@ -6,7 +6,7 @@ Purchase::Purchase(User* owner, string title, Category category, string descript
 
 }
 
-Purchase::Purchase(User* owner, string title) : Advertisement(owner, title){ }
+Purchase::Purchase(User* owner, string title, Category category) : Advertisement(owner, title, category){ }
 
 Purchase::~Purchase(){ }
 

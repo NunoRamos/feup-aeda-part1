@@ -9,11 +9,6 @@
 
 unsigned int Advertisement::nextId = 0;
 
-Advertisement::Advertisement(User* owner, string title){
-	this->title=title;
-	this->owner=owner;
-}
-
 Advertisement::Advertisement(User* owner, string title, Category category){
 	this->owner = owner;
 	this->title = title;

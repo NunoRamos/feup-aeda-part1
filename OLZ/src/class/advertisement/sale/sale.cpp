@@ -6,7 +6,9 @@ Advertisement(owner, title, category, description){
 	this->productCondition = productCondition;
 }
 
-Sale::Sale(User* owner, string title):Advertisement(owner,title){}
+Sale::Sale(User* owner, string title, Category category, Condition productCondition):Advertisement(owner, title, category){
+	this->productCondition = productCondition;
+}
 
 Sale::~Sale(){ }
 
