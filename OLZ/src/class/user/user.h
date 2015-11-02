@@ -34,8 +34,6 @@ protected:
 	string name; //< User name
 	string phoneNumber; //< User phone number
 	Location location; //< User location
-	unsigned int id; //< User identification number
-	static unsigned int nextId; //< Next user identification number
 	bool showEmail; //< Whether the user's email should be displayed in his/hers ads
 	bool showName; //< Whether the user's name should be displayed in his/hers ads
 	bool showPhoneNumber; //< Whether the user's phone number should be displayed in his/hers ads
@@ -220,6 +218,8 @@ public:
 	 * @return Returns out stream
 	 */
 	friend ostream& operator<<(ostream& out, const User &user);
+
+	vector<Advertisement *>  getAdvertisement(){return advertisements;};
 };
 
 #endif

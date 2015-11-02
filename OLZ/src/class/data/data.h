@@ -55,7 +55,7 @@ public:
 	 *
 	 * @return Returns true if the user has been successfully added
 	 */
-	bool signUp(User user);
+	bool signUp(User &user);
 
 	/**
 	 * @brief Loads users to user vector from path
@@ -90,6 +90,8 @@ public:
 	void signOut();
 
 	User* getSignedInUser() const;
+
+	vector<User> getUsers(){return users;};
 };
 
 //Better option may be writing to a binary file and end every input with \n

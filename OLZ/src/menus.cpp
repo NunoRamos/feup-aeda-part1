@@ -105,6 +105,7 @@ void signUp(Data* data){
 
 	User u1(email, passwordOne, name, phoneNumber, loc);
 
+<<<<<<< HEAD
 	//showEmail
 	string answer;
 	cout << "\nWould you mind showing your email in your advertisements? (Y/N)\n";
@@ -149,6 +150,9 @@ void signUp(Data* data){
 		i++;
 	}while(answer != "Y" && answer != "y" && answer != "N" && answer != "n");
 
+=======
+	User u1(email, passwordOne, name, phoneNumber, loc);
+>>>>>>> branch 'master' of https://github.com/bernardobelchior1/OLZ.git
 	data->signUp(u1);
 	cout << loc;
 	cout << "\nYour profile has been created. You may now sign in.\n";

@@ -147,7 +147,7 @@ public:
 	 * @brief Prints advertisement to out
 	 *
 	 * @param out Out stream
-	 * @param ad Pointer to advertisement to print
+	 * @param ad Reference to advertisement to print
 	 *
 	 * @return Returns out stream
 	 */
@@ -157,7 +157,7 @@ public:
 	 * @brief Reads advertisement to in
 	 *
 	 * @param in In stream
-	 * @param ad Pointer to advertisement to write on
+	 * @param ad Reference to advertisement to write on
 	 *
 	 * @return Returns in stream
 	 */

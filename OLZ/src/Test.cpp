@@ -83,15 +83,6 @@ void menuTest(){
 	Data* data = new Data();
 
 	data->loadUsers();
-
-	User u1("nunoramos@gmail.com", "oi" , "nuno","91","Maia, Maia, Porto");
-	data->signUp(u1);
-	User u2("a@b.c", "oi" , "nuno","91","Maia, Maia, Porto");
-	Purchase *purchase = new Purchase(&u2, "Ola", Others , "oi, esta tudo?");
-	data->addAdvertisement(purchase);
-	u2.setShowName(false);
-	u2.setShowPhoneNumber(false);
-	data->signUp(u2);
 	OptionMenu menu(data);
 	menu.addOption("Search", &search);
 	menu.addOption("Sign In", &signIn);
@@ -100,8 +91,6 @@ void menuTest(){
 	menu.createMenu();
 
 	data->saveUsers();
-	int n;
-	cin>>n;
 }
 
 void runAllTests(int argc, char const *argv[]){
