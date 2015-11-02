@@ -61,11 +61,6 @@ bool User::getShowPhoneNumber() const{
 	return showPhoneNumber;
 }
 
-unsigned int User::getId() const {
-
-	return id;
-}
-
 void User::setEmail(string email) {
 	this->email = email;
 }

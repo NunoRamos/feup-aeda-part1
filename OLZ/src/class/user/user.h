@@ -109,13 +109,6 @@ public:
 	string getLocationString() const;
 
 	/**
-	 * @brief Gets user Id
-	 *
-	 * @return Returns user Id
-	 */
-	unsigned int getId() const;
-
-	/**
 	 * @brief Gets user showEmail attribute
 	 *
 	 * @return Returns user showEmail
