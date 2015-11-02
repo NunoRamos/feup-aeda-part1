@@ -36,21 +36,11 @@ protected:
 	Category category; //< Advertisement category
 	string description; //< Advertisement description
 	Date creationDate; //< Advertisement date of creation
-	bool showName, showEmail, showPhoneNumber; //temporary
 	vector<string> imagesPath; // temporary
 	User* owner; //< Pointer to owner of advertisement
 	float price; //< Price of product
+	bool negotiable; //< Whether price is negotiable or not
 public:
-
-	/**
-	 * @brief Constructor for class Advertisement
-	 *
-	 * @param owner Pointer to advertisement owner
-	 * @param title Advertisement title
-	 * @param category Advertisement category
-	 */
-	Advertisement(User* owner, string title, Category category);
-
 	/**
 	 * @brief Constructor for class Advertisement
 	 *
@@ -58,8 +48,9 @@ public:
 	 * @param title Advertisement title
 	 * @param category Advertisement category
 	 * @param description Advertisement description
+	 * @param price Product price
 	 */
-	Advertisement(User* owner, string title, Category category, string description);
+	Advertisement(User* owner, string title, Category category, string description, float price);
 
 	/**
 	 * @brief Advertisement destructor
@@ -107,6 +98,27 @@ public:
 	 * @return Returns views
 	 */
 	unsigned int getViews() const;
+
+	/**
+	 * @brief Gets advertisement price
+	 *
+	 * @return Returns advertisement price
+	 */
+	float getPrice() const;
+
+	/**
+	 * @brief Returns if price is negotiable
+	 *
+	 * @return Returns whether the price is negotiable or not
+	 */
+	bool isPriceNegotiable() const;
+
+	/**
+	 * @brief Sets negotiable attribute to value
+	 *
+	 * @param negotiable New value of negotiable attribute
+	 */
+	void setNegotiable(bool negotiable);
 
 	string getImageAt(unsigned int index) const;//still to decide what to do with this
 	void addImage(string path);

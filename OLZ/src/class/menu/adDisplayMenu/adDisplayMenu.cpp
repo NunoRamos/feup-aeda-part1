@@ -73,6 +73,14 @@ void AdDisplayMenu::print() {
 	cout << borderChar << " Views: " << ss.str() << string(width-2-8-ss.str().length(), ' ') << borderChar << endl;
 	emptyLine();
 
+	ss.str("");
+	ss << ad->getPrice() << "  ";
+	if(!ad->isPriceNegotiable())
+		ss << "Non-";
+	ss << "Negotiable";
+	cout << borderChar << " Price: " << ss.str() << string(width-2-8-ss.str().length(), ' ') << borderChar << endl;
+	emptyLine();
+
 	//im interested
 	string imInterested = " 1 - I'm interested";
 	string exit = " 2 - Exit";

@@ -11,6 +11,7 @@ void signUp(Data* data);
 void exitApp(Data* data);
 void signedInMenu(Data* data);
 void manageAds(Data* data);
+void createAd(Data* ad);
 void createSellingAd(Data* data);
 void createBuyingAd(Data* data);
 void editAd(Data* data);

@@ -1,30 +1,22 @@
 #include "advertisement.h"
 #include "../menu/adDisplayMenu/adDisplayMenu.h"
-
-
-#include<ctime>
-#include<chrono>
 #include<iostream>
 #include<sstream>
 
 unsigned int Advertisement::nextId = 0;
 
-Advertisement::Advertisement(User* owner, string title, Category category){
+Advertisement::Advertisement(User* owner, string title, Category category, string description, float price){
 	this->owner = owner;
 	this->title = title;
 	this->category = category;
-	showName = true;
-	showEmail = true;
-	showPhoneNumber = true;
+	this->description = description;
+	this->price = price;
+	negotiable = true;
 	id = nextId;
 	nextId++;
 	views=0;
 	//TODO: get time and save as creationDate
-}
 
-Advertisement::Advertisement(User* owner, string title, Category category, string description)
-: Advertisement(owner, title, category){
-	this->description = description;
 }
 
 Advertisement::~Advertisement(){
@@ -53,6 +45,18 @@ string Advertisement::getDescription() const{
 
 unsigned int Advertisement::getViews() const{
 	return views;
+}
+
+float Advertisement::getPrice() const{
+	return price;
+}
+
+bool Advertisement::isPriceNegotiable() const{
+	return negotiable;
+}
+
+void Advertisement::setNegotiable(bool negotiable){
+	this->negotiable = negotiable;
 }
 
 string Advertisement::getImageAt(unsigned int index) const{
@@ -84,7 +88,7 @@ bool Advertisement::operator==(Advertisement* ad) const{
 
 ostream& operator<<(ostream& out, const Advertisement &ad){
 	char separationChar = '\n';
-//TODO print category to file, not sure how.
+	//TODO print category to file, not sure how.
 	//does not print id
 	out << ad.title << separationChar
 			<< ad.views << separationChar
@@ -101,19 +105,19 @@ istream& operator>>(istream& in, Advertisement &ad){
 	string temp;
 	//TODO print category from file to variable, not sure how.
 
-		getline(in,ad.title);
-		getline(in,temp);
-		ss<<temp;
-		ss>>ad.views;
-		getline(in,ad.title);
-		getline(in,temp);   //learn how to read to variable category
-		/*ss<<temp;
+	getline(in,ad.title);
+	getline(in,temp);
+	ss<<temp;
+	ss>>ad.views;
+	getline(in,ad.title);
+	getline(in,temp);   //learn how to read to variable category
+	/*ss<<temp;
 		ss>>ad.category;*/
-		ad.category=Job;
-		getline(in,ad.description);
-		getline(in,temp);
-		Date d1(temp);
-		ad.creationDate=d1;
+	ad.category=Job;
+	getline(in,ad.description);
+	getline(in,temp);
+	Date d1(temp);
+	ad.creationDate=d1;
 
-		return in;
+	return in;
 }

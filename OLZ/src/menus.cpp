@@ -107,28 +107,24 @@ void signUp(Data* data){
 
 	//showEmail
 	string answer;
-	cout << "\nWould you mind showing your email in your advertisements? (Y/N)\n";
+	cout << "\nWould you like to show your email in your advertisements? (Y/N)\n";
 	i = 0;
 	do{
 		if(i > 0)
 			cout << "Please introduce a valid option. (Y/N)\n";
 		getline(cin,answer);
-		if(answer == "Y" || answer == "y")
-			u1.setShowEmail(true);
 		if(answer == "N" || answer == "n")
 			u1.setShowEmail(false);
 		i++;
 	}while(answer != "Y" && answer != "y" && answer != "N" && answer != "n");
 
 	//showName
-	cout << "\nWould you mind showing your name in your advertisements? (Y/N)\n";
+	cout << "\nWould you like show your name in your advertisements? (Y/N)\n";
 	i = 0;
 	do{
 		if(i > 0)
 			cout << "Please introduce a valid option. (Y/N)\n";
 		getline(cin,answer);
-		if(answer == "Y" || answer == "y")
-			u1.setShowName(true);
 		if(answer == "N" || answer == "n")
 			u1.setShowName(false);
 		i++;
@@ -136,14 +132,12 @@ void signUp(Data* data){
 
 
 	//showPhoneNumber
-	cout << "\nWould you mind showing your phone number in your advertisements? (Y/N)\n";
+	cout << "\nWould you like to show your phone number in your advertisements? (Y/N)\n";
 	i = 0;
 	do{
 		if(i > 0)
 			cout << "Please introduce a valid option. (Y/N)\n";
 		getline(cin,answer);
-		if(answer == "Y" || answer == "y")
-			u1.setShowPhoneNumber(true);
 		if(answer == "N" || answer == "n")
 			u1.setShowPhoneNumber(false);
 		i++;
@@ -177,39 +171,9 @@ void signedInMenu(Data* data){
 void createSellingAd(Data* data){
 	clearScreen();
 	string title, description = "", tmp = "", category, condition;
+	float price;
 
 	cout << "Title: ";
-	getline(cin, title);
-
-	cout << "What category does your advertisement fit into?\n";
-	do{
-		getline(cin, category);
-	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
-	Category cat = Others;
-
-	cout << "Insert description.\n";
-	getline(cin, description);
-
-	cin.clear();
-
-	cout << "What is your product condition?\n";
-	do{
-		getline(cin, condition);
-	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
-	Condition cond = New;
-
-
-	Advertisement* ad = new Sale(data->getSignedInUser(), title, cat, description,cond);
-	data->addAdvertisement(ad);
-	cout << "Ad has been successfully created";
-	signedInMenu(data);
-}
-
-void createBuyingAd(Data* data){
-	clearScreen();
-	string title, description = "", tmp = "", category, condition;
-
-	cout << "\nTitle: ";
 	getline(cin, title);
 
 	cout << "\nCategory: ";
@@ -223,7 +187,73 @@ void createBuyingAd(Data* data){
 
 	cin.clear();
 
-	Advertisement* ad = new Purchase(data->getSignedInUser(), title, cat, description);
+	cout << "\nPrice: ";
+	cin >> price;
+	cin.ignore();
+	cin.clear();
+
+	cout << "\nProduct condition: ";
+	do{
+		getline(cin, condition);
+	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
+	Condition cond = New;
+
+	Advertisement* ad = new Sale(data->getSignedInUser(), title, cat, description, cond, price);
+
+	cout << "\nIs the price negotiable? (Y/N)\n";
+	string answer;
+	unsigned int i = 0;
+	do{
+		if(i > 0)
+			cout << "Please introduce a valid option. (Y/N)\n";
+		getline(cin,answer);
+		if(answer == "N" || answer == "n")
+			ad->setNegotiable(false);
+		i++;
+	}while(answer != "Y" && answer != "y" && answer != "N" && answer != "n");
+
+	data->addAdvertisement(ad);
+	cout << "Ad has been successfully created";
+	signedInMenu(data);
+}
+
+void createBuyingAd(Data* data){
+	clearScreen();
+	string title, description = "", tmp = "", category, condition;
+	float price;
+
+	cout << "\nTitle: ";
+	getline(cin, title);
+
+	cout << "\nCategory: ";
+	do{
+		getline(cin, category);
+	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
+	Category cat = Others;
+
+	cout << "\nDescription: ";
+	getline(cin, description);
+
+	cout << "\nPrice: ";
+	cin >> price;
+	cin.ignore();
+	cin.clear();
+
+	Advertisement* ad = new Purchase(data->getSignedInUser(), title, cat, description, price);
+
+	cout << "\nIs the price negotiable? (Y/N)\n";
+	string answer;
+	unsigned int i = 0;
+	do{
+		if(i > 0)
+			cout << "Please introduce a valid option. (Y/N)\n";
+		getline(cin,answer);
+		if(answer == "N" || answer == "n")
+			ad->setNegotiable(false);
+		i++;
+	}while(answer != "Y" && answer != "y" && answer != "N" && answer != "n");
+
+
 	data->addAdvertisement(ad);
 	cout << "Ad has been successfully created\n";
 	signedInMenu(data);

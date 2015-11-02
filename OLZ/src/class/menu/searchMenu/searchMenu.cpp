@@ -6,7 +6,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-SearchMenu::SearchMenu(Data* data, vector<Advertisement* > results, unsigned int height, unsigned int width, char borderChar) :
+SearchMenu::SearchMenu(Data* data, vector<Advertisement* > &results, unsigned int height, unsigned int width, char borderChar) :
 			Menu(data, height, width, borderChar){
 	this->results = results;
 	page = 0;

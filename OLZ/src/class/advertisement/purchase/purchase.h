@@ -26,18 +26,10 @@ public:
 	 * @param owner Pointer to advertisement owner
 	 * @param title Advertisement title
 	 * @param category Advertisement category
-	 */
-	Purchase(User* owner, string title, Category category);
-
-	/**
-	 * @brief Purchase constructor
-	 *
-	 * @param owner Pointer to advertisement owner
-	 * @param title Advertisement title
-	 * @param category Advertisement category
 	 * @param description Advertisement description
+	 * @param price Product price
 	 */
-	Purchase(User* owner, string title, Category category, string description);
+	Purchase(User* owner, string title, Category category, string description, float price);
 
 	/**
 	 * @brief Purchase destructor

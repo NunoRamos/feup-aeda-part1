@@ -29,18 +29,11 @@ public:
 	 * @param owner Pointer to advertisement owner
 	 * @param title Advertisement title
 	 * @param category Advertisement category
-	 */
-	Sale(User* owner, string title, Category category, Condition productCondition);
-	/**
-	 * @brief Sale constructor
-	 *
-	 * @param owner Pointer to advertisement owner
-	 * @param title Advertisement title
-	 * @param category Advertisement category
 	 * @param description Advertisement description
 	 * @param productCondition Product condition
+	 * @param price Product price
 	 */
-	Sale(User* owner, string title, Category category, string description, Condition productCondition);
+	Sale(User* owner, string title, Category category, string description, Condition productCondition, float price);
 
 	/**
 	 * @brief Sale destructor

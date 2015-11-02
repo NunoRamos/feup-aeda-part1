@@ -1,12 +1,8 @@
 #include "purchase.h"
 #include "../advertisement.h"
 
-Purchase::Purchase(User* owner, string title, Category category, string description):
-	Advertisement(owner, title, category, description){
-
-}
-
-Purchase::Purchase(User* owner, string title, Category category) : Advertisement(owner, title, category){ }
+Purchase::Purchase(User* owner, string title, Category category, string description, float price):
+	Advertisement(owner, title, category, description, price){}
 
 Purchase::~Purchase(){ }
 
