@@ -2,7 +2,7 @@
 
 using namespace enums;
 
-bool ValidCategory(string isValidCategory){
+bool validCategory(string isValidCategory){
 	if (isValidCategory=="Agriculture"){
 		return true;
 	}
@@ -46,7 +46,7 @@ bool ValidCategory(string isValidCategory){
 	return false;
 }
 
-Category StringToCategory(string validCategory){
+Category stringToCategory(string validCategory){
 	if (validCategory=="Agriculture"){
 		return Agriculture;;
 	}
@@ -89,7 +89,7 @@ Category StringToCategory(string validCategory){
 
 }
 
-string CategoryToString(Category validCategory){
+string categoryToString(Category validCategory){
 	if (validCategory==Agriculture){
 		return "Agriculture";
 	}
@@ -131,7 +131,7 @@ string CategoryToString(Category validCategory){
 	}
 }
 
-bool ValidCondition(string isValidCondition){
+bool validCondition(string isValidCondition){
 	if(isValidCondition=="New"){
 		return true;
 	}
@@ -149,7 +149,7 @@ bool ValidCondition(string isValidCondition){
 }
 
 
-Condition StringToCondition(string validCondition){
+Condition stringToCondition(string validCondition){
 	if(validCondition=="New"){
 		return New;
 	}
@@ -165,7 +165,7 @@ Condition StringToCondition(string validCondition){
 
 }
 
-string ConditionToString(Condition validCondition){
+string conditionToString(Condition validCondition){
 	if(validCondition==New){
 			return "New";
 		}

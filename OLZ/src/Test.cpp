@@ -98,12 +98,12 @@ void menuEnums(){
 	Condition condition=New;
 	string cat="Home";
 	string con="New";
-	ASSERT_EQUAL(true, ValidCategory(cat));
-	ASSERT_EQUAL(true,ValidCondition(con));
-	ASSERT_EQUAL(category,StringToCategory(cat));
-	ASSERT_EQUAL(condition,StringToCondition(con));
-	ASSERT_EQUAL(cat,CategoryToString(category));
-	ASSERT_EQUAL(con,ConditionToString(condition));
+	ASSERT_EQUAL(true, validCategory(cat));
+	ASSERT_EQUAL(true,validCondition(con));
+	ASSERT_EQUAL(category,stringToCategory(cat));
+	ASSERT_EQUAL(condition,stringToCondition(con));
+	ASSERT_EQUAL(cat,categoryToString(category));
+	ASSERT_EQUAL(con,conditionToString(condition));
 }
 
 void runAllTests(int argc, char const *argv[]){

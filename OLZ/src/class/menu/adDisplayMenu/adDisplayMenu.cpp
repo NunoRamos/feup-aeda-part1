@@ -161,8 +161,8 @@ void AdDisplayMenu::createMenu() {
 			cout<<"Please introduce the new category."<<endl;
 			getline(cin,category);
 			do{
-				if(ValidCategory(category)){
-					ad->setCategory(StringToCategory(category));
+				if(validCategory(category)){
+					ad->setCategory(stringToCategory(category));
 					break;
 				}
 				else {

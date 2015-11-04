@@ -238,8 +238,8 @@ void createBuyingAd(Data* data){
 	cout << "\nCategory: ";
 	do{
 		getline(cin, category);
-	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
-	Category cat = Others;
+	}while(!validCategory(category)); //TODO check if category is valid
+	Category cat = stringToCategory(category);
 
 	cout << "\nDescription: ";
 	getline(cin, description);

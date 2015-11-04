@@ -28,7 +28,7 @@ using namespace enums;
  *
  * @return Returns true if is a valid category
  */
-bool ValidCategory(string isValidCategory);
+bool validCategory(string isValidCategory);
 
 /**
  * @brief Changes a string to a category
@@ -37,7 +37,7 @@ bool ValidCategory(string isValidCategory);
  *
  * @return Returns one Category
  */
-Category StringToCategory(string validCategory);
+Category stringToCategory(string validCategory);
 
 /**
  * @brief Changes a string to a category
@@ -46,7 +46,7 @@ Category StringToCategory(string validCategory);
  *
  * @return Returns one string
  */
-string CategoryToString(Category validCategory);
+string categoryToString(Category validCategory);
 
 /**
  * @brief See if validCategory is a valid category then changes the value of category
@@ -55,7 +55,7 @@ string CategoryToString(Category validCategory);
  *
  * @return Returns true if is a valid category
  */
-bool ValidCondition(string isValidCondition);
+bool validCondition(string isValidCondition);
 
 /**
  * @brief Changes a string to a condition
@@ -64,7 +64,7 @@ bool ValidCondition(string isValidCondition);
  *
  * @return Returns one condition
  */
-Condition StringToCondition(string validCondition);
+Condition stringToCondition(string validCondition);
 /**
  * @brief Changes a condition to a string
  *
@@ -72,6 +72,6 @@ Condition StringToCondition(string validCondition);
  *
  * @return Returns one string
  */
-string ConditionToString(Condition validCondition);
+string conditionToString(Condition validCondition);
 
 #endif
