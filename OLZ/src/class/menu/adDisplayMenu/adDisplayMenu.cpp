@@ -71,8 +71,8 @@ void AdDisplayMenu::print() {
 	stringstream ss;
 	ss << ad->getViews();
 	cout << borderChar << " Views: " << ss.str()
-																			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
-																			<< endl;
+																									<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+																									<< endl;
 	emptyLine();
 
 	ss.str("");
@@ -81,8 +81,8 @@ void AdDisplayMenu::print() {
 		ss << "Non-";
 	ss << "Negotiable";
 	cout << borderChar << " Price: " << ss.str()
-																			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
-																			<< endl;
+																									<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+																									<< endl;
 	emptyLine();
 
 	unsigned int i = 1;
@@ -114,7 +114,7 @@ void AdDisplayMenu::print() {
 	ss.str("");
 	ss << " " << i << " - Exit";
 	cout << borderChar << ss.str() << string(width - ss.str().length() - 2, ' ')
-																			<< borderChar << endl;
+																									<< borderChar << endl;
 
 	emptyLine();
 
@@ -134,12 +134,14 @@ void AdDisplayMenu::createMenu() {
 	cout << "What option would you like to choose?" << endl;
 	if (data->getSignedInUser() == ad->getOwner()) {
 		do {
-			if (i > 0)
+			if (i > 0){
 				cout << "Please introduce a valid option." << endl;
+			}
 			cin >> input;
-			cin.ignore();
-			cin.clear();
+			/*cin.ignore();
+			cin.clear();*/
 			i++;
+
 		} while (input < 1 || input > 6);
 		switch(input){
 		case 1:

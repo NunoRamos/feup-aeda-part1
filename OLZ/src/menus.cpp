@@ -163,7 +163,7 @@ void signedInMenu(Data* data){
 	menu.addOption("Create buying advertisement", &createBuyingAd);
 	menu.addOption("Create selling advertisement", &createSellingAd);
 	menu.addOption("Edit advertisement", &editAd);
-	menu.addOption("View my advertisements", &chooseAds);
+	menu.addOption("View my advertisements", &viewMyAds);
 	menu.addOption("Delete advertisement", &removeAd);
 	menu.addOption("Sign out", &signOut);
 	menu.addOption("Exit", &exitApp);
@@ -292,6 +292,15 @@ void interested(User* user){
 	//sendEmail(user->getEmail(), contact, message);
 	cout << "Message sent.\n";
 }
+
+void viewMyAds(Data* data){
+	clearScreen();
+	vector<Advertisement* > results=data->getSignedInUser()->getAdvertisement();
+	SearchMenu menu(data, results);
+	menu.createMenu();
+	signedInMenu(data);
+}
+
 
 void chooseAds(Data* data){
 	clearScreen();
