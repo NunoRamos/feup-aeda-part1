@@ -5,6 +5,7 @@
 #include "../../advertisement/advertisement.h"
 
 using namespace std;
+using namespace enums;
 
 class AdDisplayMenu : public Menu{
 public:

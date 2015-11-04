@@ -1,7 +1,11 @@
 #include "../../../menus.h"
 #include "adDisplayMenu.h"
+#include "../../../enums.h"
 #include <sstream>
 #include <iostream>
+
+
+
 
 AdDisplayMenu::AdDisplayMenu(Data* data, Advertisement* ad, unsigned int height,
 		unsigned int width, char borderChar) :
@@ -71,8 +75,8 @@ void AdDisplayMenu::print() {
 	stringstream ss;
 	ss << ad->getViews();
 	cout << borderChar << " Views: " << ss.str()
-																																					<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
-																																					<< endl;
+																																											<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+																																											<< endl;
 	emptyLine();
 
 	ss.str("");
@@ -81,7 +85,7 @@ void AdDisplayMenu::print() {
 		ss << "Non-";
 	ss << "Negotiable";
 	cout << borderChar << " Price: " << ss.str()
-		<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar<< endl;
+								<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar<< endl;
 	emptyLine();
 
 	unsigned int i = 1;
@@ -113,7 +117,7 @@ void AdDisplayMenu::print() {
 	ss.str("");
 	ss << " " << i << " - Exit";
 	cout << borderChar << ss.str() << string(width - ss.str().length() - 2, ' ')
-																																					<< borderChar << endl;
+																																											<< borderChar << endl;
 
 	emptyLine();
 
@@ -156,12 +160,19 @@ void AdDisplayMenu::createMenu() {
 		case 3:
 			cout<<"Please introduce the new category."<<endl;
 			getline(cin,category);
-			while (!ad->setStringToCategory(category)){
-				cout<<"Invalid category, try again. Press 1 to exit."<<endl;
-				getline(cin,category);
-				if(category=="1")
+			do{
+				if(ValidCategory(category)){
+					ad->setCategory(StringToCategory(category));
 					break;
+				}
+				else {
+					cout<<"Invalid category, try again. Press 1 to exit."<<endl;
+					getline(cin,category);
+					if(category=="1")
+						break;
+				}
 			}
+			while(true);
 			break;
 		case 4:
 			cout<<"Please introduce the new price."<<endl;

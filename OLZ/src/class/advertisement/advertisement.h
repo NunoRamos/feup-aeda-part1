@@ -135,10 +135,17 @@ public:
 	void setNegotiable(bool negotiable);
 
 	/**
-	* @brief Sets price attribute to value
-	*
-	* @param newPrice New value of price attribute
-	*/
+	 * @brief Sets category attribute to value
+	 *
+	 * @param nweCategory New value of category attribute
+	 */
+	void setCategory(Category newCategory);
+
+	/**
+	 * @brief Sets price attribute to value
+	 *
+	 * @param newPrice New value of price attribute
+	 */
 	void setPrice(float newPrice);
 
 	string getImageAt(unsigned int index) const;//still to decide what to do with this
@@ -167,15 +174,6 @@ public:
 	 * @param borderChar Border character of menu to be printed
 	 */
 	virtual void displayAd(unsigned int height, unsigned int width, char borderChar) = 0;
-
-	/**
-	 * @brief See if validCategory is a valid category then changes the value of category
-	 *
-	 * @param validCategory to compare with the enums
-	 *
-	 * @return Returns true if is a valid category
-	 */
-	bool setStringToCategory(string validCategory);
 
 	/**
 	 * @brief Compares two ads by they title

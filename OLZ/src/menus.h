@@ -21,6 +21,5 @@ void interested(User* user);
 void viewMyAds(Data* data);
 void chooseAds(Data* data);
 void viewAd(Data* data);
-void viewAllAdds(Data* data);
 
 #endif

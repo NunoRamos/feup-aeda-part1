@@ -30,7 +30,6 @@ void mainMenu(Data* data){
 	menu.addOption("Search", &search);
 	menu.addOption("Sign In", &signIn);
 	menu.addOption("Sign Up", &signUp);
-	//menu.addOption("View all advertisements", &viewAllAdds);
 	menu.addOption("Exit", &exitApp);
 	menu.createMenu();
 }
@@ -332,8 +331,3 @@ void viewAd(Data* data){
 	signedInMenu(data);
 }
 
-/*void viewAllAdds(Data* data){
-	clearScreen();
-	SearchMenu menu(data,data->)
-
-}*/

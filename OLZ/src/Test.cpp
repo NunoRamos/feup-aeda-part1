@@ -93,6 +93,19 @@ void menuTest(){
 	data->saveUsers();
 }
 
+void menuEnums(){
+	Category category=Home;
+	Condition condition=New;
+	string cat="Home";
+	string con="New";
+	ASSERT_EQUAL(true, ValidCategory(cat));
+	ASSERT_EQUAL(true,ValidCondition(con));
+	ASSERT_EQUAL(category,StringToCategory(cat));
+	ASSERT_EQUAL(condition,StringToCondition(con));
+	ASSERT_EQUAL(cat,CategoryToString(category));
+	ASSERT_EQUAL(con,ConditionToString(condition));
+}
+
 void runAllTests(int argc, char const *argv[]){
 	cute::suite s;
 	//TODO add your test here
@@ -104,6 +117,7 @@ void runAllTests(int argc, char const *argv[]){
 	s.push_back(CUTE(saleTest));
 	s.push_back(CUTE(purchaseTest));
 	s.push_back(CUTE(menuTest));
+	s.push_back(CUTE(menuEnums));
 	cute::xml_file_opener xmlfile(argc,argv);
 	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
 	cute::makeRunner(lis,argc,argv)(s, "AllTests");
