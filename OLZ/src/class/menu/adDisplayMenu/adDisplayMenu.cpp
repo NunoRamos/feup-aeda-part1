@@ -71,8 +71,8 @@ void AdDisplayMenu::print() {
 	stringstream ss;
 	ss << ad->getViews();
 	cout << borderChar << " Views: " << ss.str()
-																									<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
-																									<< endl;
+																																					<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+																																					<< endl;
 	emptyLine();
 
 	ss.str("");
@@ -81,8 +81,7 @@ void AdDisplayMenu::print() {
 		ss << "Non-";
 	ss << "Negotiable";
 	cout << borderChar << " Price: " << ss.str()
-																									<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
-																									<< endl;
+		<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar<< endl;
 	emptyLine();
 
 	unsigned int i = 1;
@@ -114,7 +113,7 @@ void AdDisplayMenu::print() {
 	ss.str("");
 	ss << " " << i << " - Exit";
 	cout << borderChar << ss.str() << string(width - ss.str().length() - 2, ' ')
-																									<< borderChar << endl;
+																																					<< borderChar << endl;
 
 	emptyLine();
 
@@ -138,36 +137,28 @@ void AdDisplayMenu::createMenu() {
 				cout << "Please introduce a valid option." << endl;
 			}
 			cin >> input;
-			/*cin.ignore();
-			cin.clear();*/
+			cin.ignore();
+			cin.clear();
 			i++;
 
 		} while (input < 1 || input > 6);
 		switch(input){
 		case 1:
 			cout<<"Please introduce the new title."<<endl;
-			cin>>title;
-			cin.ignore();
-			cin.clear();
+			getline(cin,title);
 			ad->setTitle(title);
 			break;
 		case 2:
 			cout<<"Please introduce the new description."<<endl;
-			cin>>description;
-			cin.ignore();
-			cin.clear();
+			getline(cin,description);
 			ad->setDescription(description);
 			break;
 		case 3:
 			cout<<"Please introduce the new category."<<endl;
-			cin>>category;
-			cin.ignore();
-			cin.clear();
+			getline(cin,category);
 			while (!ad->setStringToCategory(category)){
 				cout<<"Invalid category, try again. Press 1 to exit."<<endl;
-				cin>>category;
-				cin.ignore();
-				cin.clear();
+				getline(cin,category);
 				if(category=="1")
 					break;
 			}
@@ -180,9 +171,7 @@ void AdDisplayMenu::createMenu() {
 			cin.clear();
 			ad->setPrice(newPrice);
 			cout<<"Please introduce if it is negotiable or not(Y/N)."<<endl;
-			cin>>answer;
-			cin.ignore();
-			cin.clear();
+			getline(cin,answer);
 			if(answer=="Y"|| answer=="y")
 				ad->setNegotiable(true);
 			else ad->setNegotiable(false);

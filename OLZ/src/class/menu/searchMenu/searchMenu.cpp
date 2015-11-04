@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 SearchMenu::SearchMenu(Data* data, vector<Advertisement* > &results, unsigned int height, unsigned int width, char borderChar) :
-			Menu(data, height, width, borderChar){
+Menu(data, height, width, borderChar){
 	this->results = results;
 	page = 0;
 	adsPerPage = 7;
@@ -86,8 +86,9 @@ void SearchMenu::createMenu(){
 	while (input <= 0 || input > adLimit + 3){
 		cout << "Please introduce a valid option.\n";
 		cin >> input;
-	}
 
+
+	}
 	cin.ignore();
 	cin.clear();
 
@@ -103,6 +104,7 @@ void SearchMenu::createMenu(){
 		if(page != pageMax)
 			page++;
 	}
+
 
 	if(input != adLimit + 3) //exit
 		createMenu();

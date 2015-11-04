@@ -30,6 +30,7 @@ void mainMenu(Data* data){
 	menu.addOption("Search", &search);
 	menu.addOption("Sign In", &signIn);
 	menu.addOption("Sign Up", &signUp);
+	//menu.addOption("View all advertisements", &viewAllAdds);
 	menu.addOption("Exit", &exitApp);
 	menu.createMenu();
 }
@@ -51,9 +52,10 @@ void search(Data* data){
 
 void signIn(Data* data){
 	clearScreen();
-	string email, password;
+	string email, password,input;
 
-	cout << "Email: ";
+
+	cout << "\nEmail: ";
 	getline(cin, email);
 
 	cout << "\nPassword: ";
@@ -65,7 +67,15 @@ void signIn(Data* data){
 		signedInMenu(data);
 	else{
 		cout << "Wrong email and password combination.\n";
-		mainMenu(data);
+		cout << "Try Again? (Y/N)"<<endl;
+		cin>>input;
+		if (input=="y"||input=="Y")
+		{
+			cin.ignore();
+			cin.clear();
+			signIn(data);
+		}
+		else mainMenu(data);
 	}
 }
 
@@ -162,7 +172,6 @@ void signedInMenu(Data* data){
 	menu.addOption("Search", &search);
 	menu.addOption("Create buying advertisement", &createBuyingAd);
 	menu.addOption("Create selling advertisement", &createSellingAd);
-	menu.addOption("Edit advertisement", &editAd);
 	menu.addOption("View my advertisements", &viewMyAds);
 	menu.addOption("Delete advertisement", &removeAd);
 	menu.addOption("Sign out", &signOut);
@@ -322,3 +331,9 @@ void viewAd(Data* data){
 	menu.createMenu();
 	signedInMenu(data);
 }
+
+/*void viewAllAdds(Data* data){
+	clearScreen();
+	SearchMenu menu(data,data->)
+
+}*/
