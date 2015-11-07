@@ -1,6 +1,7 @@
 #include "data.h"
 #include "../../sequentialSearch.h"
 #include "../advertisement/purchase/purchase.h"
+#include "../../menus.h"
 
 #include<fstream>
 #include <iostream>
@@ -120,6 +121,47 @@ vector<Advertisement*> Data::searchForAds(string text) {
 	for (unsigned int i = 0; i < advertisements.size(); i++) {
 		if (advertisements[i]->searchForText(text))
 			results.push_back(advertisements[i]);
+	}
+
+	return results;
+}
+
+vector<Advertisement*> Data::searchForAdsCategory(Category text) {
+	vector<Advertisement*> results;
+
+	for (unsigned int i = 0; i < advertisements.size(); i++) {
+		if (advertisements[i]->getCategory()==text)
+			results.push_back(advertisements[i]);
+	}
+
+	return results;
+}
+
+vector<Advertisement*> Data::searchForAdsPrice(float price){
+	vector<Advertisement*> results;
+
+	for (unsigned int i = 0; i < advertisements.size(); i++) {
+		if (advertisements[i]->getPrice()>=price-20 && advertisements[i]->getPrice()<=price+20 )
+			results.push_back(advertisements[i]);
+	}
+
+	return results;
+}
+
+vector<Advertisement*> Data::vectorOfSaleOrPurchase(vector<Advertisement*> ads, char saleOrPurchase){
+	vector<Advertisement*> results;
+
+	if(saleOrPurchase=='S'){
+		for(int i=0;i<ads.size();i++){
+			if(ads[i]->getType()=='S')
+				results.push_back(ads[i]);
+		}
+	}
+	else if(saleOrPurchase=='P'){
+		for(int i=0;i<ads.size();i++){
+			if(ads[i]->getType()=='P')
+				results.push_back(ads[i]);
+		}
 	}
 
 	return results;

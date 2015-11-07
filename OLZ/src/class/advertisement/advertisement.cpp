@@ -98,8 +98,6 @@ bool Advertisement::searchForText(string text) const{
 	return false;
 }
 
-
-
 bool Advertisement::operator==(Advertisement* ad) const{
 	return (this->id == ad->id);
 }

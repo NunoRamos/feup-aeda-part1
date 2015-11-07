@@ -27,7 +27,7 @@ void clearScreen(){
 void mainMenu(Data* data){
 	clearScreen();
 	OptionMenu menu(data);
-	menu.addOption("Search", &search);
+	menu.addOption("Search For Ads", &search);
 	menu.addOption("Sign In", &signIn);
 	menu.addOption("Sign Up", &signUp);
 	menu.addOption("Exit", &exitApp);
@@ -36,17 +36,107 @@ void mainMenu(Data* data){
 
 void search(Data* data){
 	clearScreen();
-	string search;
-	cout << "\nInsert what you would like to search for: ";
-	getline(cin, search);
+	OptionMenu menu(data);
+	menu.addOption("Search By Category", searchByCategory);
+	menu.addOption("Search By Location", searchByCategory);
+	menu.addOption("Search For Approximate Price", searchByPrice);
+	menu.addOption("Search By Keyword", searchByKeyword);
+	if(data->getSignedInUser() != NULL)
+		menu.addOption("Return",&signedInMenu);
+	else
+		menu.addOption("Return",&mainMenu);
+	menu.addOption("Exit",&exitApp);
+	menu.createMenu();
+
+}
+
+
+void searchByCategory(Data* data){
+	clearScreen();
+	string answer;
+	cout << "\nInsert what category you would like to search for\n"
+			"( Agriculture, Animals, BabyAndChildren, Fashion, Home, Job, Leisure,\n"
+			"PhonesAndTablets, RealEstate, Services, Sports, Technology, Vehicles,\n"
+			"Others ) : ";
+	getline(cin, answer);
 	vector<Advertisement* > results;
-	results = data->searchForAds(search);
+	if (validCategory(answer)){
+		Category searchCategory=stringToCategory(answer);
+		results=data->searchForAdsCategory(searchCategory);
+		saleOrPurchase(results,data);
+		SearchMenu menu(data, results);
+		menu.createMenu();
+	}
+	else {
+		cout<<"Invalid Category\n"
+				"Do you want to search again?(Y/N)?\n";
+		getline(cin, answer);
+		if (answer=="y"||answer=="Y")
+			searchByCategory(data);
+		else if(data->getSignedInUser() != NULL)
+			signedInMenu(data);
+		else
+			mainMenu(data);
+	}
+
+	if(data->getSignedInUser() != NULL)
+		signedInMenu(data);
+	else
+		mainMenu(data);
+}
+
+void searchByLocation(Data* data){//TODO berninhas dá tudo com a localização
+	clearScreen();
+	if(data->getSignedInUser() != NULL)
+		signedInMenu(data);
+	else
+		mainMenu(data);
+}
+
+void searchByPrice(Data* data){
+	clearScreen();
+	string answer;
+	float price;
+	cout << "\nInsert what price you would like to search for: ";
+	cin>>price;
+	cin.ignore(10000,'\n');
+	vector<Advertisement* > results;
+	results = data->searchForAdsPrice(price);
+	saleOrPurchase(results,data);
 	SearchMenu menu(data, results);
 	menu.createMenu();
 	if(data->getSignedInUser() != NULL)
 		signedInMenu(data);
 	else
 		mainMenu(data);
+
+}
+
+void searchByKeyword(Data* data){
+	clearScreen();
+	string answer;
+	cout << "\nInsert what you would like to search for: ";
+	getline(cin, answer);
+	vector<Advertisement* > results;
+	results = data->searchForAds(answer);
+	saleOrPurchase(results,data);
+	SearchMenu menu(data, results);
+	menu.createMenu();
+	if(data->getSignedInUser() != NULL)
+		signedInMenu(data);
+	else
+		mainMenu(data);
+}
+
+void saleOrPurchase(vector<Advertisement*> &results, Data* data){
+	string answer;
+	cout<<"Do you want sale or purchase ads(S/P)?\n";
+	getline(cin, answer);
+	if (answer=="s"||answer=="S")
+		results=data->vectorOfSaleOrPurchase(results,'S');
+	else if (answer=="p"||answer=="P")
+		results=data->vectorOfSaleOrPurchase(results,'P');
+	else search(data);
 }
 
 void signIn(Data* data){
@@ -189,8 +279,8 @@ void createSellingAd(Data* data){
 	cout << "\nCategory: ";
 	do{
 		getline(cin, category);
-	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
-	Category cat = Others;
+	}while(!validCategory(category));
+	Category cat = stringToCategory(category);
 
 	cout << "\nDescription: ";
 	getline(cin, description);
@@ -205,8 +295,8 @@ void createSellingAd(Data* data){
 	cout << "\nProduct condition: ";
 	do{
 		getline(cin, condition);
-	}while(/*!isValidCategory(category)*/false); //TODO check if category is valid
-	Condition cond = New;
+	}while(!validCondition(condition));
+	Condition cond = stringToCondition(condition);
 
 	Advertisement* ad = new Sale(data->getSignedInUser(), title, cat, description, cond, price);
 
@@ -238,7 +328,7 @@ void createBuyingAd(Data* data){
 	cout << "\nCategory: ";
 	do{
 		getline(cin, category);
-	}while(!validCategory(category)); //TODO check if category is valid
+	}while(!validCategory(category));
 	Category cat = stringToCategory(category);
 
 	cout << "\nDescription: ";

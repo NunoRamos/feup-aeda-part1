@@ -88,6 +88,32 @@ public:
 	 */
 	vector<Advertisement*> searchForAds(string text);
 
+	/**
+	 * @brief Searches for ads category with text in it.
+	 *
+	 * @return Returns vector of pointers to Advertisement with ads that have same category
+	 */
+	vector<Advertisement*> searchForAdsCategory(Category text);
+
+	/**
+	 * @brief Searches for ads that have similar price to price
+	 *
+	 * @param price price to compare
+	 *
+	 * @return Returns vector of pointers to Advertisement with ads that have similar price
+	 */
+	vector<Advertisement*> searchForAdsPrice(float price);
+
+	/**
+	 * @brief Creates a sub vector of vector ads, that only contained sale or purchase ads depending saleOrPurchase
+	 *
+	 * @param ads vector to create a sub vector
+	 * @param saleOrPurchase decided if is a sub vector of sale ads or purchase ads
+	 *
+	 * @return Returns a vector with sale ads only or purchase ads only
+	 */
+	vector<Advertisement*> vectorOfSaleOrPurchase(vector<Advertisement*> ads, char saleOrPurchase);
+
 	void signOut();
 
 	User* getSignedInUser() const;

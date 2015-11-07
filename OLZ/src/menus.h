@@ -6,6 +6,11 @@
 void clearScreen();
 void mainMenu(Data* data);
 void search(Data* data);
+void searchByCategory(Data* data);
+void searchByLocation(Data* data);
+void searchByPrice(Data* data);
+void searchByKeyword(Data* data);
+void saleOrPurchase(vector<Advertisement*> &results, Data* data);
 void signIn(Data* data);
 void signUp(Data* data);
 void exitApp(Data* data);
