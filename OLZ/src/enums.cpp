@@ -42,6 +42,8 @@ bool validCategory(string isValidCategory){
 	else if (isValidCategory=="Others"){
 		return true;
 	}
+	else if (isValidCategory=="Animals")
+		return true;
 
 	return false;
 }
@@ -86,6 +88,8 @@ Category stringToCategory(string validCategory){
 	else if (validCategory=="Others"){
 		return Others;
 	}
+	else if (validCategory=="Animals")
+		return Animals;
 
 }
 
@@ -129,6 +133,9 @@ string categoryToString(Category validCategory){
 	else if (validCategory==Others){
 		return "Others";
 	}
+	else if (validCategory==Animals)
+		return "Animals";
+
 }
 
 bool validCondition(string isValidCondition){
@@ -167,16 +174,16 @@ Condition stringToCondition(string validCondition){
 
 string conditionToString(Condition validCondition){
 	if(validCondition==New){
-			return "New";
-		}
-		else if(validCondition==UsedAsNew){
-			return "UsedAsNew";
-		}
-		else if(validCondition==Functional){
-			return "Functional";
-		}
-		else if(validCondition==ForParts){
-			return "ForParts";
-		}
+		return "New";
+	}
+	else if(validCondition==UsedAsNew){
+		return "UsedAsNew";
+	}
+	else if(validCondition==Functional){
+		return "Functional";
+	}
+	else if(validCondition==ForParts){
+		return "ForParts";
+	}
 
 }

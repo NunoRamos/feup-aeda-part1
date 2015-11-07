@@ -137,11 +137,11 @@ vector<Advertisement*> Data::searchForAdsCategory(Category text) {
 	return results;
 }
 
-vector<Advertisement*> Data::searchForAdsPrice(float price){
+vector<Advertisement*> Data::searchForAdsPrice(float inicialPrice,float finalPrice){
 	vector<Advertisement*> results;
 
 	for (unsigned int i = 0; i < advertisements.size(); i++) {
-		if (advertisements[i]->getPrice()>=price-20 && advertisements[i]->getPrice()<=price+20 )
+		if (advertisements[i]->getPrice()>=inicialPrice && advertisements[i]->getPrice()<=finalPrice )
 			results.push_back(advertisements[i]);
 	}
 

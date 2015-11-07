@@ -27,7 +27,7 @@ private:
 	vector<User> users; //< Vector of all users
 	User* signedInUser; //< Pointer to user that is currently signed in
 	int indice; //<too now which add is to show
-	const string path = "C:/Users/Nuno/git/OLZ/OLZ/data/";//const string path = "/data/"; //< used to save and load users. still not fully implemented
+	const string path = "C:/Users/mariajoaomirapaulo/git/OLZ/OLZ/data/";//const string path = "/data/"; //< used to save and load users. still not fully implemented
 public:
 	/**
 	 * @brief Constructor for class Data
@@ -98,11 +98,13 @@ public:
 	/**
 	 * @brief Searches for ads that have similar price to price
 	 *
-	 * @param price price to compare
+	 * @param inicialPrice lower price the user want to spend
+	 *
+	 ** @param finalPrice higher price the user want to spend
 	 *
 	 * @return Returns vector of pointers to Advertisement with ads that have similar price
 	 */
-	vector<Advertisement*> searchForAdsPrice(float price);
+	vector<Advertisement*> searchForAdsPrice(float inicialPrice,float finalPrice);
 
 	/**
 	 * @brief Creates a sub vector of vector ads, that only contained sale or purchase ads depending saleOrPurchase

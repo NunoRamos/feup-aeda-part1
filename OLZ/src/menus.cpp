@@ -96,12 +96,15 @@ void searchByLocation(Data* data){//TODO berninhas dá tudo com a localização
 void searchByPrice(Data* data){
 	clearScreen();
 	string answer;
-	float price;
-	cout << "\nInsert what price you would like to search for: ";
-	cin>>price;
+	float lowerPrice, higherPrice;
+	cout << "\nWhat price range do you want to spend?From: ";
+	cin>>lowerPrice;
+	cin.ignore(10000,'\n');
+	cout << "\nTo: ";
+	cin>>higherPrice;
 	cin.ignore(10000,'\n');
 	vector<Advertisement* > results;
-	results = data->searchForAdsPrice(price);
+	results = data->searchForAdsPrice(lowerPrice,higherPrice);
 	saleOrPurchase(results,data);
 	SearchMenu menu(data, results);
 	menu.createMenu();
@@ -276,10 +279,16 @@ void createSellingAd(Data* data){
 	cout << "Title: ";
 	getline(cin, title);
 
-	cout << "\nCategory: ";
-	do{
-		getline(cin, category);
-	}while(!validCategory(category));
+	cout << "\nCategory: \n ( Agriculture, Animals, BabyAndChildren, Fashion, Home, Job, Leisure,\n"
+			"PhonesAndTablets, RealEstate, Services, Sports, Technology, Vehicles,\n"
+			"Others ) : ";
+
+	getline(cin,category);
+	while (!validCategory(category))
+	{
+		cout<<"\nWrite a valid Category: ";
+		getline(cin,category);
+	}
 	Category cat = stringToCategory(category);
 
 	cout << "\nDescription: ";
@@ -292,10 +301,13 @@ void createSellingAd(Data* data){
 	cin.ignore();
 	cin.clear();
 
-	cout << "\nProduct condition: ";
-	do{
-		getline(cin, condition);
-	}while(!validCondition(condition));
+	cout << "\nProduct condition (New, UsedAsNew, Functional, ForParts): ";
+	getline(cin,condition);
+	while (!validCondition(condition))
+	{
+		cout<<"\nWrite a valid Condition: ";
+		getline(cin,condition);
+	}
 	Condition cond = stringToCondition(condition);
 
 	Advertisement* ad = new Sale(data->getSignedInUser(), title, cat, description, cond, price);
@@ -325,10 +337,15 @@ void createBuyingAd(Data* data){
 	cout << "\nTitle: ";
 	getline(cin, title);
 
-	cout << "\nCategory: ";
-	do{
-		getline(cin, category);
-	}while(!validCategory(category));
+	cout << "\nCategory: \n ( Agriculture, Animals, BabyAndChildren, Fashion, Home, Job, Leisure,\n"
+			"PhonesAndTablets, RealEstate, Services, Sports, Technology, Vehicles,\n"
+			"Others ) : ";
+	getline(cin,category);
+	while (!validCategory(category))
+	{
+		cout<<"\nWrite a valid Category: ";
+		getline(cin,category);
+	}
 	Category cat = stringToCategory(category);
 
 	cout << "\nDescription: ";
