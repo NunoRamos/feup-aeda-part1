@@ -11,7 +11,9 @@ AdDisplayMenu::AdDisplayMenu(Data* data, Advertisement* ad, unsigned int height,
 		unsigned int width, char borderChar) :
 		Menu(data, height, width, borderChar) {
 	this->ad = ad;
-	ad->incrementViews();
+	if (ad->getOwner()!=data->getSignedInUser())
+	{ad->incrementViews();}
+
 }
 
 void AdDisplayMenu::print() {
@@ -113,7 +115,7 @@ void AdDisplayMenu::print() {
 		i=5;
 	} else {
 		string imInterested = " 1 - I'm interested";
-		i = 1;
+		i = 2;
 		cout << borderChar << imInterested
 				<< string(width - imInterested.length() - 2, ' ') << borderChar
 				<< endl;

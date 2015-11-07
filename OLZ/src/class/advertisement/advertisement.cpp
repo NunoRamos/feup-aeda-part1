@@ -95,6 +95,7 @@ void Advertisement::addImage(string path){
 void Advertisement::incrementViews()
 {
 	views++;
+
 }
 
 bool Advertisement::searchForText(string text) const{
