@@ -51,6 +51,11 @@ float Advertisement::getPrice() const{
 	return price;
 }
 
+string Advertisement::getCreationDate() const{
+	return creationDate.toString();
+
+}
+
 bool Advertisement::isPriceNegotiable() const{
 	return negotiable;
 }
@@ -65,6 +70,10 @@ void Advertisement::setTitle(string newTitle){
 
 void Advertisement::setDescription(string newDescription){
 	this->description=newDescription;
+}
+
+void Advertisement::setCreationDate(Date creationDate){
+	this->creationDate=creationDate;
 }
 
 void Advertisement::setPrice(float newPrice){

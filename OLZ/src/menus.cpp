@@ -10,6 +10,7 @@
 #include<iostream>
 #include<stdlib.h>
 #include"class/menu/optionMenu/optionMenu.h"
+#include <ctime>
 
 /*Menu Presentation
  *
@@ -276,6 +277,15 @@ void createSellingAd(Data* data){
 	string title, description = "", tmp = "", category, condition;
 	float price;
 
+	time_t t = time(0);   // get time now
+	struct tm * now = localtime( & t );
+	int year=now->tm_year + 1900;
+	int month=now->tm_mon + 1 ;
+	int day= now->tm_mday;
+
+	Date creationDate(day,month,year);
+
+
 	cout << "Title: ";
 	getline(cin, title);
 
@@ -311,6 +321,7 @@ void createSellingAd(Data* data){
 	Condition cond = stringToCondition(condition);
 
 	Advertisement* ad = new Sale(data->getSignedInUser(), title, cat, description, cond, price);
+	ad->setCreationDate(creationDate);
 
 	cout << "\nIs the price negotiable? (Y/N)\n";
 	string answer;
@@ -333,6 +344,14 @@ void createBuyingAd(Data* data){
 	clearScreen();
 	string title, description = "", tmp = "", category, condition;
 	float price;
+
+	time_t t = time(0);   // get time now
+	struct tm * now = localtime( & t );
+	int year=now->tm_year + 1900;
+	int month=now->tm_mon + 1 ;
+	int day= now->tm_mday;
+
+	Date creationDate(day,month,year);
 
 	cout << "\nTitle: ";
 	getline(cin, title);
@@ -357,6 +376,7 @@ void createBuyingAd(Data* data){
 	cin.clear();
 
 	Advertisement* ad = new Purchase(data->getSignedInUser(), title, cat, description, price);
+	ad->setCreationDate(creationDate);
 
 	cout << "\nIs the price negotiable? (Y/N)\n";
 	string answer;

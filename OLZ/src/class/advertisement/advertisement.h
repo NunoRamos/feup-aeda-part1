@@ -107,6 +107,12 @@ public:
 	float getPrice() const;
 
 	/**
+	 * @brief Gets advertisement creation date
+	 *
+	 * @return Returns advertisement creation date
+	 */
+	string getCreationDate() const;
+	/**
 	 * @brief Returns if price is negotiable
 	 *
 	 * @return Returns whether the price is negotiable or not
@@ -119,6 +125,13 @@ public:
 	 * @param newTitle is the new title
 	 */
 	void setTitle(string newTitle);
+
+	/**
+	 * @brief Changes creation date
+	 *
+	 * @param creationDate date of creation
+	 */
+	void setCreationDate(Date creationDate);
 
 	/**
 	 * @brief Changes the description

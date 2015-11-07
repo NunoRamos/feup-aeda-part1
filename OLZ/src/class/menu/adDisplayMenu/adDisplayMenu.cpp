@@ -49,6 +49,10 @@ void AdDisplayMenu::print() {
 	bool showName = ad->getOwner()->getShowName();
 	bool showPhoneNumber = ad->getOwner()->getShowPhoneNumber();
 
+	cout << borderChar << " Creation Date: " << ad->getCreationDate()
+			<< string(width - 2 - 8 - ad->getCreationDate().length(), ' ') << borderChar
+			<< endl;
+
 	if (showEmail || showName || showPhoneNumber) {
 		if (showEmail) {
 			string email = ad->getOwner()->getEmail();
@@ -75,8 +79,8 @@ void AdDisplayMenu::print() {
 	stringstream ss;
 	ss << ad->getViews();
 	cout << borderChar << " Views: " << ss.str()
-																																											<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
-																																											<< endl;
+																																													<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+																																													<< endl;
 	emptyLine();
 
 	ss.str("");
@@ -85,7 +89,7 @@ void AdDisplayMenu::print() {
 		ss << "Non-";
 	ss << "Negotiable";
 	cout << borderChar << " Price: " << ss.str()
-								<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar<< endl;
+										<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar<< endl;
 	emptyLine();
 
 	unsigned int i = 1;
@@ -117,7 +121,7 @@ void AdDisplayMenu::print() {
 	ss.str("");
 	ss << " " << i << " - Exit";
 	cout << borderChar << ss.str() << string(width - ss.str().length() - 2, ' ')
-																																											<< borderChar << endl;
+																																													<< borderChar << endl;
 
 	emptyLine();
 
