@@ -9,3 +9,7 @@ Purchase::~Purchase(){ }
 void Purchase::displayAd(unsigned int height, unsigned int width, char borderChar){
 
 }
+
+char Purchase::getType() const{
+	return 'P';
+}

@@ -176,6 +176,13 @@ public:
 	virtual void displayAd(unsigned int height, unsigned int width, char borderChar) = 0;
 
 	/**
+	 * @brief Returns a P if is a purchase ad or a S if is a sale ad
+	 *
+	 * @return Returns a char ( P(urchase) / S(ale))
+	 */
+	virtual char getType() const=0;
+
+	/**
 	 * @brief Compares two ads by they title
 	 *
 	 * @param ad Pointer to ad to compare with.

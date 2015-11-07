@@ -110,7 +110,7 @@ void signUp(Data* data){
 
 	cout << "\nWhere are you from? (City, county, district)\n";
 	getline(cin, location);
-	location = "Maia, Maia, Porto"; //temporary until there is a checking function
+	location = "Maia, Maia, Porto"; //TODO temporary until there is a checking function
 	Location loc(location);
 
 	User u1(email, passwordOne, name, phoneNumber, loc);
