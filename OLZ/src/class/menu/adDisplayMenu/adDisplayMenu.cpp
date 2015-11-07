@@ -47,13 +47,13 @@ void AdDisplayMenu::print() {
 	for (unsigned int i = 0; i < topMargin; i++)
 		emptyLine();
 
+	cout << borderChar << " Creation Date: " << ad->getCreationDate()
+				<< string(width - 2 - 16 - ad->getCreationDate().length(), ' ') << borderChar
+				<< endl;
+
 	bool showEmail = ad->getOwner()->getShowEmail();
 	bool showName = ad->getOwner()->getShowName();
 	bool showPhoneNumber = ad->getOwner()->getShowPhoneNumber();
-
-	cout << borderChar << " Creation Date: " << ad->getCreationDate()
-			<< string(width - 2 - 8 - ad->getCreationDate().length(), ' ') << borderChar
-			<< endl;
 
 	if (showEmail || showName || showPhoneNumber) {
 		if (showEmail) {
