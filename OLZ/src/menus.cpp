@@ -38,7 +38,7 @@ void search(Data* data){
 	clearScreen();
 	OptionMenu menu(data);
 	menu.addOption("Search By Category", searchByCategory);
-	menu.addOption("Search By Location", searchByCategory);
+	menu.addOption("Search By Location", searchByLocation);
 	menu.addOption("Search For Approximate Price", searchByPrice);
 	menu.addOption("Search By Keyword", searchByKeyword);
 	if(data->getSignedInUser() != NULL)
