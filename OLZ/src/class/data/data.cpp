@@ -175,14 +175,6 @@ User* Data::getSignedInUser() const {
 	return signedInUser;
 }
 
-int Data::getIndice() const {
-	return indice;
-}
-
-void Data::setIndice(int i){
-	this->indice=i;
-}
-
 vector<Advertisement*> Data::getAdsInSameCity(string city){
 	vector<Advertisement*> results;
 	for(unsigned int i = 0; i < advertisements.size(); i++){

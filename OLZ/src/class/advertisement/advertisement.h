@@ -181,21 +181,17 @@ public:
 	bool searchForText(string text) const;
 
 	/**
-	 * @brief Displays ad
-	 *
-	 * @param height Height of menu to be printed
-	 * @param width Width of menu to be printed
-	 * @param borderChar Border character of menu to be printed
-	 */
-	virtual void displayAd(unsigned int height, unsigned int width, char borderChar) = 0;
-
-	/**
 	 * @brief Returns a P if is a purchase ad or a S if is a sale ad
 	 *
 	 * @return Returns a char ( P(urchase) / S(ale))
 	 */
 	virtual char getType() const=0;
 
+	/**
+	 * @brief Gets ad owner location
+	 *
+	 * @return Returns ad owner location
+	 */
 	Location getLocation() const;
 
 	/**

@@ -219,7 +219,12 @@ public:
 	 */
 	friend ostream& operator<<(ostream& out, const User &user);
 
-	vector<Advertisement *>  getAdvertisement(){return advertisements;};
+	/**
+	 * @brief Gets all advertisements the user has
+	 *
+	 * @return Returns all advertisements the user has
+	 */
+	vector<Advertisement *> getAdvertisements();
 };
 
 #endif

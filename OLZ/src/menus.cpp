@@ -478,31 +478,8 @@ void interested(User* user){
 
 void viewMyAds(Data* data){
 	clearScreen();
-	vector<Advertisement* > results=data->getSignedInUser()->getAdvertisement();
+	vector<Advertisement* > results=data->getSignedInUser()->getAdvertisements();
 	SearchMenu menu(data, results);
 	menu.createMenu();
 	signedInMenu(data);
 }
-
-
-void chooseAds(Data* data){
-	clearScreen();
-	vector<string> titles=data->getSignedInUser()->fillWithTitles();
-	OptionMenu menu(data);
-	for(unsigned int i=0;i<titles.size();i++){
-		menu.addOption(titles[i], &viewAd);
-	}
-	menu.addOption("Exit", &signedInMenu);
-	menu.createMenu();
-
-}
-
-void viewAd(Data* data){
-	clearScreen();
-	int i=data->getIndice();
-	AdDisplayMenu menu(data,data->getSignedInUser()->getAdvertisement()[i]);
-	menu.print();
-	menu.createMenu();
-	signedInMenu(data);
-}
-

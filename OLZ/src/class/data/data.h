@@ -100,7 +100,7 @@ public:
 	 *
 	 * @param inicialPrice lower price the user want to spend
 	 *
-	 ** @param finalPrice higher price the user want to spend
+	 * @param finalPrice higher price the user want to spend
 	 *
 	 * @return Returns vector of pointers to Advertisement with ads that have similar price
 	 */
@@ -116,23 +116,44 @@ public:
 	 */
 	vector<Advertisement*> vectorOfSaleOrPurchase(vector<Advertisement*> ads, char saleOrPurchase);
 
+	/**
+	 * @brief Signs user out
+	 */
 	void signOut();
 
+	/**
+	 * @brief Gets signed in user
+	 *
+	 * @return Returns pointer to signed in user
+	 */
 	User* getSignedInUser() const;
 
-	int getIndice() const ;
-
-	void setIndice(int i);
-
-	vector<User> getUsers(){return users;};
-
+	/**
+	 * @brief Gets ads in same city as parameter
+	 *
+	 * @param city City
+	 *
+	 * @return Returns vector of advertisements whose owners are from the same city as parameter
+	 */
 	vector<Advertisement*> getAdsInSameCity(string city);
 
+	/**
+	 * @brief Gets ads in same county as parameter
+	 *
+	 * @param county County
+	 *
+	 * @return Returns vector of advertisements whose owners are from the same county as parameter
+	 */
 	vector<Advertisement*> getAdsInSameCounty(string county);
 
+	/**
+	 * @brief Gets ads in same district as parameter
+	 *
+	 * @param district District
+	 *
+	 * @return Returns vector of advertisements whose owners are from the same district as parameter
+	 */
 	vector<Advertisement*> getAdsInSameDistrict(string district);
 };
-
-//Better option may be writing to a binary file and end every input with \n
 
 #endif

@@ -8,10 +8,6 @@ Advertisement(owner, title, category, description, price){
 
 Sale::~Sale(){ }
 
-void Sale::displayAd(unsigned int height, unsigned int width, char borderChar){
-
-}
-
 char Sale::getType() const{
 	return 'S';
 }

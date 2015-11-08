@@ -40,8 +40,6 @@ public:
 	 */
 	~Sale();
 
-	void displayAd(unsigned int height, unsigned int width, char borderChar);
-
 	/**
 	 * @brief Returns a P if is a purchase ad or a S if is a sale ad
 	 *
