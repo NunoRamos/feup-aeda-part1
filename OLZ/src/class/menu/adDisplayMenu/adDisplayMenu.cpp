@@ -1,6 +1,7 @@
 #include "../../../menus.h"
 #include "adDisplayMenu.h"
 #include "../../../enums.h"
+#include "../../advertisement/sale/sale.h"
 #include <sstream>
 #include <iostream>
 
@@ -59,9 +60,16 @@ void AdDisplayMenu::print() {
 			<< string(width - 2 - 14 - description.length(), ' ') << borderChar
 			<< endl;
 
-	//a white line between description and contacts
-	for (unsigned int i = 0; i < topMargin; i++)
+	if(ad->getType() == 'S'){
 		emptyLine();
+		Sale* sale = static_cast<Sale*> (ad);
+		string cond = conditionToString(sale->getCondition());
+		cout << borderChar << " Product Condition: " << cond << string(width-2-20- cond.length(), ' ') << borderChar << endl;
+	}
+
+
+	//a white line between description and contacts
+	emptyLine();
 
 	cout << borderChar << " Creation Date: " << ad->getCreationDate()
 			<< string(width - 2 - 16 - ad->getCreationDate().length(), ' ')

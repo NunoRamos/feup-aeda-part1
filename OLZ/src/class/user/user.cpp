@@ -2,6 +2,7 @@
 #include "../../sequentialSearch.h"
 #include "../advertisement/purchase/purchase.h"
 #include "../advertisement/sale/sale.h"
+#include "../../enums.h"
 #include <iostream>
 #include<sstream>
 
@@ -137,8 +138,10 @@ istream& operator>>(istream& in, User &user) {
 			ad->setCreationDate(creationDate);
 			user.advertisements.push_back(ad);
 		} else {
+			string cond;
+			getline(in, cond);
 			Advertisement* ad = new Sale(NULL, title, category, description,
-					New, price);
+					stringToCondition(cond), price);
 			ad->setNegotiable(negotiable);
 			ad->setCreationDate(creationDate);
 			user.advertisements.push_back(ad);
@@ -171,7 +174,7 @@ ostream& operator<<(ostream& out, const User &user) {
 			<< user.location << separationChar << user.showEmail
 			<< separationChar << user.showName << separationChar
 			<< user.showPhoneNumber << separationChar
-			<< user.advertisements.size() << separationChar;
+			<< user.advertisements.size();
 
 	for (unsigned int i = 0; i < user.advertisements.size(); i++) {
 		out << *user.advertisements[i];

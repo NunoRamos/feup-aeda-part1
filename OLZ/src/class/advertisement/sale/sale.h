@@ -47,6 +47,19 @@ public:
 	 */
 	char getType() const;
 
+	/**
+	 * @brief Gets condition
+	 *
+	 * @return Returns condition
+	 */
+	Condition getCondition() const;
+
+	/**
+	 * @brief Prints to out
+	 *
+	 * @param out Out stream
+	 */
+	ostream& print(ostream& out);
 };
 
 

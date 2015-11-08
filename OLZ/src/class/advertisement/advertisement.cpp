@@ -5,7 +5,8 @@
 
 unsigned int Advertisement::nextId = 0;
 
-Advertisement::Advertisement(User* owner, string title, Category category, string description, float price){
+Advertisement::Advertisement(User* owner, string title, Category category,
+		string description, float price) {
 	this->owner = owner;
 	this->title = title;
 	this->category = category;
@@ -14,154 +15,152 @@ Advertisement::Advertisement(User* owner, string title, Category category, strin
 	negotiable = true;
 	id = nextId;
 	nextId++;
-	views=0;
+	views = 0;
 	//TODO: get time and save as creationDate
 
 }
 
-Advertisement::~Advertisement(){
+Advertisement::~Advertisement() {
 	nextId--;
 }
 
-unsigned int Advertisement::getId() const{
+unsigned int Advertisement::getId() const {
 	return id;
 }
 
-User* Advertisement::getOwner(){
+User* Advertisement::getOwner() {
 	return owner;
 }
 
-string Advertisement::getTitle() const{
+string Advertisement::getTitle() const {
 	return title;
 }
 
-Category Advertisement::getCategory() const{
+Category Advertisement::getCategory() const {
 	return category;
 }
 
-string Advertisement::getDescription() const{
+string Advertisement::getDescription() const {
 	return description;
 }
 
-unsigned int Advertisement::getViews() const{
+unsigned int Advertisement::getViews() const {
 	return views;
 }
 
-float Advertisement::getPrice() const{
+float Advertisement::getPrice() const {
 	return price;
 }
 
-string Advertisement::getCreationDate() const{
+string Advertisement::getCreationDate() const {
 	return creationDate.toString();
 
 }
 
-bool Advertisement::isPriceNegotiable() const{
+bool Advertisement::isPriceNegotiable() const {
 	return negotiable;
 }
 
-void Advertisement::setNegotiable(bool negotiable){
+void Advertisement::setNegotiable(bool negotiable) {
 	this->negotiable = negotiable;
 }
 
-void Advertisement::setTitle(string newTitle){
-	this->title=newTitle;
+void Advertisement::setTitle(string newTitle) {
+	this->title = newTitle;
 }
 
-void Advertisement::setDescription(string newDescription){
-	this->description=newDescription;
+void Advertisement::setDescription(string newDescription) {
+	this->description = newDescription;
 }
 
-void Advertisement::setCreationDate(Date creationDate){
-	this->creationDate=creationDate;
+void Advertisement::setCreationDate(Date creationDate) {
+	this->creationDate = creationDate;
 }
 
-void Advertisement::setPrice(float newPrice){
-	this->price=newPrice;
+void Advertisement::setPrice(float newPrice) {
+	this->price = newPrice;
 }
 
-void Advertisement::setCategory(Category newCategory){
-	this->category=newCategory;
+void Advertisement::setCategory(Category newCategory) {
+	this->category = newCategory;
 }
 
-string Advertisement::getImageAt(unsigned int index) const{
+string Advertisement::getImageAt(unsigned int index) const {
 	return imagesPath[index];
 }
 
-void Advertisement::addImage(string path){
+void Advertisement::addImage(string path) {
 	imagesPath.push_back(path);
 }
 
-void Advertisement::incrementViews()
-{
+void Advertisement::incrementViews() {
 	views++;
 
 }
 
-bool Advertisement::searchForText(string text) const{
-	if(title.find(text, 0) != -1)
+bool Advertisement::searchForText(string text) const {
+	if (title.find(text, 0) != -1)
 		return true;
 
-	if(description.find(text, 0) != -1)
+	if (description.find(text, 0) != -1)
 		return true;
 
 	return false;
 }
 
-bool Advertisement::operator==(Advertisement* ad) const{
+bool Advertisement::operator==(Advertisement* ad) const {
 	return (this->id == ad->id);
 }
 
-ostream& operator<<(ostream& out, const Advertisement &ad){
+ostream& operator<<(ostream& out, Advertisement &ad) {
 	char separationChar = '\n';
 	//TODO print category to file, not sure how.
 	//does not print id
 
-	out <<ad.getType()<<separationChar
-			<< ad.title << separationChar
-			<< ad.views << separationChar
-			<< categoryToString(ad.category) << separationChar
-			<< ad.description << separationChar
-			<< ad.creationDate << separationChar
-			<<ad.price<<separationChar
-			<<ad.negotiable<<separationChar;
+	out << separationChar << ad.getType() << separationChar << ad.title
+			<< separationChar << ad.views << separationChar
+			<< categoryToString(ad.category) << separationChar << ad.description
+			<< separationChar << ad.creationDate << separationChar << ad.price
+			<< separationChar << ad.negotiable;
+
+	ad.print(out);
 
 	return out;
 }
 
-
-istream& operator>>(istream& in, Advertisement &ad){
+istream& operator>>(istream& in, Advertisement &ad) {
 	stringstream ss;
 	string temp;
 	//TODO print category from file to variable, not sure how.
 
-	getline(in,ad.title);
-	getline(in,temp);
-	ss<<temp;
-	ss>>ad.views;
+	getline(in, ad.title);
+	getline(in, temp);
+	ss << temp;
+	ss >> ad.views;
 	ss.str("");
-	getline(in,temp);
-	ad.category=stringToCategory(temp);
-	getline(in,ad.description);
-	getline(in,temp);
+	getline(in, temp);
+	ad.category = stringToCategory(temp);
+	getline(in, ad.description);
+	getline(in, temp);
 	Date date(temp);
-	ad.creationDate=date;
-	getline(in,temp);
-	ss<<temp;
-	ss>>ad.price;
+	ad.creationDate = date;
+	getline(in, temp);
+	ss << temp;
+	ss >> ad.price;
 	ss.str("");
-	getline(in,temp);
-	if(temp=="1")
-		ad.negotiable=true;
-	else ad.negotiable=false;
+	getline(in, temp);
+	if (temp == "1")
+		ad.negotiable = true;
+	else
+		ad.negotiable = false;
 	return in;
 }
 
-Location Advertisement::getLocation() const{
+Location Advertisement::getLocation() const {
 	return owner->getLocation();
 }
 
-void Advertisement::setOwner(User* owner){
+void Advertisement::setOwner(User* owner) {
 	this->owner = owner;
 }
 

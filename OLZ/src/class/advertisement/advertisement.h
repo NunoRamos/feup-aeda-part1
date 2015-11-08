@@ -218,7 +218,7 @@ public:
 	 *
 	 * @return Returns out stream
 	 */
-	friend ostream& operator<<(ostream& out, const Advertisement &ad);
+	friend ostream& operator<<(ostream& out, Advertisement &ad);
 
 	/**
 	 * @brief Reads advertisement to in
@@ -229,6 +229,13 @@ public:
 	 * @return Returns in stream
 	 */
 	friend istream& operator>>(istream& in, Advertisement &ad);
+
+	/**
+	 * @brief Prints to out
+	 *
+	 * @param out Out stream
+	 */
+	virtual ostream& print(ostream& out) = 0;
 };
 
 #endif

@@ -34,7 +34,7 @@ public:
 	 * @param borderChar Character with which to fill the menu borders
 	 */
 	AdDisplayMenu(Data* data, Advertisement* ad, unsigned int height = 20,
-			unsigned int width = 50, char borderChar = '#');
+			unsigned int width = 75, char borderChar = '#');
 
 	/**
 	 * @brief Prints the menu to the screen.

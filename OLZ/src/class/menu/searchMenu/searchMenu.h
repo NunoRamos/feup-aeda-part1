@@ -7,7 +7,7 @@ using namespace std;
 
 class SearchMenu : public Menu{
 public:
-	SearchMenu(Data* data, vector<Advertisement* > &results, unsigned int height = 20, unsigned int width = 50, char borderChar = '#');
+	SearchMenu(Data* data, vector<Advertisement* > &results, unsigned int height = 20, unsigned int width = 75, char borderChar = '#');
 	void setAdsPerPage(unsigned int adsPerPage);
 	unsigned int getAdsPerPage();
 	void print();

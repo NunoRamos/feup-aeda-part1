@@ -9,3 +9,5 @@ Purchase::~Purchase(){ }
 char Purchase::getType() const{
 	return 'P';
 }
+
+ostream& Purchase::print(ostream& out){ }

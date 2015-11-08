@@ -42,6 +42,13 @@ public:
 	 * @return Returns a char ( P(urchase) / S(ale))
 	 */
 	char getType() const;
+
+	/**
+	 * @brief Prints to out
+	 *
+	 * @param out Out stream
+	 */
+	ostream& print(ostream& out);
 };
 
 #endif
