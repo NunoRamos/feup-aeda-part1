@@ -68,8 +68,9 @@ bool Data::loadUsers() {
 			userFile >> temp;
 			users.push_back(temp);
 			users[i].setAdsOwner();
-			for (unsigned int j = 0; j < temp.getAdvertisements().size(); j++) {
-				advertisements.push_back(temp.getAdvertisements()[j]);
+			vector<Advertisement*> ads = users[i].getAdvertisements();
+			for (unsigned int j = 0; j < ads.size(); j++) {
+				advertisements.push_back(ads[j]);
 			}
 		}
 		userFile.close();
@@ -174,7 +175,7 @@ vector<Advertisement*> Data::vectorOfSaleOrPurchase(vector<Advertisement*> ads,
 }
 
 void Data::signOut() {
-	signedInUser == NULL;
+	signedInUser = NULL;
 }
 
 User* Data::getSignedInUser() const {

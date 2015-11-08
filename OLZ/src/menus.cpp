@@ -105,6 +105,7 @@ void sameCity(Data* data){
 	string city;
 	getline(cin, city);
 	vector<Advertisement *> ads = data->getAdsInSameCity(city);
+	saleOrPurchase(ads,data);
 	SearchMenu searchMenu(data, ads);
 	searchMenu.createMenu();
 
@@ -119,6 +120,7 @@ void sameCounty(Data* data){
 	string county;
 	getline(cin, county);
 	vector<Advertisement *> ads = data->getAdsInSameCounty(county);
+	saleOrPurchase(ads,data);
 	SearchMenu searchMenu(data, ads);
 	searchMenu.createMenu();
 
@@ -133,6 +135,7 @@ void sameDistrict(Data* data){
 	string district;
 	getline(cin, district);
 	vector<Advertisement *> ads = data->getAdsInSameDistrict(district);
+	saleOrPurchase(ads,data);
 	SearchMenu searchMenu(data, ads);
 	searchMenu.createMenu();
 
