@@ -101,12 +101,9 @@ Inheritance diagram for SearchMenu:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0aed12cbb98fcb864c9eef3b03234469"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0aed12cbb98fcb864c9eef3b03234469"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SearchMenu</b> (<a class="el" href="class_data.html">Data</a> *data, unsigned int height, unsigned int width, vector&lt; <a class="el" href="class_advertisement.html">Advertisement</a> * &gt; results)</td></tr>
-<tr class="separator:a0aed12cbb98fcb864c9eef3b03234469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a5fe2f0aa758edb5e5a809d194fc56e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a5fe2f0aa758edb5e5a809d194fc56e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SearchMenu</b> (<a class="el" href="class_data.html">Data</a> *data, unsigned int height, unsigned int width, char borderChar, vector&lt; <a class="el" href="class_advertisement.html">Advertisement</a> * &gt; results)</td></tr>
-<tr class="separator:a8a5fe2f0aa758edb5e5a809d194fc56e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b814c6254bc67bf059c0a56529eeb0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00b814c6254bc67bf059c0a56529eeb0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SearchMenu</b> (<a class="el" href="class_data.html">Data</a> *data, vector&lt; <a class="el" href="class_advertisement.html">Advertisement</a> * &gt; &amp;results, unsigned int height=20, unsigned int width=50, char borderChar= '#')</td></tr>
+<tr class="separator:a00b814c6254bc67bf059c0a56529eeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a506fce847fc8201ccc63d3fbc2ede3b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a506fce847fc8201ccc63d3fbc2ede3b8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setAdsPerPage</b> (unsigned int adsPerPage)</td></tr>
 <tr class="separator:a506fce847fc8201ccc63d3fbc2ede3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,9 +117,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> ()</td></tr
 void&#160;</td><td class="memItemRight" valign="bottom"><b>createMenu</b> ()</td></tr>
 <tr class="separator:a97f499b313e88142590aa51c2ef82f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_menu"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_menu')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_menu.html">Menu</a></td></tr>
-<tr class="memitem:a8abee3b9e053fca19f831dd776bd99d1 inherit pub_methods_class_menu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8abee3b9e053fca19f831dd776bd99d1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Menu</b> (<a class="el" href="class_data.html">Data</a> *data, unsigned int height, unsigned int width)</td></tr>
-<tr class="separator:a8abee3b9e053fca19f831dd776bd99d1 inherit pub_methods_class_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaadfa629cab782a6087766f4fc7b19a6 inherit pub_methods_class_menu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaadfa629cab782a6087766f4fc7b19a6"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Menu</b> (<a class="el" href="class_data.html">Data</a> *data, unsigned int height, unsigned int width, char borderChar)</td></tr>
 <tr class="separator:aaadfa629cab782a6087766f4fc7b19a6 inherit pub_methods_class_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +129,10 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>getBorderChar</b> ()<
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_menu"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_menu')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_menu.html">Menu</a></td></tr>
+<tr class="memitem:a58897c5c59d341626fa536ea91960fd5 inherit pro_methods_class_menu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58897c5c59d341626fa536ea91960fd5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>emptyLine</b> () const </td></tr>
+<tr class="separator:a58897c5c59d341626fa536ea91960fd5 inherit pro_methods_class_menu"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_menu"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_menu')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_menu.html">Menu</a></td></tr>
 <tr class="memitem:a912c40f15f93092412c8d6204c0f8788 inherit pro_attribs_class_menu"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a912c40f15f93092412c8d6204c0f8788"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>borderChar</b></td></tr>

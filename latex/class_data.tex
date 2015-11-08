@@ -15,46 +15,118 @@
 \hypertarget{class_data_af11f741cb7f587e2e495452a8905a22a}{}\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data} ()\label{class_data_af11f741cb7f587e2e495452a8905a22a}
 
 \begin{DoxyCompactList}\small\item\em Constructor for class \hyperlink{class_data}{Data}. \end{DoxyCompactList}\item 
-bool \hyperlink{class_data_a4dd197a4768f96f882ec6f093abd8d1c}{sign\+In} (string email, string password)
+\hypertarget{class_data_aab31956423290f0d62dcca47ab4d16dd}{}\hyperlink{class_data_aab31956423290f0d62dcca47ab4d16dd}{$\sim$\+Data} ()\label{class_data_aab31956423290f0d62dcca47ab4d16dd}
+
+\begin{DoxyCompactList}\small\item\em Destructor for class \hyperlink{class_data}{Data}. Deletes all advertisements. \end{DoxyCompactList}\item 
+bool \hyperlink{class_data_a0dda2bc60741e1c196d2345035a95ee3}{sign\+In} (const string \&email, const string \&password)
 \begin{DoxyCompactList}\small\item\em Sign user in. \end{DoxyCompactList}\item 
-bool \hyperlink{class_data_a7d8a17cd3323b4db1e1a39ce85094cff}{add\+User} (\hyperlink{class_user}{User} user)
+bool \hyperlink{class_data_a4e112b5666778df0c2e5020321c56e69}{sign\+Up} (\hyperlink{class_user}{User} \&user)
 \begin{DoxyCompactList}\small\item\em Add user to \hyperlink{class_user}{User} vector. \end{DoxyCompactList}\item 
 bool \hyperlink{class_data_af6bfff017e2428145e1f723c41f62e55}{load\+Users} ()
 \begin{DoxyCompactList}\small\item\em Loads users to user vector from path. \end{DoxyCompactList}\item 
 bool \hyperlink{class_data_aaf1fcf32ff1e5aab2dbdba338740ea41}{save\+Users} ()
 \begin{DoxyCompactList}\small\item\em Save users to path from user vector. \end{DoxyCompactList}\item 
-\hypertarget{class_data_aef09da10593bb91b3ae2f627bfc55951}{}void \hyperlink{class_data_aef09da10593bb91b3ae2f627bfc55951}{remove\+Advertisement} (unsigned int id)\label{class_data_aef09da10593bb91b3ae2f627bfc55951}
+\hypertarget{class_data_ad8454797be5cf5326ab8627d89a9e208}{}void \hyperlink{class_data_ad8454797be5cf5326ab8627d89a9e208}{remove\+Advertisement} (\hyperlink{class_advertisement}{Advertisement} $\ast$ad)\label{class_data_ad8454797be5cf5326ab8627d89a9e208}
 
 \begin{DoxyCompactList}\small\item\em Removes advertisement from advertisement vector. \end{DoxyCompactList}\item 
 \hypertarget{class_data_ae4aa5295e124638182712d68416fc603}{}void \hyperlink{class_data_ae4aa5295e124638182712d68416fc603}{add\+Advertisement} (\hyperlink{class_advertisement}{Advertisement} $\ast$ad)\label{class_data_ae4aa5295e124638182712d68416fc603}
 
 \begin{DoxyCompactList}\small\item\em Added advertisement to advertisement vector. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_a2d154ed7f306a52f9881f28c8a05dd8d}{search\+For\+Ads} (string text)
-\begin{DoxyCompactList}\small\item\em Searches for ads with text in it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Searches for ads with text in it. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_a792520f278facffb963b239b8b684a15}{search\+For\+Ads\+Category} (Category text)
+\begin{DoxyCompactList}\small\item\em Searches for ads category with text in it. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_a7f5f4489bd571f294b306547722d06ff}{search\+For\+Ads\+Price} (float inicial\+Price, float final\+Price)
+\begin{DoxyCompactList}\small\item\em Searches for ads that have similar price to price. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_aa54b962f82cd79a35fbd916ffa36a301}{vector\+Of\+Sale\+Or\+Purchase} (vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ ads, char sale\+Or\+Purchase)
+\begin{DoxyCompactList}\small\item\em Creates a sub vector of vector ads, that only contained sale or purchase ads depending sale\+Or\+Purchase. \end{DoxyCompactList}\item 
+\hypertarget{class_data_aa360a3db988286931e07793bcb179f81}{}void \hyperlink{class_data_aa360a3db988286931e07793bcb179f81}{sign\+Out} ()\label{class_data_aa360a3db988286931e07793bcb179f81}
+
+\begin{DoxyCompactList}\small\item\em Signs user out. \end{DoxyCompactList}\item 
+\hyperlink{class_user}{User} $\ast$ \hyperlink{class_data_a2e6708aea5868f9cda03563018e530bd}{get\+Signed\+In\+User} () const 
+\begin{DoxyCompactList}\small\item\em Gets signed in user. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_afd47f962d9f835cd66905fcafd1a0af7}{get\+Ads\+In\+Same\+City} (string city)
+\begin{DoxyCompactList}\small\item\em Gets ads in same city as parameter. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_aaee3cddf7c073f9e2aa9f84e13b03ba8}{get\+Ads\+In\+Same\+County} (string county)
+\begin{DoxyCompactList}\small\item\em Gets ads in same county as parameter. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_af31d6cf3249bfdff2f4ab4ed8d2676c5}{get\+Ads\+In\+Same\+District} (string district)
+\begin{DoxyCompactList}\small\item\em Gets ads in same district as parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \hyperlink{class_user}{User} and \hyperlink{class_advertisement}{Advertisement} data class. 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_data_a7d8a17cd3323b4db1e1a39ce85094cff}{}\index{Data@{Data}!add\+User@{add\+User}}
-\index{add\+User@{add\+User}!Data@{Data}}
-\subsubsection[{add\+User(\+User user)}]{\setlength{\rightskip}{0pt plus 5cm}bool Data\+::add\+User (
+\hypertarget{class_data_afd47f962d9f835cd66905fcafd1a0af7}{}\index{Data@{Data}!get\+Ads\+In\+Same\+City@{get\+Ads\+In\+Same\+City}}
+\index{get\+Ads\+In\+Same\+City@{get\+Ads\+In\+Same\+City}!Data@{Data}}
+\subsubsection[{get\+Ads\+In\+Same\+City(string city)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Advertisement} $\ast$ $>$ Data\+::get\+Ads\+In\+Same\+City (
 \begin{DoxyParamCaption}
-\item[{{\bf User}}]{user}
+\item[{string}]{city}
 \end{DoxyParamCaption}
-)}\label{class_data_a7d8a17cd3323b4db1e1a39ce85094cff}
+)}\label{class_data_afd47f962d9f835cd66905fcafd1a0af7}
 
 
-Add user to \hyperlink{class_user}{User} vector. 
+Gets ads in same city as parameter. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em user} & \hyperlink{class_user}{User} to be added in\\
+{\em city} & City\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Returns true if the user has been successfully added 
+Returns vector of advertisements whose owners are from the same city as parameter 
+\end{DoxyReturn}
+\hypertarget{class_data_aaee3cddf7c073f9e2aa9f84e13b03ba8}{}\index{Data@{Data}!get\+Ads\+In\+Same\+County@{get\+Ads\+In\+Same\+County}}
+\index{get\+Ads\+In\+Same\+County@{get\+Ads\+In\+Same\+County}!Data@{Data}}
+\subsubsection[{get\+Ads\+In\+Same\+County(string county)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Advertisement} $\ast$ $>$ Data\+::get\+Ads\+In\+Same\+County (
+\begin{DoxyParamCaption}
+\item[{string}]{county}
+\end{DoxyParamCaption}
+)}\label{class_data_aaee3cddf7c073f9e2aa9f84e13b03ba8}
+
+
+Gets ads in same county as parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em county} & County\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns vector of advertisements whose owners are from the same county as parameter 
+\end{DoxyReturn}
+\hypertarget{class_data_af31d6cf3249bfdff2f4ab4ed8d2676c5}{}\index{Data@{Data}!get\+Ads\+In\+Same\+District@{get\+Ads\+In\+Same\+District}}
+\index{get\+Ads\+In\+Same\+District@{get\+Ads\+In\+Same\+District}!Data@{Data}}
+\subsubsection[{get\+Ads\+In\+Same\+District(string district)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Advertisement} $\ast$ $>$ Data\+::get\+Ads\+In\+Same\+District (
+\begin{DoxyParamCaption}
+\item[{string}]{district}
+\end{DoxyParamCaption}
+)}\label{class_data_af31d6cf3249bfdff2f4ab4ed8d2676c5}
+
+
+Gets ads in same district as parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em district} & District\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns vector of advertisements whose owners are from the same district as parameter 
+\end{DoxyReturn}
+\hypertarget{class_data_a2e6708aea5868f9cda03563018e530bd}{}\index{Data@{Data}!get\+Signed\+In\+User@{get\+Signed\+In\+User}}
+\index{get\+Signed\+In\+User@{get\+Signed\+In\+User}!Data@{Data}}
+\subsubsection[{get\+Signed\+In\+User() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf User} $\ast$ Data\+::get\+Signed\+In\+User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_data_a2e6708aea5868f9cda03563018e530bd}
+
+
+Gets signed in user. 
+
+\begin{DoxyReturn}{Returns}
+Returns pointer to signed in user 
 \end{DoxyReturn}
 \hypertarget{class_data_af6bfff017e2428145e1f723c41f62e55}{}\index{Data@{Data}!load\+Users@{load\+Users}}
 \index{load\+Users@{load\+Users}!Data@{Data}}
@@ -98,14 +170,50 @@ Searches for ads with text in it.
 \begin{DoxyReturn}{Returns}
 Returns vector of pointers to \hyperlink{class_advertisement}{Advertisement} with ads that have text either in their title or their description 
 \end{DoxyReturn}
-\hypertarget{class_data_a4dd197a4768f96f882ec6f093abd8d1c}{}\index{Data@{Data}!sign\+In@{sign\+In}}
-\index{sign\+In@{sign\+In}!Data@{Data}}
-\subsubsection[{sign\+In(string email, string password)}]{\setlength{\rightskip}{0pt plus 5cm}bool Data\+::sign\+In (
+\hypertarget{class_data_a792520f278facffb963b239b8b684a15}{}\index{Data@{Data}!search\+For\+Ads\+Category@{search\+For\+Ads\+Category}}
+\index{search\+For\+Ads\+Category@{search\+For\+Ads\+Category}!Data@{Data}}
+\subsubsection[{search\+For\+Ads\+Category(\+Category text)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Advertisement} $\ast$ $>$ Data\+::search\+For\+Ads\+Category (
 \begin{DoxyParamCaption}
-\item[{string}]{email, }
-\item[{string}]{password}
+\item[{Category}]{text}
 \end{DoxyParamCaption}
-)}\label{class_data_a4dd197a4768f96f882ec6f093abd8d1c}
+)}\label{class_data_a792520f278facffb963b239b8b684a15}
+
+
+Searches for ads category with text in it. 
+
+\begin{DoxyReturn}{Returns}
+Returns vector of pointers to \hyperlink{class_advertisement}{Advertisement} with ads that have same category 
+\end{DoxyReturn}
+\hypertarget{class_data_a7f5f4489bd571f294b306547722d06ff}{}\index{Data@{Data}!search\+For\+Ads\+Price@{search\+For\+Ads\+Price}}
+\index{search\+For\+Ads\+Price@{search\+For\+Ads\+Price}!Data@{Data}}
+\subsubsection[{search\+For\+Ads\+Price(float inicial\+Price, float final\+Price)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Advertisement} $\ast$ $>$ Data\+::search\+For\+Ads\+Price (
+\begin{DoxyParamCaption}
+\item[{float}]{inicial\+Price, }
+\item[{float}]{final\+Price}
+\end{DoxyParamCaption}
+)}\label{class_data_a7f5f4489bd571f294b306547722d06ff}
+
+
+Searches for ads that have similar price to price. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inicial\+Price} & lower price the user want to spend\\
+\hline
+{\em final\+Price} & higher price the user want to spend\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns vector of pointers to \hyperlink{class_advertisement}{Advertisement} with ads that have similar price 
+\end{DoxyReturn}
+\hypertarget{class_data_a0dda2bc60741e1c196d2345035a95ee3}{}\index{Data@{Data}!sign\+In@{sign\+In}}
+\index{sign\+In@{sign\+In}!Data@{Data}}
+\subsubsection[{sign\+In(const string \&email, const string \&password)}]{\setlength{\rightskip}{0pt plus 5cm}bool Data\+::sign\+In (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{email, }
+\item[{const string \&}]{password}
+\end{DoxyParamCaption}
+)}\label{class_data_a0dda2bc60741e1c196d2345035a95ee3}
 
 
 Sign user in. 
@@ -119,6 +227,47 @@ Sign user in.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Returns true if the user has successfully signed in 
+\end{DoxyReturn}
+\hypertarget{class_data_a4e112b5666778df0c2e5020321c56e69}{}\index{Data@{Data}!sign\+Up@{sign\+Up}}
+\index{sign\+Up@{sign\+Up}!Data@{Data}}
+\subsubsection[{sign\+Up(\+User \&user)}]{\setlength{\rightskip}{0pt plus 5cm}bool Data\+::sign\+Up (
+\begin{DoxyParamCaption}
+\item[{{\bf User} \&}]{user}
+\end{DoxyParamCaption}
+)}\label{class_data_a4e112b5666778df0c2e5020321c56e69}
+
+
+Add user to \hyperlink{class_user}{User} vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \hyperlink{class_user}{User} to be added in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the user has been successfully added 
+\end{DoxyReturn}
+\hypertarget{class_data_aa54b962f82cd79a35fbd916ffa36a301}{}\index{Data@{Data}!vector\+Of\+Sale\+Or\+Purchase@{vector\+Of\+Sale\+Or\+Purchase}}
+\index{vector\+Of\+Sale\+Or\+Purchase@{vector\+Of\+Sale\+Or\+Purchase}!Data@{Data}}
+\subsubsection[{vector\+Of\+Sale\+Or\+Purchase(vector$<$ Advertisement $\ast$ $>$ ads, char sale\+Or\+Purchase)}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Advertisement} $\ast$ $>$ Data\+::vector\+Of\+Sale\+Or\+Purchase (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Advertisement} $\ast$ $>$}]{ads, }
+\item[{char}]{sale\+Or\+Purchase}
+\end{DoxyParamCaption}
+)}\label{class_data_aa54b962f82cd79a35fbd916ffa36a301}
+
+
+Creates a sub vector of vector ads, that only contained sale or purchase ads depending sale\+Or\+Purchase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ads} & vector to create a sub vector \\
+\hline
+{\em sale\+Or\+Purchase} & decided if is a sub vector of sale ads or purchase ads\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector with sale ads only or purchase ads only 
 \end{DoxyReturn}
 
 

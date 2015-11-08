@@ -1,19 +1,9 @@
 var searchData=
 [
-  ['getcategory',['getCategory',['../class_advertisement.html#a123c05d427fed1ac7fec0f55050da20d',1,'Advertisement']]],
-  ['getcity',['getCity',['../class_location.html#ac682ee57f401c50a88d362305d159640',1,'Location']]],
-  ['getcounty',['getCounty',['../class_location.html#aa200afd4afd7898f16c5e54c533da4ef',1,'Location']]],
-  ['getday',['getDay',['../class_date.html#a254204c492d3ebc26a2c62d532e34844',1,'Date']]],
-  ['getdescription',['getDescription',['../class_advertisement.html#ac455b4918dbd923af81efbaebf924985',1,'Advertisement']]],
-  ['getdistrict',['getDistrict',['../class_location.html#a989ce807f112210952bad662d38185dd',1,'Location']]],
-  ['getemail',['getEmail',['../class_user.html#ac8a15550f3596a7ef13eb31b82a8ecf6',1,'User']]],
-  ['getid',['getId',['../class_advertisement.html#aa66d9158d12ae99a04f81cf2adb155fd',1,'Advertisement']]],
-  ['getlocation',['getLocation',['../class_user.html#a7c2072cbf540ae1bd47992b40783843c',1,'User']]],
-  ['getlocationstring',['getLocationString',['../class_user.html#a7185d303044e8dbb683b717228e2560d',1,'User']]],
-  ['getmonth',['getMonth',['../class_date.html#ac471b901531b7a1e73809918bac8c1ec',1,'Date']]],
-  ['getname',['getName',['../class_user.html#a2b2a3d00d303affb4f5674bc9788db52',1,'User']]],
-  ['getphonenumber',['getPhoneNumber',['../class_user.html#a4d59412a7d7411dd8c8127adc9e80fae',1,'User']]],
-  ['getstring',['getString',['../class_date.html#aae63c76af05fad3181883ba040bcd074',1,'Date::getString()'],['../class_location.html#a9584236ecf93acc9192ece00583482ab',1,'Location::getString()']]],
-  ['gettitle',['getTitle',['../class_advertisement.html#ac65aa68caf2b1697c0cc04f2ebb0fd99',1,'Advertisement']]],
-  ['getyear',['getYear',['../class_date.html#a6561cf495bd6b7e6c747420d7ae9cc12',1,'Date']]]
+  ['data',['Data',['../class_data.html',1,'Data'],['../class_data.html#af11f741cb7f587e2e495452a8905a22a',1,'Data::Data()']]],
+  ['data_2ecpp',['data.cpp',['../data_8cpp.html',1,'']]],
+  ['data_2eh',['data.h',['../data_8h.html',1,'']]],
+  ['date',['Date',['../class_date.html',1,'Date'],['../class_date.html#a4e59ed4ba66eec61c27460c5d09fa1bd',1,'Date::Date()'],['../class_date.html#a28c6604a0f8ed8216becf24abc20cf5b',1,'Date::Date(unsigned int day, unsigned int month, unsigned int year)'],['../class_date.html#a5532efafed41fd5f8e013a61313200dc',1,'Date::Date(string date)']]],
+  ['date_2ecpp',['date.cpp',['../date_8cpp.html',1,'']]],
+  ['date_2eh',['date.h',['../date_8h.html',1,'']]]
 ];

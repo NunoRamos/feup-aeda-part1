@@ -84,6 +84,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">advertisement.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -92,12 +94,89 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Code for class <a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="advertisement_8h_source.html">advertisement.h</a>&quot;</code><br />
-<code>#include &quot;../menu/adDisplayMenu/adDisplayMenu.h&quot;</code><br />
-<code>#include &lt;ctime&gt;</code><br />
-<code>#include &lt;chrono&gt;</code><br />
-</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<code>#include &quot;<a class="el" href="ad_display_menu_8h_source.html">../menu/adDisplayMenu/adDisplayMenu.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4286d9a94fa7c907d6a5bad538a8527b"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advertisement_8cpp.html#a4286d9a94fa7c907d6a5bad538a8527b">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="class_advertisement.html">Advertisement</a> &amp;ad)</td></tr>
+<tr class="separator:a4286d9a94fa7c907d6a5bad538a8527b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5180e86255ebd01c83666f431b910bb4"><td class="memItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="advertisement_8cpp.html#a5180e86255ebd01c83666f431b910bb4">operator&gt;&gt;</a> (istream &amp;in, <a class="el" href="class_advertisement.html">Advertisement</a> &amp;ad)</td></tr>
+<tr class="separator:a5180e86255ebd01c83666f431b910bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Code for class <a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a>. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a4286d9a94fa7c907d6a5bad538a8527b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_advertisement.html">Advertisement</a> &amp;&#160;</td>
+          <td class="paramname"><em>ad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Out stream </td></tr>
+    <tr><td class="paramname">ad</td><td>Reference to advertisement to print</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns out stream </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5180e86255ebd01c83666f431b910bb4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">istream&amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_advertisement.html">Advertisement</a> &amp;&#160;</td>
+          <td class="paramname"><em>ad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>In stream </td></tr>
+    <tr><td class="paramname">ad</td><td>Reference to advertisement to write on</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns in stream </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

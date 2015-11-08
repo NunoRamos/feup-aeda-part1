@@ -99,50 +99,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;../date/date.h&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;../location/location.h&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span><a class="code" href="class_advertisement.html">Advertisement</a>;<span class="comment">//had to do this to allow cyclic calling of class</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_user.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_user.html">User</a>{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    vector&lt;Advertisement*&gt; advertisements; <span class="comment">//&lt; Advertisements owned by the user</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">string</span> email; <span class="comment">//&lt; User email</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">string</span> password; <span class="comment">//&lt; User password</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">string</span> name; <span class="comment">//&lt; User name</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">string</span> phoneNumber; <span class="comment">//&lt; User phone number</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_date.html">Date</a> signUpDate; <span class="comment">//&lt; User sign up date</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">class </span><a class="code" href="class_advertisement.html">Advertisement</a>;<span class="comment">//had to do this to allow cyclic calling of class</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_user.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_user.html">User</a>{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    vector&lt;Advertisement*&gt; advertisements; <span class="comment">//&lt; Advertisements owned by the user</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">string</span> email; <span class="comment">//&lt; User email</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">string</span> password; <span class="comment">//&lt; User password</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">string</span> name; <span class="comment">//&lt; User name</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">string</span> phoneNumber; <span class="comment">//&lt; User phone number</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_location.html">Location</a> location; <span class="comment">//&lt; User location</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_user.html">User</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_user.html">User</a>(<span class="keywordtype">string</span> email, <span class="keywordtype">string</span> password, <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> phoneNumber, <a class="code" href="class_date.html">Date</a> signUpDate, <a class="code" href="class_location.html">Location</a> location);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_user.html">User</a>(<span class="keywordtype">string</span> email, <span class="keywordtype">string</span> password, <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> phoneNumber, <a class="code" href="class_date.html">Date</a> signUpDate, <span class="keywordtype">string</span> location);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">string</span> getEmail() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">string</span> getName() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">string</span> getPhoneNumber() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="class_location.html">Location</a> getLocation() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">string</span> getLocationString() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">bool</span> signIn(<span class="keywordtype">string</span> password) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> showEmail; <span class="comment">//&lt; Whether the user&#39;s email should be displayed in his/hers ads</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> showName; <span class="comment">//&lt; Whether the user&#39;s name should be displayed in his/hers ads</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> showPhoneNumber; <span class="comment">//&lt; Whether the user&#39;s phone number should be displayed in his/hers ads</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_user.html">User</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_user.html">User</a>(<span class="keywordtype">string</span> email, <span class="keywordtype">string</span> password, <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> phoneNumber, <a class="code" href="class_location.html">Location</a> location);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="class_user.html">User</a>(<span class="keywordtype">string</span> email, <span class="keywordtype">string</span> password, <span class="keywordtype">string</span> name, <span class="keywordtype">string</span> phoneNumber, <span class="keywordtype">string</span> location);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">string</span> getEmail() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">string</span> getName() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">string</span> getPhoneNumber() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">string</span> getPassword() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="class_location.html">Location</a> getLocation() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">string</span> getLocationString() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">friend</span> istream&amp; <a class="code" href="user_8cpp.html#a450594b5d214c6f0e33a61a070d77422">operator&gt;&gt;</a>(istream&amp; in, <a class="code" href="class_user.html">User</a> user);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">bool</span> getShowEmail() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> removeAdvertisement(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="user_8cpp_html_a450594b5d214c6f0e33a61a070d77422"><div class="ttname"><a href="user_8cpp.html#a450594b5d214c6f0e33a61a070d77422">operator&gt;&gt;</a></div><div class="ttdeci">istream &amp; operator&gt;&gt;(istream &amp;in, User user)</div><div class="ttdef"><b>Definition:</b> user.cpp:52</div></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">bool</span> getShowName() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">bool</span> getShowPhoneNumber() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> setEmail(<span class="keywordtype">string</span> email);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> setShowEmail(<span class="keywordtype">bool</span> show);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> setShowName(<span class="keywordtype">bool</span> show);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">void</span> setShowPhoneNumber(<span class="keywordtype">bool</span> show);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">bool</span> signIn(<span class="keywordtype">string</span> password) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">friend</span> istream&amp; <a class="code" href="advertisement_8cpp.html#a5180e86255ebd01c83666f431b910bb4">operator&gt;&gt;</a>(istream&amp; in, <a class="code" href="class_user.html">User</a> &amp;user);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span> removeAdvertisement(<a class="code" href="class_advertisement.html">Advertisement</a>* ad);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> addAdvertisement(<a class="code" href="class_advertisement.html">Advertisement</a> *newAdvertisement);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">void</span> editAdvertisement();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="class_user.html">User</a> &amp; u1) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">friend</span> ostream&amp; <a class="code" href="advertisement_8cpp.html#a4286d9a94fa7c907d6a5bad538a8527b">operator&lt;&lt;</a>(ostream&amp; out, <span class="keyword">const</span> <a class="code" href="class_user.html">User</a> &amp;user);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    vector&lt;Advertisement *&gt; getAdvertisements();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;};</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
-<div class="ttc" id="class_user_html"><div class="ttname"><a href="class_user.html">User</a></div><div class="ttdoc">Date class. </div><div class="ttdef"><b>Definition:</b> user.h:28</div></div>
-<div class="ttc" id="class_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdoc">Date class. </div><div class="ttdef"><b>Definition:</b> date.h:21</div></div>
+<div class="ttc" id="class_user_html"><div class="ttname"><a href="class_user.html">User</a></div><div class="ttdoc">Date class. </div><div class="ttdef"><b>Definition:</b> user.h:29</div></div>
+<div class="ttc" id="advertisement_8cpp_html_a4286d9a94fa7c907d6a5bad538a8527b"><div class="ttname"><a href="advertisement_8cpp.html#a4286d9a94fa7c907d6a5bad538a8527b">operator&lt;&lt;</a></div><div class="ttdeci">ostream &amp; operator&lt;&lt;(ostream &amp;out, const Advertisement &amp;ad)</div><div class="ttdef"><b>Definition:</b> advertisement.cpp:115</div></div>
 <div class="ttc" id="class_location_html"><div class="ttname"><a href="class_location.html">Location</a></div><div class="ttdoc">Code for class Location. A county has many cities; a district has various counties. </div><div class="ttdef"><b>Definition:</b> location.h:22</div></div>
-<div class="ttc" id="class_advertisement_html"><div class="ttname"><a href="class_advertisement.html">Advertisement</a></div><div class="ttdoc">Advertisement class. </div><div class="ttdef"><b>Definition:</b> advertisement.h:30</div></div>
+<div class="ttc" id="class_advertisement_html"><div class="ttname"><a href="class_advertisement.html">Advertisement</a></div><div class="ttdoc">Advertisement class. </div><div class="ttdef"><b>Definition:</b> advertisement.h:31</div></div>
+<div class="ttc" id="advertisement_8cpp_html_a5180e86255ebd01c83666f431b910bb4"><div class="ttname"><a href="advertisement_8cpp.html#a5180e86255ebd01c83666f431b910bb4">operator&gt;&gt;</a></div><div class="ttdeci">istream &amp; operator&gt;&gt;(istream &amp;in, Advertisement &amp;ad)</div><div class="ttdef"><b>Definition:</b> advertisement.cpp:129</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -15,9 +15,9 @@
 \hypertarget{class_user_a4a0137053e591fbb79d9057dd7d2283d}{}\hyperlink{class_user_a4a0137053e591fbb79d9057dd7d2283d}{User} ()\label{class_user_a4a0137053e591fbb79d9057dd7d2283d}
 
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_user}{User} default constructor. \end{DoxyCompactList}\item 
-\hyperlink{class_user_a670870b549b3675f2ebcc7045f89cd1f}{User} (string email, string password, string name, string phone\+Number, \hyperlink{class_date}{Date} sign\+Up\+Date, \hyperlink{class_location}{Location} location)
+\hyperlink{class_user_a7cc314f439fc19daa7303aa31f3e6798}{User} (string email, string password, string name, string phone\+Number, \hyperlink{class_location}{Location} location)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_user}{User} constructor. \end{DoxyCompactList}\item 
-\hyperlink{class_user_a55fbba82f16e683eba80f23d09d49e06}{User} (string email, string password, string name, string phone\+Number, \hyperlink{class_date}{Date} sign\+Up\+Date, string location)
+\hyperlink{class_user_aa0732588c5bd4db4f7f6310e788abacf}{User} (string email, string password, string name, string phone\+Number, string location)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_user}{User} constructor. \end{DoxyCompactList}\item 
 string \hyperlink{class_user_ac8a15550f3596a7ef13eb31b82a8ecf6}{get\+Email} () const 
 \begin{DoxyCompactList}\small\item\em Gets user email. \end{DoxyCompactList}\item 
@@ -25,14 +25,39 @@ string \hyperlink{class_user_a2b2a3d00d303affb4f5674bc9788db52}{get\+Name} () co
 \begin{DoxyCompactList}\small\item\em Gets user name. \end{DoxyCompactList}\item 
 string \hyperlink{class_user_a4d59412a7d7411dd8c8127adc9e80fae}{get\+Phone\+Number} () const 
 \begin{DoxyCompactList}\small\item\em Gets user phone number. \end{DoxyCompactList}\item 
+string \hyperlink{class_user_a3f39e6b48da6b769692bf71f26104a6a}{get\+Password} () const 
+\begin{DoxyCompactList}\small\item\em Gets user password. \end{DoxyCompactList}\item 
 \hyperlink{class_location}{Location} \hyperlink{class_user_a7c2072cbf540ae1bd47992b40783843c}{get\+Location} () const 
 \begin{DoxyCompactList}\small\item\em Gets user location. \end{DoxyCompactList}\item 
 string \hyperlink{class_user_a7185d303044e8dbb683b717228e2560d}{get\+Location\+String} () const 
 \begin{DoxyCompactList}\small\item\em Gets user location as string. \end{DoxyCompactList}\item 
+bool \hyperlink{class_user_a6d936807efcd03cf1763742668ff8b7a}{get\+Show\+Email} () const 
+\begin{DoxyCompactList}\small\item\em Gets user show\+Email attribute. \end{DoxyCompactList}\item 
+bool \hyperlink{class_user_a232cf36107c8b0f7ff9440fc97cb402f}{get\+Show\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Gets user show\+Name attribute. \end{DoxyCompactList}\item 
+bool \hyperlink{class_user_a55730e5ee153d90c64b1871d06055c26}{get\+Show\+Phone\+Number} () const 
+\begin{DoxyCompactList}\small\item\em Gets user show\+Phone\+Number attribute. \end{DoxyCompactList}\item 
+void \hyperlink{class_user_a9d38dd7a9f5ca79cf17ecf572d42c647}{set\+Email} (string email)
+\begin{DoxyCompactList}\small\item\em Sets user email. \end{DoxyCompactList}\item 
+void \hyperlink{class_user_af2c1c491ccbb27dcf3426b8ab89841d5}{set\+Show\+Email} (bool show)
+\begin{DoxyCompactList}\small\item\em Sets user show\+Email attribute. \end{DoxyCompactList}\item 
+void \hyperlink{class_user_a655b1a3e4d1877a8cddb9a3d874c2844}{set\+Show\+Name} (bool show)
+\begin{DoxyCompactList}\small\item\em Sets user show\+Name attribute. \end{DoxyCompactList}\item 
+void \hyperlink{class_user_ae8606e0f992f391088af95a80aeaef07}{set\+Show\+Phone\+Number} (bool show)
+\begin{DoxyCompactList}\small\item\em Sets user show\+Phone\+Number attribute. \end{DoxyCompactList}\item 
 bool \hyperlink{class_user_af75d18fdc45ac9fba9911815b78b7daa}{sign\+In} (string password) const 
 \begin{DoxyCompactList}\small\item\em Signs in user. \end{DoxyCompactList}\item 
-void \hyperlink{class_user_aa3bb1db20bfdae4ae26f8e5b84360f45}{remove\+Advertisement} (unsigned int id)
-\begin{DoxyCompactList}\small\item\em Removes advertisement from advertisements the user owns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_user_a62c158d18b404de5fa049358c2a64a85}{remove\+Advertisement} (\hyperlink{class_advertisement}{Advertisement} $\ast$ad)
+\begin{DoxyCompactList}\small\item\em Removes advertisement from advertisements the user owns. \end{DoxyCompactList}\item 
+void \hyperlink{class_user_a7ac881e0b18256f2aa5bc58616994965}{add\+Advertisement} (\hyperlink{class_advertisement}{Advertisement} $\ast$new\+Advertisement)
+\begin{DoxyCompactList}\small\item\em Addd advertisement to user advertisements. \end{DoxyCompactList}\item 
+\hypertarget{class_user_a7f9f8c64216df27994ffe53960d2d18a}{}void \hyperlink{class_user_a7f9f8c64216df27994ffe53960d2d18a}{edit\+Advertisement} ()\label{class_user_a7f9f8c64216df27994ffe53960d2d18a}
+
+\begin{DoxyCompactList}\small\item\em Edits a user advertisement. \end{DoxyCompactList}\item 
+bool \hyperlink{class_user_aa141a81fd5094fea55f53126a94a0342}{operator==} (const \hyperlink{class_user}{User} \&u1) const 
+\begin{DoxyCompactList}\small\item\em Compares if this user is equal to u1, using email attribute. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_user_af0392c9bec07c5dae9f267437189ab3b}{get\+Advertisements} ()
+\begin{DoxyCompactList}\small\item\em Gets all advertisements the user has. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,35 +76,42 @@ void \hyperlink{class_user_aa3bb1db20bfdae4ae26f8e5b84360f45}{remove\+Advertisem
 \hypertarget{class_user_a727ba647fe019be6fa9c03308d60da9e}{}string {\bfseries phone\+Number}\label{class_user_a727ba647fe019be6fa9c03308d60da9e}
 
 \item 
-\hypertarget{class_user_ab508f13f113618c508641e7f47932cc9}{}\hyperlink{class_date}{Date} {\bfseries sign\+Up\+Date}\label{class_user_ab508f13f113618c508641e7f47932cc9}
+\hypertarget{class_user_a1c8e68a346c8a47d8cf0e75356c66562}{}\hyperlink{class_location}{Location} {\bfseries location}\label{class_user_a1c8e68a346c8a47d8cf0e75356c66562}
 
 \item 
-\hypertarget{class_user_a1c8e68a346c8a47d8cf0e75356c66562}{}\hyperlink{class_location}{Location} {\bfseries location}\label{class_user_a1c8e68a346c8a47d8cf0e75356c66562}
+\hypertarget{class_user_a82dcde625983882667723c4549156db8}{}bool {\bfseries show\+Email}\label{class_user_a82dcde625983882667723c4549156db8}
+
+\item 
+\hypertarget{class_user_a0360d5ecb5643df7899cef2c1479bd30}{}bool {\bfseries show\+Name}\label{class_user_a0360d5ecb5643df7899cef2c1479bd30}
+
+\item 
+\hypertarget{class_user_af166bac19b9b0b9b85d1b51aaff9cbd9}{}bool {\bfseries show\+Phone\+Number}\label{class_user_af166bac19b9b0b9b85d1b51aaff9cbd9}
 
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-istream \& \hyperlink{class_user_a450594b5d214c6f0e33a61a070d77422}{operator$>$$>$} (istream \&in, \hyperlink{class_user}{User} user)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_user}{User} $>$$>$ operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+istream \& \hyperlink{class_user_aae624f64cdd1af3b59c2443cffa82494}{operator$>$$>$} (istream \&in, \hyperlink{class_user}{User} \&user)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_user}{User} $>$$>$ operator. \end{DoxyCompactList}\item 
+ostream \& \hyperlink{class_user_acf1038a8d320684dc3fbdd5e4308e062}{operator$<$$<$} (ostream \&out, const \hyperlink{class_user}{User} \&user)
+\begin{DoxyCompactList}\small\item\em Saves user and every advertisement he/she owns. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \hyperlink{class_date}{Date} class. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_user_a670870b549b3675f2ebcc7045f89cd1f}{}\index{User@{User}!User@{User}}
+\hypertarget{class_user_a7cc314f439fc19daa7303aa31f3e6798}{}\index{User@{User}!User@{User}}
 \index{User@{User}!User@{User}}
-\subsubsection[{User(string email, string password, string name, string phone\+Number, Date sign\+Up\+Date, Location location)}]{\setlength{\rightskip}{0pt plus 5cm}User\+::\+User (
+\subsubsection[{User(string email, string password, string name, string phone\+Number, Location location)}]{\setlength{\rightskip}{0pt plus 5cm}User\+::\+User (
 \begin{DoxyParamCaption}
 \item[{string}]{email, }
 \item[{string}]{password, }
 \item[{string}]{name, }
 \item[{string}]{phone\+Number, }
-\item[{{\bf Date}}]{sign\+Up\+Date, }
 \item[{{\bf Location}}]{location}
 \end{DoxyParamCaption}
-)}\label{class_user_a670870b549b3675f2ebcc7045f89cd1f}
+)}\label{class_user_a7cc314f439fc19daa7303aa31f3e6798}
 
 
 \hyperlink{class_user}{User} constructor. 
@@ -99,18 +131,17 @@ istream \& \hyperlink{class_user_a450594b5d214c6f0e33a61a070d77422}{operator$>$$
 {\em location} & \hyperlink{class_user}{User} location \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_user_a55fbba82f16e683eba80f23d09d49e06}{}\index{User@{User}!User@{User}}
+\hypertarget{class_user_aa0732588c5bd4db4f7f6310e788abacf}{}\index{User@{User}!User@{User}}
 \index{User@{User}!User@{User}}
-\subsubsection[{User(string email, string password, string name, string phone\+Number, Date sign\+Up\+Date, string location)}]{\setlength{\rightskip}{0pt plus 5cm}User\+::\+User (
+\subsubsection[{User(string email, string password, string name, string phone\+Number, string location)}]{\setlength{\rightskip}{0pt plus 5cm}User\+::\+User (
 \begin{DoxyParamCaption}
 \item[{string}]{email, }
 \item[{string}]{password, }
 \item[{string}]{name, }
 \item[{string}]{phone\+Number, }
-\item[{{\bf Date}}]{sign\+Up\+Date, }
 \item[{string}]{location}
 \end{DoxyParamCaption}
-)}\label{class_user_a55fbba82f16e683eba80f23d09d49e06}
+)}\label{class_user_aa0732588c5bd4db4f7f6310e788abacf}
 
 
 \hyperlink{class_user}{User} constructor. 
@@ -133,6 +164,36 @@ istream \& \hyperlink{class_user_a450594b5d214c6f0e33a61a070d77422}{operator$>$$
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_user_a7ac881e0b18256f2aa5bc58616994965}{}\index{User@{User}!add\+Advertisement@{add\+Advertisement}}
+\index{add\+Advertisement@{add\+Advertisement}!User@{User}}
+\subsubsection[{add\+Advertisement(\+Advertisement $\ast$new\+Advertisement)}]{\setlength{\rightskip}{0pt plus 5cm}void User\+::add\+Advertisement (
+\begin{DoxyParamCaption}
+\item[{{\bf Advertisement} $\ast$}]{new\+Advertisement}
+\end{DoxyParamCaption}
+)}\label{class_user_a7ac881e0b18256f2aa5bc58616994965}
+
+
+Addd advertisement to user advertisements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Advertisement} & Pointer to New \hyperlink{class_advertisement}{Advertisement} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_user_af0392c9bec07c5dae9f267437189ab3b}{}\index{User@{User}!get\+Advertisements@{get\+Advertisements}}
+\index{get\+Advertisements@{get\+Advertisements}!User@{User}}
+\subsubsection[{get\+Advertisements()}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Advertisement} $\ast$ $>$ User\+::get\+Advertisements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_user_af0392c9bec07c5dae9f267437189ab3b}
+
+
+Gets all advertisements the user has. 
+
+\begin{DoxyReturn}{Returns}
+Returns all advertisements the user has 
+\end{DoxyReturn}
 \hypertarget{class_user_ac8a15550f3596a7ef13eb31b82a8ecf6}{}\index{User@{User}!get\+Email@{get\+Email}}
 \index{get\+Email@{get\+Email}!User@{User}}
 \subsubsection[{get\+Email() const }]{\setlength{\rightskip}{0pt plus 5cm}string User\+::get\+Email (
@@ -189,6 +250,20 @@ Gets user name.
 \begin{DoxyReturn}{Returns}
 Returns user name 
 \end{DoxyReturn}
+\hypertarget{class_user_a3f39e6b48da6b769692bf71f26104a6a}{}\index{User@{User}!get\+Password@{get\+Password}}
+\index{get\+Password@{get\+Password}!User@{User}}
+\subsubsection[{get\+Password() const }]{\setlength{\rightskip}{0pt plus 5cm}string User\+::get\+Password (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_user_a3f39e6b48da6b769692bf71f26104a6a}
+
+
+Gets user password. 
+
+\begin{DoxyReturn}{Returns}
+Returns user password 
+\end{DoxyReturn}
 \hypertarget{class_user_a4d59412a7d7411dd8c8127adc9e80fae}{}\index{User@{User}!get\+Phone\+Number@{get\+Phone\+Number}}
 \index{get\+Phone\+Number@{get\+Phone\+Number}!User@{User}}
 \subsubsection[{get\+Phone\+Number() const }]{\setlength{\rightskip}{0pt plus 5cm}string User\+::get\+Phone\+Number (
@@ -203,20 +278,140 @@ Gets user phone number.
 \begin{DoxyReturn}{Returns}
 Returns user phone number 
 \end{DoxyReturn}
-\hypertarget{class_user_aa3bb1db20bfdae4ae26f8e5b84360f45}{}\index{User@{User}!remove\+Advertisement@{remove\+Advertisement}}
-\index{remove\+Advertisement@{remove\+Advertisement}!User@{User}}
-\subsubsection[{remove\+Advertisement(unsigned int id)}]{\setlength{\rightskip}{0pt plus 5cm}void User\+::remove\+Advertisement (
+\hypertarget{class_user_a6d936807efcd03cf1763742668ff8b7a}{}\index{User@{User}!get\+Show\+Email@{get\+Show\+Email}}
+\index{get\+Show\+Email@{get\+Show\+Email}!User@{User}}
+\subsubsection[{get\+Show\+Email() const }]{\setlength{\rightskip}{0pt plus 5cm}bool User\+::get\+Show\+Email (
 \begin{DoxyParamCaption}
-\item[{unsigned int}]{id}
+{}
 \end{DoxyParamCaption}
-)}\label{class_user_aa3bb1db20bfdae4ae26f8e5b84360f45}
+) const}\label{class_user_a6d936807efcd03cf1763742668ff8b7a}
+
+
+Gets user show\+Email attribute. 
+
+\begin{DoxyReturn}{Returns}
+Returns user show\+Email 
+\end{DoxyReturn}
+\hypertarget{class_user_a232cf36107c8b0f7ff9440fc97cb402f}{}\index{User@{User}!get\+Show\+Name@{get\+Show\+Name}}
+\index{get\+Show\+Name@{get\+Show\+Name}!User@{User}}
+\subsubsection[{get\+Show\+Name() const }]{\setlength{\rightskip}{0pt plus 5cm}bool User\+::get\+Show\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_user_a232cf36107c8b0f7ff9440fc97cb402f}
+
+
+Gets user show\+Name attribute. 
+
+\begin{DoxyReturn}{Returns}
+Returns user show\+Name 
+\end{DoxyReturn}
+\hypertarget{class_user_a55730e5ee153d90c64b1871d06055c26}{}\index{User@{User}!get\+Show\+Phone\+Number@{get\+Show\+Phone\+Number}}
+\index{get\+Show\+Phone\+Number@{get\+Show\+Phone\+Number}!User@{User}}
+\subsubsection[{get\+Show\+Phone\+Number() const }]{\setlength{\rightskip}{0pt plus 5cm}bool User\+::get\+Show\+Phone\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_user_a55730e5ee153d90c64b1871d06055c26}
+
+
+Gets user show\+Phone\+Number attribute. 
+
+\begin{DoxyReturn}{Returns}
+Returns user show\+Phone\+Number 
+\end{DoxyReturn}
+\hypertarget{class_user_aa141a81fd5094fea55f53126a94a0342}{}\index{User@{User}!operator==@{operator==}}
+\index{operator==@{operator==}!User@{User}}
+\subsubsection[{operator==(const User \&u1) const }]{\setlength{\rightskip}{0pt plus 5cm}bool User\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf User} \&}]{u1}
+\end{DoxyParamCaption}
+) const}\label{class_user_aa141a81fd5094fea55f53126a94a0342}
+
+
+Compares if this user is equal to u1, using email attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u1} & \hyperlink{class_user}{User} to be compared with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if this and u1 have the same email. Returns false otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_user_a62c158d18b404de5fa049358c2a64a85}{}\index{User@{User}!remove\+Advertisement@{remove\+Advertisement}}
+\index{remove\+Advertisement@{remove\+Advertisement}!User@{User}}
+\subsubsection[{remove\+Advertisement(\+Advertisement $\ast$ad)}]{\setlength{\rightskip}{0pt plus 5cm}void User\+::remove\+Advertisement (
+\begin{DoxyParamCaption}
+\item[{{\bf Advertisement} $\ast$}]{ad}
+\end{DoxyParamCaption}
+)}\label{class_user_a62c158d18b404de5fa049358c2a64a85}
 
 
 Removes advertisement from advertisements the user owns. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em id} & \hyperlink{class_advertisement}{Advertisement} identification number \\
+{\em title} & \hyperlink{class_advertisement}{Advertisement} \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_user_a9d38dd7a9f5ca79cf17ecf572d42c647}{}\index{User@{User}!set\+Email@{set\+Email}}
+\index{set\+Email@{set\+Email}!User@{User}}
+\subsubsection[{set\+Email(string email)}]{\setlength{\rightskip}{0pt plus 5cm}void User\+::set\+Email (
+\begin{DoxyParamCaption}
+\item[{string}]{email}
+\end{DoxyParamCaption}
+)}\label{class_user_a9d38dd7a9f5ca79cf17ecf572d42c647}
+
+
+Sets user email. 
+
+\hyperlink{class_user}{User} email \hypertarget{class_user_af2c1c491ccbb27dcf3426b8ab89841d5}{}\index{User@{User}!set\+Show\+Email@{set\+Show\+Email}}
+\index{set\+Show\+Email@{set\+Show\+Email}!User@{User}}
+\subsubsection[{set\+Show\+Email(bool show)}]{\setlength{\rightskip}{0pt plus 5cm}void User\+::set\+Show\+Email (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+)}\label{class_user_af2c1c491ccbb27dcf3426b8ab89841d5}
+
+
+Sets user show\+Email attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & Whether show\+Email should be true or not \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_user_a655b1a3e4d1877a8cddb9a3d874c2844}{}\index{User@{User}!set\+Show\+Name@{set\+Show\+Name}}
+\index{set\+Show\+Name@{set\+Show\+Name}!User@{User}}
+\subsubsection[{set\+Show\+Name(bool show)}]{\setlength{\rightskip}{0pt plus 5cm}void User\+::set\+Show\+Name (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+)}\label{class_user_a655b1a3e4d1877a8cddb9a3d874c2844}
+
+
+Sets user show\+Name attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & Whether show\+Name should be true or not \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_user_ae8606e0f992f391088af95a80aeaef07}{}\index{User@{User}!set\+Show\+Phone\+Number@{set\+Show\+Phone\+Number}}
+\index{set\+Show\+Phone\+Number@{set\+Show\+Phone\+Number}!User@{User}}
+\subsubsection[{set\+Show\+Phone\+Number(bool show)}]{\setlength{\rightskip}{0pt plus 5cm}void User\+::set\+Show\+Phone\+Number (
+\begin{DoxyParamCaption}
+\item[{bool}]{show}
+\end{DoxyParamCaption}
+)}\label{class_user_ae8606e0f992f391088af95a80aeaef07}
+
+
+Sets user show\+Phone\+Number attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em show} & Whether show\+Phone\+Number should be true or not \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_user_af75d18fdc45ac9fba9911815b78b7daa}{}\index{User@{User}!sign\+In@{sign\+In}}
@@ -241,14 +436,36 @@ Returns if the user has successfully signed in
 
 
 \subsection{Friends And Related Function Documentation}
-\hypertarget{class_user_a450594b5d214c6f0e33a61a070d77422}{}\index{User@{User}!operator$>$$>$@{operator$>$$>$}}
+\hypertarget{class_user_acf1038a8d320684dc3fbdd5e4308e062}{}\index{User@{User}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!User@{User}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf User} \&}]{user}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_user_acf1038a8d320684dc3fbdd5e4308e062}
+
+
+Saves user and every advertisement he/she owns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Output file \\
+\hline
+{\em user} & \hyperlink{class_user}{User} to print\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns out stream 
+\end{DoxyReturn}
+\hypertarget{class_user_aae624f64cdd1af3b59c2443cffa82494}{}\index{User@{User}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!User@{User}}
 \subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (
 \begin{DoxyParamCaption}
 \item[{istream \&}]{in, }
-\item[{{\bf User}}]{user}
+\item[{{\bf User} \&}]{user}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_user_a450594b5d214c6f0e33a61a070d77422}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_user_aae624f64cdd1af3b59c2443cffa82494}
 
 
 \hyperlink{class_user}{User} $>$$>$ operator. 

@@ -84,6 +84,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_advertisement-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Advertisement Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -107,12 +110,9 @@ Inheritance diagram for Advertisement:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3819a25a48afbca0a6da6717ef0d6da3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a3819a25a48afbca0a6da6717ef0d6da3">Advertisement</a> (<a class="el" href="class_user.html">User</a> *owner, string title, Category category)</td></tr>
-<tr class="memdesc:a3819a25a48afbca0a6da6717ef0d6da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for class <a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a>.  <a href="#a3819a25a48afbca0a6da6717ef0d6da3">More...</a><br /></td></tr>
-<tr class="separator:a3819a25a48afbca0a6da6717ef0d6da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a343d31bb9f21892718fc4a756f7eb05c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a343d31bb9f21892718fc4a756f7eb05c">Advertisement</a> (<a class="el" href="class_user.html">User</a> *owner, string title, Category category, string description)</td></tr>
-<tr class="memdesc:a343d31bb9f21892718fc4a756f7eb05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for class <a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a>.  <a href="#a343d31bb9f21892718fc4a756f7eb05c">More...</a><br /></td></tr>
-<tr class="separator:a343d31bb9f21892718fc4a756f7eb05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39584aae7c125c74a9dfe97409ae326"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#aa39584aae7c125c74a9dfe97409ae326">Advertisement</a> (<a class="el" href="class_user.html">User</a> *owner, string title, Category category, string description, float price)</td></tr>
+<tr class="memdesc:aa39584aae7c125c74a9dfe97409ae326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for class <a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a>.  <a href="#aa39584aae7c125c74a9dfe97409ae326">More...</a><br /></td></tr>
+<tr class="separator:aa39584aae7c125c74a9dfe97409ae326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49170a22dcd2a8bf88d3ed1aad475b82"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49170a22dcd2a8bf88d3ed1aad475b82"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a49170a22dcd2a8bf88d3ed1aad475b82">~Advertisement</a> ()</td></tr>
 <tr class="memdesc:a49170a22dcd2a8bf88d3ed1aad475b82"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> destructor. <br /></td></tr>
@@ -120,6 +120,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:aa66d9158d12ae99a04f81cf2adb155fd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#aa66d9158d12ae99a04f81cf2adb155fd">getId</a> () const </td></tr>
 <tr class="memdesc:aa66d9158d12ae99a04f81cf2adb155fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets advertisement ID.  <a href="#aa66d9158d12ae99a04f81cf2adb155fd">More...</a><br /></td></tr>
 <tr class="separator:aa66d9158d12ae99a04f81cf2adb155fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8025c78cb72132ff989fac5c5ddb9cfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_user.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a8025c78cb72132ff989fac5c5ddb9cfe">getOwner</a> () const </td></tr>
+<tr class="memdesc:a8025c78cb72132ff989fac5c5ddb9cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets advertisement owner.  <a href="#a8025c78cb72132ff989fac5c5ddb9cfe">More...</a><br /></td></tr>
+<tr class="separator:a8025c78cb72132ff989fac5c5ddb9cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac65aa68caf2b1697c0cc04f2ebb0fd99"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#ac65aa68caf2b1697c0cc04f2ebb0fd99">getTitle</a> () const </td></tr>
 <tr class="memdesc:ac65aa68caf2b1697c0cc04f2ebb0fd99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets advertisement title.  <a href="#ac65aa68caf2b1697c0cc04f2ebb0fd99">More...</a><br /></td></tr>
 <tr class="separator:ac65aa68caf2b1697c0cc04f2ebb0fd99"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,6 +132,36 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:ac455b4918dbd923af81efbaebf924985"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#ac455b4918dbd923af81efbaebf924985">getDescription</a> () const </td></tr>
 <tr class="memdesc:ac455b4918dbd923af81efbaebf924985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets advertisement description.  <a href="#ac455b4918dbd923af81efbaebf924985">More...</a><br /></td></tr>
 <tr class="separator:ac455b4918dbd923af81efbaebf924985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a823c798799bcdf75a5b65158d6ad8c96"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a823c798799bcdf75a5b65158d6ad8c96">getViews</a> () const </td></tr>
+<tr class="memdesc:a823c798799bcdf75a5b65158d6ad8c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets number of views the advertisement has had.  <a href="#a823c798799bcdf75a5b65158d6ad8c96">More...</a><br /></td></tr>
+<tr class="separator:a823c798799bcdf75a5b65158d6ad8c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c7a08129880f12744853f9ceeb172ee"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a6c7a08129880f12744853f9ceeb172ee">getPrice</a> () const </td></tr>
+<tr class="memdesc:a6c7a08129880f12744853f9ceeb172ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets advertisement price.  <a href="#a6c7a08129880f12744853f9ceeb172ee">More...</a><br /></td></tr>
+<tr class="separator:a6c7a08129880f12744853f9ceeb172ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae882e292b1ddcad797df1d4b4766073"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#aae882e292b1ddcad797df1d4b4766073">getCreationDate</a> () const </td></tr>
+<tr class="memdesc:aae882e292b1ddcad797df1d4b4766073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets advertisement creation date.  <a href="#aae882e292b1ddcad797df1d4b4766073">More...</a><br /></td></tr>
+<tr class="separator:aae882e292b1ddcad797df1d4b4766073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a872ed609f23386fa5b26913a1d78036a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a872ed609f23386fa5b26913a1d78036a">isPriceNegotiable</a> () const </td></tr>
+<tr class="memdesc:a872ed609f23386fa5b26913a1d78036a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if price is negotiable.  <a href="#a872ed609f23386fa5b26913a1d78036a">More...</a><br /></td></tr>
+<tr class="separator:a872ed609f23386fa5b26913a1d78036a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22bc67410075fb1d7121ebe641da460e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a22bc67410075fb1d7121ebe641da460e">setTitle</a> (string newTitle)</td></tr>
+<tr class="memdesc:a22bc67410075fb1d7121ebe641da460e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the title.  <a href="#a22bc67410075fb1d7121ebe641da460e">More...</a><br /></td></tr>
+<tr class="separator:a22bc67410075fb1d7121ebe641da460e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6313190818f1e4177bedeab6077e8fd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a6313190818f1e4177bedeab6077e8fd7">setCreationDate</a> (<a class="el" href="class_date.html">Date</a> creationDate)</td></tr>
+<tr class="memdesc:a6313190818f1e4177bedeab6077e8fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes creation date.  <a href="#a6313190818f1e4177bedeab6077e8fd7">More...</a><br /></td></tr>
+<tr class="separator:a6313190818f1e4177bedeab6077e8fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaf414adece9bb3ca2077354e15ab626"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#acaf414adece9bb3ca2077354e15ab626">setDescription</a> (string newDescription)</td></tr>
+<tr class="memdesc:acaf414adece9bb3ca2077354e15ab626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the description.  <a href="#acaf414adece9bb3ca2077354e15ab626">More...</a><br /></td></tr>
+<tr class="separator:acaf414adece9bb3ca2077354e15ab626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99c97180458c86d517cbbf35d960994f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a99c97180458c86d517cbbf35d960994f">setNegotiable</a> (bool negotiable)</td></tr>
+<tr class="memdesc:a99c97180458c86d517cbbf35d960994f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets negotiable attribute to value.  <a href="#a99c97180458c86d517cbbf35d960994f">More...</a><br /></td></tr>
+<tr class="separator:a99c97180458c86d517cbbf35d960994f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9ba4dc7b74aea1e4bdd12d60322453c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#ad9ba4dc7b74aea1e4bdd12d60322453c">setCategory</a> (Category newCategory)</td></tr>
+<tr class="memdesc:ad9ba4dc7b74aea1e4bdd12d60322453c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets category attribute to value.  <a href="#ad9ba4dc7b74aea1e4bdd12d60322453c">More...</a><br /></td></tr>
+<tr class="separator:ad9ba4dc7b74aea1e4bdd12d60322453c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af47b69a36414d09f24bc2e9173e4ab8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#af47b69a36414d09f24bc2e9173e4ab8b">setPrice</a> (float newPrice)</td></tr>
+<tr class="memdesc:af47b69a36414d09f24bc2e9173e4ab8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets price attribute to value.  <a href="#af47b69a36414d09f24bc2e9173e4ab8b">More...</a><br /></td></tr>
+<tr class="separator:af47b69a36414d09f24bc2e9173e4ab8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a260fbb1a64495a5e99591202389744a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a260fbb1a64495a5e99591202389744a0"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>getImageAt</b> (unsigned int index) const </td></tr>
 <tr class="separator:a260fbb1a64495a5e99591202389744a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,56 +175,68 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a883fc4cf6525ed95001f5c21c8a4d2ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a883fc4cf6525ed95001f5c21c8a4d2ff">searchForText</a> (string text) const </td></tr>
 <tr class="memdesc:a883fc4cf6525ed95001f5c21c8a4d2ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for text in advertisement.  <a href="#a883fc4cf6525ed95001f5c21c8a4d2ff">More...</a><br /></td></tr>
 <tr class="separator:a883fc4cf6525ed95001f5c21c8a4d2ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc122690eedc8eb9bfe1689d7d58052c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#acc122690eedc8eb9bfe1689d7d58052c">displayAd</a> (unsigned int height, unsigned int width, char borderChar)=0</td></tr>
-<tr class="memdesc:acc122690eedc8eb9bfe1689d7d58052c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays ad.  <a href="#acc122690eedc8eb9bfe1689d7d58052c">More...</a><br /></td></tr>
-<tr class="separator:acc122690eedc8eb9bfe1689d7d58052c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3174a830215ed6dfd922002f2c8924"><td class="memItemLeft" align="right" valign="top">virtual char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#acb3174a830215ed6dfd922002f2c8924">getType</a> () const  =0</td></tr>
+<tr class="memdesc:acb3174a830215ed6dfd922002f2c8924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a P if is a purchase ad or a S if is a sale ad.  <a href="#acb3174a830215ed6dfd922002f2c8924">More...</a><br /></td></tr>
+<tr class="separator:acb3174a830215ed6dfd922002f2c8924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353ac42132683f145b64cf00cd9bdf40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_location.html">Location</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a353ac42132683f145b64cf00cd9bdf40">getLocation</a> () const </td></tr>
+<tr class="memdesc:a353ac42132683f145b64cf00cd9bdf40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets ad owner location.  <a href="#a353ac42132683f145b64cf00cd9bdf40">More...</a><br /></td></tr>
+<tr class="separator:a353ac42132683f145b64cf00cd9bdf40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e7b7fe8f2d1070fa2682d268e39567"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a72e7b7fe8f2d1070fa2682d268e39567">operator==</a> (<a class="el" href="class_advertisement.html">Advertisement</a> *ad) const </td></tr>
+<tr class="memdesc:a72e7b7fe8f2d1070fa2682d268e39567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two ads by they title.  <a href="#a72e7b7fe8f2d1070fa2682d268e39567">More...</a><br /></td></tr>
+<tr class="separator:a72e7b7fe8f2d1070fa2682d268e39567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:afa7bb3d8371e8fdc476614f472f31ec9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa7bb3d8371e8fdc476614f472f31ec9"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>views</b></td></tr>
+<tr class="separator:afa7bb3d8371e8fdc476614f472f31ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb0d85726a8f955d2ab8bb312814e88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cb0d85726a8f955d2ab8bb312814e88"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="separator:a0cb0d85726a8f955d2ab8bb312814e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63b197da6f91139ed6baf700f834a3db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63b197da6f91139ed6baf700f834a3db"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>title</b></td></tr>
+<tr class="separator:a63b197da6f91139ed6baf700f834a3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77599e289974c0e4f502db621257fe5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af77599e289974c0e4f502db621257fe5"></a>
+Category&#160;</td><td class="memItemRight" valign="bottom"><b>category</b></td></tr>
+<tr class="separator:af77599e289974c0e4f502db621257fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0909f9fceabb44804e06e721ff7fee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb0909f9fceabb44804e06e721ff7fee"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>description</b></td></tr>
+<tr class="separator:afb0909f9fceabb44804e06e721ff7fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1997017950120c6ed305d772baae32b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1997017950120c6ed305d772baae32b2"></a>
+<a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><b>creationDate</b></td></tr>
+<tr class="separator:a1997017950120c6ed305d772baae32b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72772fb9304654e877b5dd9b3b5b4f6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a72772fb9304654e877b5dd9b3b5b4f6e"></a>
+vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>imagesPath</b></td></tr>
+<tr class="separator:a72772fb9304654e877b5dd9b3b5b4f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10398131c5aadcd1fdf08d6acabec45f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10398131c5aadcd1fdf08d6acabec45f"></a>
+<a class="el" href="class_user.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>owner</b></td></tr>
+<tr class="separator:a10398131c5aadcd1fdf08d6acabec45f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd1dddaabd0cfa411e6cbaaf67c4dd5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aefd1dddaabd0cfa411e6cbaaf67c4dd5"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>price</b></td></tr>
+<tr class="separator:aefd1dddaabd0cfa411e6cbaaf67c4dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34021160ad144fefd9df9a30d19bd895"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34021160ad144fefd9df9a30d19bd895"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>negotiable</b></td></tr>
+<tr class="separator:a34021160ad144fefd9df9a30d19bd895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:a0b5a0f2ec778aba63d0dd24bb3b2675b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b5a0f2ec778aba63d0dd24bb3b2675b"></a>
+static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>nextId</b> = 0</td></tr>
+<tr class="separator:a0b5a0f2ec778aba63d0dd24bb3b2675b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a4286d9a94fa7c907d6a5bad538a8527b"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a4286d9a94fa7c907d6a5bad538a8527b">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="class_advertisement.html">Advertisement</a> &amp;ad)</td></tr>
+<tr class="memdesc:a4286d9a94fa7c907d6a5bad538a8527b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints advertisement to out.  <a href="#a4286d9a94fa7c907d6a5bad538a8527b">More...</a><br /></td></tr>
+<tr class="separator:a4286d9a94fa7c907d6a5bad538a8527b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5180e86255ebd01c83666f431b910bb4"><td class="memItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_advertisement.html#a5180e86255ebd01c83666f431b910bb4">operator&gt;&gt;</a> (istream &amp;in, <a class="el" href="class_advertisement.html">Advertisement</a> &amp;ad)</td></tr>
+<tr class="memdesc:a5180e86255ebd01c83666f431b910bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads advertisement to in.  <a href="#a5180e86255ebd01c83666f431b910bb4">More...</a><br /></td></tr>
+<tr class="separator:a5180e86255ebd01c83666f431b910bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> class. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a3819a25a48afbca0a6da6717ef0d6da3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Advertisement::Advertisement </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_user.html">User</a> *&#160;</td>
-          <td class="paramname"><em>owner</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Category&#160;</td>
-          <td class="paramname"><em>category</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructor for class <a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">owner</td><td>Pointer to advertisement owner </td></tr>
-    <tr><td class="paramname">title</td><td><a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> title </td></tr>
-    <tr><td class="paramname">category</td><td><a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> category </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a343d31bb9f21892718fc4a756f7eb05c"></a>
+<a class="anchor" id="aa39584aae7c125c74a9dfe97409ae326"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -217,7 +262,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>description</em>&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>price</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -234,6 +285,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
     <tr><td class="paramname">title</td><td><a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> title </td></tr>
     <tr><td class="paramname">category</td><td><a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> category </td></tr>
     <tr><td class="paramname">description</td><td><a class="el" href="class_advertisement.html" title="Advertisement class. ">Advertisement</a> description </td></tr>
+    <tr><td class="paramname">price</td><td>Product price </td></tr>
   </table>
   </dd>
 </dl>
@@ -241,56 +293,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acc122690eedc8eb9bfe1689d7d58052c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Advertisement::displayAd </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>borderChar</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Displays ad. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">height</td><td>Height of menu to be printed </td></tr>
-    <tr><td class="paramname">width</td><td>Width of menu to be printed </td></tr>
-    <tr><td class="paramname">borderChar</td><td>Border character of menu to be printed </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="a123c05d427fed1ac7fec0f55050da20d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -306,6 +308,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Gets advertisement category. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns advertisement category </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aae882e292b1ddcad797df1d4b4766073"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Advertisement::getCreationDate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets advertisement creation date. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns advertisement creation date </dd></dl>
 
 </div>
 </div>
@@ -345,6 +365,60 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a class="anchor" id="a353ac42132683f145b64cf00cd9bdf40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_location.html">Location</a> Advertisement::getLocation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets ad owner location. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns ad owner location </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8025c78cb72132ff989fac5c5ddb9cfe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_user.html">User</a> * Advertisement::getOwner </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets advertisement owner. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to advertisement owner </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6c7a08129880f12744853f9ceeb172ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Advertisement::getPrice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets advertisement price. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns advertisement price </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ac65aa68caf2b1697c0cc04f2ebb0fd99"></a>
 <div class="memitem">
 <div class="memproto">
@@ -360,6 +434,95 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Gets advertisement title. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns advertisement title </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acb3174a830215ed6dfd922002f2c8924"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual char Advertisement::getType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a P if is a purchase ad or a S if is a sale ad. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a char ( P(urchase) / S(ale)) </dd></dl>
+
+<p>Implemented in <a class="el" href="class_sale.html#ae105e16c4b41870d375c5b1442dc7031">Sale</a>, and <a class="el" href="class_purchase.html#aacd849fc1ec2b96e7c59de4012b8e45a">Purchase</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a823c798799bcdf75a5b65158d6ad8c96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Advertisement::getViews </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets number of views the advertisement has had. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns views </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a872ed609f23386fa5b26913a1d78036a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Advertisement::isPriceNegotiable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns if price is negotiable. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns whether the price is negotiable or not </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a72e7b7fe8f2d1070fa2682d268e39567"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Advertisement::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_advertisement.html">Advertisement</a> *&#160;</td>
+          <td class="paramname"><em>ad</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compares two ads by they title. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ad</td><td>Pointer to ad to compare with.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if their titles match. </dd></dl>
 
 </div>
 </div>
@@ -385,6 +548,239 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if the text being searched for has been found. Returns false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad9ba4dc7b74aea1e4bdd12d60322453c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Advertisement::setCategory </td>
+          <td>(</td>
+          <td class="paramtype">Category&#160;</td>
+          <td class="paramname"><em>newCategory</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets category attribute to value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nweCategory</td><td>New value of category attribute </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6313190818f1e4177bedeab6077e8fd7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Advertisement::setCreationDate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>creationDate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes creation date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">creationDate</td><td>date of creation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acaf414adece9bb3ca2077354e15ab626"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Advertisement::setDescription </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>newDescription</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes the description. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newDescription</td><td>is the new description </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a99c97180458c86d517cbbf35d960994f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Advertisement::setNegotiable </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>negotiable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets negotiable attribute to value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">negotiable</td><td>New value of negotiable attribute </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af47b69a36414d09f24bc2e9173e4ab8b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Advertisement::setPrice </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>newPrice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets price attribute to value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newPrice</td><td>New value of price attribute </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a22bc67410075fb1d7121ebe641da460e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Advertisement::setTitle </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>newTitle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes the title. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newTitle</td><td>is the new title </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="a4286d9a94fa7c907d6a5bad538a8527b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_advertisement.html">Advertisement</a> &amp;&#160;</td>
+          <td class="paramname"><em>ad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prints advertisement to out. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Out stream </td></tr>
+    <tr><td class="paramname">ad</td><td>Reference to advertisement to print</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns out stream </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5180e86255ebd01c83666f431b910bb4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">istream&amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">istream &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_advertisement.html">Advertisement</a> &amp;&#160;</td>
+          <td class="paramname"><em>ad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads advertisement to in. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>In stream </td></tr>
+    <tr><td class="paramname">ad</td><td>Reference to advertisement to write on</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns in stream </dd></dl>
 
 </div>
 </div>

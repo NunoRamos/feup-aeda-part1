@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['operator_3c_3c',['operator&lt;&lt;',['../location_8cpp.html#a4ad6e0794e80acce506f747d8fd35be9',1,'location.cpp']]],
-  ['operator_3d',['operator=',['../class_date.html#a6835b4cfb6a3034a8daa0168c4e9d614',1,'Date::operator=()'],['../class_location.html#a41a15b0cfd590d365e31f613d32eebd1',1,'Location::operator=()']]],
-  ['operator_3e_3e',['operator&gt;&gt;',['../user_8cpp.html#a450594b5d214c6f0e33a61a070d77422',1,'user.cpp']]]
+  ['incrementviews',['incrementViews',['../class_advertisement.html#abd20373813b956bac9a6fd78a4947ebc',1,'Advertisement']]],
+  ['isdatevalid',['isDateValid',['../class_date.html#ad99ae04c84eceaf1374d9f6617ad07cd',1,'Date::isDateValid(unsigned int day, unsigned int month, unsigned int year)'],['../class_date.html#a9e2bc98c0ff058974a3276b4501b1cf5',1,'Date::isDateValid(const Date &amp;date)']]],
+  ['isleapyear',['isLeapYear',['../class_date.html#a11e14d85e1039e5a7fab1444a57cf15b',1,'Date']]],
+  ['ispricenegotiable',['isPriceNegotiable',['../class_advertisement.html#a872ed609f23386fa5b26913a1d78036a',1,'Advertisement']]]
 ];

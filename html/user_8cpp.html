@@ -94,16 +94,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Code for class <a class="el" href="class_user.html" title="Date class. ">User</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="user_8h_source.html">user.h</a>&quot;</code><br />
+<code>#include &quot;../../sequentialSearch.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="purchase_8h_source.html">../advertisement/purchase/purchase.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a450594b5d214c6f0e33a61a070d77422"><td class="memItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user_8cpp.html#a450594b5d214c6f0e33a61a070d77422">operator&gt;&gt;</a> (istream &amp;in, <a class="el" href="class_user.html">User</a> user)</td></tr>
-<tr class="separator:a450594b5d214c6f0e33a61a070d77422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae624f64cdd1af3b59c2443cffa82494"><td class="memItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user_8cpp.html#aae624f64cdd1af3b59c2443cffa82494">operator&gt;&gt;</a> (istream &amp;in, <a class="el" href="class_user.html">User</a> &amp;user)</td></tr>
+<tr class="separator:aae624f64cdd1af3b59c2443cffa82494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf1038a8d320684dc3fbdd5e4308e062"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="user_8cpp.html#acf1038a8d320684dc3fbdd5e4308e062">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="class_user.html">User</a> &amp;user)</td></tr>
+<tr class="separator:acf1038a8d320684dc3fbdd5e4308e062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Code for class <a class="el" href="class_user.html" title="Date class. ">User</a>. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a450594b5d214c6f0e33a61a070d77422"></a>
+<a class="anchor" id="acf1038a8d320684dc3fbdd5e4308e062"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_user.html">User</a> &amp;&#160;</td>
+          <td class="paramname"><em>user</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Output file </td></tr>
+    <tr><td class="paramname">user</td><td><a class="el" href="class_user.html" title="Date class. ">User</a> to print</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns out stream </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aae624f64cdd1af3b59c2443cffa82494"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -116,7 +155,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_user.html">User</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_user.html">User</a> &amp;&#160;</td>
           <td class="paramname"><em>user</em>&#160;</td>
         </tr>
         <tr>
