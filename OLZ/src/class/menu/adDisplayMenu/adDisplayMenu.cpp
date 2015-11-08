@@ -55,7 +55,7 @@ void AdDisplayMenu::print() {
 
 	if (showEmail || showName || showPhoneNumber) {
 		if (showEmail) {
-			string email = ad->getOwner()->getEmail();
+			 string email = ad->getOwner()->getEmail();
 			cout << borderChar << " Email: " << email
 					<< string(width - 2 - 8 - email.length(), ' ') << borderChar
 					<< endl;

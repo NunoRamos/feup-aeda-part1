@@ -218,6 +218,11 @@ public:
 	 * @return Returns all advertisements the user has
 	 */
 	vector<Advertisement *> getAdvertisements();
+	
+	/**
+	 * @brief Sets all ads in user advertisement to have the user as owner
+	 */
+	void setAdsOwner();
 };
 
 #endif

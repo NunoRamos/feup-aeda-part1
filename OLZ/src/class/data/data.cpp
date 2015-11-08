@@ -67,6 +67,10 @@ bool Data::loadUsers() {
 		if (userFile.is_open()) {
 			userFile >> temp;
 			users.push_back(temp);
+			users[i].setAdsOwner();
+			for(int j=0;j<temp.getAdvertisement().size();j++){
+			advertisements.push_back(temp.getAdvertisement()[j]);
+			}
 		}
 		userFile.close();
 		ss.str("");

@@ -27,7 +27,7 @@ unsigned int Advertisement::getId() const{
 	return id;
 }
 
-User* Advertisement::getOwner() const{
+User* Advertisement::getOwner(){
 	return owner;
 }
 
@@ -116,11 +116,15 @@ ostream& operator<<(ostream& out, const Advertisement &ad){
 	char separationChar = '\n';
 	//TODO print category to file, not sure how.
 	//does not print id
-	out << ad.title << separationChar
+
+	out <<ad.getType()<<separationChar
+			<< ad.title << separationChar
 			<< ad.views << separationChar
-			<< ad.category << separationChar
+			<< categoryToString(ad.category) << separationChar
 			<< ad.description << separationChar
-			<< ad.creationDate << separationChar;
+			<< ad.creationDate << separationChar
+			<<ad.price<<separationChar
+			<<ad.negotiable<<separationChar;
 
 	return out;
 }
@@ -135,16 +139,21 @@ istream& operator>>(istream& in, Advertisement &ad){
 	getline(in,temp);
 	ss<<temp;
 	ss>>ad.views;
-	getline(in,ad.title);
-	getline(in,temp);   //learn how to read to variable category
-	/*ss<<temp;
-		ss>>ad.category;*/
-	ad.category=Job;
+	ss.str("");
+	getline(in,temp);
+	ad.category=stringToCategory(temp);
 	getline(in,ad.description);
 	getline(in,temp);
-	Date d1(temp);
-	ad.creationDate=d1;
-
+	Date date(temp);
+	ad.creationDate=date;
+	getline(in,temp);
+	ss<<temp;
+	ss>>ad.price;
+	ss.str("");
+	getline(in,temp);
+	if(temp=="1")
+		ad.negotiable=true;
+	else ad.negotiable=false;
 	return in;
 }
 
@@ -152,4 +161,7 @@ Location Advertisement::getLocation() const{
 	return owner->getLocation();
 }
 
+void Advertisement::setOwner(User* owner){
+	this->owner = owner;
+}
 

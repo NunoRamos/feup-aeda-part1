@@ -1,7 +1,9 @@
 #include "user.h"
 #include "../../sequentialSearch.h"
 #include "../advertisement/purchase/purchase.h"
+#include "../advertisement/sale/sale.h"
 #include <iostream>
+#include<sstream>
 
 User::User() {
 	showEmail = true;
@@ -83,38 +85,66 @@ void User::setShowPhoneNumber(bool show) {
 }
 
 istream& operator>>(istream& in, User &user) {
-	/*char separationChar = '\n';
-	 string line;
-	 in >> line;
+	int numberOfAds;
+	unsigned int views;
+	float price;
+	bool negotiable;
+	Category category;
+	string temp, title, description;
+	stringstream ss;
+	Date creationDate;
+	string type;
 
-	 int cursor = line.find(separationChar);
-	 user.email = line.substr(0, cursor);
-
-	 line = line.substr(cursor + 1);
-	 cursor = line.find(separationChar);
-	 user.password = line.substr(0, cursor);
-
-	 line = line.substr(cursor + 1);
-	 cursor = line.find(separationChar);
-	 user.name = line.substr(0, cursor);
-
-	 line = line.substr(cursor + 1);
-	 cursor = line.find(separationChar);
-	 user.phoneNumber = line.substr(0, cursor);
-
-	 line = line.substr(cursor + 1);
-	 cursor = line.find(separationChar);
-	 user.location = Location(line);*/
-	string loc;
 	getline(in, user.email);
 	getline(in, user.password);
 	getline(in, user.name);
 	getline(in, user.phoneNumber);
-	getline(in, loc);
-	user.location = Location(loc);
+	getline(in, temp);
+	user.location = Location(temp);
+	in >> user.showEmail;
+	in >> user.showName;
+	in >> user.showPhoneNumber;
+	in >> numberOfAds;
+	in.ignore(1000,'\n');
+	ss.str("");
+	for (unsigned int i = 0; i < numberOfAds; i++) {
+		getline(in, type);
+		ss.str("");
+		getline(in, title);
+		getline(in, temp);
+		ss << temp;
+		ss >> views;
+		ss.str("");
+		getline(in, temp);
+		category = stringToCategory(temp);
+		getline(in, description);
+		getline(in, temp);
+		Date date(temp);
+		creationDate = date;
+		in >> price;
+		in.ignore(100000, '\n');
+		ss.str("");
+		getline(in, temp);
+		if (temp == "1")
+			negotiable = true;
+		else
+			negotiable = false;
 
-	for (unsigned int i = 0; i < user.advertisements.size(); i++) {
-		in >> *user.advertisements[i];
+		if (type == "P") {
+			Advertisement* ad = new Purchase(NULL, title, category, description,
+					price);
+			ad->setNegotiable(negotiable);
+			ad->setCreationDate(creationDate);
+			user.advertisements.push_back(ad);
+		} else {
+			Advertisement* ad = new Sale(NULL, title, category, description,
+					New, price);
+			ad->setNegotiable(negotiable);
+			ad->setCreationDate(creationDate);
+			user.advertisements.push_back(ad);
+		}
+		//in >> *user.advertisements[i];
+
 	}
 
 	return in;
@@ -140,7 +170,10 @@ ostream& operator<<(ostream& out, const User &user) {
 
 	out << user.email << separationChar << user.password << separationChar
 			<< user.name << separationChar << user.phoneNumber << separationChar
-			<< user.location << separationChar;
+			<< user.location << separationChar << user.showEmail
+			<< separationChar << user.showName << separationChar
+			<< user.showPhoneNumber << separationChar
+			<< user.advertisements.size() << separationChar;
 
 	for (unsigned int i = 0; i < user.advertisements.size(); i++) {
 		out << *user.advertisements[i];
@@ -149,4 +182,10 @@ ostream& operator<<(ostream& out, const User &user) {
 }
 vector<Advertisement *> User::getAdvertisements() {
 	return advertisements;
+}
+
+void User::setAdsOwner() {
+	for (unsigned int i = 0; i < advertisements.size(); i++) {
+		advertisements[i]->setOwner(this);
+	}
 }
