@@ -82,14 +82,6 @@ void User::setShowPhoneNumber(bool show) {
 	this->showPhoneNumber = show;
 }
 
-vector<string> User::fillWithTitles() const {
-	vector<string> titles;
-	for (int i = 0; i < advertisements.size(); i++) {
-		titles.push_back(advertisements[i]->getTitle());
-	}
-	return titles;
-}
-
 istream& operator>>(istream& in, User &user) {
 	/*char separationChar = '\n';
 	 string line;

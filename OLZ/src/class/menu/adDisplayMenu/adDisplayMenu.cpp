@@ -4,15 +4,13 @@
 #include <sstream>
 #include <iostream>
 
-
-
-
 AdDisplayMenu::AdDisplayMenu(Data* data, Advertisement* ad, unsigned int height,
 		unsigned int width, char borderChar) :
 		Menu(data, height, width, borderChar) {
 	this->ad = ad;
-	if (ad->getOwner()!=data->getSignedInUser())
-	{ad->incrementViews();}
+	if (ad->getOwner() != data->getSignedInUser()) {
+		ad->incrementViews();
+	}
 
 }
 
@@ -48,8 +46,8 @@ void AdDisplayMenu::print() {
 		emptyLine();
 
 	cout << borderChar << " Creation Date: " << ad->getCreationDate()
-				<< string(width - 2 - 16 - ad->getCreationDate().length(), ' ') << borderChar
-				<< endl;
+			<< string(width - 2 - 16 - ad->getCreationDate().length(), ' ')
+			<< borderChar << endl;
 
 	bool showEmail = ad->getOwner()->getShowEmail();
 	bool showName = ad->getOwner()->getShowName();
@@ -81,8 +79,8 @@ void AdDisplayMenu::print() {
 	stringstream ss;
 	ss << ad->getViews();
 	cout << borderChar << " Views: " << ss.str()
-																																													<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
-																																													<< endl;
+			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+			<< endl;
 	emptyLine();
 
 	ss.str("");
@@ -91,7 +89,8 @@ void AdDisplayMenu::print() {
 		ss << "Non-";
 	ss << "Negotiable";
 	cout << borderChar << " Price: " << ss.str()
-										<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar<< endl;
+			<< string(width - 2 - 8 - ss.str().length(), ' ') << borderChar
+			<< endl;
 	emptyLine();
 
 	unsigned int i = 1;
@@ -112,7 +111,11 @@ void AdDisplayMenu::print() {
 		cout << borderChar << " " << editPrice
 				<< string(width - 3 - editPrice.length(), ' ') << borderChar
 				<< endl;
-		i=5;
+		string removeAd = "5 - Remove advertisement";
+		cout << borderChar << " " << removeAd
+				<< string(width - 3 - removeAd.length(), ' ') << borderChar
+				<< endl;
+		i = 6;
 	} else {
 		string imInterested = " 1 - I'm interested";
 		i = 2;
@@ -123,7 +126,7 @@ void AdDisplayMenu::print() {
 	ss.str("");
 	ss << " " << i << " - Exit";
 	cout << borderChar << ss.str() << string(width - ss.str().length() - 2, ' ')
-																																													<< borderChar << endl;
+			<< borderChar << endl;
 
 	emptyLine();
 
@@ -138,12 +141,12 @@ void AdDisplayMenu::createMenu() {
 	clearScreen();
 	AdDisplayMenu::print();
 	int input;
-	string title,description,category,answer;
+	string title, description, category, answer;
 	unsigned int i = 0;
 	cout << "What option would you like to choose?" << endl;
 	if (data->getSignedInUser() == ad->getOwner()) {
 		do {
-			if (i > 0){
+			if (i > 0) {
 				cout << "Please introduce a valid option." << endl;
 			}
 			cin >> input;
@@ -152,56 +155,60 @@ void AdDisplayMenu::createMenu() {
 			i++;
 
 		} while (input < 1 || input > 6);
-		switch(input){
+		switch (input) {
 		case 1:
-			cout<<"Please introduce the new title."<<endl;
-			getline(cin,title);
+			cout << "Please introduce the new title." << endl;
+			getline(cin, title);
 			ad->setTitle(title);
 			break;
 		case 2:
-			cout<<"Please introduce the new description."<<endl;
-			getline(cin,description);
+			cout << "Please introduce the new description." << endl;
+			getline(cin, description);
 			ad->setDescription(description);
 			break;
 		case 3:
-			cout<<"Please introduce the new category."<<endl;
-			getline(cin,category);
-			do{
-				if(validCategory(category)){
+			cout << "Please introduce the new category." << endl;
+			getline(cin, category);
+			do {
+				if (validCategory(category)) {
 					ad->setCategory(stringToCategory(category));
 					break;
-				}
-				else {
-					cout<<"Invalid category, try again. Press 1 to exit."<<endl;
-					getline(cin,category);
-					if(category=="1")
+				} else {
+					cout << "Invalid category, try again. Press 1 to exit."
+							<< endl;
+					getline(cin, category);
+					if (category == "1")
 						break;
 				}
-			}
-			while(true);
+			} while (true);
 			break;
 		case 4:
-			cout<<"Please introduce the new price."<<endl;
+			cout << "Please introduce the new price." << endl;
 			float newPrice;
-			cin>>newPrice;
+			cin >> newPrice;
 			cin.ignore();
 			cin.clear();
 			ad->setPrice(newPrice);
-			cout<<"Please introduce if it is negotiable or not(Y/N)."<<endl;
-			getline(cin,answer);
-			if(answer=="Y"|| answer=="y")
+			cout << "Please introduce if it is negotiable or not(Y/N)." << endl;
+			getline(cin, answer);
+			if (answer == "Y" || answer == "y")
 				ad->setNegotiable(true);
-			else ad->setNegotiable(false);
+			else
+				ad->setNegotiable(false);
 			break;
 		case 5:
+			ad->getOwner()->removeAdvertisement(ad);
+			data->removeAdvertisement(ad);
+			signedInMenu(data);
+			break;
+		case 6:
 			signedInMenu(data);
 			break;
 		default:
 			AdDisplayMenu::createMenu();
 			break;
 		}
-	}
-	else {
+	} else {
 		do {
 			if (i > 0)
 				cout << "Please introduce a valid option." << endl;

@@ -168,13 +168,6 @@ public:
 	bool signIn(string password) const;
 
 	/**
-	 * @brief this method fill a vector with the ads titles
-	 *
-	 * @return Returns a vector fill with strings
-	 */
-	vector<string> fillWithTitles() const;
-
-	/**
 	 * @brief User >> operator
 	 *
 	 * @return Returns input stream

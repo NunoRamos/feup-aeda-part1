@@ -314,7 +314,6 @@ void signedInMenu(Data* data){
 	menu.addOption("Create buying advertisement", &createBuyingAd);
 	menu.addOption("Create selling advertisement", &createSellingAd);
 	menu.addOption("View my advertisements", &viewMyAds);
-	menu.addOption("Delete advertisement", &removeAd);
 	menu.addOption("Sign out", &signOut);
 	menu.addOption("Exit", &exitApp);
 	menu.createMenu();
