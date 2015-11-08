@@ -1,3 +1,13 @@
+/**
+ * @file menus.h
+ *
+ * @brief Header file with menus and other utilities*/
+
+/**
+ * @file menus.cpp
+ *
+ * @brief Code for menus and other utilities*/
+
 #ifndef MAINMENU_H
 #define MAINMENU_H
 
@@ -72,11 +82,12 @@ void searchByPrice(Data* data);
 void searchByKeyword(Data* data);
 
 /**
- * @brief
+ * @brief Filters results into sale or purchase depending on user input
  *
+ * @param results Results from previous menu
  * @param data Data
  */
-void saleOrPurchase(vector<Advertisement*> &results, Data* data); // n sei o que faz
+void saleOrPurchase(vector<Advertisement*> &results, Data* data);
 
 /**
  * @brief Signs the user in

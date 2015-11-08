@@ -20,9 +20,9 @@ using namespace std;
  */
 class Date {
 private:
-	unsigned int day; //< Day
-	unsigned int month; //< Month
-	unsigned int year; //< Year
+	unsigned int day; ///< Day
+	unsigned int month; ///< Month
+	unsigned int year; ///< Year
 public:
 	/**
 	 * @brief Constructor for class Date

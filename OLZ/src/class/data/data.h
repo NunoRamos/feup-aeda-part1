@@ -23,11 +23,10 @@ using namespace std;
  */
 class Data{
 private:
-	vector<Advertisement*> advertisements; //< Vector of pointers to all advertisements
-	vector<User> users; //< Vector of all users
-	User* signedInUser; //< Pointer to user that is currently signed in
-	int indice; //<too now which add is to show
-	const string path = "C:/Users/Bernardo/git/OLZ/OLZ/data/";//const string path = "/data/"; //< used to save and load users. still not fully implemented
+	vector<Advertisement*> advertisements; ///< Vector of pointers to all advertisements
+	vector<User> users; ///< Vector of all users
+	User* signedInUser; ///< Pointer to user that is currently signed in
+	const string path = "C:/Users/Bernardo/git/OLZ/OLZ/data/";//const string path = "/data/"; ///< used to save and load users. still not fully implemented
 public:
 	/**
 	 * @brief Constructor for class Data

@@ -22,12 +22,12 @@ using namespace enums;
  */
 class AdDisplayMenu: public Menu {
 private:
-	Advertisement* ad; //< Advertisement to display
+	Advertisement* ad; ///< Advertisement to display
 public:
 	/**
 	 * @brief Constructor for AdDisplayMenu class
 	 *
-	 * @param Data data
+	 * @param data Data
 	 * @param ad Advertisement to display
 	 * @param height Menu height
 	 * @param width Menu width

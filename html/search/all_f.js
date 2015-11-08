@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['_7eadvertisement',['~Advertisement',['../class_advertisement.html#a49170a22dcd2a8bf88d3ed1aad475b82',1,'Advertisement']]],
-  ['_7edata',['~Data',['../class_data.html#aab31956423290f0d62dcca47ab4d16dd',1,'Data']]],
-  ['_7epurchase',['~Purchase',['../class_purchase.html#a8ebd6efb2177df6d10fcba514095915f',1,'Purchase']]],
-  ['_7esale',['~Sale',['../class_sale.html#ab6cb58a5d618fc4e4988b55342f21b21',1,'Sale']]]
+  ['title',['title',['../class_advertisement.html#a63b197da6f91139ed6baf700f834a3db',1,'Advertisement']]],
+  ['topmargin',['topMargin',['../class_menu.html#a572349c0905151704d7cea8e82097e5f',1,'Menu']]],
+  ['tostring',['toString',['../class_date.html#a78a793b6c55bb043789b09b1d74c1847',1,'Date::toString()'],['../class_location.html#a4d91190cad2ea40b0e8d53f5211561a6',1,'Location::toString()']]],
+  ['trimspaces',['trimSpaces',['../class_location.html#a0b4be23bfc6e2ea1ed95d80f70a84fbf',1,'Location']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['_7eadvertisement',['~Advertisement',['../class_advertisement.html#a49170a22dcd2a8bf88d3ed1aad475b82',1,'Advertisement']]],
-  ['_7edata',['~Data',['../class_data.html#aab31956423290f0d62dcca47ab4d16dd',1,'Data']]],
-  ['_7epurchase',['~Purchase',['../class_purchase.html#a8ebd6efb2177df6d10fcba514095915f',1,'Purchase']]],
-  ['_7esale',['~Sale',['../class_sale.html#ab6cb58a5d618fc4e4988b55342f21b21',1,'Sale']]]
+  ['validcategory',['validCategory',['../enums_8cpp.html#adc8f8dd0fdb2eb5da5b08e0737e5befd',1,'validCategory(string isValidCategory):&#160;enums.cpp'],['../enums_8h.html#adc8f8dd0fdb2eb5da5b08e0737e5befd',1,'validCategory(string isValidCategory):&#160;enums.cpp']]],
+  ['validcondition',['validCondition',['../enums_8cpp.html#ac44afaa3fb3951470f45296c763b772b',1,'validCondition(string isValidCondition):&#160;enums.cpp'],['../enums_8h.html#ac44afaa3fb3951470f45296c763b772b',1,'validCondition(string isValidCondition):&#160;enums.cpp']]],
+  ['vectorofsaleorpurchase',['vectorOfSaleOrPurchase',['../class_data.html#aa54b962f82cd79a35fbd916ffa36a301',1,'Data']]],
+  ['viewmyads',['viewMyAds',['../menus_8cpp.html#a3baca7623774a55698220e99e4cb58ef',1,'viewMyAds(Data *data):&#160;menus.cpp'],['../menus_8h.html#a3baca7623774a55698220e99e4cb58ef',1,'viewMyAds(Data *data):&#160;menus.cpp']]]
 ];
