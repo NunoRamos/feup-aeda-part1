@@ -109,9 +109,9 @@ void sameCity(Data* data){
 	searchMenu.createMenu();
 
 	if(data->getSignedInUser() != NULL)
-			signedInMenu(data);
-		else
-			mainMenu(data);
+		signedInMenu(data);
+	else
+		mainMenu(data);
 }
 
 void sameCounty(Data* data){
@@ -123,9 +123,9 @@ void sameCounty(Data* data){
 	searchMenu.createMenu();
 
 	if(data->getSignedInUser() != NULL)
-			signedInMenu(data);
-		else
-			mainMenu(data);
+		signedInMenu(data);
+	else
+		mainMenu(data);
 }
 
 void sameDistrict(Data* data){
@@ -137,9 +137,9 @@ void sameDistrict(Data* data){
 	searchMenu.createMenu();
 
 	if(data->getSignedInUser() != NULL)
-			signedInMenu(data);
-		else
-			mainMenu(data);
+		signedInMenu(data);
+	else
+		mainMenu(data);
 }
 
 void searchByPrice(Data* data){
@@ -250,10 +250,16 @@ void signUp(Data* data){
 	cout << "\nWhat is your phone number?\n";
 	getline(cin, phoneNumber);
 
-	cout << "\nWhere are you from? (City, county, district)\n";
-	getline(cin, location);
-	location = "Maia, Maia, Porto"; //TODO temporary until there is a checking function
-	Location loc(location);
+	Location loc;
+	unsigned int j = 0;
+	do{
+		if(j > 0)
+			cout << "\nPlease introduce a valid location.";
+		cout << "\nWhere are you from? (City, county, district)\n";
+		getline(cin, location);
+		loc = Location(location);
+		j++;
+	}while(!(location.find(",") != -1 && location.find_last_of(",") != -1 && location.find(",") < location.find_last_of(",")));
 
 	User u1(email, passwordOne, name, phoneNumber, loc);
 

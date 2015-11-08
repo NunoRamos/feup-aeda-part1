@@ -24,6 +24,15 @@ protected:
 	string city; //< City
 	string county; //< County
 	string district; //< District
+
+	/**
+	 * @brief Trims spaces from right and left
+	 *
+	 * @param str String to trim
+	 *
+	 * @return Returns trimmed string
+	 */
+	string trimSpaces(string str);
 public:
 	/**
 	 * @brief Default constructor for Location class

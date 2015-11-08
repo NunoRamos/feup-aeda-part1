@@ -13,9 +13,9 @@ Location::Location(string city, string county, string district){
 
 Location::Location(string location){
 	string temp = location.substr(location.find(",")+2);
-	this->city = location.substr(0, location.find(","));
-	this->county = temp.substr(0, temp.find(","));
-	this->district = temp.substr(temp.find(",")+2);
+	this->city = trimSpaces(location.substr(0, location.find(",")));
+	this->county = trimSpaces(temp.substr(0, temp.find(",")));
+	this->district = trimSpaces(temp.substr(temp.find(",")+2));
 }
 
 string Location::toString() const{
@@ -46,7 +46,21 @@ ostream& operator<<(ostream & os, const Location &location){
 	return os;
 }
 
+string Location::trimSpaces(string str){
+	unsigned int i = 0;
+	while(str[i] == ' '){
+		i++;
+	}
+	str.erase(0, i);
 
+	i = 0;
+	while(str[str.size()-i-1] == ' '){
+		i++;
+	}
+	str.erase(str.size()-i);
+
+	return str;
+}
 
 
 

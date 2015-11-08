@@ -109,15 +109,7 @@ void menuEnums(){
 void runAllTests(int argc, char const *argv[]){
 	cute::suite s;
 	//TODO add your test here
-	s.push_back(CUTE(dateTest));
 	s.push_back(CUTE(locationTest));
-	s.push_back(CUTE(userTest));
-	s.push_back(CUTE(userDataTest));
-	//s.push_back(CUTE(advertisementTest));
-	s.push_back(CUTE(saleTest));
-	s.push_back(CUTE(purchaseTest));
-	s.push_back(CUTE(menuTest));
-	s.push_back(CUTE(menuEnums));
 	cute::xml_file_opener xmlfile(argc,argv);
 	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
 	cute::makeRunner(lis,argc,argv)(s, "AllTests");
