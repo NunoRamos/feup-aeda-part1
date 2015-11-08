@@ -11,7 +11,9 @@ User::User() {
 	showPhoneNumber = true;
 }
 
-User::User(string email, string password, string name, string phoneNumber, Location location) : User() {
+User::User(string email, string password, string name, string phoneNumber,
+		Location location) :
+				User() {
 	this->email = email;
 	this->password = password;
 	this->name = name;
@@ -19,7 +21,10 @@ User::User(string email, string password, string name, string phoneNumber, Locat
 	this->location = location;
 }
 
-User::User(string email, string password, string name, string phoneNumber, string location) : User(email, password, name, phoneNumber, Location(location)) { }
+User::User(string email, string password, string name, string phoneNumber,
+		string location) :
+				User(email, password, name, phoneNumber, Location(location)) {
+}
 
 bool User::signIn(string password) const {
 	if (this->password == password)
@@ -51,15 +56,15 @@ string User::getLocationString() const {
 	return location.toString();
 }
 
-bool User::getShowEmail() const{
+bool User::getShowEmail() const {
 	return showEmail;
 }
 
-bool User::getShowName() const{
+bool User::getShowName() const {
 	return showName;
 }
 
-bool User::getShowPhoneNumber() const{
+bool User::getShowPhoneNumber() const {
 	return showPhoneNumber;
 }
 
@@ -67,58 +72,36 @@ void User::setEmail(string email) {
 	this->email = email;
 }
 
-void User::setShowEmail(bool show){
+void User::setShowEmail(bool show) {
 	this->showEmail = show;
 }
 
-void User::setShowName(bool show){
+void User::setShowName(bool show) {
 	this->showName = show;
 }
 
-void User::setShowPhoneNumber(bool show){
+void User::setShowPhoneNumber(bool show) {
 	this->showPhoneNumber = show;
 }
 
-vector<string> User::fillWithTitles() const{
+vector<string> User::fillWithTitles() const {
 	vector<string> titles;
-	for(int i=0;i<advertisements.size();i++){
+	for (int i = 0; i < advertisements.size(); i++) {
 		titles.push_back(advertisements[i]->getTitle());
 	}
 	return titles;
 }
 
 istream& operator>>(istream& in, User &user) {
-	/*char separationChar = '\n';
-	string line;
-	in >> line;
-
-	int cursor = line.find(separationChar);
-		user.email = line.substr(0, cursor);
-
-	 line = line.substr(cursor + 1);
-	 cursor = line.find(separationChar);
-	 user.password = line.substr(0, cursor);
-
-	 line = line.substr(cursor + 1);
-	 cursor = line.find(separationChar);
-	 user.name = line.substr(0, cursor);
-
-	 line = line.substr(cursor + 1);
-	 cursor = line.find(separationChar);
-	 user.phoneNumber = line.substr(0, cursor);
-
-	 line = line.substr(cursor + 1);
-	 cursor = line.find(separationChar);
-	 user.location = Location(line);*/
 	int numberOfAds;
 	unsigned int views;
 	float price;
 	bool negotiable;
 	Category category;
-	string temp,title,description;
+	string temp, title, description;
 	stringstream ss;
 	Date creationDate;
-	char type;
+	string type;
 
 	getline(in, user.email);
 	getline(in, user.password);
@@ -126,45 +109,44 @@ istream& operator>>(istream& in, User &user) {
 	getline(in, user.phoneNumber);
 	getline(in, temp);
 	user.location = Location(temp);
-	getline(in,temp);
-	ss<<temp;
-	ss>>numberOfAds;
+	in >> user.showEmail;
+	in >> user.showName;
+	in >> user.showPhoneNumber;
+	in >> numberOfAds;
+	in.ignore(1000,'\n');
 	ss.str("");
 	for (unsigned int i = 0; i < numberOfAds; i++) {
+		getline(in, type);
 		ss.str("");
-		getline(in,temp);
-		ss<<temp;
-		ss>>type;
+		getline(in, title);
+		getline(in, temp);
+		ss << temp;
+		ss >> views;
 		ss.str("");
-		getline(in,title);
-		getline(in,temp);
-		ss<<temp;
-		ss>>views;
-		ss.str("");
-		getline(in,temp);
-		category=stringToCategory(temp);
-		getline(in,description);
-		getline(in,temp);
+		getline(in, temp);
+		category = stringToCategory(temp);
+		getline(in, description);
+		getline(in, temp);
 		Date date(temp);
-		creationDate=date;
-		getline(in,temp);
-		ss<<temp;
-		ss>>price;
+		creationDate = date;
+		in >> price;
+		in.ignore(100000, '\n');
 		ss.str("");
-		getline(in,temp);
-		if(temp=="1")
-			negotiable=true;
-		else negotiable=false;
+		getline(in, temp);
+		if (temp == "1")
+			negotiable = true;
+		else
+			negotiable = false;
 
-		if(type=='P'){
-			Advertisement* ad=new Purchase(&user,title,category,description,price);
+		if (type == "P") {
+			Advertisement* ad = new Purchase(NULL, title, category, description,
+					price);
 			ad->setNegotiable(negotiable);
 			ad->setCreationDate(creationDate);
-			cout<<"Name: "<<ad->getOwner()->getName();
 			user.advertisements.push_back(ad);
-		}
-		else {
-			Advertisement* ad=new Sale(&user,title,category,description,New,price);
+		} else {
+			Advertisement* ad = new Sale(NULL, title, category, description,
+					New, price);
 			ad->setNegotiable(negotiable);
 			ad->setCreationDate(creationDate);
 			user.advertisements.push_back(ad);
@@ -187,7 +169,7 @@ void User::addAdvertisement(Advertisement *newAdvertisement) {
 	advertisements.push_back(newAdvertisement);
 }
 
-bool User::operator==(const User & u1) const{
+bool User::operator==(const User & u1) const {
 	return (this->email == u1.email);
 }
 
@@ -196,10 +178,20 @@ ostream& operator<<(ostream& out, const User &user) {
 
 	out << user.email << separationChar << user.password << separationChar
 			<< user.name << separationChar << user.phoneNumber << separationChar
-			<< user.location <<separationChar<<user.advertisements.size()<<separationChar;
+			<< user.location << separationChar << user.showEmail
+			<< separationChar << user.showName << separationChar
+			<< user.showPhoneNumber << separationChar
+			<< user.advertisements.size() << separationChar;
 
 	for (unsigned int i = 0; i < user.advertisements.size(); i++) {
 		out << *user.advertisements[i];
 	}
 	return out;
+}
+
+void User::setAdsOwner() {
+	for (unsigned int i = 0; i < advertisements.size(); i++) {
+		advertisements[i]->setOwner(this);
+	}
+
 }

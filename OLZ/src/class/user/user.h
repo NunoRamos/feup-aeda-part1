@@ -219,6 +219,11 @@ public:
 	 */
 	friend ostream& operator<<(ostream& out, const User &user);
 
+	/**
+	 * @brief Sets all ads in user advertisement to have the user as owner
+	 */
+	void setAdsOwner();
+
 	vector<Advertisement *>  getAdvertisement(){return advertisements;};
 };
 

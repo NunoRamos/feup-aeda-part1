@@ -69,7 +69,7 @@ public:
 	 *
 	 * @return Pointer to advertisement owner
 	 */
-	User* getOwner() const;
+	User* getOwner();
 
 	/**
 	 * @brief Gets advertisement title
@@ -160,6 +160,13 @@ public:
 	 * @param newPrice New value of price attribute
 	 */
 	void setPrice(float newPrice);
+
+	/**
+	 * @brief Sets owner
+	 *
+	 * @param owner Owner
+	 */
+	void setOwner(User* owner);
 
 	string getImageAt(unsigned int index) const;//still to decide what to do with this
 

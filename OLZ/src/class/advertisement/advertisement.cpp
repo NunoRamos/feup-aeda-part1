@@ -27,7 +27,7 @@ unsigned int Advertisement::getId() const{
 	return id;
 }
 
-User* Advertisement::getOwner() const{
+User* Advertisement::getOwner(){
 	return owner;
 }
 
@@ -157,4 +157,7 @@ istream& operator>>(istream& in, Advertisement &ad){
 	return in;
 }
 
+void Advertisement::setOwner(User* owner){
+	this->owner = owner;
+}
 
