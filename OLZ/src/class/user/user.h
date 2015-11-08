@@ -180,12 +180,12 @@ public:
 	 * @param title Advertisement
 	 */
 	void removeAdvertisement(Advertisement* ad);
+
 	/**
-	 * @brief Addd advertisement to user advertisements.
+	 * @brief Add advertisement to user advertisements.
 	 *
 	 * @param newAdvertisement Pointer to New Advertisement
 	 */
-
 	void addAdvertisement(Advertisement *newAdvertisement);
 
 	/**
@@ -223,6 +223,11 @@ public:
 	 * @brief Sets all ads in user advertisement to have the user as owner
 	 */
 	void setAdsOwner();
+
+	/**
+	 * @brief Deletes all ads
+	 */
+	void deleteAds();
 };
 
 #endif

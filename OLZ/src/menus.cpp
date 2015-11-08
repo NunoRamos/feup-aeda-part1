@@ -315,6 +315,7 @@ void signedInMenu(Data* data){
 	menu.addOption("Create selling advertisement", &createSellingAd);
 	menu.addOption("View my advertisements", &viewMyAds);
 	menu.addOption("Sign out", &signOut);
+	menu.addOption("Delete account", &deleteUser);
 	menu.addOption("Exit", &exitApp);
 	menu.createMenu();
 }
@@ -471,4 +472,15 @@ void viewMyAds(Data* data){
 	SearchMenu menu(data, results);
 	menu.createMenu();
 	signedInMenu(data);
+}
+
+void deleteUser(Data* data){
+	string password;
+	cout << "Introduce your password: ";
+	getline(cin, password);
+	if(data->signIn(data->getSignedInUser()->getEmail(), password)){
+		data->removeUser(data->getSignedInUser());
+		data->signOut();
+	}
+	mainMenu(data);
 }

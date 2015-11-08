@@ -25,7 +25,7 @@ Inheritance diagram for Advertisement\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_advertisement}{Advertisement} destructor. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_advertisement_aa66d9158d12ae99a04f81cf2adb155fd}{get\+Id} () const 
 \begin{DoxyCompactList}\small\item\em Gets advertisement I\+D. \end{DoxyCompactList}\item 
-\hyperlink{class_user}{User} $\ast$ \hyperlink{class_advertisement_a8025c78cb72132ff989fac5c5ddb9cfe}{get\+Owner} () const 
+\hyperlink{class_user}{User} $\ast$ \hyperlink{class_advertisement_a35f461deb86dce9b3b09cadf64b1cdf3}{get\+Owner} ()
 \begin{DoxyCompactList}\small\item\em Gets advertisement owner. \end{DoxyCompactList}\item 
 string \hyperlink{class_advertisement_ac65aa68caf2b1697c0cc04f2ebb0fd99}{get\+Title} () const 
 \begin{DoxyCompactList}\small\item\em Gets advertisement title. \end{DoxyCompactList}\item 
@@ -53,6 +53,8 @@ void \hyperlink{class_advertisement_ad9ba4dc7b74aea1e4bdd12d60322453c}{set\+Cate
 \begin{DoxyCompactList}\small\item\em Sets category attribute to value. \end{DoxyCompactList}\item 
 void \hyperlink{class_advertisement_af47b69a36414d09f24bc2e9173e4ab8b}{set\+Price} (float new\+Price)
 \begin{DoxyCompactList}\small\item\em Sets price attribute to value. \end{DoxyCompactList}\item 
+void \hyperlink{class_advertisement_a3333256bc60f96a933970fdfed317116}{set\+Owner} (\hyperlink{class_user}{User} $\ast$owner)
+\begin{DoxyCompactList}\small\item\em Sets owner. \end{DoxyCompactList}\item 
 \hypertarget{class_advertisement_a260fbb1a64495a5e99591202389744a0}{}string {\bfseries get\+Image\+At} (unsigned int index) const \label{class_advertisement_a260fbb1a64495a5e99591202389744a0}
 
 \item 
@@ -69,7 +71,9 @@ virtual char \hyperlink{class_advertisement_acb3174a830215ed6dfd922002f2c8924}{g
 \hyperlink{class_location}{Location} \hyperlink{class_advertisement_a353ac42132683f145b64cf00cd9bdf40}{get\+Location} () const 
 \begin{DoxyCompactList}\small\item\em Gets ad owner location. \end{DoxyCompactList}\item 
 bool \hyperlink{class_advertisement_a72e7b7fe8f2d1070fa2682d268e39567}{operator==} (\hyperlink{class_advertisement}{Advertisement} $\ast$ad) const 
-\begin{DoxyCompactList}\small\item\em Compares two ads by they title. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compares two ads by they title. \end{DoxyCompactList}\item 
+virtual ostream \& \hyperlink{class_advertisement_adb38cc00b914dd7a0509829c220eb2bc}{print} (ostream \&out)=0
+\begin{DoxyCompactList}\small\item\em Prints to out. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -112,7 +116,7 @@ bool \hyperlink{class_advertisement_a72e7b7fe8f2d1070fa2682d268e39567}{operator=
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-ostream \& \hyperlink{class_advertisement_a4286d9a94fa7c907d6a5bad538a8527b}{operator$<$$<$} (ostream \&out, const \hyperlink{class_advertisement}{Advertisement} \&ad)
+ostream \& \hyperlink{class_advertisement_af6ba8e9ebe3c64e17263cbbcaa8bbb59}{operator$<$$<$} (ostream \&out, \hyperlink{class_advertisement}{Advertisement} \&ad)
 \begin{DoxyCompactList}\small\item\em Prints advertisement to out. \end{DoxyCompactList}\item 
 istream \& \hyperlink{class_advertisement_a5180e86255ebd01c83666f431b910bb4}{operator$>$$>$} (istream \&in, \hyperlink{class_advertisement}{Advertisement} \&ad)
 \begin{DoxyCompactList}\small\item\em Reads advertisement to in. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -223,13 +227,13 @@ Gets ad owner location.
 \begin{DoxyReturn}{Returns}
 Returns ad owner location 
 \end{DoxyReturn}
-\hypertarget{class_advertisement_a8025c78cb72132ff989fac5c5ddb9cfe}{}\index{Advertisement@{Advertisement}!get\+Owner@{get\+Owner}}
+\hypertarget{class_advertisement_a35f461deb86dce9b3b09cadf64b1cdf3}{}\index{Advertisement@{Advertisement}!get\+Owner@{get\+Owner}}
 \index{get\+Owner@{get\+Owner}!Advertisement@{Advertisement}}
-\subsubsection[{get\+Owner() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf User} $\ast$ Advertisement\+::get\+Owner (
+\subsubsection[{get\+Owner()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf User} $\ast$ Advertisement\+::get\+Owner (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\label{class_advertisement_a8025c78cb72132ff989fac5c5ddb9cfe}
+)}\label{class_advertisement_a35f461deb86dce9b3b09cadf64b1cdf3}
 
 
 Gets advertisement owner. 
@@ -330,6 +334,26 @@ Compares two ads by they title.
 \begin{DoxyReturn}{Returns}
 Returns true if their titles match. 
 \end{DoxyReturn}
+\hypertarget{class_advertisement_adb38cc00b914dd7a0509829c220eb2bc}{}\index{Advertisement@{Advertisement}!print@{print}}
+\index{print@{print}!Advertisement@{Advertisement}}
+\subsubsection[{print(ostream \&out)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual ostream\& Advertisement\+::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_advertisement_adb38cc00b914dd7a0509829c220eb2bc}
+
+
+Prints to out. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Out stream \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_sale_a0b9e2e6bcc648d2471dc561a7eb3dcb4}{Sale}, and \hyperlink{class_purchase_ad9c91fe1eadbb43884d5e95fb9607b08}{Purchase}.
+
 \hypertarget{class_advertisement_a883fc4cf6525ed95001f5c21c8a4d2ff}{}\index{Advertisement@{Advertisement}!search\+For\+Text@{search\+For\+Text}}
 \index{search\+For\+Text@{search\+For\+Text}!Advertisement@{Advertisement}}
 \subsubsection[{search\+For\+Text(string text) const }]{\setlength{\rightskip}{0pt plus 5cm}bool Advertisement\+::search\+For\+Text (
@@ -413,6 +437,22 @@ Sets negotiable attribute to value.
 {\em negotiable} & New value of negotiable attribute \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_advertisement_a3333256bc60f96a933970fdfed317116}{}\index{Advertisement@{Advertisement}!set\+Owner@{set\+Owner}}
+\index{set\+Owner@{set\+Owner}!Advertisement@{Advertisement}}
+\subsubsection[{set\+Owner(\+User $\ast$owner)}]{\setlength{\rightskip}{0pt plus 5cm}void Advertisement\+::set\+Owner (
+\begin{DoxyParamCaption}
+\item[{{\bf User} $\ast$}]{owner}
+\end{DoxyParamCaption}
+)}\label{class_advertisement_a3333256bc60f96a933970fdfed317116}
+
+
+Sets owner. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Owner \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_advertisement_af47b69a36414d09f24bc2e9173e4ab8b}{}\index{Advertisement@{Advertisement}!set\+Price@{set\+Price}}
 \index{set\+Price@{set\+Price}!Advertisement@{Advertisement}}
 \subsubsection[{set\+Price(float new\+Price)}]{\setlength{\rightskip}{0pt plus 5cm}void Advertisement\+::set\+Price (
@@ -448,14 +488,14 @@ Changes the title.
 
 
 \subsection{Friends And Related Function Documentation}
-\hypertarget{class_advertisement_a4286d9a94fa7c907d6a5bad538a8527b}{}\index{Advertisement@{Advertisement}!operator$<$$<$@{operator$<$$<$}}
+\hypertarget{class_advertisement_af6ba8e9ebe3c64e17263cbbcaa8bbb59}{}\index{Advertisement@{Advertisement}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Advertisement@{Advertisement}}
 \subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{ostream \&}]{out, }
-\item[{const {\bf Advertisement} \&}]{ad}
+\item[{{\bf Advertisement} \&}]{ad}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_advertisement_a4286d9a94fa7c907d6a5bad538a8527b}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_advertisement_af6ba8e9ebe3c64e17263cbbcaa8bbb59}
 
 
 Prints advertisement to out. 

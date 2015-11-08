@@ -50,14 +50,20 @@ bool \hyperlink{class_user_af75d18fdc45ac9fba9911815b78b7daa}{sign\+In} (string 
 void \hyperlink{class_user_a62c158d18b404de5fa049358c2a64a85}{remove\+Advertisement} (\hyperlink{class_advertisement}{Advertisement} $\ast$ad)
 \begin{DoxyCompactList}\small\item\em Removes advertisement from advertisements the user owns. \end{DoxyCompactList}\item 
 void \hyperlink{class_user_a7ac881e0b18256f2aa5bc58616994965}{add\+Advertisement} (\hyperlink{class_advertisement}{Advertisement} $\ast$new\+Advertisement)
-\begin{DoxyCompactList}\small\item\em Addd advertisement to user advertisements. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Add advertisement to user advertisements. \end{DoxyCompactList}\item 
 \hypertarget{class_user_a7f9f8c64216df27994ffe53960d2d18a}{}void \hyperlink{class_user_a7f9f8c64216df27994ffe53960d2d18a}{edit\+Advertisement} ()\label{class_user_a7f9f8c64216df27994ffe53960d2d18a}
 
 \begin{DoxyCompactList}\small\item\em Edits a user advertisement. \end{DoxyCompactList}\item 
 bool \hyperlink{class_user_aa141a81fd5094fea55f53126a94a0342}{operator==} (const \hyperlink{class_user}{User} \&u1) const 
 \begin{DoxyCompactList}\small\item\em Compares if this user is equal to u1, using email attribute. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_user_af0392c9bec07c5dae9f267437189ab3b}{get\+Advertisements} ()
-\begin{DoxyCompactList}\small\item\em Gets all advertisements the user has. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets all advertisements the user has. \end{DoxyCompactList}\item 
+\hypertarget{class_user_adcc858fe44180cee73bc834632bfdb25}{}void \hyperlink{class_user_adcc858fe44180cee73bc834632bfdb25}{set\+Ads\+Owner} ()\label{class_user_adcc858fe44180cee73bc834632bfdb25}
+
+\begin{DoxyCompactList}\small\item\em Sets all ads in user advertisement to have the user as owner. \end{DoxyCompactList}\item 
+\hypertarget{class_user_a9e9f5d5cc0627f130ff2739ea57d3366}{}void \hyperlink{class_user_a9e9f5d5cc0627f130ff2739ea57d3366}{delete\+Ads} ()\label{class_user_a9e9f5d5cc0627f130ff2739ea57d3366}
+
+\begin{DoxyCompactList}\small\item\em Deletes all ads. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -173,7 +179,7 @@ ostream \& \hyperlink{class_user_acf1038a8d320684dc3fbdd5e4308e062}{operator$<$$
 )}\label{class_user_a7ac881e0b18256f2aa5bc58616994965}
 
 
-Addd advertisement to user advertisements. 
+Add advertisement to user advertisements. 
 
 
 \begin{DoxyParams}{Parameters}

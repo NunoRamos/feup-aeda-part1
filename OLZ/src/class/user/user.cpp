@@ -190,3 +190,8 @@ void User::setAdsOwner() {
 		advertisements[i]->setOwner(this);
 	}
 }
+
+void User::deleteAds(){
+	while(advertisements.size() != 0)
+		advertisements.pop_back();
+}

@@ -148,4 +148,11 @@ void interested(User* user);
  */
 void viewMyAds(Data* data);
 
+/**
+ * @brief Deletes user
+ *
+ * @param data Data
+ */
+void deleteUser(Data* data);
+
 #endif

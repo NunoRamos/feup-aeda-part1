@@ -50,7 +50,9 @@ vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{c
 vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_aaee3cddf7c073f9e2aa9f84e13b03ba8}{get\+Ads\+In\+Same\+County} (string county)
 \begin{DoxyCompactList}\small\item\em Gets ads in same county as parameter. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{class_advertisement}{Advertisement} $\ast$ $>$ \hyperlink{class_data_af31d6cf3249bfdff2f4ab4ed8d2676c5}{get\+Ads\+In\+Same\+District} (string district)
-\begin{DoxyCompactList}\small\item\em Gets ads in same district as parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets ads in same district as parameter. \end{DoxyCompactList}\item 
+void \hyperlink{class_data_aae526c8adaee61fa6ccad0a2d53cc3d1}{remove\+User} (\hyperlink{class_user}{User} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Removes user. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -142,6 +144,22 @@ Loads users to user vector from path.
 \begin{DoxyReturn}{Returns}
 Returns true if the users have been successfully loaded 
 \end{DoxyReturn}
+\hypertarget{class_data_aae526c8adaee61fa6ccad0a2d53cc3d1}{}\index{Data@{Data}!remove\+User@{remove\+User}}
+\index{remove\+User@{remove\+User}!Data@{Data}}
+\subsubsection[{remove\+User(\+User $\ast$user)}]{\setlength{\rightskip}{0pt plus 5cm}void Data\+::remove\+User (
+\begin{DoxyParamCaption}
+\item[{{\bf User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)}\label{class_data_aae526c8adaee61fa6ccad0a2d53cc3d1}
+
+
+Removes user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \hyperlink{class_user}{User} to remove \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_data_aaf1fcf32ff1e5aab2dbdba338740ea41}{}\index{Data@{Data}!save\+Users@{save\+Users}}
 \index{save\+Users@{save\+Users}!Data@{Data}}
 \subsubsection[{save\+Users()}]{\setlength{\rightskip}{0pt plus 5cm}bool Data\+::save\+Users (

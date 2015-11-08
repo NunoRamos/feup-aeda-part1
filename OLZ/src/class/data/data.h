@@ -154,6 +154,13 @@ public:
 	 * @return Returns vector of advertisements whose owners are from the same district as parameter
 	 */
 	vector<Advertisement*> getAdsInSameDistrict(string district);
+
+	/**
+	 * @brief Removes user
+	 *
+	 * @param user User to remove
+	 */
+	void removeUser(User* user);
 };
 
 #endif

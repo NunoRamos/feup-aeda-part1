@@ -213,3 +213,16 @@ vector<Advertisement*> Data::getAdsInSameDistrict(string district) {
 
 	return results;
 }
+
+void Data::removeUser(User* user){
+	unsigned int index = sequentialSearch(users, *user);
+	users[index].deleteAds();
+	for(unsigned int i = 0; i < advertisements.size(); i++){
+		if(advertisements[i]->getOwner() == user){
+			delete advertisements[i];
+			advertisements.erase(advertisements.begin()+i);
+			i--;
+		}
+	}
+	users.erase(users.begin()+index);
+}
