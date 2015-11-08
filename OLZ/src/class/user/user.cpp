@@ -143,8 +143,6 @@ istream& operator>>(istream& in, User &user) {
 			ad->setCreationDate(creationDate);
 			user.advertisements.push_back(ad);
 		}
-		//in >> *user.advertisements[i];
-
 	}
 
 	return in;

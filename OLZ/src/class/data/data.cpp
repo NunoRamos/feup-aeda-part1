@@ -39,7 +39,7 @@ bool Data::signIn(const string &email, const string &password) {
 }
 
 bool Data::signUp(User &user) { //may add a condition to see if a user with the same email already exists
-	int i = sequentialSearch(users,user);
+	int i = sequentialSearch(users, user);
 	if (i != -1)
 		cout << "Client is already created\n";
 	else
@@ -49,7 +49,7 @@ bool Data::signUp(User &user) { //may add a condition to see if a user with the 
 
 bool Data::loadUsers() {
 	ifstream userFile;
-	int numberOfFiles;
+	unsigned int numberOfFiles;
 	stringstream ss;
 
 	userFile.open((path + "info.txt").c_str());
@@ -68,8 +68,8 @@ bool Data::loadUsers() {
 			userFile >> temp;
 			users.push_back(temp);
 			users[i].setAdsOwner();
-			for(int j=0;j<temp.getAdvertisement().size();j++){
-			advertisements.push_back(temp.getAdvertisement()[j]);
+			for (unsigned int j = 0; j < temp.getAdvertisements().size(); j++) {
+				advertisements.push_back(temp.getAdvertisements()[j]);
 			}
 		}
 		userFile.close();
@@ -134,36 +134,38 @@ vector<Advertisement*> Data::searchForAdsCategory(Category text) {
 	vector<Advertisement*> results;
 
 	for (unsigned int i = 0; i < advertisements.size(); i++) {
-		if (advertisements[i]->getCategory()==text)
+		if (advertisements[i]->getCategory() == text)
 			results.push_back(advertisements[i]);
 	}
 
 	return results;
 }
 
-vector<Advertisement*> Data::searchForAdsPrice(float inicialPrice,float finalPrice){
+vector<Advertisement*> Data::searchForAdsPrice(float inicialPrice,
+		float finalPrice) {
 	vector<Advertisement*> results;
 
 	for (unsigned int i = 0; i < advertisements.size(); i++) {
-		if (advertisements[i]->getPrice()>=inicialPrice && advertisements[i]->getPrice()<=finalPrice )
+		if (advertisements[i]->getPrice() >= inicialPrice
+				&& advertisements[i]->getPrice() <= finalPrice)
 			results.push_back(advertisements[i]);
 	}
 
 	return results;
 }
 
-vector<Advertisement*> Data::vectorOfSaleOrPurchase(vector<Advertisement*> ads, char saleOrPurchase){
+vector<Advertisement*> Data::vectorOfSaleOrPurchase(vector<Advertisement*> ads,
+		char saleOrPurchase) {
 	vector<Advertisement*> results;
 
-	if(saleOrPurchase=='S'){
-		for(int i=0;i<ads.size();i++){
-			if(ads[i]->getType()=='S')
+	if (saleOrPurchase == 'S') {
+		for (int i = 0; i < ads.size(); i++) {
+			if (ads[i]->getType() == 'S')
 				results.push_back(ads[i]);
 		}
-	}
-	else if(saleOrPurchase=='P'){
-		for(int i=0;i<ads.size();i++){
-			if(ads[i]->getType()=='P')
+	} else if (saleOrPurchase == 'P') {
+		for (int i = 0; i < ads.size(); i++) {
+			if (ads[i]->getType() == 'P')
 				results.push_back(ads[i]);
 		}
 	}
@@ -179,35 +181,35 @@ User* Data::getSignedInUser() const {
 	return signedInUser;
 }
 
-vector<Advertisement*> Data::getAdsInSameCity(string city){
+vector<Advertisement*> Data::getAdsInSameCity(string city) {
 	vector<Advertisement*> results;
-	for(unsigned int i = 0; i < advertisements.size(); i++){
+	for (unsigned int i = 0; i < advertisements.size(); i++) {
 		Location location = advertisements[i]->getLocation();
-		if(location.getCity() == city)
+		if (location.getCity() == city)
 			results.push_back(advertisements[i]);
 	}
 
 	return results;
 }
 
-vector<Advertisement*> Data::getAdsInSameCounty(string county){
+vector<Advertisement*> Data::getAdsInSameCounty(string county) {
 	vector<Advertisement*> results;
-		for(unsigned int i = 0; i < advertisements.size(); i++){
-			Location location = advertisements[i]->getLocation();
-			if(location.getCounty() == county)
-				results.push_back(advertisements[i]);
-		}
+	for (unsigned int i = 0; i < advertisements.size(); i++) {
+		Location location = advertisements[i]->getLocation();
+		if (location.getCounty() == county)
+			results.push_back(advertisements[i]);
+	}
 
-		return results;
+	return results;
 }
 
-vector<Advertisement*> Data::getAdsInSameDistrict(string district){
+vector<Advertisement*> Data::getAdsInSameDistrict(string district) {
 	vector<Advertisement*> results;
-		for(unsigned int i = 0; i < advertisements.size(); i++){
-			Location location = advertisements[i]->getLocation();
-			if(location.getDistrict() == district)
-				results.push_back(advertisements[i]);
-		}
+	for (unsigned int i = 0; i < advertisements.size(); i++) {
+		Location location = advertisements[i]->getLocation();
+		if (location.getDistrict() == district)
+			results.push_back(advertisements[i]);
+	}
 
-		return results;
+	return results;
 }
