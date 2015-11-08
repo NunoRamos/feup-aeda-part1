@@ -6,12 +6,18 @@
 using namespace std;
 
 namespace enums{
+/**
+ * @brief Categories for the different kinds of advertisements.
+ */
 enum Category{
 	Agriculture, Animals, BabyAndChildren, Fashion, Home, Job, Leisure,
 	PhonesAndTablets, RealEstate, Services, Sports, Technology, Vehicles,
 	Others
 };
 
+/**
+ * @brief Condition for the different kinds of product being sold.
+ */
 enum Condition{
 	New, UsedAsNew, Functional, ForParts
 };

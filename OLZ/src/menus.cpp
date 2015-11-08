@@ -450,16 +450,6 @@ void editAd(Data* data){
 	signedInMenu(data);
 }
 
-void removeAd(Data* data){
-	clearScreen();
-	//temporary. will create a menu afterwards.
-	string title;
-	cout << "Insert the title of the advertisement you want to delete.\n";
-	//data->removeAdvertisement(title);
-	cout << "WIP. Ad has been successfully removed.\n";
-	signedInMenu(data);
-}
-
 void signOut(Data* data){
 	data->signOut();
 	mainMenu(data);
