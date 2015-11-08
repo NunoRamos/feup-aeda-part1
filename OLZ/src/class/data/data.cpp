@@ -182,3 +182,36 @@ int Data::getIndice() const {
 void Data::setIndice(int i){
 	this->indice=i;
 }
+
+vector<Advertisement*> Data::getAdsInSameCity(string city){
+	vector<Advertisement*> results;
+	for(unsigned int i = 0; i < advertisements.size(); i++){
+		Location location = advertisements[i]->getLocation();
+		if(location.getCity() == city)
+			results.push_back(advertisements[i]);
+	}
+
+	return results;
+}
+
+vector<Advertisement*> Data::getAdsInSameCounty(string county){
+	vector<Advertisement*> results;
+		for(unsigned int i = 0; i < advertisements.size(); i++){
+			Location location = advertisements[i]->getLocation();
+			if(location.getCounty() == county)
+				results.push_back(advertisements[i]);
+		}
+
+		return results;
+}
+
+vector<Advertisement*> Data::getAdsInSameDistrict(string district){
+	vector<Advertisement*> results;
+		for(unsigned int i = 0; i < advertisements.size(); i++){
+			Location location = advertisements[i]->getLocation();
+			if(location.getDistrict() == district)
+				results.push_back(advertisements[i]);
+		}
+
+		return results;
+}

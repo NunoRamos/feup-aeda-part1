@@ -148,4 +148,8 @@ istream& operator>>(istream& in, Advertisement &ad){
 	return in;
 }
 
+Location Advertisement::getLocation() const{
+	return owner->getLocation();
+}
+
 

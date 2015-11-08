@@ -88,10 +88,58 @@ void searchByCategory(Data* data){
 
 void searchByLocation(Data* data){//TODO berninhas dá tudo com a localização
 	clearScreen();
+	OptionMenu menu(data);
+	menu.addOption("Same city",&sameCity);
+	menu.addOption("Same county",&sameCounty);
+	menu.addOption("Same district",&sameDistrict);
+	menu.createMenu();
+
 	if(data->getSignedInUser() != NULL)
 		signedInMenu(data);
 	else
 		mainMenu(data);
+}
+
+void sameCity(Data* data){
+	cout << "Where do you want to check for ads?\n";
+	string city;
+	getline(cin, city);
+	vector<Advertisement *> ads = data->getAdsInSameCity(city);
+	SearchMenu searchMenu(data, ads);
+	searchMenu.createMenu();
+
+	if(data->getSignedInUser() != NULL)
+			signedInMenu(data);
+		else
+			mainMenu(data);
+}
+
+void sameCounty(Data* data){
+	cout << "Where do you want to check for ads?\n";
+	string county;
+	getline(cin, county);
+	vector<Advertisement *> ads = data->getAdsInSameCounty(county);
+	SearchMenu searchMenu(data, ads);
+	searchMenu.createMenu();
+
+	if(data->getSignedInUser() != NULL)
+			signedInMenu(data);
+		else
+			mainMenu(data);
+}
+
+void sameDistrict(Data* data){
+	cout << "Where do you want to check for ads?\n";
+	string district;
+	getline(cin, district);
+	vector<Advertisement *> ads = data->getAdsInSameDistrict(district);
+	SearchMenu searchMenu(data, ads);
+	searchMenu.createMenu();
+
+	if(data->getSignedInUser() != NULL)
+			signedInMenu(data);
+		else
+			mainMenu(data);
 }
 
 void searchByPrice(Data* data){

@@ -18,6 +18,7 @@
 #include "../../enums.h"
 #include "../date/date.h"
 #include "../user/user.h"
+#include "../location/location.h"
 
 using namespace std;
 using namespace enums;
@@ -194,6 +195,8 @@ public:
 	 * @return Returns a char ( P(urchase) / S(ale))
 	 */
 	virtual char getType() const=0;
+
+	Location getLocation() const;
 
 	/**
 	 * @brief Compares two ads by they title

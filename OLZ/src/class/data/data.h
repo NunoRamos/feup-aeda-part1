@@ -125,6 +125,12 @@ public:
 	void setIndice(int i);
 
 	vector<User> getUsers(){return users;};
+
+	vector<Advertisement*> getAdsInSameCity(string city);
+
+	vector<Advertisement*> getAdsInSameCounty(string county);
+
+	vector<Advertisement*> getAdsInSameDistrict(string district);
 };
 
 //Better option may be writing to a binary file and end every input with \n
