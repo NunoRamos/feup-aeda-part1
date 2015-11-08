@@ -25,20 +25,38 @@ void AdDisplayMenu::print() {
 	for (unsigned int i = 0; i < topMargin; i++)
 		emptyLine();
 
+	cout << borderChar << " ";
+	string adType;
+	if (ad->getType() == 'P')
+		adType = "Purchase";
+	else
+		adType = "Sale";
+	adType += " Ad";
+
+	cout << adType << string(width - 3 - adType.length(), ' ') << borderChar << endl;
+	emptyLine();
+
 	//display title
 	string title = ad->getTitle();
-	cout << borderChar << " " << title
-			<< string(width - 3 - title.length(), ' ') << borderChar << endl;
+	cout << borderChar << " Title: " << title
+			<< string(width - 2 - 8 - title.length(), ' ') << borderChar << endl;
 
 	//a white line between title and description
-	for (unsigned int i = 0; i < topMargin; i++)
-		emptyLine();
+	emptyLine();
+
+	cout << borderChar << " Category: " << categoryToString(ad->getCategory())
+			<< string(
+					width - 2 - 11
+							- categoryToString(ad->getCategory()).length(), ' ')
+			<< borderChar << endl;
+
+	emptyLine();
 
 	//used to add menu options correctly
 	string description = ad->getDescription();
 
-	cout << borderChar << " " << description
-			<< string(width - 3 - description.length(), ' ') << borderChar
+	cout << borderChar << " Description: " << description
+			<< string(width - 2 - 14 - description.length(), ' ') << borderChar
 			<< endl;
 
 	//a white line between description and contacts
@@ -55,7 +73,7 @@ void AdDisplayMenu::print() {
 
 	if (showEmail || showName || showPhoneNumber) {
 		if (showEmail) {
-			 string email = ad->getOwner()->getEmail();
+			string email = ad->getOwner()->getEmail();
 			cout << borderChar << " Email: " << email
 					<< string(width - 2 - 8 - email.length(), ' ') << borderChar
 					<< endl;
