@@ -30,17 +30,17 @@ class User;//had to do this to allow cyclic calling of class
  */
 class Advertisement{
 protected:
-	unsigned int views; //< Number of times the advertisement has been seen
-	unsigned int id; //< Advertisement identification number
-	static unsigned int nextId; //<Next advertisement identification number
-	string title; //< Advertisement title
-	Category category; //< Advertisement category
-	string description; //< Advertisement description
-	Date creationDate; //< Advertisement date of creation
+	unsigned int views; ///< Number of times the advertisement has been seen
+	unsigned int id; ///< Advertisement identification number
+	static unsigned int nextId; ///<Next advertisement identification number
+	string title; ///< Advertisement title
+	Category category; ///< Advertisement category
+	string description; ///< Advertisement description
+	Date creationDate; ///< Advertisement date of creation
 	vector<string> imagesPath; // temporary
-	User* owner; //< Pointer to owner of advertisement
-	float price; //< Price of product
-	bool negotiable; //< Whether price is negotiable or not
+	User* owner; ///< Pointer to owner of advertisement
+	float price; ///< Price of product
+	bool negotiable; ///< Whether price is negotiable or not
 public:
 	/**
 	 * @brief Constructor for class Advertisement
@@ -151,7 +151,7 @@ public:
 	/**
 	 * @brief Sets category attribute to value
 	 *
-	 * @param nweCategory New value of category attribute
+	 * @param newCategory New value of category attribute
 	 */
 	void setCategory(Category newCategory);
 

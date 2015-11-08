@@ -1,3 +1,13 @@
+/**
+ * @file enums.h
+ *
+ * @brief Header file with enumerations and their conversion*/
+
+/**
+ * @file enums.cpp
+ *
+ * @brief Code for enumerations and their conversion*/
+
 #ifndef CATEGORY_H
 #define CATEGORY_H
 
@@ -57,7 +67,7 @@ string categoryToString(Category validCategory);
 /**
  * @brief See if validCategory is a valid category then changes the value of category
  *
- * @param validCondition to compare with the enums
+ * @param isValidCondition to compare with the enums
  *
  * @return Returns true if is a valid category
  */

@@ -21,7 +21,7 @@ using namespace enums;
  */
 class Sale : public Advertisement{
 private:
-	Condition productCondition; //< Condition of product being sold
+	Condition productCondition; ///< Condition of product being sold
 public:
 	/**
 	 * @brief Sale constructor

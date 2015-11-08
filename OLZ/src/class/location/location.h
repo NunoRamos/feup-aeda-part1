@@ -21,9 +21,9 @@ using namespace std;
  */
 class Location{
 protected:
-	string city; //< City
-	string county; //< County
-	string district; //< District
+	string city; ///< City
+	string county; ///< County
+	string district; ///< District
 
 	/**
 	 * @brief Trims spaces from right and left

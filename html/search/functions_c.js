@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['user',['User',['../class_user.html#a4a0137053e591fbb79d9057dd7d2283d',1,'User::User()'],['../class_user.html#a7cc314f439fc19daa7303aa31f3e6798',1,'User::User(string email, string password, string name, string phoneNumber, Location location)'],['../class_user.html#aa0732588c5bd4db4f7f6310e788abacf',1,'User::User(string email, string password, string name, string phoneNumber, string location)']]]
+  ['tostring',['toString',['../class_date.html#a78a793b6c55bb043789b09b1d74c1847',1,'Date::toString()'],['../class_location.html#a4d91190cad2ea40b0e8d53f5211561a6',1,'Location::toString()']]],
+  ['trimspaces',['trimSpaces',['../class_location.html#a0b4be23bfc6e2ea1ed95d80f70a84fbf',1,'Location']]]
 ];

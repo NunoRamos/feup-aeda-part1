@@ -1,27 +1,5 @@
 var searchData=
 [
-  ['sale',['Sale',['../class_sale.html#ac8ff8ff1ab16deb6f12f1b3e63fcb310',1,'Sale']]],
-  ['saveusers',['saveUsers',['../class_data.html#aaf1fcf32ff1e5aab2dbdba338740ea41',1,'Data']]],
-  ['searchforads',['searchForAds',['../class_data.html#a2d154ed7f306a52f9881f28c8a05dd8d',1,'Data']]],
-  ['searchforadscategory',['searchForAdsCategory',['../class_data.html#a792520f278facffb963b239b8b684a15',1,'Data']]],
-  ['searchforadsprice',['searchForAdsPrice',['../class_data.html#a7f5f4489bd571f294b306547722d06ff',1,'Data']]],
-  ['searchfortext',['searchForText',['../class_advertisement.html#a883fc4cf6525ed95001f5c21c8a4d2ff',1,'Advertisement']]],
-  ['setadsowner',['setAdsOwner',['../class_user.html#adcc858fe44180cee73bc834632bfdb25',1,'User']]],
-  ['setcategory',['setCategory',['../class_advertisement.html#ad9ba4dc7b74aea1e4bdd12d60322453c',1,'Advertisement']]],
-  ['setcreationdate',['setCreationDate',['../class_advertisement.html#a6313190818f1e4177bedeab6077e8fd7',1,'Advertisement']]],
-  ['setday',['setDay',['../class_date.html#a18dc2bd52ab8adcca331f66c27ed6623',1,'Date']]],
-  ['setdescription',['setDescription',['../class_advertisement.html#acaf414adece9bb3ca2077354e15ab626',1,'Advertisement']]],
-  ['setemail',['setEmail',['../class_user.html#a9d38dd7a9f5ca79cf17ecf572d42c647',1,'User']]],
-  ['setmonth',['setMonth',['../class_date.html#aa83b79359070012ab58ff99abeb34340',1,'Date']]],
-  ['setnegotiable',['setNegotiable',['../class_advertisement.html#a99c97180458c86d517cbbf35d960994f',1,'Advertisement']]],
-  ['setowner',['setOwner',['../class_advertisement.html#a3333256bc60f96a933970fdfed317116',1,'Advertisement']]],
-  ['setprice',['setPrice',['../class_advertisement.html#af47b69a36414d09f24bc2e9173e4ab8b',1,'Advertisement']]],
-  ['setshowemail',['setShowEmail',['../class_user.html#af2c1c491ccbb27dcf3426b8ab89841d5',1,'User']]],
-  ['setshowname',['setShowName',['../class_user.html#a655b1a3e4d1877a8cddb9a3d874c2844',1,'User']]],
-  ['setshowphonenumber',['setShowPhoneNumber',['../class_user.html#ae8606e0f992f391088af95a80aeaef07',1,'User']]],
-  ['settitle',['setTitle',['../class_advertisement.html#a22bc67410075fb1d7121ebe641da460e',1,'Advertisement']]],
-  ['setyear',['setYear',['../class_date.html#a1299c7e1f0080304f082a9225a743957',1,'Date']]],
-  ['signin',['signIn',['../class_data.html#a0dda2bc60741e1c196d2345035a95ee3',1,'Data::signIn()'],['../class_user.html#af75d18fdc45ac9fba9911815b78b7daa',1,'User::signIn()']]],
-  ['signout',['signOut',['../class_data.html#aa360a3db988286931e07793bcb179f81',1,'Data']]],
-  ['signup',['signUp',['../class_data.html#a4e112b5666778df0c2e5020321c56e69',1,'Data']]]
+  ['removeadvertisement',['removeAdvertisement',['../class_data.html#ad8454797be5cf5326ab8627d89a9e208',1,'Data::removeAdvertisement()'],['../class_user.html#a62c158d18b404de5fa049358c2a64a85',1,'User::removeAdvertisement()']]],
+  ['removeuser',['removeUser',['../class_data.html#aae526c8adaee61fa6ccad0a2d53cc3d1',1,'Data']]]
 ];

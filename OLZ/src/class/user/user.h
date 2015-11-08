@@ -24,19 +24,19 @@ using namespace std;
 class Advertisement;//had to do this to allow cyclic calling of class
 
 /**
- * @brief Date class
+ * @brief User class
  */
 class User{
 protected:
-	vector<Advertisement*> advertisements; //< Advertisements owned by the user
-	string email; //< User email
-	string password; //< User password
-	string name; //< User name
-	string phoneNumber; //< User phone number
-	Location location; //< User location
-	bool showEmail; //< Whether the user's email should be displayed in his/hers ads
-	bool showName; //< Whether the user's name should be displayed in his/hers ads
-	bool showPhoneNumber; //< Whether the user's phone number should be displayed in his/hers ads
+	vector<Advertisement*> advertisements; ///< Advertisements owned by the user
+	string email; ///< User email
+	string password; ///< User password
+	string name; ///< User name
+	string phoneNumber; ///< User phone number
+	Location location; ///< User location
+	bool showEmail; ///< Whether the user's email should be displayed in his/hers ads
+	bool showName; ///< Whether the user's name should be displayed in his/hers ads
+	bool showPhoneNumber; ///< Whether the user's phone number should be displayed in his/hers ads
 public:
 	/**
 	 * @brief User default constructor
@@ -50,7 +50,6 @@ public:
 	 * @param password User Password
 	 * @param name User name
 	 * @param phoneNumber User phone number
-	 * @param signUpDate User sign up date
 	 * @param location User location
 	 */
 	User(string email, string password, string name, string phoneNumber, Location location);
@@ -62,7 +61,6 @@ public:
 	 * @param password User Password
 	 * @param name User name
 	 * @param phoneNumber User phone number
-	 * @param signUpDate User sign up date
 	 * @param location User location as string
 	 */
 	User(string email, string password, string name, string phoneNumber, string location);
@@ -132,7 +130,7 @@ public:
 	/**
 	 * @brief Sets user email
 	 *
-	 * @email User email
+	 * @param email User email
 	 */
 	void setEmail(string email);
 
@@ -177,7 +175,7 @@ public:
 	/**
 	 * @brief Removes advertisement from advertisements the user owns.
 	 *
-	 * @param title Advertisement
+	 * @param ad Pointer to advertisement to remove
 	 */
 	void removeAdvertisement(Advertisement* ad);
 
