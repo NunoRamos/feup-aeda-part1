@@ -23,7 +23,7 @@ using namespace std;
  */
 class Data{
 private:
-	const string path = "C:/Users/mariajoaomirapaulo/git/OLZ/OLZ/data/";//const string path = "/data/"; ///< used to save and load users.
+	const string path = "C:/Users/Nuno/git/OLZ/OLZ/data/";//const string path = "/data/"; ///< used to save and load users.
 	vector<Advertisement*> advertisements; ///< Vector of pointers to all advertisements
 	vector<User> users; ///< Vector of all users
 	User* signedInUser; ///< Pointer to user that is currently signed in
