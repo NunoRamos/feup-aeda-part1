@@ -1,6 +1,6 @@
 # OLZ
-Hello. This is a project made for AEDA class, belonging to MIEIC course, at FEUP.
-This project is being developed by:
+Hello. This is the first part of a project made for AEDA class, taught at FEUP.
+This project was developed by:
 - Bernardo Belchior
-- Maria Jo„o Mira Paulo
+- Maria Jo√£o Mira Paulo
 - Nuno Ramos
